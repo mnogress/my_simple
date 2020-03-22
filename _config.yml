@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/my_simple"
+baseurl: ""
 url: "https://mnogress.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
