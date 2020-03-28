@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "https://mnogress.github.io/my_simple"
+url: "https://mnogress.github.io/my_simple/"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Type on Strap                                    # site's title
