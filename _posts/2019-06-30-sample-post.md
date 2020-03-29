@@ -1,18 +1,17 @@
 ---
 layout: post
-title: Sample post
-tags: [A Tag, Test, Lorem, Ipsum]
+title: カテゴリカル・データの理解
+tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
-Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
+解析するデータセットに含まれるカテゴリカルデータの中身を理解する。　解析する大前提として用意された、データセットの中身を理解する必要がありますが、カテゴリカルデータの特徴と場合によっては、それから解析用の別の特徴量を作成する必要がある場合があります。　
 <!--more-->
-Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.
+ここでは、まず用意されたデータセットの中身を理解する方法について説明する
 
-* Consectetur adipiscing elit
-* Donec a diam lectus
-* Sed sit amet ipsum mauris
+* カテゴリカルデータの要素を知る
+* 各要素の集計を知る
+* NAN（欠損値）の有無を検査する
 
 Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
 
