@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 * 各要素の集計を知る
 * NAN（欠損値）の有無を検査する
 
-{% highlight p %}
+{% highlight py %}
 // count to ten
 for (var i = 1; i <= 10; i++) {
     console.log(i);
