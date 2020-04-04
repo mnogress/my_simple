@@ -13,9 +13,19 @@ excerpt_separator: <!--more-->
 * 各要素の集計を知る
 * NAN（欠損値）の有無を検査する
 
-Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+{% highlight p %}
+// count to ten
+for (var i = 1; i <= 10; i++) {
+    console.log(i);
+}
 
-Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula *semper consectetur sagittis*, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.
+// count to twenty
+var j = 0;
+while (j < 20) {
+    j++;
+    console.log(j);
+}
+{% endhighlight %}
 
 ![Travel]({{ "/assets/img/pexels/travel.jpeg" | relative_url}})
 
