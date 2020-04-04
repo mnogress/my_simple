@@ -52,7 +52,7 @@ $search-color: #999;
 /*  Syntax highlighting  */
 // Syntax typography
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
-$font-size-code: 0.9em !default; // ~12px  original was 0.75
+$font-size-code: 0.82em !default; // ~12px  original was 0.75
 $border-radius: 4px !default;
 
 // base16 Material Theme
@@ -91,7 +91,7 @@ $border-radius: 4px !default;
 //$base0e: #C792EA !default;
 //$base0f: #FF5370 !default;
 
-$base00: rgb(216, 207, 207) !default;
+$base00: rgb(238, 227, 227) !default;
 $base01: #E7EAEC !default;
 $base02: #CCEAE7 !default;
 $base03: #CCD7DA !default;
