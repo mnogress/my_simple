@@ -19,6 +19,7 @@ excerpt_separator: <!--more-->
 df.dtypes  
 {% endhighlight %}
 
+すると、以下のようにアウトプットされる
 {% highlight py %}
 R1BH      float64
 R1C1a       int64
@@ -39,6 +40,22 @@ R1V1      float64
 R1W1      float64
 R1BHa       int64
 dtype: object
+{% endhighlight %}
+
+上記のように　`R1E1` はカテゴリカル・データであるが、実際は都道府県番号が入っている。　その中身を見てみる
+
+{% highlight python %}
+# data frame の'R1E1' 列のデータ型を見る
+df['R1E1']..dtypes  
+{% endhighlight %}
+
+{% highlight python %}
+CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
+                  16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+                  31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                  46, 47],
+                 ordered=False)
+
 {% endhighlight %}
 
 ![Travel]({{ "/assets/img/pexels/travel.jpeg" | relative_url}})
