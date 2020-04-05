@@ -14,8 +14,9 @@ excerpt_separator: <!--more-->
 * NAN（欠損値）の有無を検査する
 
 データフレーム（df) の各列のデータの型を調べるには、`df.dtypes` と入力すればいい。
-{% highlight py %}
-df.dtypes
+{% highlight python %}
+# data frame の各列のデータ型を見る
+df.dtypes  
 {% endhighlight %}
 
 {% highlight py %}
