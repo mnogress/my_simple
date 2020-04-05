@@ -38,7 +38,7 @@ R1V1      float64
 R1W1      float64
 R1BHa       int64
 dtype: object
-{% highlight py %}
+{% endhighlight %}
 
 ![Travel]({{ "/assets/img/pexels/travel.jpeg" | relative_url}})
 
