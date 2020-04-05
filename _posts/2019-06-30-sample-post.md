@@ -13,19 +13,32 @@ excerpt_separator: <!--more-->
 * 各要素の集計を知る
 * NAN（欠損値）の有無を検査する
 
+データフレーム（df) の各列のデータの型を調べるには、`df.dtypes` と入力すればいい。
 {% highlight py %}
-// count to ten
-for (var i = 1; i <= 10; i++) {
-    console.log(i);
-}
-
-// count to twenty
-var j = 0;
-while (j < 20) {
-    j++;
-    console.log(j);
-}
+df.dtypes
 {% endhighlight %}
+
+{% highlight py %}
+R1BH      float64
+R1C1a       int64
+R1E1     category
+R1J1     category
+R1K1      float64
+R1L1      float64
+R1M1      float64
+R1N1      float64
+R1O1      float64
+R1P1      float64
+R1Q1       object
+R1T1     category
+R1AB      float64
+R1AG      float64
+R1AH      float64
+R1V1      float64
+R1W1      float64
+R1BHa       int64
+dtype: object
+{% highlight py %}
 
 ![Travel]({{ "/assets/img/pexels/travel.jpeg" | relative_url}})
 
