@@ -46,9 +46,10 @@ dtype: object
 
 {% highlight python %}
 # data frame の'R1E1' 列のデータ型を見る
-df['R1E1']..dtypes  
+df['R1E1'].dtypes  
 {% endhighlight %}
 
+結果は以下のとおり：
 {% highlight python %}
 CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
                   16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
