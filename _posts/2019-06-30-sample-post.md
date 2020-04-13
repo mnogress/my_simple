@@ -24,24 +24,24 @@ df.dtypes
 
 すると、以下のようにアウトプットされる
 {% highlight py %}
-R1BH      float64
-R1C1a       int64
-R1E1     category
-R1J1     category
-R1K1      float64
-R1L1      float64
-R1M1      float64
-R1N1      float64
-R1O1      float64
-R1P1      float64
-R1Q1       object
-R1T1     category
-R1AB      float64
-R1AG      float64
-R1AH      float64
-R1V1      float64
-R1W1      float64
-R1BHa       int64
+R1A1      object
+R1B1     float64
+R1B1a    float64
+R1C1     float64
+R1C1a    float64
+R1D1      object
+R1E1     float64
+R1F1     float64
+R1G1     float64
+ <省略>
+R1H1      object
+R1I1     float64
+R1J1     float64
+R1K1     float64
+R1L1     float64
+R1M1     float64
+R1N1     float64
+Length: 63, dtype: object
 dtype: object
 {% endhighlight %}
 
