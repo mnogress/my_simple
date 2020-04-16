@@ -19,9 +19,9 @@ excerpt_separator: <!--more-->
 
 #### チートシート
 
-`やりたいこと`{:style="color: blue"}         | `コーディング`
+やりたいこと{:style="color: blue"}         | `コーディング`{:style="color: blue"}
 -------------------- | -------------
-Content Cell  | Content Cell
+ データの型を調べる | df.dtypes
 Content Cell  | Content Cell
 
 
