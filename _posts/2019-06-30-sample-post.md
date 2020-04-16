@@ -67,10 +67,30 @@ df['R1E1'].dtypes
 結果は以下のとおり：
 {% highlight python %}
 dtype('int64')
+{% endhighlight %}
 
+整数の型になった、この列をカテゴリカルのデータ型に変換する。Categoricalメソッドを使う。
+具体的には：```df['列名']=pd.Categorical(df.列名)```　である。
+
+{% highlight python %}
+# data frame の'R1E1' 列の型をカテゴリカルデータ型にする
+df['R1E1']=pd.Categorical(df.R1E1)
+
+# 確認する
+df['R1E1'].dtypes
+{% endhighlight %}
+
+結果は以下のとおり：
+{% highlight python %}
+CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
+                  16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+                  31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                  46, 47],
+                 ordered=False)
 {% endhighlight %}
 
 
+## ひとこと
 > 解析するデータの中身によるが、私の経験では連続データより圧倒的に多い、性別、県番号、業種、評価等、枚挙にいとまがない。これらカテゴリカル・データはデータ解析では、説明変数では「ダミー変数化」する。　また、目的変数では分類問題のモデルで解析する。
 
 
