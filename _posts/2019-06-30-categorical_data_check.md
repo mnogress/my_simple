@@ -24,7 +24,7 @@ df.dtypes
 {% endhighlight %}
 
 すると、以下のようにアウトプットされる。
-この例では、データフレーム名は``df`` という名前で列の数は６３列ある。
+この例では、データフレーム名は``df`` という名前で列の数は52列ある。
 {% highlight py %}
 Sc7A1      object
 Sc7B1     float64
@@ -43,7 +43,7 @@ Sc7K1     float64
 Sc7L1     float64
 Sc7M1     float64
 Sc7N1     float64
-Length: 63, dtype: object
+Length: 52, dtype: object
 dtype: object
 {% endhighlight %}
 
