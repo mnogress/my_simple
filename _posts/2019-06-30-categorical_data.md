@@ -52,7 +52,7 @@ dtype: object
 まず、`float65` から整数 `int64` に変更してそれから、カテゴリカルデータに変更する。
 
 整数にするには、
-```df['列名']=df['列名'].astype(int)```でよい
+```df['列名']=df['列名'].astype(int)```{:style="color: blue"} でよい
 
 
 
