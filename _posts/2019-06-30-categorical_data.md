@@ -1,6 +1,6 @@
 ---
 layout: post
-title: カテゴリカル・データを理解する　〜カテゴリカル・データの確認〜
+title: データを理解する　〜カテゴリカル・データの確認〜
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
