@@ -17,7 +17,7 @@ excerpt_separator: <!--more-->
  - 種類ごとの数（集計）
 3. NAN（欠損値）の有無を調べる
 
-データフレーム（df) の各列のデータの型を調べるには、`df.dtypes` と入力すればいい。
+データフレーム（df) の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入力すればいい。
 {% highlight python %}
 # data frame の各列のデータ型を見る
 df.dtypes  
@@ -70,7 +70,7 @@ dtype('int64')
 {% endhighlight %}
 
 整数の型になった、この列をカテゴリカルのデータ型に変換する。Categoricalメソッドを使う。
-具体的には：```df['列名']=pd.Categorical(df.列名)```　である。
+具体的には：```df['列名']=pd.Categorical(df.列名)```{:style="color: blue"} 　である。
 
 {% highlight python %}
 # data frame の'R1E1' 列の型をカテゴリカルデータ型にする
