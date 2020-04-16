@@ -26,28 +26,28 @@ df.dtypes
 すると、以下のようにアウトプットされる。
 この例では、データフレーム名は``df`` という名前で列の数は６３列ある。
 {% highlight py %}
-R1A1      object
-R1B1     float64
-R1B1a    float64
-R1C1     float64
-R1C1a    float64
-R1D1      object
-R1E1     float64
-R1F1     float64
-R1G1     float64
+Sc7A1      object
+Sc7B1     float64
+Sc7B1a    float64
+Sc7C1     float64
+Sc7C1a    float64
+Sc7D1      object
+Sc7Tdfk     float64
+Sc7F1     float64
+Sc7G1     float64
  <省略>
-R1H1      object
-R1I1     float64
-R1J1     float64
-R1K1     float64
-R1L1     float64
-R1M1     float64
-R1N1     float64
+Sc7H1      object
+Sc7I1     float64
+Sc7J1     float64
+Sc7K1     float64
+Sc7L1     float64
+Sc7M1     float64
+Sc7N1     float64
 Length: 63, dtype: object
 dtype: object
 {% endhighlight %}
 
-上記のように　`R1E1` はカテゴリカル・データであるが、実際は都道府県番号が入っているがデータを読み込むにあたり、
+上記のように　`Sc7Tdfk` はカテゴリカル・データであるが、実際は都道府県番号が入っているがデータを読み込むにあたり、
 `fload64` と認識されている。そこで、カテゴリカルデータをに変更する。　都道府県番号なので、
 まず、`float65` から整数 `int64` に変更してそれから、カテゴリカルデータに変更する。
 
@@ -57,11 +57,11 @@ dtype: object
 
 
 {% highlight python %}
-# data frame の'R1E1' 列の型を整数にする
-df['R1E1']=df['R1E1'].astype(int) 
+# data frame の'Sc7Tdfk' 列の型を整数にする
+df['Sc7Tdfk']=df['Sc7Tdfk'].astype(int) 
 
 # 確認する
-df['R1E1'].dtypes
+df['Sc7Tdfk'].dtypes
 {% endhighlight %}
 
 結果は以下のとおり：
@@ -70,14 +70,14 @@ dtype('int64')
 {% endhighlight %}
 
 整数の型になった、この列をカテゴリカルのデータ型に変換する。Categoricalメソッドを使う。
-具体的には：```df['列名']=pd.Categorical(df.列名)```{:style="color: blue"} 　である。
+具体的には：```df['列名']=pd.Categorical(df.列名)```{:style="color: blue"} である。
 
 {% highlight python %}
-# data frame の'R1E1' 列の型をカテゴリカルデータ型にする
-df['R1E1']=pd.Categorical(df.R1E1)
+# data frame の'Sc7Tdfk' 列の型をカテゴリカルデータ型にする
+df['Sc7Tdfk']=pd.Categorical(df.Sc7Tdfk)
 
 # 確認する
-df['R1E1'].dtypes
+df['Sc7Tdfk'].dtypes
 {% endhighlight %}
 
 結果は以下のとおり：
