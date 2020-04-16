@@ -17,9 +17,9 @@ excerpt_separator: <!--more-->
  - 種類ごとの数（集計）
 3. NAN（欠損値）の有無を調べる
 
-# チートシート
+#### チートシート
 
-`やりたいこと`{:style="background-color: #3f3f3f"}         | `コーディング`
+`やりたいこと`{:style="color: blue"}         | `コーディング`
 -------------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
