@@ -19,10 +19,11 @@ excerpt_separator: <!--more-->
 
 #### チートシート
 
-やりたいこと{:style="color: blue"}         | `コーディング`{:style="color: blue"}
--------------------- | -------------
+やりたいこと | コーディング
+---------- | -------------
  データの型を調べる | df.dtypes
-Content Cell  | Content Cell
+　整数型にする  | df['列名']=df['列名'].astype(int)
+カテゴリカル型にする  | df['列名']=pd.Categorical(df.列名)
 
 
 データフレーム（df) の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入力すればいい。
