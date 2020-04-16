@@ -17,14 +17,16 @@ excerpt_separator: <!--more-->
  - 種類ごとの数（集計）
 3. NAN（欠損値）の有無を調べる
 
-#### チートシート
+---
+チートシートは、以下のとおり：
 
 やりたいこと | コーディング
 ---------- | -------------
- データの型を調べる | df.dtypes
-　整数型にする  | df['列名']=df['列名'].astype(int)
+データの型を調べる | df.dtypes
+整数型にする  | df['列名']=df['列名'].astype(int)
 カテゴリカル型にする  | df['列名']=pd.Categorical(df.列名)
 
+---
 
 データフレーム（df) の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入力すればいい。
 {% highlight python %}
