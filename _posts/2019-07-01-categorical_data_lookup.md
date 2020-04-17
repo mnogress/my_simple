@@ -82,6 +82,7 @@ Name: R1E1, dtype: int64
 {% highlight python %}
 # カテゴリカル・データの列にある中身を定量的に見る
 df['Sc7Tdfk'].describe()
+{% endhighlight %}
 
 結果は以下のとおり：
 {% highlight python %}
