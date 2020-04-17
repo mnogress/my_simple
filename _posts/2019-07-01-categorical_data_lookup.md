@@ -35,12 +35,11 @@ excerpt_separator: <!--more-->
 df['Sc7Tdfk'].dtypes
 {% endhighlight %}
 
-結果は以下のとおり：
+結果は以下のとおりで、４７都道府県のうち１から３３番までの都道府県であることがわかる。
 {% highlight python %}
 CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
                   16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-                  31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
-                  46, 47],
+                  31, 32, 33, ],
                  ordered=False)
 {% endhighlight %}
 
@@ -75,44 +74,38 @@ df['R1E1'].value_counts()
 Name: R1E1, dtype: int64
 {% endhighlight %}
 
+リストを見ても中身を十分理解できないので、分布のイメージを`describe`{:style="color: blue"}  メソッドで定量的に掴む。　以下のように打つ。
 
-整数にするには、
-```df['列名']=df['列名'].astype(int)```{:style="color: blue"} でよい
-
+```df['列名'].describe()```
 
 
 {% highlight python %}
-# data frame の'Sc7Tdfk' 列の型を整数にする
-df['Sc7Tdfk']=df['Sc7Tdfk'].astype(int) 
-
-# 確認する
-df['Sc7Tdfk'].dtypes
-{% endhighlight %}
+# カテゴリカル・データの列にある中身を定量的に見る
+df['Sc7Tdfk'].describe()
 
 結果は以下のとおり：
 {% highlight python %}
-dtype('int64')
+count     24453 
+unique       33
+top          13
+freq       4005
+Name: Sc7Tdfk, dtype: int64
 {% endhighlight %}
 
-整数の型になった、この列をカテゴリカルのデータ型に変換する。Categoricalメソッドを使う。
-具体的には：```df['列名']=pd.Categorical(df.列名)```{:style="color: blue"} である。
+これで、総度数（count)は、24453,　種類の総数 (unique)は、33種類。　 最も多い種類 (top)は、「13（東京都」 で、最頻値 (freq) 4005個であることがわかる。
+
+次に、棒グラフで見てみる。
 
 {% highlight python %}
-# data frame の'Sc7Tdfk' 列の型をカテゴリカルデータ型にする
-df['Sc7Tdfk']=pd.Categorical(df.Sc7Tdfk)
-
-# 確認する
-df['Sc7Tdfk'].dtypes
+# 度数分布図をseaboan 書く
+import seaborn as sb
+sb.set_style('whitegrid')
+sb.countplot(x='R1E1', data=df, palette='hls')
 {% endhighlight %}
 
 結果は以下のとおり：
-{% highlight python %}
-CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
-                  16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-                  31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
-                  46, 47],
-                 ordered=False)
-{% endhighlight %}
+![BarChart]({{ "assets/img/2019_07_01/dl_04_18.png" | relative_url}})
+
 
 
 ## ひとこと
