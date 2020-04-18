@@ -1,13 +1,13 @@
 ---
 layout: post
-title: データを理解する　〜カテゴリカル・データの確認〜
+title: カテゴリカル・データの要約
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-前回の続きとして、データの中身を理解する手順を説明する。今回は、カテゴリカルデータの各要素を概観する。
+前回の続きとして、カテゴリカル・データの中身を要約し、理解を深める手順を説明する。データの理解は、分析の大前提である。
 <!--more-->
-要素の総数はもちろん、集約したり、グラフで分布のイメージを持つ。
+ここの要約では、要素の総数はもちろん、集約したり、グラフで分布のイメージを持つ。
 
 2の **「カテゴリカルデータの要素を概観する」**について説明する。
 1. そもそもデータタイプがカテゴリカル・データかどうか
@@ -29,17 +29,18 @@ excerpt_separator: <!--more-->
 ---
 
 カテゴリカル・データでは、`df.dtypes`{:style="color: blue"}  と入力すれば、どんなデータが入っているかはわかる。
-この例では、データフレーム名は`df` で、列名`Sc7Tdfk` に都道府県番号が入っている。
+この例では、データフレーム名は`df` で、列名`PY_07` に都道府県番号が入っている。
 
 {% highlight python %}
-df['Sc7Tdfk'].dtypes
+df['PY_07'].dtypes
 {% endhighlight %}
 
-結果は以下のとおりで、４７都道府県のうち１から３３番までの都道府県であることがわかる。
+結果は以下のとおりで、この列を使えば、４７都道府県ごとに分類できる。
 {% highlight python %}
 CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
                   16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-                  31, 32, 33, ],
+                  31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                  46, 47],
                  ordered=False)
 {% endhighlight %}
 
@@ -47,31 +48,44 @@ CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13,
 このデータを使って、調べてみることにする。
 
 {% highlight python %}
-df['R1E1'].value_counts()
+df['PY_07'].value_counts()
 {% endhighlight %}
 
 結果は以下のとおり：
 
 {% highlight python %}
-13    4005
-27    2562
-23    1867
-1     1418
-14    1339
-28    1317
+13    1114
+27     691
+23     508
+14     406
+1      388
+28     364
+12     267
+11     228
+20     223
+22     208
+40     205
+4      163
+21     151
+15     136
+34     130
 
 <省略>
 
-18     264
-32     249
-29     231
-31     225
-30     219
-16     204
-19     199
-24     190
-5      188
-Name: R1E1, dtype: int64
+24      60
+29      59
+35      58
+45      55
+18      54
+25      53
+42      50
+39      41
+36      38
+5       33
+41      15
+32      10
+Name: PY_07, dtype: int64
+
 {% endhighlight %}
 
 リストを見ても中身を十分理解できないので、分布のイメージを`describe`{:style="color: blue"}  メソッドで定量的に掴む。　以下のように打つ。
@@ -81,19 +95,19 @@ Name: R1E1, dtype: int64
 
 {% highlight python %}
 # カテゴリカル・データの列にある中身を定量的に見る
-df['Sc7Tdfk'].describe()
+df['PY_07'].describe()
 {% endhighlight %}
 
 結果は以下のとおり：
 {% highlight python %}
-count     24453 
-unique       33
-top          13
-freq       4005
-Name: Sc7Tdfk, dtype: int64
+count     7507
+unique      47
+top         13
+freq      1114
+Name: PY_07, dtype: int64
 {% endhighlight %}
 
-これで、総度数（count)は、24453,　種類の総数 (unique)は、33種類。　 最も多い種類 (top)は、「13（東京都」 で、最頻値 (freq) 4005個であることがわかる。
+これで、総度数（count)は、7507,　種類の総数 (unique)は、47種類。　 最も多い種類 (top)は、「13（東京都」 で、最頻値 (freq) 1114個であることがわかる。
 
 次に、棒グラフで見てみる。
 
@@ -101,7 +115,7 @@ Name: Sc7Tdfk, dtype: int64
 # 度数分布図をseaboan 書く
 import seaborn as sb
 sb.set_style('whitegrid')
-sb.countplot(x='R1E1', data=df, palette='hls')
+sb.countplot(x='PY_07', data=df, palette='hls')
 {% endhighlight %}
 
 結果は以下のとおり：
