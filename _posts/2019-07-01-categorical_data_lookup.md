@@ -25,6 +25,7 @@ excerpt_separator: <!--more-->
 '列' のカテゴリ変数の値をカウントする（重複は除く） | df['列名'.value_counts()]
 要約された統計量をみる  | df['列名'].describe()
 ヒストグラムを作図する  | sb.countplot(x='列名', data=df, palette='hls')
+
 ---
 
 カテゴリカル・データでは、`df.dtypes`{:style="color: blue"}  と入力すれば、どんなデータが入っているかはわかる。
