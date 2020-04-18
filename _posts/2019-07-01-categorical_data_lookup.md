@@ -22,10 +22,9 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-データの型を調べる | df.dtypes
-整数型にする  | df['列名']=df['列名'].astype(int)
-カテゴリカル型にする  | df['列名']=pd.Categorical(df.列名)
-
+'列' のカテゴリ変数の値をカウントする（重複は除く） | df['列名'.value_counts()]
+要約された統計量をみる  | df['列名'].describe()
+ヒストグラムを作図する  | sb.countplot(x='列名', data=df, palette='hls')
 ---
 
 カテゴリカル・データでは、`df.dtypes`{:style="color: blue"}  と入力すれば、どんなデータが入っているかはわかる。
