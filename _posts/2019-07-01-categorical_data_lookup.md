@@ -90,7 +90,7 @@ Name: PY_07, dtype: int64
 
 リストを見ても中身を十分理解できないので、分布のイメージを`describe`{:style="color: blue"}  メソッドで定量的に掴む。　以下のように打つ。
 
-```df['列名'].describe()```
+**```df['列名'].describe()```**
 
 
 {% highlight python %}
@@ -119,6 +119,7 @@ sb.countplot(x='PY_07', data=df, palette='hls')
 {% endhighlight %}
 
 結果は以下のとおり：
+
 ![BarChart]({{ "assets/img/2019_07_01/dl_04_18.png" | relative_url}})
 
 
