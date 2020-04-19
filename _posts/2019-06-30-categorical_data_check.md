@@ -1,7 +1,7 @@
 ---
 layout: post
 title: カテゴリカル・データの確認
-hide_title: true                                  # Hide the title when displaying the post, but shown in lists of posts
+hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/code-1839406_1920.jpg"              # Add a feature-image to the post
 thumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
 color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
