@@ -27,9 +27,9 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-データの型を調べる | df.dtypes
-整数型にする  | df['列名']=df['列名'].astype(int)
-カテゴリカル型にする  | df['列名']=pd.Categorical(df.列名)
+各列の欠損値の有無とその総数を調べる | df.isnull().sum()
+特定の列のNanのある行を外す | df = df[df['列名'].isnull() == False]
+データフレームのサイズ（行数、列数）を確認する  | df.shape
 
 ---
 
