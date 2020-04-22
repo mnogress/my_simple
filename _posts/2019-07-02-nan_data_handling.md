@@ -33,14 +33,15 @@ excerpt_separator: <!--more-->
 
 ---
 
-データフレーム（df) の各列の欠損値の有無とその総数を調べるには、`df.isnull().sum()`{:style="color: blue"}  と入力すると、欠損値の有無。無ければゼロを返す。ある場合はその個数を返す。　早速、用意したデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}) で欠損値の状況を見る。_posts/2019-06-01-reference_data.md
+データフレーム（df) の各列の欠損値の有無とその総数を調べるには、`df.isnull().sum()`{:style="color: blue"}  と入力すると、欠損値の有無。無ければゼロを返す。ある場合はその個数を返す。　早速、用意したデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}) で欠損値の状況を見る。
+
 {% highlight python %}
 # data frame の各列の欠損値の有無を確認する
 df.isnull().sum() 
 {% endhighlight %}
 
 すると、以下のようにアウトプットされる。
-この例では、データフレーム名は``df`` という名前で列の数は14列ある。
+この例では、データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}) という名前で列の数は14列ある。
 {% highlight py %}
 PY_01       0
 PY_02     830

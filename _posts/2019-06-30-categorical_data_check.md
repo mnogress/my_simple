@@ -33,14 +33,14 @@ excerpt_separator: <!--more-->
 
 ---
 
-データフレーム（df) の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入力すればいい。
+データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}) の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入力すればいい。
 {% highlight python %}
 # data frame の各列のデータ型を見る
 df.dtypes  
 {% endhighlight %}
 
 すると、以下のようにアウトプットされる。
-この例では、データフレーム名は``df`` という名前で列の数は14列ある。
+この例では、データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}) という名前で列の数は14列ある。
 {% highlight py %}
 PY_01     object
 PY_02    float64
