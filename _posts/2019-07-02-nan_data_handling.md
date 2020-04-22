@@ -31,9 +31,9 @@ excerpt_separator: <!--more-->
 特定の列のNaNのある行を外す | df = df[df['列名'].isnull() == False]
 データフレームのサイズ（行数、列数）を確認する  | df.shape
 
---
+---
 
-データフレーム（df) の各列の欠損値の有無とその総数を調べるには、`df.isnull().sum()`{:style="color: blue"}  と入力すると、欠損値の有無。無ければゼロを返す。ある場合はその個数を返す。　早速、用意したデータフレーム`df` で欠損値の状況を見る。
+データフレーム（df) の各列の欠損値の有無とその総数を調べるには、`df.isnull().sum()`{:style="color: blue"}  と入力すると、欠損値の有無。無ければゼロを返す。ある場合はその個数を返す。　早速、用意したデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}) で欠損値の状況を見る。_posts/2019-06-01-reference_data.md
 {% highlight python %}
 # data frame の各列の欠損値の有無を確認する
 df.isnull().sum() 
