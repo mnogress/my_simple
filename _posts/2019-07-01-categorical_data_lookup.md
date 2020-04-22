@@ -29,7 +29,7 @@ excerpt_separator: <!--more-->
 ---
 
 カテゴリカル・データでは、`df.dtypes`{:style="color: blue"}  と入力すれば、どんなデータが入っているかはわかる。
-この例では、データフレーム名は`df` で、列名`PY_07` に都道府県番号が入っている。
+この例では、データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}) で、列名`PY_07` に都道府県番号が入っている。
 
 {% highlight python %}
 df['PY_07'].dtypes
