@@ -1,6 +1,6 @@
 ---
 layout: post
-title: サンプルデータ
+title: サンプルデータ(df)
 hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/code-1839406_1920.jpg"              # Add a feature-image to the post
 # Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
@@ -14,19 +14,16 @@ excerpt_separator: <!--more-->
 <!--more-->
 
 
-手順は、以下のとおりで、ここでは、3の **「NAN（欠損値）を適切に処置する」**について説明する。
-1. そもそもデータタイプがカテゴリカル・データかどうか
-2. カテゴリカルデータの要素を概観する
- - 総数
- - 種類
- - 種類ごとの数（集計）
-3. **NAN（欠損値）を適切に処置する**
+**まとめ**　
 
----
-**チートシート**：
+本サイトの記事でその中身をみて行くが、解析に使われる実際のデータの構成に似せて作成した。
+練習用のデータセットは、 [kaggle](https://www.kaggle.com/)からダウンロードしてみるといい。
 
-やりたいこと | コーディング
+項目 | 内容
 ---------- | -------------
-各列の欠損値の有無とその総数を調べる | df.isnull().sum()
-特定の列のNaNのある行を外す | df = df[df['列名'].isnull() == False]
-データフレームのサイズ（行数、列数）を確認する  | df.shape
+データフレーム名 | `df`
+サイズ | 読み込んだ最初は、7507行　x 14列
+中身  | 仮想ビジネスデータ（社員ID， 担当企業名、所属都道府県番号等
+データの型　| 数値(int64、float64）、カテゴリカル・データ、文字列、欠損値、外れ値
+
+
