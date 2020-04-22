@@ -40,7 +40,7 @@ df.dtypes
 {% endhighlight %}
 
 すると、以下のようにアウトプットされる。
-この例では、データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}) {:target="_blank"}という名前で列の数は14列ある。
+この例では、データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}という名前で列の数は14列ある。
 {% highlight py %}
 PY_01     object
 PY_02    float64
