@@ -6,9 +6,14 @@ feature-img: "assets/img/pexels/circuit.jpeg"
 tags: [About, Archive]
 ---
 
-Type on Strap is based on Type Theme, a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+管理人の Southwiseman ですどうぞよろしくお願いします。新卒で某外資系のITベンダーに入社して、その会社で60歳の定年を迎えました。法で定めによって、会社が用意した「継続雇用」は選ばず、数ヶ月の浪人を経験して、ハローワークの求人情報から現在の職場に再就職しました。IT歴36年になりました。
 
-Head over to the [theme's documentation](https://github.io/sylhare/Type-on-Strap) for much more information about Type on Strap or to install this theme on your own Jekyll site.
+HTML/CSS, JavaScript, Photoshp, Illustrator からAWS・IBM Cloudまで、いわゆるWeb関連はなんでもこなします。
+また、仕事では　Python(機械学習)、R，EXCEL(VBA)を日常的に使っています。
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
+新しい職場ではホームページの刷新がメインの仕事となり、今までのWordpress で簡単にホームページ立ち上げとは行かず、セキュリティに強い静的Webサイト構築技術を調べるうちに、Jekyllに出会い、このサイトを立ち上げるに至りました。
+
+このサイトでは、私のIT仕事歴で出会った数々の技術の内、50代を過ぎて学び直しで得たPyhtonによるデータ分析の実際を易しく、解説したいと思います。どうぞよろしくお願いします。
+
+*Thank You for reading!*
  
