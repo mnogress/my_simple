@@ -1,10 +1,10 @@
 --- 
 layout: page
-title : Portfolio 
-permalink: /portfolio/
-subtitle: "Projects I am working on" 
+title : Reference 
+permalink: /reference/
+subtitle: "やり方忘れてよくググる項目をメモ" 
 feature-img: "assets/img/pexels/computer.jpeg"
-tags: [Archive]
+tags: [referece]
 ---
 
 {% include portfolio.html %}
