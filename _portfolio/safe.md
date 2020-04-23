@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UnicodeDecodeError; 'utf-8' codec can't decode byte 0x83 in position 2; invalid start byte
+title: UnicodeDecodeErrorで csv ファイルが読み込みエラーになる
 feature-img: "assets/img/portfolio/safe.png"
 img: "assets/img/portfolio/safe.png"
 date: August, 16 2019
