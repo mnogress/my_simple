@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 2: invalid start byte
+title: UnicodeDecodeError; 'utf-8' codec can't decode byte 0x83 in position 2; invalid start byte
 feature-img: "assets/img/portfolio/safe.png"
 img: "assets/img/portfolio/safe.png"
 date: August, 16 2019
