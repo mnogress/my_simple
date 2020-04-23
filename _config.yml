@@ -10,7 +10,7 @@ favicon: assets/img/favicon.png                             # Icon displayed in 
 
 # Header and footer text
 header_text: データ分析の実際  # Change Blog header text
-header_feature_image: assets/img/pexels/dog-4372036_1920.jpg
+header_feature_image: assets/img/pexels/dog-4372036_1920_2.jpg
 footer_text: >
   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://mnogress.github.io">so-wi.com</a>
 
