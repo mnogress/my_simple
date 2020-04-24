@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 feature-img: "assets/img/pexels/circuit.jpeg"
+date: 2017-09-03
 tags: [About, Archive]
 ---
 
