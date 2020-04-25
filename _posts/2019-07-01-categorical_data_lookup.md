@@ -1,6 +1,7 @@
 ---
 layout: post
 title: カテゴリカル・データの要約
+feature-img: "assets/img/2019_06_30/carbon-fiber.png"   
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---

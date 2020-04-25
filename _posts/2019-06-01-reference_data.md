@@ -2,7 +2,7 @@
 layout: post
 title: サンプルデータ(df)
 hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
-feature-img: "assets/img/2019_06_30/code-1839406_1920.jpg"              # Add a feature-image to the post
+feature-img: "assets/img/2019_06_30/appearance_square-100.png"              # Add a feature-image to the post
 # Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
 color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
 bootstrap: true                                   # Add bootstrap to the page
