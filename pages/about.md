@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "assets/img/pexels/circuit.jpeg"
+feature-img: "assets/img/2019_06_30/icecream_1.png"
 date: 2017-09-03
 tags: [About, Archive]
 ---
