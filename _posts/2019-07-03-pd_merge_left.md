@@ -28,7 +28,8 @@ EXCELのVlookupのように共通列をキーにマッチする行へ結合し�
 
 ![merge_left]({{ "/assets/img/2019_07_01/pd_merge_left.png" | relative_url}})
 
-ポイントは
+### ポイント
+
 1. df の左にdf2 が結合する
 2. df のキー列は不変
 3. df のキー列にない要素の行は結合されない　例では、df2のd行
