@@ -1,7 +1,7 @@
 ---
 layout: post
 title: カテゴリカル・データのダミー変数化
-feature-img: "assets/img/2019_07_01/zabuton1-100_square.png"   
+feature-img: "assets/img/portfolio/game.png"   
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
