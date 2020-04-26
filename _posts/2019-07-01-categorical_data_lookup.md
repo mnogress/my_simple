@@ -128,7 +128,7 @@ sb.countplot(x='PY_07', data=df, palette='hls')
 
 棒グラフ：
 
-![BarChart]({{ "assets/img/2019_07_01/dl_04_18.png" | relative_url}})
+<!-- # ![BarChart]({{ "assets/img/2019_07_01/dl_04_18.png" | relative_url}}) -->
 
 ---
 
