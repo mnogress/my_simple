@@ -25,7 +25,7 @@ after (7507, 2)
 
 {% highlight python %}
 # データフレームの先頭5行を見る
-df.hed()
+df.head()
 {% endhighlight %}
 
 カッコ内に数字をいれるとその数分、先頭から表示しますが、何も指定しないと 5行になります。
