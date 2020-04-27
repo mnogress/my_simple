@@ -75,7 +75,7 @@ df['PY_07'].value_counts()
 36      38
 5       33
 41      15
-32      10
+29      10
 Name: PY_07, dtype: int64
 
 {% endhighlight %}
@@ -106,12 +106,12 @@ Name: PY_07, dtype: int64
 # 度数分布図をseaboan 書く
 import seaborn as sb
 sb.set_style('whitegrid')
-sb.countplot(x='PY_07', data=df, palette='hls')
+sb.countplot(x='PY_07', data=df, palette='pastel')
 {% endhighlight %}
 
 棒グラフ：
 
-<!-- # ![BarChart]({{ "assets/img/2019_07_01/dl_04_18.png" | relative_url}}) -->
+![BarChart]({{ "assets/img/2019_07_01/dl_04_27.png" | relative_url}})
 
 ---
 
