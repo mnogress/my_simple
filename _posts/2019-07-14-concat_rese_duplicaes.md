@@ -39,7 +39,7 @@ excerpt_separator: <!--more-->
 
 ### Kaggle データ
 
-今回は、いつものデータフレームではなく、Kaggle より[HRデータ]({{ "https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset" | relative_url}}){:target="_blank"} をダウンロードしてオペレーションしました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
+今回は、いつものデータフレームではなく、Kaggle より[適当なデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} をダウンロードしてオペレーションしました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
 
 
 {% highlight python %}
@@ -76,7 +76,7 @@ print('after', df.shape)
 {% endhighlight %}
 
 df のサイズを確認します。ちなみに、`df=df.drop_duplicates()` と同じdf に代入しているため、行数が変化します。　
-`df.drop_duplicates(inplace=True)` と`inplace=True`を指定するとdfに代入する必要はありません。
+`df.drop_duplicates(inplace=True)` と`inplace=True`{:style="background: #ffebf6"}を指定するとdfに代入する必要はありません。
 
 {% highlight python %}
 # 列名を出力します
@@ -86,7 +86,7 @@ after (32, 35)
 
 ### Kaggle データで行ってみる
 
-Kaggle より[HRデータ]({{ "https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset" | relative_url}}){:target="_blank"} で2つのデータフレームを作成して上記の一連の操作を行いました。
+Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} で2つのデータフレームを作成して上記の一連の操作を行いました。
 
 データフレームのビフォア、アフターは以下のようになりました。
 薄いオレンジがインデクスです。　薄黄色が重複のある行です。　それが除外され、赤い部分に置き換わっています。
