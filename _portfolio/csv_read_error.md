@@ -9,9 +9,9 @@ tags: [pandas]
 
 折角作ってもらった、`data.csv` ファイルがうまくread できないで；
 
-```UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 2: invalid start byte``` 
+```UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 2: invalid start byte```{:style="background: #ffebf6"} 
 
-でエラーとなった場合の対処法
+でエラーとなった場合の対処法をメモしました。
 
 
 {% highlight python %}
@@ -22,7 +22,7 @@ with codecs.open("data.csv", mode ="r", encoding ="Shift-JIS", errors="ignore") 
 {% endhighlight %}
 
 もちろん、一旦ファイルをEXCELで開いて、`data.xlsx` 形式にして以下のようにEXCELファイルで読み込むことも可能ですが、この場合
-csv to xlsx の手作業が発生する。頻繁にデータの入れ替えをして解析する場合やチームで対応する場合は実質このような方法は無理な場合が多いと思います。
+csv to xlsx の手作業が発生します。頻繁にデータの入れ替えをして解析する場合やチームで対応する場合は実質、EXCELで編集する方法は、無理な場合が多いと思います。
 
 {% highlight python %}
 # EXCELファイルをread する
