@@ -59,8 +59,13 @@ pd.pivot_table(df,'tips',['sex','smoker'],['day','time'], margins=True, aggfunc=
 
 {% endhighlight %}
 
-結果は以下のとおりです。
+結果は以下のとおりですが、ビフォア、アフターで比較できるように、データフレームの最初５行も合わせて紹介します。
 
+#### オリジナルのデータセット
+![df,head()]({{ "/assets/img/2019_07_01/pivot_table_tips_before.png" | relative_url}})
+
+
+#### ピボットテーブル
 ![ピボットテーブル]({{ "/assets/img/2019_07_01/pivot_table_tips.png" | relative_url}})
 
 
