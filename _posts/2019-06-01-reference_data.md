@@ -1,6 +1,6 @@
 ---
 layout: post
-title: サンプルデータ(df)
+title: サンプルデータセットについて
 hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/appearance_square-100.png"              # Add a feature-image to the post
 # Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
@@ -29,7 +29,8 @@ excerpt_separator: <!--more-->
 
 データセットを自作で用意できないと思われる方には、 [kaggle](https://www.kaggle.com/)からダウンロードしてみるいいと思います。
 
-### データセット1　
+
+##### `データセット1`{:style="background: #cbe8f5"} 　
 
 項目 | 内容
 ---------- | -------------
@@ -40,7 +41,8 @@ excerpt_separator: <!--more-->
 データの種類　| 数値(int64、float64）、カテゴリカル・データ、文字列、欠損値、外れ値
 
 
-### データセット2
+
+##### `データセット2`{:style="background: #cbe8f5"} 
 
 項目 | 内容
 ---------- | -------------
@@ -50,7 +52,8 @@ excerpt_separator: <!--more-->
 中身  | レストラン　料金とチップ
 データの種類　| 数値(int64、float64）、カテゴリカル・データ、文字列
 
-### データセット3
+
+##### `データセット3`{:style="background: #cbe8f5"} 
 
 項目 | 内容
 ---------- | -------------
