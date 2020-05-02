@@ -55,7 +55,7 @@ Kaggle で tips, restaurant と検索すれば出てくると思います・
 
 {% highlight python %}
 # ピボットテーブルを作成する
-pd.pivot_table(df,'tips',['sex','smoker'],['day','time'], margins=True, aggfunc=np.mean)
+pd.pivot_table(df, values='tip', index=['sex', 'smoker'], columns=['day', 'time'], margins=True,  aggfunc=np.mean)
 
 {% endhighlight %}
 
