@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-複数のデータフレームの行を連結する | df = pd.cancat([df1, df2]) 
+複数のデータフレームの行を連結する | df = pd.concat([df1, df2]) 
 新しくインデックスをつけ直し、元のインデックスは削除する | df.reset_index(drop=True)
 重複した行を削除する| df = df.drop_diplicates()
 
