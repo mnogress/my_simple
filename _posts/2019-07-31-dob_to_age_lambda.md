@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 生年月日から年齢を計算する
-feature-img: "assets/img/portfolio/ttt.png"   
+feature-img: "assets/img/2019_07_01/alice_pattern.png"   
 tags: [pandas, data_handling]
 excerpt_separator: <!--more-->
 ---
@@ -37,7 +37,7 @@ Kaggle で RIO, Olympic と検索すると出てくると思います・
 
 ![df.shape]({{ "assets/img/2019_07_01/dob_to_age_lambda.png" | relative_url}})
 
-
+### サンプルコーディング
 
 
 {% highlight python linenos %}
