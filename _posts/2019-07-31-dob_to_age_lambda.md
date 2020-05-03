@@ -66,10 +66,16 @@ df['age']=(now.year - df['DoB'].dt.year) - ((now.month - df['DoB'].dt.month) < 0
 #### 計算結果のデータフレーム
 ![result]({{ "/assets/img/2019_07_01/dob_to_age_result.png" | relative_url}})
 
+---
 
-#### 密度関数分布
 
-![ピボットテーブル]({{ "assets/img/2019_07_01/density_func_distribution.png" | relative_url}})
+#### おまけ
+
+よろしかったら、[strptimeについての記事]({{ "portfolio/datetime-strptime.html" | relative_url}}){:target="_blank"}　も参考にしてください！
+
+密度関数のグラフ化もして分布の状況をみてみました。
+
+![密度関数]({{ "assets/img/2019_07_01/density_func_distribution.png" | relative_url}})
 
 
 ---
