@@ -3,7 +3,7 @@ layout: post
 title: 文字列を日付に変換する
 feature-img: "assets/img/portfolio/ttt.png"
 img: "assets/img/portfolio/drop_cols_create_new_df.png"
-date: 201９-09-13
+date: 2019-07-13
 tags: [pandas, python]
 ---
 
@@ -16,10 +16,10 @@ tags: [pandas, python]
 
 コーディング | 結果
 ---------- | -------------
-datetime.datetime.strptime("21/12/2008", "%d/%m/%Y").strftime("%Y-%m-%d") | '2008-12-21'
-datetime.datetime.strptime("12/21/2008", "%m/%d/%Y").strftime("%Y-%m-%d") | '2008-12-21'
-datetime.datetime.strptime("12/21/08", "%m/%d/%y").strftime("%Y-%m-%d")| '2008-12-21'
-datetime.datetime.strptime("1/1/68", "%m/%d/%y").strftime("%Y-%m-%d") | `2068-01-01`{:style="background: #ffebf6"}
+datetime.datetime.strptime('21/12/2008', '%d/%m/%Y').strftime('%Y-%m-%d') | '2008-12-21'
+datetime.datetime.strptime('12/21/2008', '%m/%d/%Y').strftime('%Y-%m-%d') | '2008-12-21'
+datetime.datetime.strptime('12/21/08', '%m/%d/%y').strftime('%Y-%m-%d')| '2008-12-21'
+datetime.datetime.strptime('1/1/68', '%m/%d/%y').strftime('%Y-%m-%d') | ```'2068-01-01'```{:style='background: #ffebf6'}
 
 ### ひとこと
 
