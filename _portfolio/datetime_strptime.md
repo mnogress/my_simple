@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 文字列を日付に変換する
-feature-img: "assets/img/portfolio/ttt.png"
-img: "assets/img/portfolio/drop_cols_create_new_df.png"
+feature-img: "assets/img/portfolio/datetime_strptime.png"
+img: "assets/img/portfolio/datetime_strptime.png"
 date: 2019-07-13
 tags: [pandas, python]
 ---
@@ -22,7 +22,8 @@ datetime.datetime.strptime('12/21/08', '%m/%d/%y').strftime('%Y-%m-%d')| '2008-1
 datetime.datetime.strptime('1/1/68', '%m/%d/%y').strftime('%Y-%m-%d') | ```'2068-01-01'```{:style='background: #ffebf6'}
 
 
-ポイント
+### ポイント
+
 1. strptime は「文字列」を「日付」に変換、strftime は、「日付」を「文字列」に変換する
 2. %Y <- 大文字"ワイ"　が4桁で推奨、%y <- 小文字"ワイ"　は二桁の場合に使う
 3. %y 部分が「1から68」すなわち、1968年以前の二桁では、を2068と変換する 　
