@@ -48,8 +48,8 @@ def excel2datetime(et):
 
 df['Date1'] = df['Serial_Date'].apply(excel2datetime)
 
-# ---------------------
-
+# ---------------------ß
+C
 # 関数名 excel2date, 引数はet2, 列Date2を追加
 def excel2date(et2):
     from datetime import datetime, timedelta
