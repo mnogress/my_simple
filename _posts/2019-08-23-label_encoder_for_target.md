@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Label Encoderで目的変数を作成する
-feature-img: "assets/img/2019_07_01/check_patterm.png"   
+feature-img: "assets/img/2019_07_01/label_encoded_bg.png"   
 tags: [pandas, logistic regression]
 excerpt_separator: <!--more-->
 ---
@@ -33,10 +33,10 @@ Label Encoder で作成します。　Kaggle より[人事データ]({{ "https:/
 
 
 
-### サンプルコーディング
+### サンプルオペレーション
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # Attrition に対してLabel Encodeし、最初の５行の結果をみる
 from sklearn.preprocessing import LabelEncoder as LE
 label_encoder = LE()
@@ -47,13 +47,14 @@ attrition_encoded[0:5]
 
 
 結果は以下のとおりです。 Attrition = Yes を１に、No を0にしています。
+
 {% highlight python %}
 array([1, 0, 1, 0, 0])
 {% endhighlight %}
 
 戻り値の配列を`target_df`という名前のデータフレームにします。
 
-{% highlight python %}
+{% highlight python linenos %}
 # 1 = yes / 0 = no
 target_df = pd.DataFrame(attrition_encoded, columns=['attrition_yes'])
 target_df.head()
@@ -68,8 +69,8 @@ target_df.head()
 
 #### 目的変数を可視化してみました
 
-{% highlight python %}
-df_pie =target_df.groupby(by='attrition_yes').size()
+{% highlight python linenos %}
+
 rcParams['figure.figsize'] = 6,4
 sb.countplot(x='attrition_yes', data=target_df, palette='hls')
 {% endhighlight %}
@@ -77,9 +78,10 @@ sb.countplot(x='attrition_yes', data=target_df, palette='hls')
 
 ![count_bar]({{ "assets/img/2019_07_01/label_encode_bar.png" | relative_url}})
 
-{% highlight python %}
-labels = ['Yes', 'No']
+{% highlight python linenos  %}
+df_pie =target_df.groupby(by='attrition_yes').size()
 
+labels = ['Yes', 'No']
 plot = df_pie.plot.pie(y='attrition_yes', labels=labels, autopct='%.1f%%')
 {% endhighlight %}
 
