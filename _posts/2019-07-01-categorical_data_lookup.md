@@ -16,9 +16,9 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-'列' のカテゴリ変数の値をカウントする（重複は除く） | df['列名'].value_counts()
-要約された統計量をみる  | df['列名'].describe()
-ヒストグラムを作図する  | sb.countplot(x='列名', data=df, palette='hls')
+&#39;列&#39; のカテゴリ変数の値をカウントする（重複は除く） | df[&#39;列名&#39;]C.value_counts()
+要約された統計量をみる  | df[&#39;列名&#39;].describe()
+ヒストグラムを作図する  | sb.countplot(x=&#39;列名&#39;, data=df, palette=&#39;hls&#39;)
 
 ---
 
@@ -39,7 +39,7 @@ excerpt_separator: <!--more-->
 カテゴリカル・データでは、`df.dtypes`{:style="color: blue"}  と入力すれば、各列にどんなデータ型で格納されているかわかります。
 本サイトで使うデータセットはデータフレーム化され pandasで扱えるようになっていますが、データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}) の、列名`PY_07` に都道府県番号が入っています。まず、読み込んだデータフレームで`PY_07`はどのようなデータ型で認識されているか確認します。
 
-{% highlight python %}
+{% highlight python linenos %}
 # PY_07 のデータの型の確認
 df['PY_07'].dtypes
 {% endhighlight %}
@@ -56,7 +56,7 @@ CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13,
 各都道府県番号ごとの要素の数（度数）を見るには、`df['列名'].value_counts()`{:style="color: blue"}を使います。
 データセットの中身を都道府県別に、集約して差異を見てみます。
 
-{% highlight python %}
+{% highlight python linenos %}
 df['PY_07'].value_counts()
 {% endhighlight %}
 
@@ -66,11 +66,7 @@ df['PY_07'].value_counts()
 13    1114
 27     691
 23     50
-
-
 <省略>
-
-
 39      41
 36      38
 5       33
@@ -85,7 +81,7 @@ Name: PY_07, dtype: int64
 **```df['列名'].describe()```**
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # カテゴリカル・データの列の基本統計量を確認します
 df['PY_07'].describe()
 {% endhighlight %}
@@ -102,7 +98,7 @@ Name: PY_07, dtype: int64
 これで、総度数（count)は、7507,　種類の総数 (unique)は、47種類。　その中は、「13（東京都)」 で、その数=最頻値 (freq) は、1114個であることがわかりました。
 次に、棒グラフで各県の様子を見てみます。　棒グラフはプレゼン等でビジュアルで説明する際にとても有効です。
 
-{% highlight python %}
+{% highlight python linenos %}
 # 度数分布図をseaboan 書く
 import seaborn as sb
 sb.set_style('whitegrid')

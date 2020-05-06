@@ -17,7 +17,7 @@ EXCELのVlookupのように共通列をキーにマッチする行へ結合し�
 
 やりたいこと | コーディング
 ---------- | -------------
-'キー列'でdfにdf2を左結合する | pd.merge(df, df2, how='left', on ='キー列名')
+&#39;キー列&#39;でdfにdf2を左結合する | pd.merge(df, df2, how=&#39;left&#39;, on =&#39;キー列名&#39;)
 
 
 ---
@@ -40,7 +40,7 @@ EXCELのVlookupのように共通列をキーにマッチする行へ結合し�
 
 本サイトでおなじみのデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} にdf2 というデータフレームを左結合する。　各々のデータフレームのサイズ配下のとおりです。
 
-{% highlight python %}
+{% highlight python linenos %}
 # df, df2 それぞれのサイズをプリントしておきます
 print('df', df.shape)
 print('df2', df2.shape)
@@ -55,7 +55,7 @@ df2 (22596, 2)
 共通の列は`PY_09` です。サイズは、dfが7507行 でdf2が22596行あります。
 更に、NaNの様子を確認します。
 
-{% highlight python %}
+{% highlight python linenos %}
 # df, df2 それぞれのNaNの数をプリントしておきます
 print('df:','\n', df.isnull().sum())
 print('\n')
@@ -85,7 +85,7 @@ dtype: int64
 
 df にdf2 を左結合します。 
 
-{% highlight python %}
+{% highlight python linenos %}
 # merge 前と後のデータフレームの構成を確認
 print('before', df.shape)
 df=pd.merge(df,df2, how='left', on = 'PY_09')
@@ -99,7 +99,7 @@ after (7507, 11)
 
 結合の結果、df に追加された`PY_20` のNaNの数を確認します。
 
-{% highlight python %}
+{% highlight python linenos %}
 #　NaN 特にPY_20の数を確認
 df.isnull().sum()
 {% endhighlight %}

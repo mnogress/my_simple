@@ -16,10 +16,10 @@ tags: [pandas, python]
 
 コーディング | 結果
 ---------- | -------------
-datetime.datetime.strptime('21/12/2008', '%d/%m/%Y').strftime('%Y-%m-%d') | '2008-12-21'
-datetime.datetime.strptime('12/21/2008', '%m/%d/%Y').strftime('%Y-%m-%d') | '2008-12-21'
-datetime.datetime.strptime('12/21/08', '%m/%d/%y').strftime('%Y-%m-%d')| '2008-12-21'
-datetime.datetime.strptime('1/1/68', '%m/%d/%y').strftime('%Y-%m-%d') | ```'2068-01-01'```{:style='background: #ffebf6'}
+datetime.datetime.strptime(&#39;21/12/2008&#39;, &#39;%d/%m/%Y&#39;).strftime(&#39;%Y-%m-%d&#39;) | &#39;2008-12-21&#39;
+datetime.datetime.strptime(&#39;12/21/2008&#39;, &#39;%m/%d/%Y&#39;).strftime(&#39;%Y-%m-%d&#39;) | &#39;2008-12-21&#39;
+datetime.datetime.strptime(&#39;12/21/08&#39;, &#39;%m/%d/%y&#39;).strftime(&#39;%Y-%m-%d&#39;)| &#39;2008-12-21&#39;
+datetime.datetime.strptime(&#39;1/1/68&#39;, &#39;%m/%d/%y&#39;).strftime(&#39;%Y-%m-%d&#39;) | ```'2068-01-01'```{:style='background: #ffebf6'}
 
 
 ### ポイント

@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | 注意点
 ---------- | -------------
-EXCEL Dateシリアル値をDatetimeに変換する | df['d'] = df['s'].apply(関数名)　関数をapplyする
+EXCEL Dateシリアル値をDatetimeに変換する | df[&#39;d&#39;] = df[&#39;s&#39;].apply(関数名)　関数をapplyする
 
 
 ---
@@ -48,8 +48,7 @@ def excel2datetime(et):
 
 df['Date1'] = df['Serial_Date'].apply(excel2datetime)
 
-# ---------------------ß
-C
+# ---------------------
 # 関数名 excel2date, 引数はet2, 列Date2を追加
 def excel2date(et2):
     from datetime import datetime, timedelta

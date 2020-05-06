@@ -1,11 +1,8 @@
 ---
 layout: post
 title: カテゴリカル・データの確認
-hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/code-1839406_1920.jpg"              # Add a feature-image to the post
-# Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
-color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
-bootstrap: true                                   # Add bootstrap to the page
+# bootstrap: true                                   # Add bootstrap to the page
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
@@ -21,8 +18,8 @@ excerpt_separator: <!--more-->
 やりたいこと | コーディング
 ---------- | -------------
 データの型を調べる | df.dtypes
-整数型にする  | df['列名']=df['列名'].astype(int)
-カテゴリカル型にする  | df['列名']=pd.Categorical(df.列名)
+整数型にする  | df[&#39;列名&#39;]=df[&#39;列名&#39;].astype(int)
+カテゴリカル型にする  | df[&#39;列名&#39;]=pd.Categorical(df.列名)
 
 ---
 
@@ -36,7 +33,8 @@ excerpt_separator: <!--more-->
 
 
 データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入します。
-{% highlight python %}
+
+{% highlight python linenos %}
 # data frame の各列のデータ型を見る
 df.dtypes  
 {% endhighlight %}
@@ -44,6 +42,7 @@ df.dtypes
 アウトプットです。
 
 データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}という名前で14列ですね。
+
 {% highlight py %}
 PY_01     object
 PY_02    float64
@@ -72,7 +71,7 @@ dtype: object
 
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # data frame の'PY_07' 列の型を整数にする
 df['PY_07']=df['PY_07'].astype(int) 
 # 確認
@@ -90,7 +89,7 @@ dtype('int64')
 
 整数型や浮動小数点型にする時と構文が異なります
 
-{% highlight python %}
+{% highlight python linenos %}
 # data frame の'PY_07' 列の型をカテゴリカルデータ型にする
 df['PY_07']=pd.Categorical(df.PY_07)
 

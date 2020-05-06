@@ -16,8 +16,8 @@ Pandas では一発でダミー変数にできます。
 
 やりたいこと | コーディング
 ---------- | -------------
-ダミー変数化したい列をシリーズデータ(dummy)として取り出す | dummy = df['ダミー変数したい列'] 
-シリーズデータ(dummy)をダミー変数のデータフレームにする | dymmy = pd.get_dummies(dummy, prefix='td')
+ダミー変数化したい列をシリーズデータ(dummy)として取り出す | dummy = df[&#39;ダミー変数したい列&#39;] 
+シリーズデータ(dummy)をダミー変数のデータフレームにする | dymmy = pd.get_dummies(dummy, prefix=&#39;td&#39;)
 
 ---
 
@@ -42,7 +42,7 @@ Pandas では一発でダミー変数にできます。
 本サイトでおなじみのデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の都道府県番号が入っている`PY_07`をダミー変数化します。
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # Series データとして取り出した後、ダミー変数化したデータフレムにする
 tdfk = df['PY_07'] # series 
 tdfk = pd.get_dummies(tdfk, prefix='td')
@@ -63,7 +63,7 @@ print('tdfk', tdfk.shape)
 今回の連結には pd,concat メソッドでdf にtdfk を追加する感じで連結します。
 また、都道府県番号が入った'PY_07'は必要ないので、ドロップしてます。
 
-{% highlight python %}
+{% highlight python linenos %}
 # dfの前後のサイズをプリントしておきます
 print('before', df.shape)
 df = pd.concat([df, tdfk], axis = 1)
@@ -79,7 +79,7 @@ after (7485, 57)
 
 dfの列名について確認します。 
 
-{% highlight python %}
+{% highlight python linenos %}
 # 列名を出力します
 df.columns
 {% endhighlight %}

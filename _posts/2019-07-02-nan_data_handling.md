@@ -4,8 +4,8 @@ title: 欠損値のハンドリング
 hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/code-1839406_1920.jpg"              # Add a feature-image to the post
 # Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
-color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
-bootstrap: true                                   # Add bootstrap to the page
+# color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
+# bootstrap: true                                   # Add bootstrap to the page
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
@@ -22,7 +22,7 @@ excerpt_separator: <!--more-->
 やりたいこと | コーディング
 ---------- | -------------
 各列の欠損値の有無とその総数を調べる | df.isnull().sum()
-特定の列のNaNのある行を外す | df = df[df['列名'].isnull() == False]
+特定の列のNaNのある行を外す | df = df[df[&#39;列名&#39;].isnull() == False]
 データフレームのサイズ（行数、列数）を確認する  | df.shape
 
 
@@ -45,7 +45,7 @@ excerpt_separator: <!--more-->
 
 データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の各列の欠損値の有無とその総数を調べるには、`df.isnull().sum()`{:style="color: blue"}  と入力します。すると、欠損値の有無。無ければゼロを返します。欠損値があれば、その個数を返します。データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} 全体の欠損値の状況を見ます。
 
-{% highlight python %}
+{% highlight python linenos %}
 # data frame の各列の欠損値の有無を確認する
 df.isnull().sum() 
 {% endhighlight %}
@@ -107,7 +107,7 @@ dtype: int64
 行を落とした結果、全体のデータフレームのサイズが変わってしまいます。　そこで、行を落とす前と後のサイズを記録しておきます。
 データフレームのサイズの確認は ```df.shape``` で（行数、列数）を返します。
 
-{% highlight python %}
+{% highlight python linenos %}
 # data frame の'PY_13' 列のNaN のある行を落とす。
 # 前後のデータフレームのサイズを記録する。
 print('before', df.shape)
@@ -125,7 +125,8 @@ after (7493, 14)
 
 再度、NaNの数を確認します。
 
-{% highlight python %}
+{% highlight python linenos %}
+# NaNを確認
 df.isnull().sum() 
 {% endhighlight %}
 

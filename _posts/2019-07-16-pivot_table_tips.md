@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-ピボットテーブルを作成する | pd.pivot_table(df, values='計算列', index=['列1', '列2'], columns=['比較列1', '比較列2'], margins=True,  aggfunc=np.mean)
+ピボットテーブルを作成する | pd.pivot_table(df, values=&#39;計算列&#39;, index=[&#39;列1&#39;, &#39;列2&#39;], columns=[&#39;比較列1&#39;, &#39;比較列2&#39;], margins=True,  aggfunc=np.mean)
 
 
 要素名 | 説明
@@ -53,7 +53,7 @@ Kaggle で tips, restaurant と検索すれば出てくると思います・
 4. 集約する計算方法は平均値になります
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # ピボットテーブルを作成する
 pd.pivot_table(df, values='tip', index=['sex', 'smoker'], columns=['day', 'time'], margins=True,  aggfunc=np.mean)
 

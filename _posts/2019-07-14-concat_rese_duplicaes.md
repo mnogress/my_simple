@@ -42,7 +42,7 @@ excerpt_separator: <!--more-->
 今回は、いつものデータフレームではなく、Kaggle より[適当なデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} をダウンロードしてオペレーションしました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # データを分割して作成したdf1 とdf2 を連結する
 print('before df1', df1.shape) 
 print('before df2', df2.shape) 
@@ -63,12 +63,12 @@ after df (40, 35)
 今回の連結には pd,concat メソッドでdf にtdfk を追加する感じで連結します。
 また、都道府県番号が入った'PY_07'は必要ないので、ドロップしてます。
 
-{% highlight python %}
+{% highlight python linenos %}
 # インデックスを振り直します
 df =df.reset_index(drop=True)
 {% endhighlight %}
 
-{% highlight python %}
+{% highlight python linenos %}
 # 重複した行を除外します
 print('before', df.shape) 
 df = df.drop_duplicates()
@@ -79,7 +79,6 @@ df のサイズを確認します。ちなみに、`df=df.drop_duplicates()` と
 `df.drop_duplicates(inplace=True)` と`inplace=True`{:style="background: #ffebf6"}を指定するとdfに代入する必要はありません。
 
 {% highlight python %}
-# 列名を出力します
 before (40, 35)
 after (32, 35)
 {% endhighlight %}
