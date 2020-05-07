@@ -39,7 +39,9 @@ excerpt_separator: <!--more-->
 
 ### Kaggle データ
 
-今回は、いつものデータフレームではなく、Kaggle より[適当なデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} をダウンロードしてオペレーションしました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
+今回は、いつものデータフレームではなく、Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} をダウンロードしてオペレーションしました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
+
+[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}にデータセットの概要があります。参考にしてください。
 
 
 {% highlight python linenos %}

@@ -33,8 +33,10 @@ excerpt_separator: <!--more-->
 
 ### Kaggle データで作成する
 
-今回は、いつものデータフレームではなく、Kaggle より[レストランTipsデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} をダウンロードしてピボットテーブルを作成しました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
+今回は、いつものデータフレームではなく、Kaggle より[Tipデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} をダウンロードしてピボットテーブルを作成しました。　欠損値のチェックやデータセットの理解のための一連の作業は実施済です。
 Kaggle で tips, restaurant と検索すれば出てくると思います・
+
+[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}にデータセットの概要があります。参考にしてください。
 
 
 ### 今回使うデータのポイント

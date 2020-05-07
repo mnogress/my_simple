@@ -39,7 +39,7 @@ Pandas では一発でダミー変数にできます。
 
 ### one hop encoding の実際
 
-本サイトでおなじみのデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の都道府県番号が入っている`PY_07`をダミー変数化します。
+本サイトでおなじみのオリジナルデータ[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の都道府県番号が入っている`PY_07`をダミー変数化します。
 
 
 {% highlight python linenos %}
@@ -61,7 +61,7 @@ print('tdfk', tdfk.shape)
 
 2つのデータフレームとも同じ行数です。次に、ダミー変数のデータフレームのtdfkをdf に連結します。
 今回の連結には pd,concat メソッドでdf にtdfk を追加する感じで連結します。
-また、都道府県番号が入った'PY_07'は必要ないので、ドロップしてます。
+また、ダミー変数化されたオリジナルの「都道府県番号が入った'PY_07'」は必要ありません。データフレームからドロップしてます。
 
 {% highlight python linenos %}
 # dfの前後のサイズをプリントしておきます

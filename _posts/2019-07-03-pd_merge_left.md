@@ -38,10 +38,10 @@ EXCELのVlookupのように共通列をキーにマッチする行へ結合し�
 
 ### データフレームdf とdf2 を結合する
 
-本サイトでおなじみのデータフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} にdf2 というデータフレームを左結合する。　各々のデータフレームのサイズ配下のとおりです。
+本サイトでおなじみのオリジナルデータ[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} で操作します。これに、df2 というデータフレーム別途用意して左結合します。　各々のデータフレームのサイズは、以下のとおりです。
 
 {% highlight python linenos %}
-# df, df2 それぞれのサイズをプリントしておきます
+# df, df2 それぞれのサイズをプリントします
 print('df', df.shape)
 print('df2', df2.shape)
 {% endhighlight %}
@@ -52,7 +52,8 @@ df (7507, 10)
 df2 (22596, 2)
 {% endhighlight %}
 
-共通の列は`PY_09` です。サイズは、dfが7507行 でdf2が22596行あります。
+いずれも`PY_09`という列が存在します。
+共通の列`PY_09` の各々のサイズは、dfが7507行 でdf2が22596行あります。
 更に、NaNの様子を確認します。
 
 {% highlight python linenos %}
@@ -83,7 +84,7 @@ dtype: int64
 {% endhighlight %}
 
 
-df にdf2 を左結合します。 
+`PY_09` 列にいずれもNaN がありません。　では、df にdf2 を左結合します。 
 
 {% highlight python linenos %}
 # merge 前と後のデータフレームの構成を確認

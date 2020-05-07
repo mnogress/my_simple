@@ -32,7 +32,7 @@ excerpt_separator: <!--more-->
 3. NAN（欠損値）の有無を調べる
 
 
-データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入します。
+オリジナルデータ[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の各列のデータの型を調べるには、`df.dtypes`{:style="color: blue"}  と入します。
 
 {% highlight python linenos %}
 # data frame の各列のデータ型を見る
@@ -41,7 +41,7 @@ df.dtypes
 
 アウトプットです。
 
-データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}という名前で14列ですね。
+データフレーム名は[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}という名前で14列です。
 
 {% highlight py %}
 PY_01     object
