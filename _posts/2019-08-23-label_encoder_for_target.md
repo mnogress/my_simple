@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 二項ロジスティック回帰分析も目的変数は 1または0の配列です。
 <!--more-->
-Label Encoder で作成します。　Kaggle より[人事データ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} のデータセットでオペレーションしました。　このデータセットで社員の退職要因を分析する二項ロジスティック回帰分析をシリーズでブログしたいと思います。
+Label Encoder で作成します。　Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} のデータセットでオペレーションしました。　このデータセットで社員の退職要因を分析する二項ロジスティック回帰分析をシリーズでブログしたいと思います。
 
 ---
 
@@ -27,7 +27,7 @@ Label Encoder で作成します。　Kaggle より[人事データ]({{ "https:/
 2. df.shape => 1470 x 35 
 3. 目的変数用のデータフレームを作成します
 
-データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} で紹介したデータセット３です。
+[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事で紹介している`HRデータ`です。
 
 ![df.shape]({{ "assets/img/2019_07_01/labe_encoder_log_res.png" | relative_url}})
 

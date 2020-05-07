@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 1900/1/1 を起点とするEXCELのDateシリアル値をPython Datetime に変換する関数です。
 <!--more-->
-データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} のでも使われていたEXCEL Dateシリアル値をpandasデータフレームで正しく表示させます。定番のデータハンドリングです。
+オリジナルデータ[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} で使われていたEXCEL Dateシリアル値をpandasデータフレームで正しく表示させます。定番のデータハンドリングです。
 
 ---
 
@@ -28,7 +28,7 @@ EXCEL Dateシリアル値をDatetimeに変換する | df[&#39;d&#39;] = df[&#39;
 2. Serial_Date とある列が変換対象のEXCEL Dateシリアル値です
 3. 関数２つでDate1,Date2の2列を追加します
 
-データフレーム[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} の一部で検証しました。
+オリジナルデータ[df]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"} のEXCEL シリアルDate値を抜き出して検証しました。
 
 ![df.shape]({{ "assets/img/2019_07_01/original_date_df.png" | relative_url}})
 

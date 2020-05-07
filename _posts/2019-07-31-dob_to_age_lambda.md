@@ -10,6 +10,8 @@ excerpt_separator: <!--more-->
 <!--more-->
 [Kaggle]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"}でみつけた2016年リオデジャネイロオリンピックの選手リストを使って、Pandas で計算します。
 
+[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}にデータセットの概要があります。参考にしてください。
+
 ---
 
 ### チートシート
@@ -25,7 +27,7 @@ MM/DD/YYの対応 | 1/1/68 が2068-01-01になってしまうので、計算を�
 
 ### Kaggle データで作成する
 
-Kaggle より[リオオリンピック選手リスト]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} を使って、生年月日を計算しました。　生年月日がMM/DD/YYと年が二桁であること。　データに欠損値があるので、必ず、その行を落とすなどして下準備をする必要があります。
+[リオデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} を使って、生年月日を計算しました。　生年月日がMM/DD/YYと年が二桁であること。　データに欠損値があるので、必ず、その行を落とすなどして下準備をする必要があります。
 Kaggle で RIO, Olympic と検索すると出てくると思います・
 
 
