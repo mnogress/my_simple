@@ -16,7 +16,7 @@ YYYY-MM-DD のフォーマットです。
 
 やりたいこと | コーディング
 ---------- | -------------
-古い順に並べ替える　|　df.sort_values(by = &#39;Date&#39, ascending=True)
+古い順に並べ替える　|　df.sort_values(by = &#39;Date&#39;, ascending=True)
 インデックスを付け替える　|　df.reset_index(drop=True)
 データフレームにそのまま書き込む　|　df.reset_index(drop=True, inplace=True)
 
