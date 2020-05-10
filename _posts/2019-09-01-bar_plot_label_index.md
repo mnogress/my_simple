@@ -119,12 +119,7 @@ plt.show()
 
 ![df.shape]({{ "assets/img/2019_07_01/regular_bar_to_stack.png" | relative_url}})
 
-
-{% highlight python linenos %}
-# 1 = yes / 0 = no
-target_df = pd.DataFrame(attrition_encoded, columns=['attrition_yes'])
-target_df.head()
-{% endhighlight %}
+参照ドキュメント(英語）のURLも追記します。
 
 
 参照　[matplotlib_documentation](https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar){:target="_blank"}
