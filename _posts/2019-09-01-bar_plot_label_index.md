@@ -127,9 +127,6 @@ target_df.head()
 {% endhighlight %}
 
 
-#### 計算結果のデータフレーム
-![result]({{ "assets/img/2019_07_01/label_encoded_df.png" | relative_url}})
-
 参照　[matplotlib_documentation](https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar){:target="_blank"}
 
 
