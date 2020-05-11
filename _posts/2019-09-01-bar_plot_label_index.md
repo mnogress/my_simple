@@ -76,13 +76,10 @@ plt.title('Points by 1st_try and 2nd_try')
 P3 = df_month['PY_03']
 P5 = df_month['PY_05']
 ind =  df_month.index.tolist()
-
 left = np.arange(len(ind))
 width = 0.35  
-
 p3 = plt.bar(left, P3, width, color='lightblue')
 p5 = plt.bar(left+width, P5, width, color='orange' )
-
 plt.ylabel('Points')
 plt.title('Points by 1st_tryl and 2nd_try')
 plt.xticks(left, ind)
@@ -98,14 +95,15 @@ plt.show()
 1. PY_03 をdf_month のデータフレームから取り出し、変数P3 に代入します。P3はシリーズオブジェクトです
 2. PY_05 をdf_month のデータフレームから取り出し、変数P5 に代入します。P5はシリーズオブジェクトです
 3. 変数indにインデックス(=Year of Month)を代入します。ind ははシリーズオブジェクトです
-5. 変数leftは、barの数だけの順序配列で、作図に必要です。そのため、np.arrange関数を用いて作りますが、barの数はind の長さより求めています
-8. 変数p3にライトブルーのbarの情報を代入します。7本のbar それぞれのbarの値はP3オブジェクトから取る、barの幅、色を指定しています
-9. 変数p5にオレンジのbarの情報を代入します。7本のbarの横に置いて、その幅、それぞれのbarの値はP５オブジェクトから、幅、色の指定をしています
-11. Y軸のラベル
-12. グラフタイトル
-13. 刻みとラベル
-14. グラフ左上のlegend
-15. おまじないの作図命令
+4. 変数leftは、barの数だけの順序配列で、作図に必要です。そのため、np.arrange関数を用いて作りますが、barの数はind の長さより求めています
+5. 幅を 0.35としています
+6. 変数p3にライトブルーのbarの情報を代入します。7本のbar それぞれのbarの値はP3オブジェクトから取る、barの幅、色を指定しています
+7. 変数p5にオレンジのbarの情報を代入します。7本のbarの横に置いて、その幅、それぞれのbarの値はP５オブジェクトから、幅、色の指定をしています
+8. Y軸のラベル
+9. グラフタイトル
+10. 刻みとラベル
+11. グラフ左上のlegend
+12. おまじないの作図命令
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 0.85em"}
 
 
