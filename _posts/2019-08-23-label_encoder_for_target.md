@@ -50,7 +50,7 @@ attrition_encoded[0:5]
 
 {% highlight python %}
 array([1, 0, 1, 0, 0])
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 戻り値の配列を`target_df`という名前のデータフレームにします。
 

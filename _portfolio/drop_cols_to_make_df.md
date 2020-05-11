@@ -9,7 +9,7 @@ tags: [pandas]
 
 列を元のデータフレームからドロップして新しいデータフレームとする方がピックアップして作るより多いと思います。この例では14列程度の小さなデータフレームなので、その気になれば一から組み立てることもできますが、実際の解析では、500以上の列というのはザラです。　そんな時、10程度の列をドロップしてNaNを完全になくしたデータフレームを作成するには、やはり`drop`メソッドを使うことが多いと思います。　それなのに、忘れてしまいがちな構文です。
 
-{% highlight python %}
+{% highlight python linenos %}
 # 元のデータフレームから5つの任意の列をドロップする
 print('before', df.shape) 
 
@@ -27,13 +27,13 @@ print('after', df.shape)
 {% highlight python %}
 before (7507, 14)
 after (7507, 9)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 `inplace=True`{:style="background: #ffebf6"}  でオブジェクトそのものに変更を加える。　そしてカラムに対して行うというコーディングです。
 
 また、以下で同じことです。この場合は、ドロップした結果をdfに再度、代入しています。　
 
-{% highlight python %}
+{% highlight python  linenos %}
 print('before', df.shape) 
 df =  df.drop(columns=['PY_01', 'PY_04','PY_08', 'PY_09', 'PY_10'])
 print('after', df.shape) 

@@ -58,7 +58,7 @@ print('after df', df.shape)
 before df1 (10, 35)
 before df2 (30, 35)
 after df (40, 35)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 2つのデータフレームとも同じ行数です。次に、ダミー変数のデータフレームのtdfkをdf に連結します。
@@ -83,7 +83,7 @@ df のサイズを確認します。ちなみに、`df=df.drop_duplicates()` と
 {% highlight python %}
 before (40, 35)
 after (32, 35)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 ### Kaggle データで行ってみる
 

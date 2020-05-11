@@ -50,7 +50,7 @@ print('df2', df2.shape)
 {% highlight python %}
 df (7507, 10)
 df2 (22596, 2)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 いずれも`PY_09`という列が存在します。
 共通の列`PY_09` の各々のサイズは、dfが7507行 でdf2が22596行あります。
@@ -81,7 +81,7 @@ df2:
  PY_09     0
 PY_20    44
 dtype: int64
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 `PY_09` 列にいずれもNaN がありません。　では、df にdf2 を左結合します。 
@@ -96,7 +96,7 @@ print('after', df.shape)
 {% highlight python %}
 before (7507, 10)
 after (7507, 11)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 結合の結果、df に追加された`PY_20` のNaNの数を確認します。
 
@@ -120,7 +120,7 @@ PY_13      14
 PY_14      14
 PY_20      22
 dtype: int64
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 ---

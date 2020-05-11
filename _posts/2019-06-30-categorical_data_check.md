@@ -59,7 +59,7 @@ PY_12    float64
 PY_13    float64
 Py_14    float64
 dtype: object
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 `PY_07` はカテゴリカル・データなので、実際は都道府県番号が入っています。
 しかし、データを読み込むにあたり、`float64` と認識されています。カテゴリカルデータの方に変更します。　
@@ -82,7 +82,7 @@ df['PY_07'].dtypes
 結果は以下のとおりです：
 {% highlight python %}
 dtype('int64')
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 次に、カテゴリカルのデータ型に変換する。Categoricalメソッドを使います。
 具体的には：```df['列名']=pd.Categorical(df.列名)```{:style="color: blue"} です。
@@ -104,7 +104,7 @@ CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13,
                   31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
                   46, 47],
                  ordered=False)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 ### ひとこと

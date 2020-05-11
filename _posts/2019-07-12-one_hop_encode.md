@@ -56,7 +56,7 @@ print('tdfk', tdfk.shape)
 {% highlight python %}
 (7485, 11)
 (7485, 47)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 2つのデータフレームとも同じ行数です。次に、ダミー変数のデータフレームのtdfkをdf に連結します。
@@ -74,7 +74,7 @@ print('after', df.shape)
 {% highlight python %}
 before (7485, 11)
 after (7485, 57)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 dfの列名について確認します。 
@@ -94,7 +94,7 @@ Index(['PY_02', 'PY_03', 'PY_05', 'PY_06', 'PY_09', 'PY_11', 'PY_12', 'PY_13',
        'td_39', 'td_40', 'td_41', 'td_42', 'td_43', 'td_44', 'td_45', 'td_46',
        'td_47'],
       dtype='object')
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 

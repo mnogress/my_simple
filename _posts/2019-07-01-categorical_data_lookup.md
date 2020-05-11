@@ -52,7 +52,7 @@ CategoricalDtype(categories=[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13,
                   31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
                   46, 47],
                  ordered=False)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 各都道府県番号ごとの要素の数（度数）を見るには、`df['列名'].value_counts()`{:style="color: blue"}を使います。
 データセットの中身を都道府県別に、集約して差異を見てみます。
@@ -75,7 +75,7 @@ df['PY_07'].value_counts()
 29      10
 Name: PY_07, dtype: int64
 
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 `describe`{:style="color: blue"}  メソッドで基本的な統計量を確認します。　
 
@@ -94,7 +94,7 @@ unique      47
 top         13
 freq      1114
 Name: PY_07, dtype: int64
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 これで、総度数（count)は、7507,　種類の総数 (unique)は、47種類。　その中は、「13（東京都)」 で、その数=最頻値 (freq) は、1114個であることがわかりました。
 次に、棒グラフで各県の様子を見てみます。　棒グラフはプレゼン等でビジュアルで説明する際にとても有効です。

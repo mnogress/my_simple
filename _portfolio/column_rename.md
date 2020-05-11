@@ -11,7 +11,7 @@ tags: [pandas]
 
 しかし、空でコードするほどは使いません。　そのため、いざコーディングをする際には、以前使ったコーディングを探してコピペして必要なところ変更は手間がかかります。　そこで、レファレンスとして記事にしました。　
 
-{% highlight python %}
+{% highlight python linenos %}
 # 列名を変更する
 df = df.rename(columns = {
     'KT_A1': 'PY_01',

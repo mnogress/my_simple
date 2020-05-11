@@ -14,7 +14,7 @@ tags: [pandas]
 でエラーとなった場合の対処法をメモしました。
 
 
-{% highlight python %}
+{% highlight python linenos %}
 # データの内容を無視してread する
 import codecs
 with codecs.open("data.csv", mode ="r", encoding ="Shift-JIS", errors="ignore") as file:
@@ -24,7 +24,7 @@ with codecs.open("data.csv", mode ="r", encoding ="Shift-JIS", errors="ignore") 
 もちろん、一旦ファイルをEXCELで開いて、`data.xlsx` 形式にして以下のようにEXCELファイルで読み込むことも可能ですが、この場合
 csv to xlsx の手作業が発生します。頻繁にデータの入れ替えをして解析する場合やチームで対応する場合は実質、EXCELで編集する方法は、無理な場合が多いと思います。
 
-{% highlight python %}
+{% highlight python linenos %}
 # EXCELファイルをread する
 df.to_excel('data.xlsx', sheet_name='Sheet1')
 {% endhighlight %}

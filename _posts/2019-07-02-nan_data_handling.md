@@ -69,7 +69,7 @@ PY_12    7507
 PY_13      14
 Py_14      14
 dtype: int64
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 `PY_12` はすべて欠損値（NaN) です。また、`PY_04` は5014個の欠損値があります。`PY_06` は5014個のNaNが存在します。
@@ -121,7 +121,7 @@ print('after', df.shape)
 {% highlight python %}
 before (7507, 14)
 after (7493, 14)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 7505 マイナス　7493 イコール 14 ということで、14行落としました。
 
@@ -149,7 +149,7 @@ PY_12    7493
 PY_13       0
 Py_14       0
 dtype: int64
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 
 `PY_13` と`PY_14` にあった、NaN はどうやら同じ行に存在していたようです。　`PY_14`の欠損値もなくなりました。

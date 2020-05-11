@@ -9,7 +9,7 @@ tags: [pandas]
 
 元のデータセットの中から、特定の列をピックアップして新しいデータフレームを作成する。新しく計算する際、定番の手順にもかかわらず、いつも忘れてしまい過去のやり方を確認しています。
 
-{% highlight python %}
+{% highlight python linenos %}
 # 任意の列で新しいデータフレームを作成する
 print('before', df.shape) 
 df = df[['PY_02', 'PY_11']]
@@ -21,9 +21,9 @@ print('after', df.shape)
 {% highlight python %}
 before (7507, 14)
 after (7507, 2)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
-{% highlight python %}
+{% highlight python linenos %}
 # データフレームの先頭5行を見る
 df.head()
 {% endhighlight %}

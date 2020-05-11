@@ -12,7 +12,7 @@ tags: [pandas]
 どうやら、EXCEL でVllokupをかけて内容を他のEXCELシートから突合したようで、見つからない＝#N/A が入っているようだったので、
 それを探すために以下のコマンドを打ち突き止めることができました。
 
-{% highlight python %}
+{% highlight python linenos %}
 # 列PY_10に`#N/A` が混ざっていないかを確認する
 df[df['PY_10'].isin(['#N/A'])]
 {% endhighlight %}
@@ -24,7 +24,7 @@ df[df['PY_10'].isin(['#N/A'])]
 
 ピンポイントに変更は、以下のように打ちました。 今回はゼロを代入しています。
 
-{% highlight python %}
+{% highlight python linenos %}
 # 特定の要素をピンポイントに変更する
 df.at[6203, 'PY_10']=0
 

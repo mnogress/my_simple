@@ -62,7 +62,7 @@ Date     object
 PY_03     int64
 PY_05     int64
 dtype: object
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 groupbyでsum集約します。ついでに、集約した列名も`Year of Month`とし、更に再インデックス化します。
 また、その結果はdf_monthというデータフレームに代入し、そのデータフレームの行数、列数をとります（df.shapeします）
@@ -77,7 +77,7 @@ df_month.shape
 
 {% highlight python %}
 (7, 3)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 ７行なので、データフレームすべてを表示しましょう。
 
