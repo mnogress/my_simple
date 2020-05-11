@@ -17,7 +17,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-n桁の文字でsum()集約、列名変更と再インデクスする | df.groupby(df[&#39;Date&#39;].str[:n]).sum().reset_index().rename(columns={&#39;Date&#39; :  &#39;New_Date&#39;})
+n桁の文字でsum()集約する<br> さらに列名変更と再インデクスする | df.groupby(df[&#39;Date&#39;].str[:n]).sum()<br>.reset_index().rename(columns={&#39;Date&#39; :  &#39;New_Date&#39;})
 Dateオブジェクトを文字列オブジェクトに変える　| df[&#39;Date&#39;]=df[&#39;Date&#39;].astype(str)
 
 
