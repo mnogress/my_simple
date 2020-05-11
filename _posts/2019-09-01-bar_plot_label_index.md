@@ -20,6 +20,8 @@ excerpt_separator: <!--more-->
 ラベルでインデックスをつけ直す | df.index = df.pop(&#39;Col&#39;)
 インデックスをｘ軸に棒グラフを作成する　| df.plot.bar()
 
+`'Col' : 任意の列名`{:style="background-color: #ffe3e2; font-size: 0.7em"}
+
 ---
 
 
