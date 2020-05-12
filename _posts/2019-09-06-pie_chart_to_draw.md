@@ -1,6 +1,6 @@
 ---
 layout: post
-title: value_counts()の結果を plt.bar で円グラフ化する
+title: value_counts()の結果を plt.subplots()で円グラフ化する
 feature-img: "assets/img/2019_07_01/logo_pink_square.png"   
 tags: [pandas, data_visualization]
 excerpt_separator: <!--more-->
