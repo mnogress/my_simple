@@ -36,7 +36,7 @@ value_counts()の結果を円グラフの<br>ソースデータにする | pie =
 1470行 x 35列のサイズがあります。
 
 
-![df_JobRole]({{ "assets/img/2019_07_01/bar_plot_original_group_by.png" | relative_url}})
+![df_JobRole]({{ "assets/img/2019_07_01/hr_data_oroginal.png" | relative_url}})
 
 
 
