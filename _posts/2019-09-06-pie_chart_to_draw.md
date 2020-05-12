@@ -108,7 +108,7 @@ plt.show()
 
 ![df.shape]({{ "assets/img/2019_07_01/df_jobrole_pie_2.png" | relative_url}})
 
-まず、横に並列させました。　line by line で解説します。
+line by line で解説します。
 
 >
 1. JobRole をdf_JobRole のデータフレームから取り出し、変数sizes に代入します。sizesはシリーズオブジェクトです
