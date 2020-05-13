@@ -153,7 +153,7 @@ precision    recall  f1-score   support
    micro avg       0.86      0.86      0.86       294
    macro avg       0.68      0.53      0.53       294
 weighted avg       0.82      0.86      0.81       294
-{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.70em"}
 
 #### コンフュージョンマトリックス
 
