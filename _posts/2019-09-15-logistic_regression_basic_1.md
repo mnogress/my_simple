@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ロジスティック回帰分析＿その１
-feature-img: "assets/img/2019_07_01/label_encoded_bg.png"   
+feature-img: "assets/img/2019_07_01/marble_floor.png"   
 tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
@@ -18,7 +18,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | 今回は
 ---------- | -------------
-説明変数同士の相関関係をチェックする | sb.heatmap(df.corr(), annot=True, cmap=#39;Blues#39;)
+説明変数同士の相関関係をチェックする | sb.heatmap(df.corr(), annot=True, cmap=&#39;Blues&#39;)
 
 ロジスティック回帰のモデルにおいて、説明変数同士の相関係数が概ね0.3upあれば、どちらか一方を除外します。　
 いわゆる多重共線性を回避する必要があります。
@@ -60,11 +60,32 @@ sb.heatmap(df.corr(), annot=True, cmap='Blues')
 2. 計算結果の的中率が向上する方。
 3. 2.に関しては後出しの感はいなめませが、試行錯誤して行います。実際、PeformanceRating とPerformanceSalaryHike　順序尺度してのバラエティは後者でした
 
+{% highlight python linenos %}
+#　ヒートマップから相互相関の変数の片方をドロップする
+to_drop = [
+    'JobLevel',
+    'PercentSalaryHike',
+    'TotalWorkingYears', 
+    'YearsAtCompany', 
+    'YearsInCurrentRole', 
+    'YearsSinceLastPromotion', 
+    'YearsWithCurrManager'  
+]
+df.drop(to_drop, inplace=True, axis=1)
+
+sb.heatmap(df.corr(), annot=True, cmap='Blues')
+{% endhighlight %}
+
 結果は以下のとおりです。
 
 ![heatmap]({{ "assets/img/2019_07_01/heatmap_hr_df_after.png" | relative_url}})
 
-更に、社員番号、性別、既婚・非婚等のカテゴリカル・データと目的変数となる'Attrition'を覗いて機械学習用のデータセット`df_tet`を作成します。
+---
+
+
+### 機械学習用のデータセットの作成
+
+更に、社員番号、性別、既婚・非婚等のカテゴリカル・データと目的変数となる'Attrition'を除外して機械学習用のデータセット`df_test`を作成します。
 
 {% highlight python linenos %}
 # 機械学習用データセットを作成する
@@ -79,10 +100,18 @@ df.shape
 (1470, 25)
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
+データセットをトレーニング用とテスト用に8:2で分割します。　目的変数は、`target_df`です。
+[Label Encoderで目的変数を作成する]({{ "2019/08/23/label_encoder_for_target.html" | relative_url}}){:target="_blank"}の記事で紹介している`目的変数のデータセット`です。
+
+{% highlight python %}
+X_train, X_test, y_train, y_test = train_test_split(df_test,
+                                                   target_df['attrition_yes'], test_size=0.2,
+                                                   random_state=200)
+{% endhighlight %}
 
 ### ロジスティック回帰分析をする
 
-データセットをトレーニング用とテスト用に8:2で分割する機械学習を行います。　テスト用でモデルの性能評価をします。その手始めと最初のモデルです。
+する機械学習を行います。　テスト用でモデルの性能評価をします。その手始めと最初のモデルです。
 
 {% highlight python linenos %}
 # モジュールを読み込む
