@@ -134,7 +134,7 @@ LogisticRegression(C=1.0, class_weight=None,
           intercept_scaling=1, max_iter=100, multi_class='warn',
           n_jobs=None, penalty='l2', random_state=None, solver='liblinear',
           tol=0.0001, verbose=0, warm_start=False)
-{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.70em"}
 
 ### 結果レポート（クラシフィケーションレポート、コンフュージョンマトリックス)
 
