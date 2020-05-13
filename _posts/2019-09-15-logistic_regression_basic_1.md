@@ -136,7 +136,7 @@ LogisticRegression(C=1.0, class_weight=None,
           tol=0.0001, verbose=0, warm_start=False)
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.70em"}
 
-### 結果レポート（クラシフィケーションレポート、コンフュージョンマトリックス)
+### 結果レポート
 
 #### クラシフィケーションレポート
 
