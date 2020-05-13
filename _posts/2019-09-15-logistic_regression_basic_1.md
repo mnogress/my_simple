@@ -30,7 +30,7 @@ excerpt_separator: <!--more-->
 
 1. 1,470名の社員の退職状況(attrition)に関する人事データ (Kaggleより)
 2. df.shape => 1470 x 35 
-3. 目的変数用のデータフレームを作成します
+3. 列を取捨選択し、説明変数用のデータフレームを作成します
 
 [サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事で紹介している`HRデータ`です。
 
@@ -103,7 +103,7 @@ df.shape
 データセットをトレーニング用とテスト用に8:2で分割します。　目的変数は、`target_df`です。
 [Label Encoderで目的変数を作成する]({{ "2019/08/23/label_encoder_for_target.html" | relative_url}}){:target="_blank"}の記事で紹介している`目的変数のデータセット`です。
 
-{% highlight python %}
+{% highlight python linenos %}
 X_train, X_test, y_train, y_test = train_test_split(df_test,
                                                    target_df['attrition_yes'], test_size=0.2,
                                                    random_state=200)
@@ -111,7 +111,8 @@ X_train, X_test, y_train, y_test = train_test_split(df_test,
 
 ### ロジスティック回帰分析をする
 
-する機械学習を行います。　テスト用でモデルの性能評価をします。その手始めと最初のモデルです。
+全データのうちの80%のトレーニングデータで機械学習を行います。　次に。残りの20%のデータで構成されるテスト用でモデルの性能評価をします。
+まず、最初のモデルの機械学習と性能評価を行います。
 
 {% highlight python linenos %}
 # モジュールを読み込む
@@ -128,7 +129,8 @@ LogReg.fit(X_train, y_train)
 {% endhighlight %}
 
 {% highlight python %}
-LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+LogisticRegression(C=1.0, class_weight=None, 
+          dual=False, fit_intercept=True,
           intercept_scaling=1, max_iter=100, multi_class='warn',
           n_jobs=None, penalty='l2', random_state=None, solver='liblinear',
           tol=0.0001, verbose=0, warm_start=False)
@@ -136,13 +138,15 @@ LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
 
 ### 結果レポート（クラシフィケーションレポート、コンフュージョンマトリックス)
 
+#### クラシフィケーションレポート
+
 {% highlight python linenos %}
 # 分配問題としてのクラシフィケーションレポートを出す
 y_pred = LogReg.predict(X_test)
 print(classification_report(y_test, y_pred))
 {% endhighlight %}
 
-{% highlight python linenos %}
+{% highlight python %}
 precision    recall  f1-score   support
            0       0.87      0.99      0.92       253
            1       0.50      0.07      0.13        41
@@ -151,12 +155,14 @@ precision    recall  f1-score   support
 weighted avg       0.82      0.86      0.81       294
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
+#### コンフュージョンマトリックス
+
 {% highlight python linenos %}
 y_train_pred = cross_val_predict(LogReg, X_train, y_train, cv=5)
 confusion_matrix(y_train, y_train_pred)
 {% endhighlight %}
 
-{% highlight python linenos %}
+{% highlight python %}
 array([[975,   5],
        [187,   9]])
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
@@ -171,7 +177,7 @@ array([[975,   5],
 precision_score(y_train, y_train_pred)
 {% endhighlight %}
 
-{% highlight python linenos %}
+{% highlight python %}
 0.6428571428571429
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
