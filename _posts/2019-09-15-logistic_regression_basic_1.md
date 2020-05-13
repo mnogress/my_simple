@@ -1,0 +1,155 @@
+---
+layout: post
+title: ロジスティック回帰分析＿その１
+feature-img: "assets/img/2019_07_01/label_encoded_bg.png"   
+tags: [logistic regression, machine learning]
+excerpt_separator: <!--more-->
+---
+
+[Label_Encoderで目的変数を作成する]({{ "2019/08/23/label_encoder_for_target.html" | relative_url}}){:target="_blank"} で作成した目的変数に対して二項ロジスティック回帰分析で機械学習をします。　テストデータの的中率を向上する手順を紹介します。
+<!--more-->
+今回は、そのベースとなるモデル作成と最初の計算結果までご紹介します。
+
+使うデータは、Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} のデータセットでオペレーションしました。
+
+---
+
+### チートシート
+
+やりたいこと | 今回は
+---------- | -------------
+説明変数同士の相関関係をチェックする | sb.heatmap(df.corr(), annot=True, cmap=#39;Blues#39;)
+
+ロジスティック回帰のモデルにおいて、説明変数同士の相関係数が概ね0.3upあれば、どちらか一方を除外します。　
+いわゆる多重共線性を回避する必要があります。
+
+---
+
+
+### 今回使うデータのポイント
+
+1. 1,470名の社員の退職状況(attrition)に関する人事データ (Kaggleより)
+2. df.shape => 1470 x 35 
+3. 目的変数用のデータフレームを作成します
+
+[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事で紹介している`HRデータ`です。
+
+![df.shape]({{ "assets/img/2019_07_01/labe_encoder_log_res.png" | relative_url}})
+
+
+
+### サンプルオペレーション
+
+相互の相関関係をチェックします。　順序尺度となる変数が19ある今回のデータセットでは、組み合わせは自身を除いても以下のとおり 
+19 x 18 / 2 = 171 とおりとなります。 これを確認する方法としてヒートマップを作成し相関関係のある変数を整理します。
+
+
+{% highlight python linenos %}
+# dfに対して相関関係のヒートマップを作成する
+%matplotlib inline
+rcParams['figure.figsize'] = 18,12
+sb.heatmap(df.corr(), annot=True, cmap='Blues')
+{% endhighlight %}
+
+![heatmap]({{ "assets/img/2019_07_01/heatmap_hr_df_original.png" | relative_url}})
+
+
+
+相互に相関のある列のうちいずれかを除外します。　ルールはありません。しいて言えば、
+1. 説明変数として説明力がある　Monthly Income とMaonthly Rateなら前者の方が包含していると考えます
+2. 計算結果の的中率が向上する方。
+3. 2.に関しては後出しの感はいなめませが、試行錯誤して行います。実際、PeformanceRating とPerformanceSalaryHike　順序尺度してのバラエティは後者でした
+
+結果は以下のとおりです。
+
+![heatmap]({{ "assets/img/2019_07_01/heatmap_hr_df_after.png" | relative_url}})
+
+更に、社員番号、性別、既婚・非婚等のカテゴリカル・データと目的変数となる'Attrition'を覗いて機械学習用のデータセット`df_tet`を作成します。
+
+{% highlight python linenos %}
+# 機械学習用データセットを作成する
+df_test = df[['DistanceFromHome', 'Education','EnvironmentSatisfaction', 'JobInvolvement','JobSatisfaction','MonthlyIncome',
+            'NumCompaniesWorked',  'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel', 'TrainingTimesLastYear',
+            'WorkLifeBalance' ]]
+
+df.shape
+{% endhighlight %}
+
+{% highlight python %}
+(1470, 25)
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+
+
+### ロジスティック回帰分析をする
+
+データセットをトレーニング用とテスト用に8:2で分割する機械学習を行います。　テスト用でモデルの性能評価をします。その手始めと最初のモデルです。
+
+{% highlight python linenos %}
+# モジュールを読み込む
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_predict
+from sklearn import metrics
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score, recall_score
+
+LogReg = LogisticRegression(solver='liblinear')
+LogReg.fit(X_train, y_train)
+{% endhighlight %}
+
+{% highlight python %}
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='warn',
+          n_jobs=None, penalty='l2', random_state=None, solver='liblinear',
+          tol=0.0001, verbose=0, warm_start=False)
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+
+### 結果レポート（クラシフィケーションレポート、コンフュージョンマトリックス)
+
+{% highlight python linenos %}
+# 分配問題としてのクラシフィケーションレポートを出す
+y_pred = LogReg.predict(X_test)
+print(classification_report(y_test, y_pred))
+{% endhighlight %}
+
+{% highlight python linenos %}
+precision    recall  f1-score   support
+           0       0.87      0.99      0.92       253
+           1       0.50      0.07      0.13        41
+   micro avg       0.86      0.86      0.86       294
+   macro avg       0.68      0.53      0.53       294
+weighted avg       0.82      0.86      0.81       294
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+
+{% highlight python linenos %}
+y_train_pred = cross_val_predict(LogReg, X_train, y_train, cv=5)
+confusion_matrix(y_train, y_train_pred)
+{% endhighlight %}
+
+{% highlight python linenos %}
+array([[975,   5],
+       [187,   9]])
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+
+### 性能評価のための的中率
+
+的中率を計算します。これが、性能評価基準になります。　いろいろなレポートを統計情報としてPythonは提供しますが、
+クライアントらとディスカッションによるモデルの性能評価とそれから読み取るアクションのディスカッションでは、的中率がわかりやすく
+議論も活発になります。　
+
+{% highlight python linenos %}
+precision_score(y_train, y_train_pred)
+{% endhighlight %}
+
+{% highlight python linenos %}
+0.6428571428571429
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+
+まだ始まりの段階の計算結果に過ぎません。
+
+---
+
+### ひとこと
+
+> 分類問題の基本である二項ロジスティック回帰分析を行いました。的中率64% です。あてずっぽうでは50%前後と比較すれば、それなりの結果かもしれません。これをボトムとして現存のデータで向上させるところが分析の冥利です。　その解説は次回以降にアップします。
