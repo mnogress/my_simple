@@ -6,7 +6,7 @@ tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
 
-[Label_Encoderで目的変数を作成する]({{ "2019/08/23/label_encoder_for_target.html" | relative_url}}){:target="_blank"} で作成した目的変数に対して二項ロジスティック回帰分析で機械学習をします。　テストデータの的中率を向上する手順を紹介します。
+[「Label_Encoderで目的変数を作成する」]({{ "2019/08/23/label_encoder_for_target.html" | relative_url}}){:target="_blank"} で作成した目的変数に対して二項ロジスティック回帰分析で機械学習をします。　テストデータの的中率を向上する手順を紹介します。
 <!--more-->
 今回は、そのベースとなるモデル作成と最初の計算結果までご紹介します。
 
@@ -89,9 +89,18 @@ sb.heatmap(df.corr(), annot=True, cmap='Blues')
 
 {% highlight python linenos %}
 # 機械学習用データセットを作成する
-df_test = df[['DistanceFromHome', 'Education','EnvironmentSatisfaction', 'JobInvolvement','JobSatisfaction','MonthlyIncome',
-            'NumCompaniesWorked',  'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel', 'TrainingTimesLastYear',
-            'WorkLifeBalance' ]]
+df_test = df[['DistanceFromHome', 
+              'Education',
+              'EnvironmentSatisfaction', 
+              'JobInvolvement',
+              'JobSatisfaction',
+              'MonthlyIncome',
+              'NumCompaniesWorked',  
+              'PerformanceRating', 
+              'RelationshipSatisfaction', 
+              'StockOptionLevel', 
+              'TrainingTimesLastYear',
+              'WorkLifeBalance' ]]
 
 df.shape
 {% endhighlight %}
@@ -182,6 +191,10 @@ precision_score(y_train, y_train_pred)
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 まだ始まりの段階の計算結果に過ぎません。
+
+参照　[sklearn.linear_model.LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn-linear-model-logisticregression
+){:target="_blank"}
+
 
 ---
 
