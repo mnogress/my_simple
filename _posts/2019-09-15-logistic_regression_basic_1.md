@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 ### チートシート
 
-やりたいこと | 今回は
+やりたいこと | コーディング
 ---------- | -------------
 説明変数同士の相関関係をチェックする | sb.heatmap(df.corr(), annot=True, cmap=&#39;Blues&#39;)
 
