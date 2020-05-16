@@ -165,9 +165,9 @@ print(classification_report(y_test, y_pred))
    micro avg       0.86      0.86      0.86       294
    macro avg       0.68      0.53      0.53       294
 weighted avg       0.82      0.86      0.81       294
-{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.70em"}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.80em"}
 
-HTMLのテーブルに転記しました。
+HTMLのテーブルに転記しました。 今回は、二項ロジスティックですので、0 と1 のクラスに対する `precision`, `recall`, `f1-score`, `support` を提供しています。
 
 　|  precision  |  recall  | f1-score |  support
 ---------- | ------------- | ------------- | ------------- | -------------
@@ -177,30 +177,38 @@ micro avg     |  0.86   |   0.86   |   0.86    |   294
 macro avg     |   0.68   |    0.53   |    0.53    |    294
 weighted avg    |    0.82    |   0.86  |     0.81   |     294
 
-#### Cross Validated Prediction (Grid Search) でパラメータの最適化をする
+予測値と正解値の組み合わせは以下のように4通りあります。`precision`, `recall`, `f1-score`はこの組み合わせごとの出現回数で計算されます。
 
-トレーニングデータを更にK個に細分化してパラメータを最適化します。k-fold_cross-validationテクニックと言われる方法です。　
-その予測結果を　　`y_train_pred` に格納します。  図のように `cv=5` で５つに分けました。
+![df.shape]({{ "assets/img/2019_07_01/tp_fp_table.JPG" | relative_url}})　<br>
 
-![grid_seach]({{ "assets/img/2019_07_01/grid_search_workflow.png" | relative_url}})<br>
+* precision　：　TP /　(TP + FP) 適合率と訳され、実際の分類値において正解が占める割合
+* recall :  TP / (TP + TN) 再現率と言われ、予想した分類値において正解が占める割合
+* f1-score : 2 x (precision x recall) / (precision + recall)  precision とrecall で計算され f1 と呼ばれます。　
+* support : テストデータ(二項)の結果です
 
-参照　[k-fold_cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-evaluating-estimator-performance){:target="_blank"}
+f1 は直感的にはわかりにくいですが、これを論文では性能評価の指標とすること多いです。
+加重平均の方法でmicro とmacro があります。micro が次節で述べる「的中率 `acuuracy`」 と同意です。　
 
-{% highlight python linenos %}
-y_train_pred = cross_val_predict(LogReg, X_train, y_train, cv=5)
-confusion_matrix(y_train, y_train_pred)
-{% endhighlight %}
+予想値に対して、このように多面的にいろいろな指標が用意されていますが、
+`直感的にわかりやすい的中率、もしくは論文等でよく使われる f1 を正しく理解して注釈を入れて誤解を生まない程度で使い分けることが肝要`{:style="background: #cbe8f5"} かと思います。
 
-{% highlight python %}
-array([[975,   5],
-       [187,   9]])
-{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
+モデルの性能を議論する純粋な数理系のディスカッションでも無い限り、f1 を指標として使う必要はないと個人的には考えます。的中率を使うので事が足りると思います。
+理由は以下のとおりです
+
+1. 的中率はわかりやすく、多くの関係者がモデルの性能について正しく、同じ理解を持てる
+2. f1 の説明は難しく、正しく理解されず、的中率や正答率と誤解の元となる
+3. precision　や、recall はそれぞれ正答率の一部分を示しており、マトリックスでの説明になり、どれがどうかわからなくなる。'
+
+
+参照：　[Accuracy,_Precision,_Recall_&_F1_Score:_Interpretation_of_Performance_Measures](https://blog.exsilio.com/all/accuracy-precision-recall-f1-score-interpretation-of-performance-measures/){:target="_blank"}
+
+
 
 ### 性能評価のための的中率
 
-的中率を計算します。これが、性能評価基準になります。　いろいろなレポートを統計情報としてPythonは提供しますが、
-クライアントらとディスカッションによるモデルの性能評価とそれから読み取るアクションのディスカッションでは、的中率がわかりやすく
-議論も活発になります。　 `y_train`が正解。`y_pred`が予測値です。
+的中率を計算します。これを、性能評価基準としていろいろなケースで検討します。クライアントや部門の上司とディスカッションによるモデルの性能評価とそれから読み取るアクションのディスカッションでは、的中率がわかりやすく議論も活発になります。　 
+
+`y_train`が正解。`y_pred`が予測値で、`accuracy_score`メソッドで得ることができます。また、これは前述のクラシフィケーションレポートのmicro avgの欄でも示されています。
 
 {% highlight python linenos %}
 accuracy_score(y_test, y_pred)
