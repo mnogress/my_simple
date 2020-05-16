@@ -151,12 +151,15 @@ LogisticRegression(C=1.0, class_weight=None,
 
 {% highlight python linenos %}
 # 分配問題としてのクラシフィケーションレポートを出す
+
+`y_pred`がロジスティック回帰分析での予想値です。　`y_test`が正解です。
+
 y_pred = LogReg.predict(X_test)
 print(classification_report(y_test, y_pred))
 {% endhighlight %}
 
 {% highlight python %}
-precision    recall  f1-score   support
+                precision    recall  f1-score   support
            0       0.87      0.99      0.92       253
            1       0.50      0.07      0.13        41
    micro avg       0.86      0.86      0.86       294
@@ -164,7 +167,24 @@ precision    recall  f1-score   support
 weighted avg       0.82      0.86      0.81       294
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.70em"}
 
-#### コンフュージョンマトリックス
+HTMLのテーブルに転記しました。
+
+　|  precision  |  recall  | f1-score |  support
+---------- | ------------- | ------------- | ------------- | -------------
+0     |   0.87    |   0.99     |  0.92      |  253
+1    |   0.50    |  0.07     | 0.13        |41
+micro avg     |  0.86   |   0.86   |   0.86    |   294
+macro avg     |   0.68   |    0.53   |    0.53    |    294
+weighted avg    |    0.82    |   0.86  |     0.81   |     294
+
+#### Cross Validated Prediction (Grid Search) でパラメータの最適化をする
+
+トレーニングデータを更にK個に細分化してパラメータを最適化します。k-fold_cross-validationテクニックと言われる方法です。　
+その予測結果を　　`y_train_pred` に格納します。  図のように `cv=5` で５つに分けました。
+
+![grid_seach]({{ "assets/img/2019_07_01/grid_search_workflow.png" | relative_url}})<br>
+
+参照　[k-fold_cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-evaluating-estimator-performance){:target="_blank"}
 
 {% highlight python linenos %}
 y_train_pred = cross_val_predict(LogReg, X_train, y_train, cv=5)
@@ -180,14 +200,14 @@ array([[975,   5],
 
 的中率を計算します。これが、性能評価基準になります。　いろいろなレポートを統計情報としてPythonは提供しますが、
 クライアントらとディスカッションによるモデルの性能評価とそれから読み取るアクションのディスカッションでは、的中率がわかりやすく
-議論も活発になります。　
+議論も活発になります。　 `y_train`が正解。`y_pred`が予測値です。
 
 {% highlight python linenos %}
-precision_score(y_train, y_train_pred)
+accuracy_score(y_test, y_pred)
 {% endhighlight %}
 
 {% highlight python %}
-0.6428571428571429
+0.8605442176870748
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 まだ始まりの段階の計算結果に過ぎません。
@@ -200,4 +220,4 @@ precision_score(y_train, y_train_pred)
 
 ### ひとこと
 
-> 分類問題の基本である二項ロジスティック回帰分析を行いました。的中率64% です。あてずっぽうでは50%前後と比較すれば、それなりの結果かもしれません。これをボトムとして現存のデータで向上させるところが分析の冥利です。　その解説は次回以降にアップします。
+> 分類問題の基本である二項ロジスティック回帰分析を行いました。的中率86.05% です。あてずっぽうでは50%前後と比較すれば、それなりの結果かもしれません。これをボトムとして現存のデータで向上させるところが分析の冥利です。　その解説は次回以降にアップします。
