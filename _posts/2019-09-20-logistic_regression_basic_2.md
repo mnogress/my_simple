@@ -6,7 +6,7 @@ tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
 
-[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、64%の的中率でした。モデルに修正を加えて的中率をアップする手順を解説します。
+[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率でした。モデルに修正を加えて的中率をアップする手順を解説します。
 <!--more-->
 前回は、満足度や業績評価、月収等のすでに数値化された順序尺度のみで回帰分析をかけましたが、今回は性別等のカテゴリカルデータを説明変数に加えます。
 
@@ -74,14 +74,14 @@ LogReg.fit(X_train, y_train)
 
 y_pred = LogReg.predict(X_test)
 
-precision_score(y_train, y_train_pred)
+accuracy_score(y_test, y_pred)
 
 {% endhighlight %}
 
-モデルの性能評価をします。　残念ながら、4ポイントダウンで`JobRol`eは`Attrition`に関係なさそうです。
+モデルの性能評価をします。　残念ながら、0.1ポイントダウンで`JobRol`eは`Attrition`に関係なさそうです。
 
 {% highlight python %}
-0.6086956521739131
+0.8571428571428571
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 同様に、df_test2 には`Gender`を追加したデータフレームでの二項ロジスティック分析を、df_test3では`Business_Travel`で同様の分析をしました。
@@ -95,12 +95,12 @@ precision_score(y_train, y_train_pred)
 
 カテゴリカル・データ　| 的中率
 ---------- | -------------
-何も投入しない　| 0.6428571428571429
-JobRole(職務)　| 0.6086956521739131
-Gender(性別)　| 0.47058823529411764
-Business Travel (出張)　| 0.7619047619047619
+何も投入しない　| 0.8605442176870748
+JobRole(職務)　| 0.8571428571428571
+Gender(性別)　| 0.8605442176870748
+Business Travel (出張)　| 0.8639455782312925
 
-出張は職務より、性別より社員の退職を予想制度を上げる結果となりました。　
+出張は職務より、性別より社員の退職を予想制度を若干上げる結果となりました。　
 モデルを確定するにあたり、Business Travel の影響を考慮する必要がありそうです。　ここまで検討をすると、現在投入したそれぞれの説明変数の予想精度に対する寄与度を見たくなると思います。
 次回からはその辺の検討方法について解説します。
 
