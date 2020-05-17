@@ -6,7 +6,7 @@ tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
 
-[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率でした。モデルに修正を加えて的中率をアップする手順を解説します。
+[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率でした。モデルに修正を加えて的中率をアップする手順を解説します。
 <!--more-->
 前回は、満足度や業績評価、月収等のすでに数値化された順序尺度のみで回帰分析をかけましたが、今回は性別等のカテゴリカルデータを説明変数に加えます。
 
@@ -63,19 +63,14 @@ print('df_JobRole', df_JobRole.shape)
 `df_test`に`df_JobRole`を左結合してこのテストデータを`df_test1`とし、二項ロジスティック回帰分析をします。
 
 {% highlight python linenos %}
-df_test1 = pd.concat([df_test, df_JobRole], axis = 1)
-
-X_train, X_test, y_train, y_test = train_test_split(df_test1,
+df_test1 = pd.concat([df_test, df_JobRole], axis = 1)X_train, X_test, y_train, y_test = train_test_split(df_test1,
                                                    target_df['attrition_yes'], test_size=0.2,
                                                    random_state=200)
 
 LogReg = LogisticRegression(solver='liblinear')
 LogReg.fit(X_train, y_train)
-
 y_pred = LogReg.predict(X_test)
-
 accuracy_score(y_test, y_pred)
-
 {% endhighlight %}
 
 モデルの性能評価をします。　残念ながら、0.1ポイントダウンで`JobRol`eは`Attrition`に関係なさそうです。
@@ -115,4 +110,4 @@ Business Travel (出張)　| 0.8639455782312925
 
 ### ひとこと
 
-> 二項ロジスティック回帰分析のモデルの生成について説明しました。現在、的中率76% です。85%を超えたいと思う一方、分析の本旨は何かを今一度、考えてみましょう。精度の高いモデルの構築はデータ分析屋としては追求したいですが、クライアントは数ある説明変数のうち、どれを管理すれば退職率が低下できるのかといった、管理面に関心があることが多いです。なんのためのデータ分析なのか、一呼吸入れて考えることも大事ですね。
+> 二項ロジスティック回帰分析のモデルの生成について説明しました。現在、的中率86.4% です。90%を超えたいと思う一方、分析の本旨は何かを今一度、考えてみましょう。精度の高いモデルの構築はデータ分析屋としては追求したいですが、クライアントは数ある説明変数のうち、どれを管理すれば退職率が低下できるのかといった、管理面に関心があることが多いです。なんのためのデータ分析なのか、一呼吸入れて考えることも大事ですね。
