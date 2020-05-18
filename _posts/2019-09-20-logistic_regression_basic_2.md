@@ -20,7 +20,7 @@ excerpt_separator: <!--more-->
 ---------- | -------------
 カテゴリカル・データを説明変数に加える |　df_cat = pd.get_dummies(cat, prefix=&#39;cat&#39;)<br> df_test1 = pd.concat([df_test, df_cat], axis = 1)
 
-`'cat : カテゴリカル・データ変数の列名`{:style="background-color: #ffe3e2; font-size: 0.7em"}
+`'cat' : カテゴリカル・データ変数の列名`{:style="background-color: #ffe3e2; font-size: 0.7em"}
 
 ---
 

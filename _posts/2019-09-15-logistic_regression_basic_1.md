@@ -63,6 +63,7 @@ sb.heatmap(df.corr(), annot=True, cmap='Blues')
 {% highlight python linenos %}
 #　ヒートマップから相互相関の変数の片方をドロップする
 to_drop = [
+    'Age',
     'JobLevel',
     'PercentSalaryHike',
     'TotalWorkingYears', 
