@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 [「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_2.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰モデルにダミー変数を加えて的中率(hit rate)をアップする手順を解説しました。
 <!--more-->
-今回は、説明変数を退職率への影響の大小という観点で検討のため、「相関係数(coeffiect)」の扱いについて説明します。
+今回は、説明変数を退職率への影響の大小という観点で検討のため、「相関係数(coeffient)」の扱いについて説明します。
 
 データ分析屋としては的中率の最大化に進みたいところですが、クライアントの人事や現場は、むしろ何が退職率に影響しているのか、影響度の度合いについての検討を望んでいることが多いと感じます。　
 
@@ -123,8 +123,8 @@ line by line で説明します。
 
 ### 多重共線性でドロップした説明変数を忘れないこと
 
-多重回帰もそうですが、ロジスティック回帰分析では説明変数間は独立（相関が無い）ことが求められています。そのため、以下の説明変数は
-モデル作成時にドロップさせました。　
+多重回帰もそうですが、ロジスティック回帰分析では説明変数間は独立性（相関が無い）が求められています。そのため、以下の説明変数は相互に相関があるとして
+モデル作成時にドロップしました。　
 
 1. Age
 2. JobLevel
@@ -135,9 +135,10 @@ line by line で説明します。
 7. YearsSinceLastPromotion
 8. YearsWithCurrManager
 
-3のPercentSalaryHike（賃金上昇率）がPeformanceRating（業績評価）と相関でドロップしましたが、それ以外はMonthlyIncome（月収）との相関関係があったので、ドロップしました。年功序列の傾向の強いデータですが、MonthlyIncomeの係数は`-0`となり、回帰分析の結果からはほとんど退職には影響していないということです。
+3のPercentSalaryHike（賃金上昇率）がPeformanceRating（業績評価）と相関でドロップしましたが、それ以外はMonthlyIncome（月収）との相関関係があったので、
+ドロップしました。年功序列の傾向の強いデータですが、MonthlyIncomeの係数は`-0`となり、回帰分析の結果からはほとんど退職には影響していないということです。
 
-なんとなく疑問が生じる部分かと思います。そういうときは、ドロップした説明変数と入れ替えるなりして、影響を見極める必要があります。
+すべての説明変数を使えないことは、なんとなく疑問が生じる部分かと思います。対案として、ドロップした説明変数と入れ替えるなりして、影響を見極める必要があります。
 
 
 参照　[sklearn.linear_model.LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn-linear-model-logisticregression
