@@ -20,7 +20,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | 方法
 ---------- | -------------
-各説明変数の相関係数(θ)の変数`coef`を得る |　coef = LogReg.coef_
+各説明変数の相関係数(θ)の変数`coef`を得る | coef = LogReg.coef_
 データフレームを転地する　| df_coef = df_coef.T
 
 `'LogReg : LogReg.fit(X_train, y_train)で学習(fit)済オブジェクト`{:style="background-color: #ffe3e2; font-size: 0.7em"}
@@ -58,7 +58,7 @@ print(LogReg.coef_)
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 各説明変数の統計量は`y_test.describe()`で得ることができます。　ここでは、`LogReg.coef_`で得たcoefと統計量をそれぞれデータフレームにして結合します。結合に当たり、各々のデータフレームを転地（行と列を入れ替え）て 12 x 9 のデータフレームにしています。
-また、最初に表示する数値を小数点以下2位までにして、大小関係を分かりやすくさせています。
+また、最初に表示する数値を小数点以下1位までにして、大小関係を分かりやすくさせています。
 
 {% highlight python linenos %}
 # 各説明変数の相関係数(coef)を取得する
