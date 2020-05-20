@@ -6,7 +6,7 @@ tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
 
-[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_2.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰モデルにダミー変数を加えて的中率(hit rate)をアップする手順を解説しました。
+[「ロジスティック回帰分析＿その2」]({{"2019/09/20/logistic_regression_basic_2.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰モデルにダミー変数を加えて的中率(hit rate)をアップする手順を解説しました。
 <!--more-->
 今回は、説明変数を退職率への影響の大小という観点で検討のため、「相関係数(coeffient)」の扱いについて説明します。
 
