@@ -6,11 +6,12 @@ tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
 
-[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率でした。モデルに修正を加えて的中率をアップする手順を解説します。
-<!--more-->
-前回は、満足度や業績評価、月収等のすでに数値化された順序尺度のみで回帰分析をかけましたが、今回は性別等のカテゴリカルデータを説明変数に加えます。
+満足度や業績評価、月収等のすでに数値化された順序尺度の回帰分析に性別等のカテゴリカルデータを説明変数に加えて的中率の影響を調べます。モデルに修正を加えて的中率をアップする手順を解説します。
 
-使うデータは、Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} のデータセットでオペレーションしました。
+<!--more-->
+[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率でした。
+
+使うデータは、Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} ダウンロードできます。
 
 ---
 
