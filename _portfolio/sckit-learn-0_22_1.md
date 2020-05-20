@@ -9,7 +9,7 @@ tags: [anaconda, scikit-learn]
 
 ### ことの始まり
 
-Random Forest Classifer のFeature Importances ではなく、`permutation_importance` で分析するため、`from sklearn.inspection import permutation_importance` としたところ、sklean のバージョが低く
+Random Forest Classifer のFeature Importances ではなく、`permutation_importance` で分析するため、`from sklearn.inspection import permutation_importance` としたところ、scikit-learn のバージョが低く
 `ModuleNotFoundError: No module named 'sklearn.inspection'`{:style="background: #e8f00a"}で
 怒られました。　それで、[scikit-learn_0.22.1](https://scikit-learn.org/stable/whats_new/v0.22.html#version-0-22-1){:target="_blank"}にanaconda on Mac Catalina の環境でアップデートをしようとして半日以上、ハマリマしたので、メモします。
 
