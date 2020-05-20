@@ -9,14 +9,14 @@ tags: [anaconda, scikit-learn]
 
 ### ことの始まり
 
-Random Forest Classifer のFeature Importances ではなく、`permutation_importance` で分析するため、`from sklearn.inspection import permutation_importance` としたところ、scikit-learn のバージョが低く
+Random Forest Classifer のFeature Importances ではなく、permutation_importance で分析するため、"from sklearn.inspection import permutation_importance" としたところ、scikit-learn のバージョが低く
 `ModuleNotFoundError: No module named 'sklearn.inspection'`{:style="background: #e8f00a"}で
 怒られました。　それで、[scikit-learn_0.22.1](https://scikit-learn.org/stable/whats_new/v0.22.html#version-0-22-1){:target="_blank"}にanaconda on Mac Catalina の環境でアップデートをしようとして半日以上、ハマリマしたので、メモします。
 
 #### ModuleNotFoundError の際のエラーメッセージ
 
 [Permutation_feature_importance](https://scikit-learn.org/stable/modules/permutation_importance.html
-){:target="_blank"}より、`permutation_importance` のモジュールを読み込もうとしたところ、以下のようなエラーメッセージを出力されました。
+){:target="_blank"}より、permutation_importanceのモジュールを読み込もうとしたところ、以下のようなエラーメッセージを出力されました。
 
 {% highlight python linenos %}
 from sklearn.inspection import permutation_importance
