@@ -96,7 +96,7 @@ Verifying transaction: done
 Executing transaction: done
 
 conda list scikit-learn
--# packages in environment at /Users/nantetsu/anaconda3:
+-# packages in environment at /Users/so-wi/anaconda3:
 -## Name                    Version                   Build  Channel
 scikit-learn              0.22.1           py37hebd9d1a_0  
 
