@@ -25,16 +25,16 @@ INTEL MKL ERROR: dlopen(/Users/so-wi/anaconda3/lib/libmkl_intel_thread.dylib, 9)
   Reason: image not found.
 Intel MKL FATAL ERROR: Cannot load libmkl_intel_thread.dylib.
 [I 09:18:52.333 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
-kernel 3d9ff618-8c1d-4c1e-9a54-301a5ab4b684 restarted
+kernel **deleted**d-4c1e-9a54-301a5ab4b684 restarted
 INTEL MKL ERROR: dlopen(/Users/so-wi/anaconda3/lib/libmkl_intel_thread.dylib, 9): Library not loaded: @rpath/libiomp5.dylib
   Referenced from: /Users/so-wi/anaconda3/lib/libmkl_intel_thread.dylib
   Reason: image not found.
 Intel MKL FATAL ERROR: Cannot load libmkl_intel_thread.dylib.
 [I 09:19:13.339 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
 kernel 3d9ff618-8c1d-4c1e-9a54-301a5ab4b684 restarted
-[I 09:19:46.289 NotebookApp] Saving file at /OneDrive/py_20-RFC_05_19-Copy1.ipynb
-[W 09:19:46.291 NotebookApp] Notebook OneDrive/py_20-RFC_05_19-Copy1.ipynb is not trusted
-[I 09:47:25.793 NotebookApp] Starting buffering for 3d9ff618-8c1d-4c1e-9a54-301a5ab4b684:d3cb421358c0497183df29029a423ee3
+[I 09:19:46.289 NotebookApp] Saving file at  **deleted**1.ipynb
+[W 09:19:46.291 NotebookApp] Notebook **deleted**.ipynb is not trusted
+[I 09:47:25.793 NotebookApp] Starting buffering for **deleted**3df29029a423ee3
 {% endhighlight %}
 
 #### 参考にしたネットの記事
@@ -296,7 +296,7 @@ Verifying transaction: done
 Executing transaction: done
 {% endhighlight %}
 
-### nonkl のscikit-learn, numpy, scipy を導入
+### nomkl のscikit-learn, numpy, scipy を導入
 
 {% highlight python linenos %}
 sudo conda install nomkl numpy scipy scikit-learn numexpr
@@ -349,3 +349,8 @@ The following NEW packages will be INSTALLED:
 
 Proceed ([y]/n)? y
 {% endhighlight %}
+
+### 追記
+
+私のマシンの場合は、nomkl numpy scipy scikit-learn numexpr以外にseaborn matplotlib pandasも入れ直しました。。。
+でもこれから追加が必要かもしれません。`conda list`{:target="_blank"}で確認しましょう。　
