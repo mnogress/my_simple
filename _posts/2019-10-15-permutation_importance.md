@@ -9,11 +9,9 @@ excerpt_separator: <!--more-->
 モデルの評価基準は、予測精度(accuracy)に偏りがちですが、モデルによって事象の発生を解釈(interpret)し、事象をコントロールする可能性(interpretability)があります。ランダムフォーレストなど決定木系のアルゴリズムでは係数(feature imporatances)に変数の選択肢の数(cardinality)でバイアスされ解釈には使えないと言われています。
 <!--more-->
 [scikit-learn-0-22のpermutation_feature_importance](https://scikit-learn.org/stable/modules/permutation_importance.html
-){:target="_blank"} でどの説明変数が重要かということを計算してくれるようになりました。実際に使って見たいと思います。
+){:target="_blank"} でどの説明変数が重要かということを計算してくれるようになりました。実際に使って見たいと思います。アルゴリズムはrandom forest classifierです。
 
-アルゴリズムはrandom forest classifierです。
-
-Permutation_Feature_Importanceは説明変数の一つをランダムにシャッフルし、予測結果をオリジナルのそれと比較します。　シャッフルした説明変数が重要だとすると、シャッフルしない場合と比較して予測精度が落ちるハズだという仮設に基づくアルゴリズムです。　また、説明変数のシャッフルも一度ではなく、複数回行いその平均と標準偏差がPermutation_Feature_Importanceの結果になります。
+Permutation_Feature_Importanceは説明変数の一つをランダムにシャッフルし、予測結果をオリジナルのそれと比較します。　シャッフルした説明変数が重要だとすると、シャッフルしない場合と比較して予測精度が落ちるハズだという仮説に基づくアルゴリズムです。　また、説明変数のシャッフルも一度ではなく、複数回行いその平均と標準偏差がPermutation_Feature_Importanceの結果になります。
 
 使うデータは、ロジスティック回帰分析のブログで利用したKaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} で検討しました。
 
