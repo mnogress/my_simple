@@ -6,10 +6,10 @@ tags: [logistic regression, machine learning]
 excerpt_separator: <!--more-->
 ---
 
-満足度や業績評価、月収等のすでに数値化された順序尺度の回帰分析に性別等のカテゴリカルデータを説明変数に加えて的中率の影響を調べます。モデルに修正を加えて的中率をアップする手順を解説します。
+満足度や業績評価、月収等のすでに数値化された順序尺度の回帰分析に性別等のカテゴリカルデータを説明変数に加えて的中率(hit ratio)の影響を調べます。モデルに修正を加えて的中率(hit ratio)をアップする手順を解説します。
 
 <!--more-->
-[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率でした。
+[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} では、各社員の退職の予想を二項ロジスティック回帰分析し、86%の的中率(hit ratio)でした。
 
 使うデータは、Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} ダウンロードできます。
 
@@ -29,7 +29,7 @@ excerpt_separator: <!--more-->
 ### 今回使うデータのポイント
 
 1. 1,470名の社員の退職状況(attrition)に関する人事データ[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} と同じデータ
-2. JooRole（職務）,Gender（性別）, BusinessTravel (出張の有無)のカテゴリカル・データを別々に追加して的中率で評価します 
+2. JooRole（職務）,Gender（性別）, BusinessTravel (出張の有無)のカテゴリカル・データを別々に追加して的中率(hit ratio)で評価します 
 
 [サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事で紹介している`HRデータ`です。
 
@@ -89,7 +89,7 @@ accuracy_score(y_test, y_pred)
 
 ### 検証結果
 
-カテゴリカル・データ　| 的中率
+カテゴリカル・データ　| 的中率(hit ratio)
 ---------- | -------------
 何も投入しない　| 0.8605442176870748
 JobRole(職務)　| 0.8571428571428571
