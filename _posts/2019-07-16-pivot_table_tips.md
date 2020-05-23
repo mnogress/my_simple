@@ -27,6 +27,7 @@ excerpt_separator: <!--more-->
 比較列1 | 集約列（親）
 比較列2 | 集約列（子）
 
+参照：　[pandas.DataFrame.pivot_table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot_table.html#pandas.DataFrame.pivot_table){:target="_blank"}
 
 ---
 
