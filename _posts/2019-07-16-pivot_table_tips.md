@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-ピボットテーブルを作成する | pd.pivot_table(df, values=&#39;計算列&#39;, index=[&#39;列1&#39;, &#39;列2&#39;], columns=[&#39;比較列1&#39;, &#39;比較列2&#39;], margins=True,  aggfunc=np.mean)
+ピボットテーブルを作成する<br>計算列の値を平均する | pd.pivot_table(df, values=&#39;計算列&#39;, index=[&#39;列1&#39;, &#39;列2&#39;],<br> columns=[&#39;比較列1&#39;, &#39;比較列2&#39;], margins=True,  aggfunc=np.mean)
 
 
 要素名 | 説明
@@ -62,7 +62,7 @@ pd.pivot_table(df, values='tip', index=['sex', 'smoker'], columns=['day', 'time'
 
 {% endhighlight %}
 
-結果は以下のとおりですが、ビフォア、アフターで比較できるように、データフレームの最初５行も合わせて紹介します。
+結果は以下のとおりですが、ビフォア、アフターで比較できるように、データフレームの最初５行も合わせて紹介します。今回は、`np.mean`{:style="background: #ffebf6"}で平均を計算してしますが、総和をとりたい場合は`np.sum`{:style="background: #ffebf6"}になります。
 
 #### オリジナルのデータセット
 ![df,head()]({{ "/assets/img/2019_07_01/pivot_table_tips_before.png" | relative_url}})
