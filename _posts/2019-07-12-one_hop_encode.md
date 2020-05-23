@@ -1,12 +1,12 @@
 ---
 layout: post
-title: カテゴリカル・データをダミー変数にする
+title: カテゴリカル変数をダミー変数にする
 feature-img: "assets/img/portfolio/game.png"   
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-カテゴリカル・データをデータ解析の説明変数とするためダミー変数にします。Pandas では一発でダミー変数にできます。
+カテゴリカル変数をデータ解析の説明変数とするためダミー変数にします。Pandas では一発でダミー変数にできます。
 <!--more-->
 
 
@@ -33,7 +33,7 @@ excerpt_separator: <!--more-->
 
 ### ポイント
 
-1. df内のカテゴリカル・データの列（タテ）を横に展開する
+1. df内のカテゴリカル変数の列（タテ）を横に展開する
 2. 都道府県番号のように47種類ある場合は、47列生成される
 3. データフレームの行数（Length）は不変
 4. `pd.cancat`で結合する

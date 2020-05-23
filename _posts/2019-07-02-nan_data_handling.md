@@ -3,17 +3,14 @@ layout: post
 title: 欠損値のハンドリング
 hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/code-1839406_1920.jpg"              # Add a feature-image to the post
-# Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
-# color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
-# bootstrap: true                                   # Add bootstrap to the page
+# color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in 
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
 
-データセット内の「計算する列」に欠損値が含まれていると、Python は処理エラーとなり分析できません。
+データセット内の「計算する列」に欠損値が含まれていると、Python は処理エラーとなり分析できません。欠損値を削除したり、代替するなどして、Pythonを正常に稼働するようにデータセットの中身を整え（クリーニング）ます。
 <!--more-->
-欠損値を削除したり、代替するなどして、Pythonを正常に稼働するようにデータセットの中身を整え（クリーニング）ます。
 今回もオリジナルデータを使用します。
 [サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}にデータセットの概要があります。
 
@@ -32,7 +29,7 @@ excerpt_separator: <!--more-->
 
 データの理解の流れは、以下のとおりです。
 
-1. データタイプがカテゴリカル・データかどうか確認する
+1. データタイプがカテゴリカル変数かどうか確認する
 2. カテゴリカルデータの要素を概観する
  - 総数
  - 種類
@@ -92,7 +89,7 @@ dtype: int64
 
 方法2「欠損値=> 0 に置き換える」はどうでしょう。
 
-データの型が`int`や`float`であれば、使えないこともありませんが、データタイプがカテゴリカル・データで「0」は、意味をなさず、使えません。（カテゴリカル・データの種類として0 があり、それとNaN を同じと前提できるのであれば、使える場合は除きます）。
+データの型が`int`や`float`であれば、使えないこともありませんが、データタイプがカテゴリカル変数で「0」は、意味をなさず、使えません。（カテゴリカル変数の種類として0 があり、それとNaN を同じと前提できるのであれば、使える場合は除きます）。
 
 方法3は、データの内容を一定の前提のもと、変更してしまうこととなりますので、多くの場合、解析には適していません。
 
