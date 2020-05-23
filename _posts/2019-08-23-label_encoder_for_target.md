@@ -6,9 +6,10 @@ tags: [pandas, logistic regression]
 excerpt_separator: <!--more-->
 ---
 
-二項ロジスティック回帰分析も目的変数は 1または0の配列です。
+二項ロジスティック回帰分析も目的変数は 1または0の配列です。Label Encoder で作成します。
 <!--more-->
-Label Encoder で作成します。　Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} のデータセットでオペレーションしました。　このデータセットで社員の退職要因を分析する二項ロジスティック回帰分析をシリーズでブログしたいと思います。
+このデータセットで社員の退職要因を分析する二項ロジスティック回帰分析をシリーズでブログしたいと思います。
+Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} のデータセットでオペレーションしました。　
 
 ---
 
@@ -17,6 +18,8 @@ Label Encoder で作成します。　Kaggle より[HRデータ]({{ "https://www
 やりたいこと | 注意点
 ---------- | -------------
 二項カテゴリカル・データを0/1の配列にする | Label Encoder を使う
+
+参照：　[sklearn.preprocessing.LabelEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html#sklearn-preprocessing-labelencoder){:target="_blank"}
 
 ---
 
