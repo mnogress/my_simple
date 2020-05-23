@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RFCのPermutation_Feature_Importanceについて
+title: RFCのPermutation Feature Importanceについて
 feature-img: "assets/img/2019_07_01/wood_floor.png"   
 tags: [random forest classifier, interpretability]
 excerpt_separator: <!--more-->
