@@ -1,14 +1,14 @@
 ---
 layout: post
-title: カテゴリカル・データのダミー変数化
+title: カテゴリカル・データをダミー変数にする
 feature-img: "assets/img/portfolio/game.png"   
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-カテゴリカル・データをデータ解析の説明変数とするためダミー変数にします。
+カテゴリカル・データをデータ解析の説明変数とするためダミー変数にします。Pandas では一発でダミー変数にできます。
 <!--more-->
-Pandas では一発でダミー変数にできます。
+
 
 ---
 
@@ -18,6 +18,9 @@ Pandas では一発でダミー変数にできます。
 ---------- | -------------
 ダミー変数化したい列をシリーズデータ(dummy)として取り出す | dummy = df[&#39;ダミー変数したい列&#39;] 
 シリーズデータ(dummy)をダミー変数のデータフレームにする | dymmy = pd.get_dummies(dummy, prefix=&#39;td&#39;)
+
+参照　[pd.get_dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html#pandas-get-dummies
+){:target="_blank"}
 
 ---
 
