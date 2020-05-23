@@ -1,15 +1,15 @@
 ---
 layout: post
-title: データセットの結合
+title: データセットの結合_左結合
 feature-img: "assets/img/2019_06_30/website-1624028_1280.jpg"   
 tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-2つのデータセットを共通の列で結合します。
+2つのデータセットを共通の列で結合します。EXCELのVlookupのように共通列をキーにマッチする行へ結合し、要素を引き込みます。　
+ここでは、「左結合」と呼ばれる結合元のデータセットのキー列で要素をデータセットの左側に引き込む方法を解説します。
 <!--more-->
-EXCELのVlookupのように共通列をキーにマッチする行へ結合し、要素を引き込みます。　
-ここでは、「左結合」と呼ばれる結合元のデータセットのキー列で要素を引き込む方法を解説します。
+
 
 ---
 
@@ -19,6 +19,8 @@ EXCELのVlookupのように共通列をキーにマッチする行へ結合し�
 ---------- | -------------
 &#39;キー列&#39;でdfにdf2を左結合する | pd.merge(df, df2, how=&#39;left&#39;, on =&#39;キー列名&#39;)
 
+参照： [pd.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html#pandas-merge){:target="_blank"}
+　
 
 ---
 
