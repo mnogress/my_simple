@@ -2,7 +2,7 @@
 layout: post
 title: データセットの結合_左結合
 feature-img: "assets/img/2019_06_30/website-1624028_1280.jpg"   
-tags: [Python, data_handling]
+tags: [pandas, data_handling]
 excerpt_separator: <!--more-->
 ---
 
