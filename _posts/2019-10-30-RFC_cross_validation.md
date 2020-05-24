@@ -6,10 +6,10 @@ tags: [random forest classifier, cross validation]
 excerpt_separator: <!--more-->
 ---
 
-トレーニングデータでは完璧のスコアで学習をしたモデルで正解データで検証すると良くないスコアとなることを過学習(overfitting)と言います。通常トレーニングデータセットを更にトレーニン結果の評価用テストとトレーニングに細分化してそれぞれのデータでaccuracyのバラツキを見ることをクロスバリデーション(CV: cross-validatint)といいます。簡単に計算できます。
+トレーニングデータでは完璧のスコアで学習をしたモデルで正解データで検証すると良くないスコアとなることを過学習(overfitting)と言います。通常トレーニングデータセットを更にバリデーション用に細分化してそれぞれでaccuracyのバラツキを見ることをクロスバリデーション(CV: cross-validatint)といいます。簡単に計算できます。
 <!--more-->
 
-[RFCのPermutation_Feature_Importanceについて]({{ "2019/10/15/permutation_importance.html" | relative_url}}{:target="_blank"}のRFC(ランダムフォーレスト分類器)の問題で、クロスバリデーションを行います。
+[RFCのPermutation_Feature_Importanceについて]({{"2019/10/15/permutation_importance.html" | relative_url}}){:target="_blank"}のRFC(ランダムフォーレスト分類器)の問題で、クロスバリデーションを行います。
 
 大元のデータは、ロジスティック回帰分析のブログで利用したKaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} です。kaggleよりダウンロードして、確かめてみてください。
 
@@ -40,7 +40,6 @@ excerpt_separator: <!--more-->
 
 
 {% highlight python linenos %}
-# 
 from sklearn.ensemble import RandomForestClassifier as RFC
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(df_test,
@@ -62,9 +61,9 @@ array([0.85034014, 0.81632653, 0.83673469, 0.83673469, 0.85034014])
 print('Accuracy : %0.2f (+/- %0.2f)' % (scores.mean(), scores.std() *2))
 {% endhighlight %}
 
-{% highlight python linenos %}
+{% highlight python %}
 Accuracy : 0.84 (+/- 0.02)
-{% endhighlight %}
+{% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 ### クロスバリデーションはトレーニングデータに適用する
 
