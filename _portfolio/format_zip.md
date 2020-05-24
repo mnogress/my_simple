@@ -24,7 +24,7 @@ print('円周率は{}です'.format(round(Pi, 2) ))
 ##### いつもカッコの数が足りなく、エラーが出ています　お尻に３つ閉じカッコがいるところを２つしかないと。。
 
 {% highlight python %}
-File "<ipython-input-207-5b5bb335a438>", line ２
+File "<ipython-input-207-5b5bb335a438>", line 2
     print('円周率は{}です'.format(round(Pi, 2) )
                         ^
 SyntaxError: unexpected EOF while parsing
