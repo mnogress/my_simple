@@ -17,6 +17,14 @@ tags: [pandas]
 
 
 ---
+### ポイント
+
+1. 辞書型のリストで指定する {'old name' : 'new name' }
+2. 複数の列をrename するときは、{'old name' : 'new name' , 'old2 name' : 'new2 name'} とする
+3. inplace=True を指定するとdf自身に書き込む、チートシートのようにdf = で受ける必要なし
+
+
+---
 
 ### 複数の列を変更する場合
 
