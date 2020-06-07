@@ -55,7 +55,7 @@ accuracy score が５つ出てきます
 array([0.85034014, 0.81632653, 0.83673469, 0.83673469, 0.85034014])
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
-平均を標準偏差をプリントします。
+平均を標準偏差をプリントします。 各々のクロスバリデーションのスコアが戻り値です。`scores`{:style="background: #ffebf6"}に配列の形式で格納されていますので、平均と標準偏差を計算してプリントします。
 
 {% highlight python linenos %}
 print('Accuracy : %0.2f (+/- %0.2f)' % (scores.mean(), scores.std() *2))
