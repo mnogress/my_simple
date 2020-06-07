@@ -22,7 +22,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | 方法
 ---------- | -------------
-エクセルファイルの複数シート<br>(&#39;３月&#39;, &#39;4月&#39;)をdf1, df2に読み込む | 1) xlsx = pd.ExcelFile(&#39;file.xlsx&#39;)<br>2) df1 = pd.read_excel(xlsx, &#39;３月&#39;, index_col=None, `header=4`{:style="background-color: #ffe3e2; font-size: 1.0em"})<br>3) df1 = pd.read_excel(xlsx, &#39;４月&#39;, index_col=None, header=4) 
+エクセルファイルの複数シート<br>(&#39;３月&#39;, &#39;4月&#39;)をdf1, df2に読み込む | 1) xlsx = pd.ExcelFile(&#39;file.xlsx&#39;)<br>2) df1 = pd.read_excel(xlsx, &#39;３月&#39;, index_col=None, `header=4`{:style="background-color: #ffe3e2; font-size: 1.0em"})<br>3) df1 = pd.read_excel(xlsx, &#39;４月&#39;, index_col=None, `header=4`{:style="background-color: #ffe3e2; font-size: 1.0em"})
 数値データ以外をNaNとする<br>特定の列のNaNの数を確認する | 1) df[&#39;日付&#39;] = pd.to_numeric(df[&#39;日付&#39;],errors = &#39;coerce&#39; )<br>2) df[&#39;日付&#39;].isnull().sum()
 重複行の最初の行を残し、他を削除する | 1) df = df.drop_duplicates([&#39;会社ID&#39;], keep=&#39;first&#39; )
 
