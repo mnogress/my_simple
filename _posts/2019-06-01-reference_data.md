@@ -16,13 +16,13 @@ excerpt_separator: <!--more-->
 
 ---
 
-データ自体は、当サイトから共有はできません。tipデータ等の出典がKaggleのデータ関しては[kaggle](https://www.kaggle.com/)からダウンロード可能です。　
+データ自体は、当サイトから共有はできません。tipデータ等の出典がKaggleのデータ関しては[kaggle](https://www.kaggle.com/){:target="_blank"}からダウンロード可能です。　
 
 ### 概要
 
 1. 本サイトの記事でその中身を確認及び操作ログを載せるために使用しています。
-2. 私が今まで経験してきた解析のデータの構成に似せて作成したり、[kaggle](https://www.kaggle.com/)eから見つけてきました
-3. 各ブログテーマに即したデータセットを[kaggle](https://www.kaggle.com/)よりダウンロードしています
+2. 私が今まで経験してきた解析のデータの構成に似せて作成したり、[kaggle](https://www.kaggle.com/){:target="_blank"}から見つけてきました
+3. 各ブログテーマに即したデータセットを[kaggle](https://www.kaggle.com/){:target="_blank"}よりダウンロードしています
 
 
 実践的なスキルを習得するには、5x5 のデータフレームで練習してもビジネスの場ではあまり役に立ちません。　生のデータセットに近い、ある程度のサイズ、欠損値、外れ値、種々のデータ型が混在したデータセットを操作するスキルがとても重要です。
@@ -30,7 +30,7 @@ excerpt_separator: <!--more-->
 解析したいデータに似せたデータセットを自前で用意できない、もしくは時間が無い方には、 [kaggle](https://www.kaggle.com/)から適当なデータを見つけてダウンロードして使うといいと思います。
 
 
-##### `データセット1`{:style="background: #cbe8f5"} 　`オリジナルデータ｀
+##### `データセット1`{:style="background: #cbe8f5"} `オリジナルデータ`
 
 項目 | 内容
 ---------- | -------------
@@ -42,11 +42,11 @@ excerpt_separator: <!--more-->
 
 
 
-##### `データセット2`{:style="background: #cbe8f5"} 　`tipデータ`
+##### `データセット2`{:style="background: #cbe8f5"} `tipデータ`
 
 項目 | 内容
 ---------- | -------------
-出典 | [kaggle](https://www.kaggle.com/)で restaurant, tip で検索
+出典 | [リンク](https://www.kaggle.com/jsphyg/tipping){:target="_blank"}、または[kaggle](https://www.kaggle.com/){:target="_blank"}で restaurant, tip で検索
 データセット名 | tipデータ
 サイズ | 244行　x 7列
 中身  | レストラン　料金とチップ
@@ -57,7 +57,7 @@ excerpt_separator: <!--more-->
 
 項目 | 内容
 ---------- | -------------
-出典 | [kaggle](https://www.kaggle.com/)で HR, attrition で検索
+出典 | [リンク](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset){:target="_blank"}または、[kaggle](https://www.kaggle.com/){:target="_blank"}で HR, attrition で検索
 データセット名 | HRデータ
 サイズ | 1470行　x 35列
 中身  | HR データ　退職(attrition flag)、部門、年齢等
@@ -67,7 +67,7 @@ excerpt_separator: <!--more-->
 
 項目 | 内容
 ---------- | -------------
-出典 | [kaggle](https://www.kaggle.com/)で Rio, Olympic で検索
+出典 | [リンク](https://www.kaggle.com/rio2016/olympic-games){:target="_blank"}、または[kaggle](https://www.kaggle.com/){:target="_blank"}で Rio, Olympic で検索
 データセット名 | リオデータ
 サイズ | 11538行　x 11列
 中身  | 各国別メダル数、選手リスト、生年月日
