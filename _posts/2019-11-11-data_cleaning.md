@@ -2,7 +2,7 @@
 layout: post
 title: EXCELデータを機械学習用にデータをクリーニングする
 feature-img: "assets/img/2019_07_01/argyle-909253_1280.jpg"   
-tags: [data handling, pandas]
+tags: [data_handling, pandas]
 excerpt_separator: <!--more-->
 ---
 
