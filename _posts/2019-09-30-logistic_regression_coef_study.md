@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 
 データ分析屋としては的中率(hit ratio)の最大化に進みたいところですが、クライアントの人事や現場は、むしろ何が退職率に影響しているのか、影響度の度合いについての検討を望んでいることが多いと感じます。　
 
-使うデータは、Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} からダウンロードできます。
+使うデータは、Kaggle より[HRデータ]({{ "https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset" | relative_url}}){:target="_blank"} からダウンロードできます。
 
 ---
 
