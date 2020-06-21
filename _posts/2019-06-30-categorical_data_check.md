@@ -18,7 +18,7 @@ excerpt_separator: <!--more-->
 ---------- | -------------
 データの型を調べる | df.dtypes
 整数型にする  | df[&#39;列名&#39;]=df[&#39;列名&#39;].astype(int)
-カテゴリカル型にする  | df[&#39;列名&#39;]=pd.Categorical(df.列名)
+カテゴリカル型にする  | df[&#39;列名&#39;]=pd.Categorical(df[&#39;列名&#39;])
 
 ---
 
@@ -84,13 +84,13 @@ dtype('int64')
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 次に、カテゴリカルのデータ型に変換する。Categoricalメソッドを使います。
-具体的には：```df['列名']=pd.Categorical(df.列名)```{:style="color: blue"} です。
+具体的には：```df['列名']=pd.Categorical(df['列名'])```{:style="color: blue"} です。
 
 整数型や浮動小数点型にする時と構文が異なります
 
 {% highlight python linenos %}
 # data frame の'PY_07' 列の型をカテゴリカルデータ型にする
-df['PY_07']=pd.Categorical(df.PY_07)
+df['PY_07']=pd.Categorical(df['PY_07'])
 
 # 確認する
 df['PY_07'].dtypes
