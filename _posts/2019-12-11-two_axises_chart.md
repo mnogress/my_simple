@@ -77,7 +77,7 @@ ax1.grid(True)
 ax2.grid(False)
 
 #第一軸が棒グラフ、第二軸が折れ線グラフで描画する
-ax1.bar(x, y1, label='# of Teian', color="lightblue" )
+ax1.bar(x, y1, label='# of Cases', color="lightblue" )
 ax2.plot(x, y2, linewidth=2, color='orange', linestyle='solid', marker='o', markersize=8, label='Success Rate')
 
 #タイトル、軸ラベル、凡例の表示、ｘ軸のラベル(month)は70度傾ける
