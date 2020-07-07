@@ -111,7 +111,7 @@ df['Revenue'].plot.bar()
 df['Rate'].plot(secondary_y=True, style='g')
 {% endhighlight %}
 
-結果は以下のようなとてもシンプルなグラフ画鋲がされます。　プレゼン資料には使えないかもしれませんが、傾向値のイメージは掴めます。
+結果は以下のようなとてもシンプルなグラフが描画がされます。　プレゼン資料には使えないかもしれませんが、傾向値のイメージは掴めます。
 <br>
 ![two_axis]({{ "assets/img/2019_07_01/quick_19_02.png" | relative_url}})<br>
 
