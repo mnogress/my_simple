@@ -1,7 +1,7 @@
 ---
 layout: post
 title: matplotlibで二軸のグラフを作成する
-feature-img: "assets/img/2019_07_01/argyle-909253_1280.jpg"   
+feature-img: "assets/img/2019_07_01/Origami-pandas.jpg"   
 tags: [matplotlib, pandas]
 excerpt_separator: <!--more-->
 ---
@@ -95,6 +95,12 @@ plt.show()
 fig.savefig('img_01_19.png')
 {% endhighlight %}
 
+#### 結果の図
+
+以下のような図が描画されると思います。
+
+![two_axis]({{ "assets/img/2019_07_01/img_01_19.png" | relative_url}})<br>
+
 #### クイック表示
 
 細かくパラメータを設定する必要がありますが、一旦作成するとデータを変えて繰り返しスタイルのグラフを作成する場合は、便利な機能だと思います。　ただ、どのようなグラフになるか傾向を知りたいだけの場合、やはり長ったらしい設定であることは否めません。
@@ -104,6 +110,10 @@ fig.savefig('img_01_19.png')
 df['Revenue'].plot.bar()
 df['Rate'].plot(secondary_y=True, style='g')
 {% endhighlight %}
+
+結果は以下のようなとてもシンプルなグラフ画鋲がされます。　プレゼン資料には使えないかもしれませんが、傾向値のイメージは掴めます。
+<br>
+![two_axis]({{ "assets/img/2019_07_01/quick_19_02.png" | relative_url}})<br>
 
 
 ### タイトル、ラベルの日本語化について
