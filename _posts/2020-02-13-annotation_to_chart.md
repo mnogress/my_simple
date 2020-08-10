@@ -25,6 +25,8 @@ excerpt_separator: <!--more-->
 2. `xy=(a,b)` がannotateする位置`(a,b)`です。
 3. `xytext=(c,d)`は説明文の開始する位置を指定します。
 
+参考: [matplotlib.pyplot.annotate](https://matplotlib.org/3.3.0/api/_as_gen/matplotlib.pyplot.annotate.html#matplotlib.pyplot.annotate
+){:target="_blank"}
 
 ### サンプルコード
 
