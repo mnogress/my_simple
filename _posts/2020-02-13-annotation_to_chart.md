@@ -77,7 +77,7 @@ ax1.bar(x, y1, label='# of Cases', color="lightblue" )
 ax2.plot(x, y2, linewidth=2, color='orange', linestyle='solid', marker='o', markersize=8, label='Success Rate')
 
 #タイトル、軸ラベル、凡例の表示、ｘ軸のラベル(month)は70度傾ける
-ax1.set_title('2019', pad=8, fontsize=20, color='blue')
+ax1.set_title('2019 with annotation', pad=8, fontsize=20, color='blue')
 ax1.set_ylabel('# of Cases')
 ax2.set_ylabel('Success Rate')
 ax1.set_xlabel('Month')
