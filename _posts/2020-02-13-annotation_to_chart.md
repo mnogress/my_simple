@@ -90,8 +90,8 @@ index_of_max = np.argmax(y1)
 # 注釈の位置(index_of_max_next)は、インデックス番号の一つ右（＋１）とする
 index_of_max_next = index_of_max + 1
 
-# 最大値の月を"Best of Month"と注釈(annotation)を付ける
-ax1.annotate('Best of Month', xy= (index_of_max, max), xytext=(index_of_max_next, max ),
+# 最大値の月を"Peak of Month"と注釈(annotation)を付ける
+ax1.annotate('Peak of Month', xy= (index_of_max, max), xytext=(index_of_max_next, max ),
            arrowprops=dict(facecolor='red', shrink=0.05))
 
 plt.show()
