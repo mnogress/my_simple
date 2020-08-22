@@ -6,7 +6,8 @@ tags: [matplotlib, pandas]
 excerpt_separator: <!--more-->
 ---
 
-Pandas でデータ解析をしていて、作図はEXCELに頼ることはしばしばあります。できればJupyter Notebookの中で完結したいですね。
+Pandas でデータ解析をしていて、結果を可視化するための作図にはEXCELに頼ることはしばしばあります。しかし、同じような作図を何度も行う場合、
+できればJupyter Notebookの中で完結したいですね。
 
 簡単な図であれば、このBlogでも紹介したように`matplotlib`の基本機能で大丈夫ですが、EXCELでは、ごく一般的な棒グラフと折れ線グラフ
 が重なりあった二軸のグラフを`matplotlib`で描画するのは、やはり最初は、ネットで調べる時間と使い方の理解が必要です。
@@ -32,6 +33,7 @@ Pandas でデータ解析をしていて、作図はEXCELに頼ることはし�
 5. グラフのスタイルセットを`seaborn`からロードしています。　`seaborn`をインポートする必要があります。
 6. `rcParams`でグラフ画像のサイズを指定しています。 `pylab`をインポートする必要があります。
 
+---
 
 ### サンプルコード
 
@@ -41,10 +43,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pylab import rcParams
-import seaborn as sb
+import seaborn as sns
 
 # 背景白のグリッドにする
-sb.set_style('whitegrid') 
+sns.set_style('whitegrid') 
 %matplotlib inline
 
 # 図のサイズを9inch x 6inch = 648px X 432px にする
