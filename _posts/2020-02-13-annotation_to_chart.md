@@ -37,10 +37,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pylab import rcParams
-import seaborn as sb
+import seaborn as sns
 
 # 背景白のグリッドにする
-sb.set_style('whitegrid') 
+sns.set_style('whitegrid') 
 %matplotlib inline
 
 # 図のサイズを9inch x 6inch = 648px X 432px にする
@@ -108,19 +108,19 @@ fig.savefig('img_02_13.png')
 
 ![two_axis]({{ "assets/img/2019_07_01/img_02_131.png" | relative_url}})<br>
 
-#### annotate のは軸あたり一つ
+#### annotate は軸あたり一つ
 
-上記の計算では、最大値を求めて、それにannotateしましたが、サンプルデータでは230 の最大値を持つ月は6月の他に10月がありますが、
-ご覧のとおり、最初の月（最初に現れた月）を最大値として持ってきています。最初に出現したものを最大値とするからですが、これは整数値でしかも取りうる値が限られている場合に最大値を求める計算の課題でもあります。
+上記の計算では、最大値を求めて、それにannotateしましたが、サンプルデータでは230 の最大値を持つ月は6月の他に10月があります。ここでは、
+最初の月（最初に現れた月）を最大値として持ってきています。今回、紹介した計算では、最初に出現したものを最大値となります。これは、取りうる値が整数値でかつその値の幅が限られていると、同じ値の最大値を持つところが複数回出現する（今回は、6月と10月がいずれも最大値230を持つ）ことはありえます。
 
-どうしても気になる場合は、ここだけ再計算して`annotate`を重ねることで解消はできます。
+最大値を一つしか`annotate`しないことが、どうしても気になる場合は、ここだけ再計算して`annotate`を重ねることで解消可能です。
 
 ![two_axis]({{ "assets/img/2019_07_01/img_02_132.png" | relative_url}})<br>
 
 
 ### 二軸目にも当然、追加できます
 
-今回のサンプルでは、ax1 が棒グラフ、ax2 が折れ線グラフとしています。　`annotate` をax2 に対して行なえば、二軸目にも注釈可能です。
+今回のサンプルでは、ax1 が棒グラフ、ax2 が折れ線グラフとしています。　`annotate` をax2 に対して行なえば、二軸目にも注釈可能です。4月の折れ線グラフの値を`annotate`してみました。
 
 ![two_axis]({{ "assets/img/2019_07_01/img_02_133.png" | relative_url}})<br>
 
