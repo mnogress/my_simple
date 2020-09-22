@@ -26,7 +26,8 @@ excerpt_separator: <!--more-->
 
 ### 今回使うデータのポイント
 
-1. 退職状況(attrition)に関する人事データ[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} で選択した12個の説明変数でRandom Forest Classifer（RFC)で機械学習するところまでは同じです。
+
+1. 退職状況(attrition)に関する人事データ[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} で選択した12個の説明変数でRandom Forest Classifer（RFC)で機械学習するところまでは同じです。
 2. テストデータを更に5等分して、バリデーション用データとトレーニング用を1:4の組み合わせを５通り作ります
 3. 5通り各々の組み合わせでaccuracy スコアを計算して、トレーニングデータでの学習における的中率の平均と標準偏差をみます
 
