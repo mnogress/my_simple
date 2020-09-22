@@ -24,7 +24,7 @@ excerpt_separator: <!--more-->
 ---
 
 
-### 今回使うデータのポイント
+### 今回使うデータのポイント1
 
 
 1. 退職状況(attrition)に関する人事データ[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/logistic_regression_basic_1.html" | relative_url}}){:target="_blank"} で選択した12個の説明変数でRandom Forest Classifer（RFC)で機械学習するところまでは同じです。
