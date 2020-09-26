@@ -199,7 +199,7 @@ f1 は直感的にはわかりにくいですが、これを論文では性能�
 
 1. 的中率はわかりやすく、多くの関係者がモデルの性能について正しく、同じ理解を持てる
 2. f1 の説明は難しく、正しく理解されず、的中率や正答率と誤解の元となる
-3. precision　や、recall はそれぞれ正答率の一部分を示しており、マトリックスでの説明になり、どれがどうかわからなくなる。'
+3. precision　や、recall はそれぞれ正答率の一部分を示しており、マトリックスでの説明になり、どれがどうかわからなくなる。
 
 
 参照：　[Accuracy,_Precision,_Recall_&_F1_Score:_Interpretation_of_Performance_Measures](https://blog.exsilio.com/all/accuracy-precision-recall-f1-score-interpretation-of-performance-measures/){:target="_blank"}
