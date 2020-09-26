@@ -59,7 +59,7 @@ sns.heatmap(df.corr(), annot=True, cmap='Blues')
 相互に相関のある列のうちいずれかを除外します。　ルールはありません。しいて言えば、
 1. 説明変数として説明力がある　Monthly Income とMonthly Rateなら前者の方が包含していると考えます
 2. 計算結果の的中率が向上する方。
-3. 2.に関しては後出しの感はいなめませが、試行錯誤して行います。実際、PeformanceRating とPerformanceSalaryHike　順序尺度してのバラエティは後者でした
+3. 2.に関しては、後出しの感はいなめませが、試行錯誤して行います。実際、PeformanceRating とPerformanceSalaryHike　順序尺度してのバラエティは後者でした
 
 {% highlight python linenos %}
 #　ヒートマップから相互相関の変数の片方をドロップする
