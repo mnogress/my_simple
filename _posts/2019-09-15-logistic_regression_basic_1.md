@@ -18,7 +18,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | コーディング
 ---------- | -------------
-説明変数同士の相関関係をチェックする | sb.heatmap(df.corr(), annot=True, cmap=&#39;Blues&#39;)
+説明変数同士の相関関係をチェックする | import seaborn as sns<br>sns.heatmap(df.corr(), annot=True, cmap=&#39;Blues&#39;)
 
 ロジスティック回帰のモデルにおいて、説明変数同士の相関係数が概ね0.3upあれば、どちらか一方を除外します。　
 いわゆる多重共線性を回避する必要があります。
@@ -46,9 +46,10 @@ excerpt_separator: <!--more-->
 
 {% highlight python linenos %}
 # dfに対して相関関係のヒートマップを作成する
+import seaborn as sns
 %matplotlib inline
 rcParams['figure.figsize'] = 18,12
-sb.heatmap(df.corr(), annot=True, cmap='Blues')
+sns.heatmap(df.corr(), annot=True, cmap='Blues')
 {% endhighlight %}
 
 ![heatmap]({{ "assets/img/2019_07_01/heatmap_hr_df_original.png" | relative_url}})
@@ -74,7 +75,7 @@ to_drop = [
 ]
 df.drop(to_drop, inplace=True, axis=1)
 
-sb.heatmap(df.corr(), annot=True, cmap='Blues')
+sns.heatmap(df.corr(), annot=True, cmap='Blues')
 {% endhighlight %}
 
 結果は以下のとおりです。
