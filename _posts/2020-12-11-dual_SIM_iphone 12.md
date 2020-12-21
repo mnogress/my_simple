@@ -5,13 +5,14 @@ feature-img: "assets/img/2019_07_01/background-3147808_1920.jpg"
 tags: [data handling, pandas]
 excerpt_separator: <!--more-->
 ---
-モバイル通信料金の削減の取り組みの一環として、iPhone12ででデュアルSIM環境を実現しました。実際に行った手順をメモしたこのブログが参考になれば幸いです。<!--more-->　
+モバイル通信料金の削減の取り組みの一環として、iPhone12でデュアルSIM環境を実現しました。実際に行った手順をメモしたこのブログが参考になれば幸いです。<!--more-->　
 
 ----
 
 ### デュアルSIMでiphone 12 を使う
 
-iPhone12へ機種変更をきっかけに、物理SIMのソフトバンクミニフィットプランとeSIM のIIJのmio eSIM (MVNOサービス）のデュアルSIMにしましたので、その方法をメモします。完成形は以下のとおりです。<br>
+iPhone12へ機種変更をきっかけに、物理SIMのソフトバンクミニフィットプランとeSIM のIIJのmio eSIM (MVNOサービス）のデュアルSIMにしましたので、その方法をメモします。完成形は以下のとおりです。在宅勤務等で外出が減る中、自宅のWiFi環境でのiPhoneの利用が増えた方には、月間5GB以内のデータ容量でOKという人も少なくないと思います。
+<br>
 <br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1607845393/so-wi/IMG_780E4355C162-12_xycxpo.png" alt="eSIMDual" width="60%"/>
 
 
