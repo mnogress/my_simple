@@ -32,14 +32,14 @@ eSIM(イーシムと読みます)は、iphoneにあらかじめ埋め込まれ�
 ### SIMロックの解除
 
 SIMロックを解除したいiPhoneからMy SoftBankにログインして行います。 
-1. My SoftBank にログインする（一旦、Wifiを外してモバイル回線から行うと簡単です）
-2. 以下の画面の　①のMy SoftBankへログイン　のリンクを押すと、直接、SIMロックを解除する「契約・オプション管理」の画面に行きます<br><br>
+１ My SoftBank にログインする（一旦、Wifiを外してモバイル回線から行うと簡単です）
+２ 以下の画面の　①のMy SoftBankへログイン　のリンクを押すと、直接、SIMロックを解除する「契約・オプション管理」の画面に行きます<br><br>
 <img src="https://res.cloudinary.com/denhnjaey/image/upload/v1607831343/so-wi/IMG_7C27A3984E2A-1_dqs62c.png" alt="drawing" width="50%"/> <br>
-3.   「契約・オプション管理」画面のSIMロック解除画面より、IMEIを入力します。<br><br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1607832253/so-wi/IMG_0FDF1A28816C-1_skazad.png" alt="drawing" width="60%"/> <br>IMEI入力フィールドは画面下部にあります。
+３   「契約・オプション管理」画面のSIMロック解除画面より、IMEIを入力します。<br><br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1607832253/so-wi/IMG_0FDF1A28816C-1_skazad.png" alt="drawing" width="60%"/> <br>IMEI入力フィールドは画面下部にあります。
     <br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1607832690/so-wi/IMG_27D110C79678-1_d1maxc.png" alt="drawing" width="60%"/> 
-4. IMEIは、「設定」>「一般」>「情報」の画面にあります。　図のように、IMEIの画面で③のところを長押しすれば、クリップボードにコピーされますので、いちいち手打ちをする必要はありません。
+４ IMEIは、「設定」>「一般」>「情報」の画面にあります。　図のように、IMEIの画面で③のところを長押しすれば、クリップボードにコピーされますので、いちいち手打ちをする必要はありません。
     <br><br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1608030090/so-wi/main_line_IMEI_copy_bltjfp.png" alt="drawing" width="60%"/> 
-5. 3に戻って、IMEIをペーストして、次を押します。すると、以下のような確認画面が出てきますので、「確認」を押してこの画面を抜ければ、iPhone側の設定は完了です。
+５ 3に戻って、IMEIをペーストして、次を押します。すると、以下のような確認画面が出てきますので、「確認」を押してこの画面を抜ければ、iPhone側の設定は完了です。
     <br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1608030201/so-wi/SIM_unlock_confirm_ej4bbz.png" alt="drawing" width="60%"/>
 
 ----  
@@ -50,9 +50,9 @@ iPhone 12の全モデルで稼働実績があるとHP上で公表しているIIJ
 
 IIJのeSIMサービスデータプランゼロを選択した理由は以下の２つになります。
 
-1. iPhone12の全モデルでの稼働実績がある
+１ iPhone12の全モデルでの稼働実績がある
 
-2. 期間限定で通常3,000円の初期費用を１円*1)という破格な値段で提供していた
+２ 期間限定で通常3,000円の初期費用を１円*1)という破格な値段で提供していた
 
    >*1) 2021年１月21日までの期間限定のキャンペーンで最新の料金プラン、キャンペーンは[IIJのサイト](https://www.iijmio.jp/esim/){:target="_blank"}
    >で確認してください。
