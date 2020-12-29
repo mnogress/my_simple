@@ -13,7 +13,13 @@ excerpt_separator: <!--more-->
 
 Permutation_Feature_Importanceは説明変数の一つをランダムにシャッフルし、予測結果をオリジナルのそれと比較します。　シャッフルした説明変数が重要だとすると、シャッフルしない場合と比較して予測精度が落ちるハズだという仮説に基づくアルゴリズムです。　また、説明変数のシャッフルも一度ではなく、複数回行いその平均と標準偏差がPermutation_Feature_Importanceの結果になります。
 
-使うデータは、ロジスティック回帰分析のブログで利用したKaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} で検討しました。
+Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} で検討しました。
+
+>
+利用したデータセットは
+[kaggle_hr_data](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset){:target="_blank"}からダウンロードできます。
+[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事でデータセットの概要を紹介しています。併せて参考にしてください。
+{:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 0.9em"}
 
 ---
 
@@ -32,20 +38,19 @@ permutation_importanceを得る | permutation_importance(rc, X_train, y_train_ar
 
 ### 今回使うデータのポイント
 
-1. 退職状況(attrition)に関する人事データ[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} で選択した12個の説明変数でRandom Forest Classifer（RFC)で機械学習しFeature Imporances とCardinalityが一致する関係を調べます。
-2. [permutation_importance](https://scikit-learn.org/stable/modules/permutation_importance.html
-){:target="_blank"}を計算して、1で調べたFeature Imporances とCardinalityと比較する
+１） 退職状況(attrition)に関する人事データ[「ロジスティック回帰分析＿その1」]({{ "2019/09/15/regression_basic_1.html" | relative_url}}){:target="_blank"} で選択した12個の説明変数でRandom Forest Classifer（RFC)で機械学習しFeature Imporances とCardinalityが一致する関係を調べます。<br>
+２） [permutation_importance](https://scikit-learn.org/stable/modules/permutation_importance.html
+){:target="_blank"}を計算して、1で調べたFeature Imporances とCardinalityと比較する<br>
 
-[サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事で紹介している`HRデータ`です。
-
+----
 
 ### サンプルオペレーション
 
-12の説明変数それぞれのcardinarily を算出します。　チートシートにあるように`df.apply(pd.Series.nunique)`でとれます。それをデータフレーム化しておきます。
+１）　12の説明変数それぞれのcardinarily を算出します。　チートシートにあるように`df.apply(pd.Series.nunique)`{:style="background: #cbe8f5"} でとれます。それをデータフレーム化しておきます。<br>
 
-RFCで機械学習し、説明変数のCardinalityの大きさ順にFeature Importances になることを確認します。　RFC で定番のCross Validation Predict といったモデルの性能の最大化は今回はしません。
+２）RFCで機械学習し、説明変数のCardinalityの大きさ順にFeature Importances になることを確認します。　RFC で定番のCross Validation Predict といったモデルの性能の最大化は今回はしません。<br>
 
-Permutation_Importancesの計算をしてその結果と比較します。　
+３）Permutation_Importancesの計算をしてその結果と比較します。　
 
 ### Feature_ImporatancesとCardinalityの一致を確認します
 
