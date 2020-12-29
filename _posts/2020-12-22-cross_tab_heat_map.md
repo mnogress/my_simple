@@ -18,8 +18,7 @@ excerpt_separator: <!--more-->
 Pandasを使えば、簡単にクロス集計表やヒートマップを作成、描画が可能です。このブログではKaggle のHRデータの年齢とMonthly Salary のデータでクロス集計表とヒートマップの作成をご紹介したいと思います。
 
 >
-利用したデータセットは
-[kaggle_hr_data](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset){:target="_blank"}からダウンロードできます。
+利用したデータセットについて
 [サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事でデータセットの概要を紹介しています。併せて参考にしてください。
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 0.9em"}
 
@@ -35,7 +34,7 @@ seabornを使えば、簡単にきれいな度数分布グラフを作成する�
 
 {% highlight python linenos %}
 # カレントディレクトリからKaggleデータを読み込みます
-df = pd.read_csv('/WA_Fn-UseC_-HR-Employee-Attrition.csv', delimiter =",", header=0)
+df = pd.read_csv('/data.csv', delimiter =",", header=0)
 # 年齢別の度数分布を作成します
 sns.countplot(x='Age', data=df, palette='hls')
 {% endhighlight %}

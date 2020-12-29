@@ -16,8 +16,7 @@ Permutation_Feature_Importanceは説明変数の一つをランダムにシャ�
 Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} で検討しました。
 
 >
-利用したデータセットは
-[kaggle_hr_data](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset){:target="_blank"}からダウンロードできます。
+利用したデータセットは：
 [サンプルデータセットについて]({{ "2019/06/01/reference_data.html" | relative_url}}){:target="_blank"}の記事でデータセットの概要を紹介しています。併せて参考にしてください。
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 0.9em"}
 
