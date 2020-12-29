@@ -11,7 +11,7 @@ excerpt_separator: <!--more-->
 
 ### デュアルSIMでiphone 12 を使う
 
-iPhone12へ機種変更をきっかけに、物理SIMのソフトバンクミニフィットプランとeSIM のIIJのmio eSIM (MVNOサービス）のデュアルSIMにしましたので、その方法をメモします。完成形は以下のとおりです。在宅勤務等で外出が減る中、自宅のWiFi環境でのiPhoneの利用が増えた方には、月間5GB以内のデータ容量でOKという人も少なくないと思います。
+iPhone12へ機種変更をきっかけに、物理SIMのソフトバンクミニフィットプランとeSIM のIIJのmio eSIM (MVNOサービス）のデュアルSIMを使えるようにしましたので、その方法をメモします。完成形は以下のとおりです。在宅勤務等で外出が減る中、自宅のWiFi環境でのiPhoneの利用が増えた方には、月間5GB以内のデータ容量でOKという人も少なくないと思います。
 <br>
 <br><img src="https://res.cloudinary.com/denhnjaey/image/upload/v1607845393/so-wi/IMG_780E4355C162-12_xycxpo.png" alt="eSIMDual" width="60%"/>
 
