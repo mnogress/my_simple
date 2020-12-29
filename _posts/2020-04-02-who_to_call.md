@@ -79,6 +79,9 @@ df['訪問先役職'].value_counts()
 Name: 訪問先役職, dtype: int64
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
+以下が登録した「語」で分類するプログラムになります。　10行目の 調べる列を変数「s]とする**str.contains**メソッド`s.str.contains(executive, na=False)`{:style="background: #cbe8f5"} で語群「executive」に含む語があれば、Trueを返し、なければFalseを返すところがポイントです。
+
+同様に、17行目では`s.str.contains(management, na=False)`{:style="background: #cbe8f5"}で語群「management」を調べています。
 
 {% highlight python linenos %}
 #経営層(executive)，管理職(management)、その他(executive でもmanagementでない＝allでない)を語を登録し、それぞれ変数に代入します
