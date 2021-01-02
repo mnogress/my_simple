@@ -2,7 +2,7 @@
 layout: post
 title: クロス集計表とヒートマップでデータセットを理解する
 feature-img: "assets/img/2019_07_01/cake-3107967_1280.png"   
-tags: [data handling, pandas]
+tags: [heatmap, pandas, cross_table]
 excerpt_separator: <!--more-->
 ---
 

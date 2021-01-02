@@ -2,7 +2,7 @@
 layout: post
 title: iPhone12 でデュアルSIM環境を実現する
 feature-img: "assets/img/2019_07_01/background-3147808_1920.jpg"   
-tags: [data handling, pandas]
+tags: [iPhone, Dual, eSIM]
 excerpt_separator: <!--more-->
 ---
 
