@@ -33,7 +33,7 @@ seabornを使えば、簡単にきれいな度数分布グラフを作成する�
 
 
 {% highlight python linenos %}
-# カレントディレクトリからKaggleデータを読み込みます
+# カレントディレクトリからKaggleデータ data.csv を読み込みます
 df = pd.read_csv('/data.csv', delimiter =",", header=0)
 # 年齢別の度数分布を作成します
 sns.countplot(x='Age', data=df, palette='hls')
