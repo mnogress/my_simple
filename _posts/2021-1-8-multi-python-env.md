@@ -94,7 +94,8 @@ No analytics data has been sent yet (or will be during this `install` run).
 
 Python3.7 を導入しまが、まずPATHを通しておきます。　
 
-次に**brew install python@3.7**と **3.7**とバージョンを明示します　以下がコマンド投入
+次に**brew install python@3.7**とし、 インストールするバージョンを明示します。
+以下がコマンド投入ログです。
 
 {% highlight python linenos %}
 $ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
@@ -133,7 +134,7 @@ Python has been installed as
 {% endhighlight %}
 
 
-`brew install python@3.7`としましたので、python3 と入力すると、3.7が起動されます。　今回は、3.8も導入したいので、リリースを起動時に明示できるよう以下のコマンドを投入します。
+`brew install python@3.7`{:style="background: #ffebf6"}としましたので、python3 と入力すると、3.7が起動されます。　今回は、3.8も導入したいので、リリースを起動時に明示できるよう以下のコマンドを投入します。
 
 `ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`{:style="background: #ffebf6"}
 
