@@ -14,12 +14,13 @@ Python を使って開発では、目的や用途に応じて専用の実行環�
 
 | やりたいこと                                                 | How To                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Homebrew をインストールする                                  | [Homebrew](https://brew.sh/index_ja){:target="_blank"}で最新のコマンドをコピペする         |
+| Homebrew をインストールする                                  | [Homebrew](https://brew.sh/index_ja){:target="_blank"}で最新のコマンドをコピペする |
 | 特定のPythonのバージョン(例3.7）をインストールする           | `brew install python@3.7`{:style="background: #ffebf6"}<br> @3.7を追加することでバージョンを指定できる |
-| py37envという名前の仮想環境を作成する                      | `python3.7 -m venv py37env`{:style="background: #ffebf6"}<br>`mkdir` で任意のディレクトリを作成してその配下で行う |
+| 起動時にPythonのバージョン(例3.7）を指定できるようにする     | `ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`{:style="background: #ffebf6"} |
+| py37envという名前の仮想環境を作成する                        | `python3.7 -m venv py37env`{:style="background: #ffebf6"}<br>`mkdir` で任意のディレクトリを作成してその配下で行う |
 | 作成した仮想環境(例 py37env)の中に入る<br>＝＞アクティベイトする | `. py38env/bin/activate`{:style="background: #ffebf6"}<br>先頭に`(py37env)`があることを確認すること |
 | 仮想環境から出る<br>＝＞ディアクティベイトする               | `deactivate`{:style="background: #ffebf6"}<br>ディアクティベイトで、別の仮想環境の中に入ることができる |
-| 最新のpip パッケージをインストールする<br>パッケージをインストールする前の必須手順です | `pip install --upgrade pip`{:style="background: #ffebf6"}                                  |
+| 最新のpip パッケージをインストールする<br>パッケージをインストールする前の必須手順です | `pip install --upgrade pip`{:style="background: #ffebf6"}    |
 
 
 
@@ -133,10 +134,13 @@ Python has been installed as
 
 {% endhighlight %}
 
-
 `brew install python@3.7`{:style="background: #ffebf6"}としましたので、python3 と入力すると、3.7が起動されます。　今回は、3.8も導入したいので、リリースを起動時に明示できるよう以下のコマンドを投入します。
 
-`ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`{:style="background: #ffebf6"}
+{% highlight python linenos %}
+
+ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7
+
+{% endhighlight %}
 
 **python3.7**と入力して3.7が起動されることを確認します。
 
