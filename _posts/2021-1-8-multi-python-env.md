@@ -95,7 +95,7 @@ No analytics data has been sent yet (or will be during this `install` run).
 
 Python3.7 を導入しまが、まずPATHを通しておきます。　
 
-次に**brew install python@3.7**とし、 インストールするバージョンを明示します。
+次に`brew install python@3.7`{:style="background: #ffebf6"}とし、 インストールするバージョンを明示します。今回は、3.7ですね。
 以下がコマンド投入ログです。
 
 {% highlight python linenos %}
