@@ -16,8 +16,8 @@ Python を使って開発では、目的や用途に応じて専用の実行環�
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Homebrew をインストールする                                  | [Homebrew](https://brew.sh/index_ja){:target="_blank"}で最新のコマンドをコピペする         |
 | 特定のPythonのバージョン(例3.7）をインストールする           | `brew install python@3.7`{:style="background: #ffebf6"}<br> @3.7を追加することでバージョンを指定できる |
-| `py37env`という名前の仮想環境を作成する                      | `python3.7 -m venv py37env`{:style="background: #ffebf6"}<br>`mkdir` で任意のディレクトリを作成してその配下で行う |
-| 作成した仮想環境(例 `py37env`)の中に入る<br>＝＞アクティベイトする | `. py38env/bin/activate`{:style="background: #ffebf6"}<br>先頭に`(py37env)`があることを確認すること |
+| py37envという名前の仮想環境を作成する                      | `python3.7 -m venv py37env`{:style="background: #ffebf6"}<br>`mkdir` で任意のディレクトリを作成してその配下で行う |
+| 作成した仮想環境(例 py37env)の中に入る<br>＝＞アクティベイトする | `. py38env/bin/activate`{:style="background: #ffebf6"}<br>先頭に`(py37env)`があることを確認すること |
 | 仮想環境から出る<br>＝＞ディアクティベイトする               | `deactivate`{:style="background: #ffebf6"}<br>ディアクティベイトで、別の仮想環境の中に入ることができる |
 | 最新のpip パッケージをインストールする<br>パッケージをインストールする前の必須手順です | `pip install --upgrade pip`{:style="background: #ffebf6"}                                  |
 
