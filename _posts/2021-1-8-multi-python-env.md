@@ -141,7 +141,7 @@ Python has been installed as
 
 `brew install python@3.7`としましたので、python3 と入力すると、3.7が起動されます。　今回は、3.8も導入したいので、リリースを起動時に明示できるよう以下のコマンドを投入します。
 
-`ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`
+`ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`{:style="background: #ffebf6"}
 
 **python3.7**と入力して3.7が起動されることを確認します。
 
@@ -162,11 +162,11 @@ Python 3.7が起動されましたね。
 
 py37envという仮想環境名で仮想環境を作成し、パッケージはシステムから切り離して、この仮想環境にインストールすることにします。
 
-`mkdir project1` でホームディレクトリの配下にproject1 というディレクトリを作成します
+`mkdir project1`{:style="background: #ffebf6"} でホームディレクトリの配下にproject1 というディレクトリを作成します
 
-仮想環境は、 `python3.7 -m venv py37env`で作成します。`. py37env/bin/activate`を投入して仮想環境アクティベイトして、仮想環境を利用できるようにします。
+仮想環境は、 `python3.7 -m venv py37env`{:style="background: #ffebf6"}で作成します。`. py37env/bin/activate`{:style="background: #ffebf6"}を投入して仮想環境アクティベイトして、仮想環境を利用できるようにします。
 
-以下のログのとおり、アクティベイトして仮想環境の中に入ると`(py37env)` が先頭についてpy37envという仮想環境にいることがわかります。
+以下のログのとおり、アクティベイトして仮想環境の中に入ると`(py37env)`{:style="background: #ffebf6"} が先頭についてpy37envという仮想環境にいることがわかります。
 
 {% highlight python linenos %}
 . py37env/bin/activate
@@ -179,11 +179,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 {% endhighlight %}
 
 
-仮想環境から出るときには、上記のように`deactivate`コマンドを投入します。
+仮想環境から出るときには、上記のように`deactivate`{:style="background: #ffebf6"}コマンドを投入します。
 
 #### ５）Python 3.7をインストールする
 
-3.7と同様の手順で、python3.8 を導入します。 `cd ~`でホームディレクトリ戻り、Homebrewコマンドで3.8をホームディレクトリに導入します
+3.7と同様の手順で、python3.8 を導入します。 `cd ~`{:style="background: #ffebf6"}でホームディレクトリ戻り、Homebrewコマンドで3.8をホームディレクトリに導入します
 
 {% highlight python linenos %}
 ~ brew install python@3.8
@@ -203,7 +203,7 @@ because this is an alternate version of another formula.
 {% endhighlight %}
 
 
-`python3.8`と入力すれば、python 3.8が起動できるようにします
+`python3.8`{:style="background: #ffebf6"}と入力すれば、python 3.8が起動できるようにします
 
 {% highlight python linenos %}
 $ ln -s /usr/local/opt/python@3.8/bin/python3.8 /usr/local/bin/python3.8
