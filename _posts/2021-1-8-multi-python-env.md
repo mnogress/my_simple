@@ -52,7 +52,7 @@ git version 2.13.6 (Apple Git-96)
 
 #### ２）Homebrew をインストールする
 
-[Homebrew](https://brew.sh/index_ja){:target="_blank"}のホームページに行って、インストール用のコマンドがありますのでそれをホームディレクトリから入力します。ターミナルから`cd ~`を入力すると、 ホームディレクトリに戻ります。
+[Homebrew](https://brew.sh/index_ja){:target="_blank"}のホームページに行って、インストール用のコマンドがありますのでそれをホームディレクトリから入力します。ターミナルから`cd ~`{:style="background: #ffebf6"}を入力すると、 ホームディレクトリに戻ります。
 
 {% highlight python linenos %}
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
