@@ -23,14 +23,15 @@ excerpt_separator: <!--more-->
 
 |  No  | やりたいこと                                                 | Python Coding                                                | 説明                                                         |
 | :--: | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-|  1.  | 列番号だけでデータフレームを組みなおす                       | `df=df.iloc[:, [8,11]]`                                      | 元のデータフレームの最初の列を0と数えて、8番目と11番目の2列に組み替える |
-|  2.  | 列名`'cols'`の各行の文字列に含まれるブランクをとる           | `df['cols'] = df['cols'].str.strip()`                        | 全角の空白をとる場合は、`df['cols'].str.replace("　", "")`も行う |
-|  3.  | 列名`'cols'`にある`NaN`の行を落とす                          | `df = df[df['cols'].isnull() == False]`                      | `df.dropna()` はデータフレームの列のうちどこかの列に`NaN`があれば行を落としているため、場合によってはすべてがなくなる場合もある。 |
-|  4.  | 列名`'Date'`の日付で降順にソートする                         | `df = df.sort_values(by = 'Date', ascending=False)`          | 降順（新しいものから古いものへの順序）としたい時、`ascending=False`　とする。後続の処理として重複排除（一番新しいのを残す）をする場合などは、その前処理として降順にしておくとよい |
-|  5.  | 列名`'EmpID'`で最も新しいのを残して重複排除をする。          | `df = df.drop_duplicates(['EmpId'], keep='first' )`          | 前後に`print('before/after', df.shape)`をそれぞれ挟むと何行削除されたかが計算できる。 |
-|  6.  | 列名`'氏名'`に「その他」という名前でないものがあればその行を削除する | `df = df[~df['氏名'].str.contains('その他')]`                | 'その他'という言葉を指定してそれが含まれるものを除くため、削除する語を指定する必要がある |
-|  7.  | 列名`'col1'`に`NaN`がなく、列名`'col2'`が0でないいずれがであること | `df = df[(df['col1'].isnull() == False) | ( df['col2'] != 0)]` | 2つの条件を OR をとる場合は、'\|' を()で挟むことで条件を指定します |
-|  8.  | `INT`もしくは`Float`が取りうる列名`'num'`に入っているstr等を除外する | `df['num'] = pd.to_numeric(df['num'],errors = 'coerce' )`<br><br>`df = df[df['num'].isnull() == False]` | `errors = 'coerce'`のオプションでnumeric に変換できないものを`NaN`とする関数で`NaN`にしてそれを2つ目の式で削除します |
+|  1.  | 列番号だけでデータフレームを組みなおす                       | `df=df.iloc[:, [8,11]]`{:style="background: #ffebf6"}        | 元のデータフレームの最初の列を0と数えて、8番目と11番目の2列に組み替える |
+|  2.  | 3,000行以降のデータを削除する                                | `df=df.iloc[range(3000), :]`{:style="background: #ffebf6"}   | range関数により、0から3000までの連番を指定しいます。結果、それ以降は削除します。 |
+|  3.  | 列名`'cols'`の各行の文字列に含まれるブランクをとる           | `df['cols'] = df['cols'].str.strip()`{:style="background: #ffebf6"} | 全角の空白をとる場合は、`df['cols'].str.replace("　", "")`も行う |
+|  4.  | 列名`'cols'`にある`NaN`の行を落とす                          | `df = df[df['cols'].isnull() == False]`{:style="background: #ffebf6"} | `df.dropna()` はデータフレームの列のうちどこかの列に`NaN`があれば行を落としているため、場合によってはすべてがなくなる場合もある。 |
+|  5.  | 列名`'Date'`の日付で降順にソートする                         | `df = df.sort_values(by = 'Date', ascending=False)`{:style="background: #ffebf6"} | 降順（新しいものから古いものへの順序）としたい時、`ascending=False`　とする。後続の処理として重複排除（一番新しいのを残す）をする場合などは、その前処理として降順にしておくとよい |
+|  6.  | 列名`'EmpID'`で最も新しいのを残して重複排除をする。          | `df = df.drop_duplicates(['EmpId'], keep='first' )`{:style="background: #ffebf6"} | 前後に`print('before/after', df.shape)`をそれぞれ挟むと何行削除されたかが計算できる。 |
+|  7.  | 列名`'氏名'`に「その他」という名前でないものがあればその行を削除する | `df = df[~df['氏名'].str.contains('その他')]`{:style="background: #ffebf6"} | 'その他'という言葉を指定してそれが含まれるものを除くため、削除する語を指定する必要がある |
+|  8.  | 列名`'col1'`に`NaN`がなく、列名`'col2'`が0でないいずれがであること | `df = df[(df['col1'].isnull() == False) | ( df['col2'] != 0)]`{:style="background: #ffebf6"} | 2つの条件を OR をとる場合は、'\|' を()で挟むことで条件を指定します |
+|  9.  | `INT`もしくは`Float`が取りうる列名`'num'`に入っているstr等を除外する | `df['num'] = pd.to_numeric(df['num'],errors = 'coerce' )`{:style="background: #ffebf6"}<br><br>`df = df[df['num'].isnull() == False]`{:style="background: #ffebf6"} | `errors = 'coerce'`のオプションでnumeric に変換できないものを`NaN`とする関数で`NaN`にしてそれを2つ目の式で削除します |
 
 #### 補足
 
