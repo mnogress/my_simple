@@ -31,7 +31,7 @@ excerpt_separator: <!--more-->
 |  6.  | 列名`'EmpID'`で最も新しいのを残して重複排除をする。          | `df = df.drop_duplicates(['EmpId'], keep='first' )`{:style="background: #ffebf6"} | 前後に`print('before/after', df.shape)`をそれぞれ挟むと何行削除されたかが計算できる。 |
 |  7.  | 列名`'氏名'`に「その他」という名前でないものがあればその行を削除する | `df = df[~df['氏名'].str.contains('その他')]`{:style="background: #ffebf6"} | 'その他'という言葉を指定してそれが含まれるものを除くため、削除する語を指定する必要がある |
 |  8.  | 列名`'col1'`に`NaN`がなく、列名`'col2'`が0でないいずれがであること | `df = df[(df['col1'].isnull() == False) | ( df['col2'] != 0)]`{:style="background: #ffebf6"} | 2つの条件を OR をとる場合は、'\|' を()で挟むことで条件を指定します |
-|  9.  | `INT`もしくは`Float`が取りうる列名`'num'`に入っているstr等を除外する | `df['num'] = pd.to_numeric(df['num'],errors = 'coerce' )`{:style="background: #ffebf6"}<br><br>`df = df[df['num'].isnull() == False]`{:style="background: #ffebf6"} | `errors = 'coerce'`のオプションでnumeric に変換できないものを`NaN`とする関数で`NaN`にしてそれを2つ目の式で削除します |
+|  9.  | `INT`もしくは`Float`が取りうる列名`'num'`に入っているstr等を除外する | `df['num'] = pd.to_numeric(df['num'],errors = 'coerce' )`{:style="background: #ffebf6"}<br><br>`df = df[df['num'].isnull() == False]`{:style="background: #ffebf6"} | `errors = 'coerce'`のオプションでnumeric に変換できないものを`NaN`とする関数で`NaN`にしてそれを2つ目の式で削除します。<br>`NAN`や文字(`str`)が紛れ込んで、`astype(int)`で整数に変えられない時には必要です。 |
 
 #### 補足
 
