@@ -1,6 +1,6 @@
 ---
 layout: post
-title: サンプルデータセットについて
+title: サンプルデータセットの説明
 hide_title: false                                 # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/2019_06_30/appearance_square-100.png"              # Add a feature-image to the post
 # Sthumbnail: "assets/img/2019_06_30/code-1839406_1920.jpg"   # Add a thumbnail image on blog view
