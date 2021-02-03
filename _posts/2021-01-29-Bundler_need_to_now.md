@@ -10,12 +10,28 @@ excerpt_separator: <!--more-->
 [Bundler](https://bundler.io/){:target="_blank"}は、[Jekyll](http://jekyllrb-ja.github.io/){:target="_blank"}とは別物のRubyアプリケーションです。Rubyアプリケーション間の依存関係を解決します。Bundlerなしでは、Jekyllはインストールできません。
 Bundlerは、Jekyllにとって、必須ツールです。　しかし、実際、Jekyllの運用ではBundlerの多くを知る必要はありません。　
 
-運用するにあたり、最低限知っておくべき、GemfileとGemfie.lockの役割について説明します。<!--more-->
+Jekyll での静的サイト運用するにあたり、最低限知っておくべき、`Gemfile`と`Gemfie.lock`の役割について説明します。<!--more-->
 
 * TOC
 {:toc}
 
 ----
+
+### チートシート
+
+
+
+| やりたいこと                                                 | How To                                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `Ruby` のバージョンを確認する。<br>`Bundler`導入の前提として`Ruby`が必要。バージョンを確認する。<br>安定したバージョン2.7.1であることを確認(as of 2020/12) | `$ ruby -v`{:style="background: #ffebf6"}<br>`ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-darwin20]` |
+| ホームディレクトリにBundlerをインストールする<br>`Bundler version 2.2.7(as of 2020/12)` | `$  cd ~`{:style="background: #ffebf6"}<br>`$ gem install bundler`{:style="background: #ffebf6"}<br>Successfully installed bundler-2.2.7 |
+| `missing gem` のインストール<br>`Ruby` アプリの最初の起動時、必要な`gem`が無い場合に投入する | `$ bundle install`<br>`Fetching gem metadata from https://rubygems.org/..........`でインストールが開始する |
+
+
+
+------
+
+
 
 ### Bundlerとは
 
@@ -26,7 +42,7 @@ Jekyllでは20から30のRubyアプリケーションで構成されています
 gemspec にそのアプリケーションが稼働する前提となる他のRubyアプリケーションやバージョンを記述します。
 Gemfileには依存するgem の取得先を記述します。　
 
-通常は、`source` 行でURLを記述するだけです。
+通常は、`source`{:style="background: #ffebf6"} 行でURLを記述するだけです。
 ただし、Jekyll の場合はいかのGemfile のように導入当初は`gemspec`を使わず、`Gemfile`に依存関係と必要な`gem`を記述しています。
 
 アプリの稼働のための前提条件を依存関係といいます。
@@ -38,7 +54,7 @@ Gemfileには依存するgem の取得先を記述します。　
 ### Bundlerのインストール
 
 Bundlerのインストールは、gemで行われます。Rubyが導入されている環境が必要です。
-`ruby -v` で導入されているRubyのバージョンを確認します。この場合は、2.7.1 の安定版が導入されています。
+`ruby -v`{:style="background: #ffebf6"} で導入されているRubyのバージョンを確認します。この場合は、2.7.1 の安定版が導入されています。
 
 {% highlight vb linenos %}
 $ ruby -v
@@ -56,7 +72,7 @@ $ bundler -v
 Bundler version 2.2.7
 {% endhighlight %}
 
-`bundler -v`で導入されたBundler のバージョンを確認します。
+`bundler -v`{:style="background: #ffebf6"}で導入されたBundler のバージョンを確認します。
 
 Bundler の2.2.7 が導入されました。簡単ですね。
 
@@ -79,8 +95,7 @@ _posts          _site           about.markdown  index.markdown
 
 {% endhighlight %}
 
-
-[Jekyll 4.2.0 導入のページ](http://jekyllrb-ja.github.io/docs/installation/macos/){:target="_blank"}でも作成されているGemfile とGemfiile.lock中身を見てみましょう。　Gemfileです。
+[Jekyll 4.2.0 導入のページ](http://jekyllrb-ja.github.io/docs/installation/macos/){:target="_blank"}でも作成されている`Gemfile` と`Gemfiile.lock`中身を見てみましょう。　Gemfileです。
 
 {% highlight vb linenos %}
 source "https://rubygems.org"
