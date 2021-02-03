@@ -7,8 +7,10 @@ excerpt_separator: <!--more-->
 ---
 
 
-Bundlerは、Jekyll とは別物のRubyアプリケーションです。Rubyアプリケーション間の依存関係を解決します。Bundlerなしでは、Jekyllはインストールできません。
-Bundlerは、Jekyllにとって、必須ツールです。　しかし、実際、Jekyllの運用ではBundlerの多くを知る必要はありません。　運用するにあたり、最低限知っておくべき、GemfileとGemfie.lockの役割について説明します。<!--more-->
+[Bundler](https://bundler.io/){:target="_blank"}は、[Jekyll](http://jekyllrb-ja.github.io/){:target="_blank"}とは別物のRubyアプリケーションです。Rubyアプリケーション間の依存関係を解決します。Bundlerなしでは、Jekyllはインストールできません。
+Bundlerは、Jekyllにとって、必須ツールです。　しかし、実際、Jekyllの運用ではBundlerの多くを知る必要はありません。　
+
+運用するにあたり、最低限知っておくべき、GemfileとGemfie.lockの役割について説明します。<!--more-->
 
 * TOC
 {:toc}
@@ -78,7 +80,7 @@ _posts          _site           about.markdown  index.markdown
 {% endhighlight %}
 
 
-[Jekyll 4.2.0 導入のページ](https://www.so-wi.com/web/2019/06/29/what-is-jekyll/){:target="_blank"}でも作成されているGemfile とGemfiile.lock中身を見てみましょう。　Gemfileです。
+[Jekyll 4.2.0 導入のページ](http://jekyllrb-ja.github.io/docs/installation/macos/){:target="_blank"}でも作成されているGemfile とGemfiile.lock中身を見てみましょう。　Gemfileです。
 
 {% highlight vb linenos %}
 source "https://rubygems.org"
