@@ -25,7 +25,7 @@ Jekyll での静的サイト運用するにあたり、最低限知っておく�
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `Ruby` のバージョンを確認する。<br>`Bundler`導入の前提として`Ruby`が必要。バージョンを確認する。<br>安定したバージョン2.7.1であることを確認(as of 2020/12) | `$ ruby -v`{:style="background: #ffebf6"}<br><br>`ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-darwin20]` |
 | ホームディレクトリにBundlerをインストールする<br>`Bundler version 2.2.7(as of 2020/12)` | `$  cd ~`{:style="background: #ffebf6"}<br>`$ gem install bundler`{:style="background: #ffebf6"}<br><br>`Successfully installed bundler-2.2.7` |
-| `missing gem` のインストール<br>`Ruby` アプリの最初の起動時、必要な`gem`が無い場合に投入する | `$ bundle install`{:style="background: #ffebf6"}<br><br>`Fetching gem metadata from https://rubygems.org/..........`<br>でインストールが開始する |
+| `missing gem` のインストール<br>`Ruby` アプリの最初の起動時、必要な`gem`が無い場合に投入する。<br><br>`$ cd site_name`<br>`$ bundle exec jekyll serve`<br>で`missing gem`が出たら、このコマンドをこのディレクトリで投入する。 | `$ bundle install`{:style="background: #ffebf6"}<br><br>`Fetching gem metadata from https://rubygems.org/..........`<br>でインストールが開始する |
 
 
 
@@ -234,5 +234,6 @@ BUNDLED WITH
 2. Rubyアプリケーション間の依存関係を解決するツールです。
 3. Gemfile がユーザ定義、Gemfiile.lockがBundlerが使う依存関係の詳細です。
 4. Gemfile でJekyllのバージョンか、一緒に使うプラグインアプリケーション、Jekyllのテーマ等を指定します
+5. gem は通常```"https://rubygems.org"```に格納されています。
 >
 
