@@ -21,7 +21,7 @@ SSGの中では、最大級のユーザとプラグインを有しています�
 | Rbenv を導入し、特定のRubyのバージョンをインストールできるようにする。<br>**Rbenvの初期化をお忘れなく。<br>`eval "$(rbenv init -)"`{:style="background: #ffebf6"}をzshrcシェルに入れておけば、<br>自動的にrbenvがロードされるようになる。 | `brew install rbenv`{:style="background: #ffebf6"}<br><br>`rbenv init`{:style="background: #ffebf6"} |
 | Ruby 2.7.1 を導入する<br>2.7.1は2020/12現在のJekyllの推奨バージョン<br> | `rbenv install 2.7.1`{:style="background: #ffebf6"}          |
 | 特定のRubyのバージョンのPATHを通す。<br>MacOSX のシェルは現在、.zshrc です。 | ```echo 'export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"' >> ~/.zshrc```{:style="background: #ffebf6"} |
-| .zshrc シェルの中身を確認する。<br>ホームディレクトリから投入します。 | `ls -a`{:style="background: #ffebf6"}<br>** ファイルの存在を確認する<br>`cat .zshrc`{:style="background: #ffebf6"} |
+| .zshrc シェルの中身を確認する。<br>ホームディレクトリから投入します。 | `ls -a`{:style="background: #ffebf6"}** ファイルの存在を確認する<br><br>`cat .zshrc`{:style="background: #ffebf6"} |
 | Jekyll を導入する<br>                                        | `gem install --user-install bundler jekyll`{:style="background: #ffebf6"}<br><br>`jekyll -v`{:style="background: #ffebf6"} ** バージョン確認する |
 | my_site フォルダにサイトイメージを出力する<br>my_siteというディレクトリを作成して、<br>そのディレクトリに移動しておくこと。 | `mkdir my_site`{:style="background: #ffebf6"}<br>`cd my_site`{:style="background: #ffebf6"}<br><br>`jekyll new my_site`{:style="background: #ffebf6"} |
 
