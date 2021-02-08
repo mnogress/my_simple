@@ -288,7 +288,7 @@ jekyll バージョン4.2.0 がインストールされました。
   Bundler: Using forwardable-extended 2.6.0
   Bundler: Using rb-fsevent 0.10.4
   Bundler: Using liquid 4.0.3
-
+å
   *** 省略
 
  Bundler: Bundle complete! 6 Gemfile dependencies, 31 gems now installed.
