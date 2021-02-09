@@ -14,7 +14,7 @@ excerpt_separator: <!--more-->
 
 | やりたいこと                                                 | How To                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 作成した仮想環境(例 py37env)の中に入る<br/>＝＞アクティベイトする | `. py38env/bin/activate`{:style="background: #ffebf6"}<br/>先頭に`(py37env)`があることを確認すること |
+| 作成した仮想環境(例 py37env)の中に入る<br/>＝＞アクティベイトする | `. py37env/bin/activate`{:style="background: #ffebf6"}<br/>先頭に`(py37env)`があることを確認すること |
 | PIPを最新のバージョンにする                                  | `pip install --upgrade pip`{:style="background: #ffebf6"}<br>頻繁に`PIP`は更新されているので、おまじないのように最初に行う。<br>`Requirement already satisfied: pip in ./py37env/lib/python3.7/site-packages (20.3.3)`が出れば最新になっている |
 | Jupyter Notebook を導入する                                  | `pip install notebook`{:style="background: #ffebf6"}         |
 | Numpyをインストールする                                      | `pip install numpy`{:style="background: #ffebf6"}<br>`Successfully installed numpy-1.19.5` で正常にインストールできたことを確認できます。 |
