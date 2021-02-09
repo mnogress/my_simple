@@ -23,8 +23,8 @@ Python を使って開発では、目的や用途に応じて専用の実行環�
 | 起動時にPythonのバージョン(例3.7）を指定できるようにする     | `ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`{:style="background: #ffebf6"} |
 | py37envという名前の仮想環境を作成する <br><br/>**`mkdir` で任意のディレクトリ(project1)を作成してその配下で行う | `mkdir project1`{:style="background: #ffebf6"}<br><br>`cd project1`{:style="background: #ffebf6"}<br><br>`python3.7 -m venv py37env`{:style="background: #ffebf6"} |
 | 作成した仮想環境(例 py37env)の中に入る<br>＝＞アクティベイトする | `. py37env/bin/activate`{:style="background: #ffebf6"}<br>先頭に`(py37env)`があることを確認すること |
+| 最新のpip パッケージをインストールする<br/>パッケージをインストールする前の必須手順です | `pip install --upgrade pip`{:style="background: #ffebf6"}<br>**仮想環境`(py37env)`下にインストールするので、<br>`PIP`から仮想環境下にインストールする。 |
 | 仮想環境から出る<br>＝＞ディアクティベイトする               | `deactivate`{:style="background: #ffebf6"}<br>ディアクティベイトで、別の仮想環境の中に入ることができる |
-| 最新のpip パッケージをインストールする<br>パッケージをインストールする前の必須手順です | `pip install --upgrade pip`{:style="background: #ffebf6"}    |
 
 
 
