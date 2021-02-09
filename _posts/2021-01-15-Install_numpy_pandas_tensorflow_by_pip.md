@@ -17,6 +17,7 @@ excerpt_separator: <!--more-->
 | 作成した仮想環境(例 py37env)の中に入る<br/>＝＞アクティベイトする | `. py37env/bin/activate`{:style="background: #ffebf6"}<br/>先頭に`(py37env)`があることを確認すること |
 | PIPを最新のバージョンにする                                  | `pip install --upgrade pip`{:style="background: #ffebf6"}<br>頻繁に`PIP`は更新されているので、おまじないのように最初に行う。<br>`Requirement already satisfied: pip in ./py37env/lib/python3.7/site-packages (20.3.3)`が出れば最新になっている |
 | Jupyter Notebook を導入する                                  | `pip install notebook`{:style="background: #ffebf6"}         |
+| Jupyter Notebook を起動させる<br>ターミナルはそのままです    | `nohup jupyter notebook > /dev/null 2>&1 &`{:style="background: #ffebf6"} |
 | Numpyをインストールする                                      | `pip install numpy`{:style="background: #ffebf6"}<br>`Successfully installed numpy-1.19.5` で正常にインストールできたことを確認できます。 |
 | Pandasをインストールする                                     | `pip install pandas`{:style="background: #ffebf6"}<br/>正常にインストールできると`Successfully installed pandas-1.2.1 pytz-2020.5`のようなメッセージが出ます。 |
 | Matplotlibをインストールする                                 | `pip install matplotlib`{:style="background: #ffebf6"}<br/>正常にインストールできると、`Successfully installed cycler-0.10.0 kiwisolver-1.3.1 matplotlib-3.3.3 pillow-8.1.0`が出現します。 |
@@ -24,7 +25,7 @@ excerpt_separator: <!--more-->
 | Seabornをインストールする                                    | `pip install seaborn`{:style="background: #ffebf6"}<br/>`Successfully installed scipy-1.6.0 seaborn-0.11.1`が出現すれば、OK |
 | Scikit-learnをインストールする                               | `pip install -U scikit-learn`{:style="background: #ffebf6"}<br>`Successfully installed joblib-1.0.0 scikit-learn-0.24.1 threadpoolctl-2.1.0`でOK |
 | Tensorflowをインストールする                                 | `pip install --upgrade tensorflow`{:style="background: #ffebf6"}<br/>Kerasも一緒にインストールしてくれます。 |
-| 現仮想環境に導入されたパッケージのリストを出す               | `pip list`{:style="background: #ffebf6"}<br/>               |
+| 現仮想環境に導入されたパッケージのリストを出す               | `pip list`{:style="background: #ffebf6"}<br/>                |
 | 仮想環境から出る<br>＝＞ディアクティベイトする               | `deactivate`{:style="background: #ffebf6"}<br>ディアクティベイトで、別の仮想環境の中に入ることができる |
 
 
@@ -49,19 +50,19 @@ py37envという仮想環境に入ります。pip list でこの環境に導入�
 
 {% highlight python linenos %}
 $  . py37env/bin/activate
-(py37env) ~/project1 sowi pip list          
+(py37env) ~/project1 % pip list          
 Package  Version
 ---------- -------
 pip    20.1.1
 setuptools 47.1.0
 WARNING: You are using pip version 20.1.1; however, version 20.3.3 is available.
-You should consider upgrading via the '/Users/sowi/project1/py37env/bin/python3.7 -m pip install --upgrade pip'　command.
+You should consider upgrading via the '/Users/%/project1/py37env/bin/python3.7 -m pip install --upgrade pip'　command.
 {% endhighlight %}
 
 PIPをアップグレードして、定番パッケージを導入します。
 
 {% highlight python linenos %}
-(py37env) ~/project1 sowi  pip install --upgrade pip
+(py37env) ~/project1 %  pip install --upgrade pip
 Requirement already satisfied: pip in ./py37env/lib/python3.7/site-packages (20.3.3)
 Collecting pip
  Downloading pip-21.0-py3-none-any.whl (1.5 MB)
@@ -75,12 +76,12 @@ Successfully installed pip-21.0
 
 # PIP バーションを確認する
 
-(py37env) ~/project1 sowi pip --version
-pip 21.0 from /Users/sowi/project1/py37env/lib/python3.7/site-packages/pip (python 3.7)
+(py37env) ~/project1 % pip --version
+pip 21.0 from /Users/%/project1/py37env/lib/python3.7/site-packages/pip (python 3.7)
 
 # Jupyte Notebook を導入する
 
-(py37env) ~/project1 sowi pip install notebook
+(py37env) ~/project1 % pip install notebook
 Collecting notebook
  Downloading notebook-6.2.0-py3-none-any.whl (9.5 MB)
    |████████████████████████████████| 9.5 MB 52 kB/s 
@@ -95,8 +96,8 @@ Successfully installed MarkupSafe-1.1.1 Send2Trash-1.5.0 appnope-0.1.2 argon2-cf
 ### Jupyter Notebookを起動する　　jupyter notebook とコマンド入力
 
 (py37env) ~/project1 % jupyter notebook
-[I 14:50:08.335 NotebookApp] ノートブックサーバは cookie secret を /Users/sowi/Library/Jupyter/runtime/notebook_cookie_secret に書き込みます
-[I 14:50:09.303 NotebookApp] ローカルディレクトリからノートブックをサーブ: /Users/sowi/python
+[I 14:50:08.335 NotebookApp] ノートブックサーバは cookie secret を /Users/%/Library/Jupyter/runtime/notebook_cookie_secret に書き込みます
+[I 14:50:09.303 NotebookApp] ローカルディレクトリからノートブックをサーブ: /Users/%/python
 [I 14:50:09.303 NotebookApp] Jupyter Notebook 6.2.0 is running at:
 [I 14:50:09.303 NotebookApp] http://localhost:8888/?token=bf5386c42381d969aee7b81d9137ad97ccb9650ae49e156a
 [I 14:50:09.303 NotebookApp]  or http://127.0.0.1:8888/?token=bf5386c42381d969aee7b81d9137ad97ccb9650ae49e156a
@@ -127,7 +128,7 @@ http://localhost:8888/?token=c9559b4c6d6048bb607c4b354ce4028395c8f70cdfd86134
 
 # Numpyをインストールする
 
-(py37env) ~/project1 sowi pip install numpy
+(py37env) ~/project1 % pip install numpy
 Collecting numpy
  Downloading numpy-1.19.5-cp37-cp37m-macosx_10_9_x86_64.whl (15.6 MB)
    |████████████████████████████████| 15.6 MB 65 kB/s 
@@ -136,7 +137,7 @@ Successfully installed numpy-1.19.5
 
 # Pandas をインストールする
 
-(py37env) ~/project1 sowi pip install pandas
+(py37env) ~/project1 % pip install pandas
 Collecting pandas
  Downloading pandas-1.2.1-cp37-cp37m-macosx_10_9_x86_64.whl (10.3 MB)
    |████████████████████████████████| 10.3 MB 67 kB/s 
@@ -151,7 +152,7 @@ Successfully installed pandas-1.2.1 pytz-2020.5
 
 # Matplotlibをインストールする
 
-(py37env) ~/project1 sowi pip install matplotlib
+(py37env) ~/project1 % pip install matplotlib
 Collecting matplotlib
  Downloading matplotlib-3.3.3-cp37-cp37m-macosx_10_9_x86_64.whl (8.5 MB)
 
@@ -162,7 +163,7 @@ Successfully installed cycler-0.10.0 kiwisolver-1.3.1 matplotlib-3.3.3 pillow-8.
 
 # Openyxlをインストールする
 
-(py37env) ~/project1 sowi pip install openpyxl
+(py37env) ~/project1 % pip install openpyxl
 Collecting openpyxl
  Downloading openpyxl-3.0.6-py2.py3-none-any.whl (242 kB)
    |████████████████████████████████| 242 kB 8.1 MB/s 
@@ -177,7 +178,7 @@ Successfully installed et-xmlfile-1.0.1 jdcal-1.4.1 openpyxl-3.0.6
 
 # Xlrdをインストールする
 
-(py37env) ~/project1 sowi pip install xlrd   
+(py37env) ~/project1 % pip install xlrd   
 Collecting xlrd
  Downloading xlrd-2.0.1-py2.py3-none-any.whl (96 kB)
    |████████████████████████████████| 96 kB 2.6 MB/s 
@@ -186,7 +187,7 @@ Successfully installed xlrd-2.0.1
 
 # Seabornをインストールする
 
-(py37env) ~/project1 sowi pip install seaborn  
+(py37env) ~/project1 % pip install seaborn  
 Collecting seaborn
  Downloading seaborn-0.11.1-py3-none-any.whl (285 kB)
    |████████████████████████████████| 285 kB 5.6 MB/s 
@@ -200,7 +201,7 @@ Successfully installed scipy-1.6.0 seaborn-0.11.1
 
 # Scikit-learnをインストールする
 
-(py37env) ~/project1 sowi pip install -U scikit-learn
+(py37env) ~/project1 % pip install -U scikit-learn
 Collecting scikit-learn
  Downloading scikit_learn-0.24.1-cp37-cp37m-macosx_10_13_x86_64.whl (7.2 MB)
    |████████████████████████████████| 7.2 MB 67 kB/s 
@@ -216,7 +217,7 @@ Successfully installed joblib-1.0.0 scikit-learn-0.24.1 threadpoolctl-2.1.0
 
 # Tensorflowをインストールする
 
-(py37env) ~/project1 sowi pip install --upgrade tensorflow
+(py37env) ~/project1 % pip install --upgrade tensorflow
 Collecting tensorflow
  Downloading tensorflow-2.4.1-cp37-cp37m-macosx_10_11_x86_64.whl (173.9 MB)
    |████████████████████████████████| 173.9 MB 38 kB/s 
