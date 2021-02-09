@@ -24,7 +24,7 @@ excerpt_separator: <!--more-->
 | Seabornをインストールする                                    | `pip install seaborn`{:style="background: #ffebf6"}<br/>`Successfully installed scipy-1.6.0 seaborn-0.11.1`が出現すれば、OK |
 | Scikit-learnをインストールする                               | `pip install -U scikit-learn`{:style="background: #ffebf6"}<br>`Successfully installed joblib-1.0.0 scikit-learn-0.24.1 threadpoolctl-2.1.0`でOK |
 | Tensorflowをインストールする                                 | `pip install --upgrade tensorflow`{:style="background: #ffebf6"}<br/>Kerasも一緒にインストールしてくれます。 |
-| 現仮想環境に導入されたパッケージのリストを出す               | `pip -list`{:style="background: #ffebf6"}<br/>               |
+| 現仮想環境に導入されたパッケージのリストを出す               | `pip list`{:style="background: #ffebf6"}<br/>               |
 | 仮想環境から出る<br>＝＞ディアクティベイトする               | `deactivate`{:style="background: #ffebf6"}<br>ディアクティベイトで、別の仮想環境の中に入ることができる |
 
 
@@ -222,4 +222,117 @@ Collecting tensorflow
    |████████████████████████████████| 173.9 MB 38 kB/s 
 Collecting astunparse~=1.6.3
 Successfully installed absl-py-0.11.0 astunparse-1.6.3 cachetools-4.2.0 certifi-2020.12.5 chardet-4.0.0 flatbuffers-1.12 gast-0.3.3 google-auth-1.24.0 google-auth-oauthlib-0.4.2 google-pasta-0.2.0 grpcio-1.32.0 h5py-2.10.0 idna-2.10 keras-preprocessing-1.1.2 markdown-3.3.3 oauthlib-3.1.0 opt-einsum-3.3.0 protobuf-3.14.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.25.1 requests-oauthlib-1.3.0 rsa-4.7 tensorboard-2.4.1 tensorboard-plugin-wit-1.8.0 tensorflow-2.4.1 tensorflow-estimator-2.4.0 termcolor-1.1.0 urllib3-1.26.2 werkzeug-1.0.1 wheel-0.36.2 wrapt-1.12.1
+{% endhighlight %}
+
+### 仮想環境下にインストールしたパッケージをリストする
+
+`pip list`{:style="background: #ffebf6"} でインストールしたパッケージをリストします。
+
+
+{% highlight python %}
+(py37env) ~/project1 % pip list
+Package                Version
+---------------------- ---------
+absl-py                0.11.0
+appnope                0.1.2
+argon2-cffi            20.1.0
+astunparse             1.6.3
+async-generator        1.10
+attrs                  20.3.0
+backcall               0.2.0
+bleach                 3.3.0
+cachetools             4.2.1
+certifi                2020.12.5
+cffi                   1.14.4
+chardet                4.0.0
+cycler                 0.10.0
+decorator              4.4.2
+defusedxml             0.6.0
+entrypoints            0.3
+et-xmlfile             1.0.1
+flatbuffers            1.12
+gast                   0.3.3
+google-auth            1.25.0
+google-auth-oauthlib   0.4.2
+google-pasta           0.2.0
+grpcio                 1.32.0
+h5py                   2.10.0
+idna                   2.10
+importlib-metadata     3.4.0
+ipykernel              5.4.3
+ipython                7.20.0
+ipython-genutils       0.2.0
+jdcal                  1.4.1
+jedi                   0.18.0
+Jinja2                 2.11.3
+joblib                 1.0.0
+jsonschema             3.2.0
+jupyter-client         6.1.11
+jupyter-core           4.7.1
+jupyterlab-pygments    0.1.2
+Keras-Preprocessing    1.1.2
+kiwisolver             1.3.1
+Markdown               3.3.3
+MarkupSafe             1.1.1
+matplotlib             3.3.4
+mistune                0.8.4
+nbclient               0.5.1
+nbconvert              6.0.7
+nbformat               5.1.2
+nest-asyncio           1.5.1
+notebook               6.2.0
+numpy                  1.19.5
+oauthlib               3.1.0
+openpyxl               3.0.6
+opt-einsum             3.3.0
+packaging              20.9
+pandas                 1.2.1
+pandocfilters          1.4.3
+parso                  0.8.1
+pexpect                4.8.0
+pickleshare            0.7.5
+Pillow                 8.1.0
+pip                    21.0.1
+prometheus-client      0.9.0
+prompt-toolkit         3.0.14
+protobuf               3.14.0
+ptyprocess             0.7.0
+pyasn1                 0.4.8
+pyasn1-modules         0.2.8
+pycparser              2.20
+Pygments               2.7.4
+pyparsing              2.4.7
+pyrsistent             0.17.3
+python-dateutil        2.8.1
+pytz                   2021.1
+pyzmq                  22.0.2
+requests               2.25.1
+requests-oauthlib      1.3.0
+rsa                    4.7
+scikit-learn           0.24.1
+scipy                  1.6.0
+seaborn                0.11.1
+Send2Trash             1.5.0
+setuptools             47.1.0
+six                    1.15.0
+tensorboard            2.4.1
+tensorboard-plugin-wit 1.8.0
+tensorflow             2.4.1
+tensorflow-estimator   2.4.0
+termcolor              1.1.0
+terminado              0.9.2
+testpath               0.4.4
+threadpoolctl          2.1.0
+tornado                6.1
+traitlets              5.0.5
+typing-extensions      3.7.4.3
+urllib3                1.26.3
+wcwidth                0.2.5
+webencodings           0.5.1
+Werkzeug               1.0.1
+wheel                  0.36.2
+wrapt                  1.12.1
+xlrd                   2.0.1
+zipp                   3.4.0
+(py37env) ~/roject1 % 
 {% endhighlight %}
