@@ -21,7 +21,7 @@ Python を使って開発では、目的や用途に応じて専用の実行環�
 | インストールした python 37をPATHの先頭に置く<br>.zshrch が最新のMAC のデフォルトシェルです。 | ```echo 'export PATH="/usr/local/opt/python@3.7/bin:$PATH"' >> ~/.zshrc```{:style="background: #ffebf6"} |
 | インストールしたpython37のコンパイラとConfigの場所を指定する | ```export LDFLAGS="-L/usr/local/opt/python@3.7/lib"```{:style="background: #ffebf6"}<br><br>```export PKG_CONFIG_PATH="/usr/local/opt/python@3.7/lib/pkgconfig"```{:style="background: #ffebf6"} |
 | 起動時にPythonのバージョン(例3.7）を指定できるようにする     | `ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7`{:style="background: #ffebf6"} |
-| py37envという名前の仮想環境を作成する <br><br/>**`mkdir` で任意のディレクトリを作成してその配下で行う | `mkdir project1`{:style="background: #ffebf6"}<br><br>`cd project1`{:style="background: #ffebf6"}<br><br>`python3.7 -m venv py37env`{:style="background: #ffebf6"} |
+| py37envという名前の仮想環境を作成する <br><br/>**`mkdir` で任意のディレクトリ(project1)を作成してその配下で行う | `mkdir project1`{:style="background: #ffebf6"}<br><br>`cd project1`{:style="background: #ffebf6"}<br><br>`python3.7 -m venv py37env`{:style="background: #ffebf6"} |
 | 作成した仮想環境(例 py37env)の中に入る<br>＝＞アクティベイトする | `. py37env/bin/activate`{:style="background: #ffebf6"}<br>先頭に`(py37env)`があることを確認すること |
 | 仮想環境から出る<br>＝＞ディアクティベイトする               | `deactivate`{:style="background: #ffebf6"}<br>ディアクティベイトで、別の仮想環境の中に入ることができる |
 | 最新のpip パッケージをインストールする<br>パッケージをインストールする前の必須手順です | `pip install --upgrade pip`{:style="background: #ffebf6"}    |
@@ -32,7 +32,7 @@ Python を使って開発では、目的や用途に応じて専用の実行環�
 
 > **１）コマンドラインデベロッパーツールを導入する**<br>macOS をクリーンインストールしましたので、まずコマンドラインツールから導入します。
 >
-> **２）Homebrew をインストールする**<br>3.7と3.8のPyhtonをMacOSのホームディレクトリインストールするためにMacバージョン管理のHomebrewをインストールします
+> **２）Homebrew をホームディレクトリにインストールする**<br>3.7と3.8のPyhtonは、ホームディレクトリインストールします。そのため、Macバージョン管理のHomebrewをインストールします
 >
 > **３）仮想環境を作成する**<br>py37envとpy38env という名前の仮想環境を作成します
 >
@@ -171,6 +171,8 @@ py37envという仮想環境名で仮想環境を作成し、パッケージは�
 
 以下のログのとおり、アクティベイトして仮想環境の中に入ると`(py37env)`{:style="background: #ffebf6"} が先頭についてpy37envという仮想環境にいることがわかります。
 
+仮想環境は、具体的には`py37env`{:style="background: #ffebf6"}というディレクトリ配下にパッケージを導入するということです。　`ls -a`{:style="background: #ffebf6"}で実際のファイル構成を確認してします。
+
 {% highlight python linenos %}
 . py37env/bin/activate
 (py37env) ~/project1 sowi python3.7
@@ -178,13 +180,22 @@ Python 3.7.9 (default, Nov 20 2020, 23:58:42)
 [Clang 12.0.0 (clang-1200.0.32.27)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
+
+### py37env のディレクトリの中を見る
+(py37env) ~/proect1 % ls -a
+.       ..      py37env
+(py37env) ~/project1 % cd py37env
+(py37env) ~/project1/py37env % ls -a     
+.               ..              bin             include         lib             pyvenv.cfg
+(py37env) ~/project1/py37env % 
+
 (py37env) ~/project1 sowi deactivate
 {% endhighlight %}
 
 
 仮想環境から出るときには、上記のように`deactivate`{:style="background: #ffebf6"}コマンドを投入します。
 
-#### ５）Python 3.7をインストールする
+#### ５）Python 3.8をインストールする
 
 3.7と同様の手順で、python3.8 を導入します。 `cd ~`{:style="background: #ffebf6"}でホームディレクトリ戻り、Homebrewコマンドで3.8をホームディレクトリに導入します
 
@@ -232,7 +243,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 (py38env) ~/project1 sowi deactivate
 {% endhighlight %}
 
-3.7と3.8 で別々の仮想環境を作成できました。　py38env をアクティベイトしてそこにpip パッケージのの最新バージョをインストールします。仮想環境へのインストールですから、システムとは分離されいろいろな開発環境を再現できるようになります。
+3.7と3.8 で別々の仮想環境を作成できました。　py38env をアクティベイトしてそこにpip パッケージのの最新バージョンをインストールします。仮想環境へのインストールですから、システムとは分離されいろいろな開発環境を再現できるようになります。
 
 {% highlight python linenos %}
 $ ~/project1 sowi . py38env/bin/activate  
