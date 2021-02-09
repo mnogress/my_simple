@@ -92,6 +92,39 @@ Collecting jupyter-client>=5.3.4
   Running setup.py install for pandocfilters ... done
 Successfully installed MarkupSafe-1.1.1 Send2Trash-1.5.0 appnope-0.1.2 argon2-cffi-20.1.0 async-generator-1.10 attrs-20.3.0 backcall-0.2.0 bleach-3.2.2 cffi-1.14.4 decorator-4.4.2 defusedxml-0.6.0 entrypoints-0.3 importlib-metadata-3.4.0 ipykernel-5.4.3 ipython-7.19.0 ipython-genutils-0.2.0 jedi-0.18.0 jinja2-2.11.2 jsonschema-3.2.0 jupyter-client-6.1.11 jupyter-core-4.7.0 jupyterlab-pygments-0.1.2 mistune-0.8.4 nbclient-0.5.1 nbconvert-6.0.7 nbformat-5.1.2 nest-asyncio-1.4.3 notebook-6.2.0 packaging-20.8 pandocfilters-1.4.3 parso-0.8.1 pexpect-4.8.0 pickleshare-0.7.5 prometheus-client-0.9.0 prompt-toolkit-3.0.13 ptyprocess-0.7.0 pycparser-2.20 pygments-2.7.4 pyparsing-2.4.7 pyrsistent-0.17.3 python-dateutil-2.8.1 pyzmq-21.0.1 six-1.15.0 terminado-0.9.2 testpath-0.4.4 tornado-6.1 traitlets-5.0.5 typing-extensions-3.7.4.3 wcwidth-0.2.5 webencodings-0.5.1 zipp-3.4.0
 
+### Jupyter Notebookを起動する　　jupyter notebook とコマンド入力
+
+(py37env) ~/project1 % jupyter notebook
+[I 14:50:08.335 NotebookApp] ノートブックサーバは cookie secret を /Users/sowi/Library/Jupyter/runtime/notebook_cookie_secret に書き込みます
+[I 14:50:09.303 NotebookApp] ローカルディレクトリからノートブックをサーブ: /Users/sowi/python
+[I 14:50:09.303 NotebookApp] Jupyter Notebook 6.2.0 is running at:
+[I 14:50:09.303 NotebookApp] http://localhost:8888/?token=bf5386c42381d969aee7b81d9137ad97ccb9650ae49e156a
+[I 14:50:09.303 NotebookApp]  or http://127.0.0.1:8888/?token=bf5386c42381d969aee7b81d9137ad97ccb9650ae49e156a
+[I 14:50:09.303 NotebookApp] サーバを停止し全てのカーネルをシャットダウンするには Control-C を使って下さい(確認をスキップするには2回)。
+[C 14:50:09.320 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///Users/home/Library/Jupyter/runtime/nbserver-12445-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=bf5386c42381d969aee7b81d9137ad97ccb9650ae49e156a
+     or http://127.0.0.1:8888/?token=bf5386c42381d969aee7b81d9137ad97ccb9650ae49e156a
+
+## お馴染みのJupyter Notebook がデフォルトブラウザから立ち上がるのを確認する
+
+**** ctrl+c を二度打って終了させる
+
+^C[I 14:54:21.219 NotebookApp] 中断しました
+ローカルディレクトリからノートブックをサーブ: /Users/home/python
+0 個のアクティブなカーネル
+Jupyter Notebook 6.2.0 is running at:
+http://localhost:8888/?token=c9559b4c6d6048bb607c4b354ce4028395c8f70cdfd86134
+ or http://127.0.0.1:8888/?token=c9559b4c6d6048bb607c4b354ce4028395c8f70cdfd86134
+このノートブックサーバをシャットダウンしますか？ (y/[n])^C[C 14:54:21.483 NotebookApp] シグナル 2 を受信。停止します
+[I 14:54:21.483 NotebookApp] Shutting down 0 kernels
+[I 14:54:21.484 NotebookApp] Shutting down 0 terminals
+(py37env) ~/python % 
+
+
 # Numpyをインストールする
 
 (py37env) ~/project1 sowi pip install numpy
