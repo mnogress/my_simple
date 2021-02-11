@@ -48,8 +48,15 @@ excerpt_separator: <!--more-->
 
 py37envという仮想環境に入ります。pip list でこの環境に導入済みのパッケージリストを出力しますが、pip 20.1.1 が入っているだけです。pip 20.1.1が古く、20.3.3があるのでそれにアップグレードしてくださいというメッセージが出ます。
 
+>
+このインストールログでは、**仮想環境名 `(py37env)`** の中に入り、**ホームディレクトリ配下の`project1`**というディレクトリの下でパッケージをインストールしています。仮想環境の作成については
+[Python3.7と3.8両方を使うための仮想環境を作成する_(Mac_Big_Sur)]({{ "2021/01/08/multi-python-env.html" | relative_url}}){:target="_blank"}の記事で仮想環境の作成方法を紹介しています。併せて参考にしてください。
+{:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
+
+
 {% highlight python linenos %}
-$  . py37env/bin/activate
+# ホームディレクトリ上から仮想環境をアクティブにする
+%  . py37env/bin/activate
 (py37env) ~/project1 % pip list          
 Package  Version
 ---------- -------

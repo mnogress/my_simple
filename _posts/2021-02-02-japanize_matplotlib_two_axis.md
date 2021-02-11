@@ -36,7 +36,7 @@ PIPコマンドで`japanize-matplotlib`{:style="background: #ffebf6"} を追加�
 >
 このインストールログでは、**仮想環境名 `(py37env)`** の中に入り、**ホームディレクトリ配下の`python`**というディレクトリの下でパッケージをインストールしています。仮想環境の作成については
 [Python3.7と3.8両方を使うための仮想環境を作成する_(Mac_Big_Sur)]({{ "2021/01/08/multi-python-env.html" | relative_url}}){:target="_blank"}の記事で仮想環境の作成方法を紹介しています。併せて参考にしてください。
-{:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 0.9em"}
+{:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
 
 {% highlight python linenos %}
