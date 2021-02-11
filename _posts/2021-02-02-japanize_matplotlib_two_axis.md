@@ -6,16 +6,16 @@ tags: [matplotlib, japanese, pandas]
 excerpt_separator: <!--more-->
 ---
 
-matplotlib で作画した２軸のグラフでEXECLと決定的に違うところは、日本語対応です。何もしないと日本語のラベルは文字化けしてしまい、□□いわゆる豆腐になってしまいます。ブログで紹介した[matplotlib_二軸グラフ]({{ "2019/12/11/two_axises_chart.html" | relative_url}}){:target="_blank"}やそれに注釈をつけた[matplotlib_二軸グラフ_注釈]({{ "2020/02/13/annotation_to_chart.html" | relative_url}}){:target="_blank"}では、いずれも英語のラベルや注釈でしたが、簡単に文字化けせず、日本語で表示する方法をご紹介します。
+matplotlib で作画した２軸のグラフでEXECLと決定的に違うところは、日本語対応です。何もしないと日本語のラベルは文字化けしてしまい、□□いわゆる豆腐になってしまいます。ブログで紹介した「[matplotlibで二軸のグラフを作成する]({{ "2019/12/11/two_axises_chart.html" | relative_url}}){:target="_blank"}」やそれに注釈をつけた「[二軸グラフに注釈をつける]({{ "2020/02/13/annotation_to_chart.html" | relative_url}}){:target="_blank"}」では、いずれも英語のラベルや注釈でしたが、簡単に文字化けせず、日本語で表示する方法をご紹介します。
 
 <!--more-->
 
-[matplotlib_二軸グラフ_注釈]({{ "2020/02/13/annotation_to_chart.html" | relative_url}}){:target="_blank"}で使った月別の二軸のグラフの縦軸、横軸、注釈部分を日本語で表記する例について、MacOSX Big Surでの例をご紹介します。
+[二軸グラフに注釈をつける]({{ "2020/02/13/annotation_to_chart.html" | relative_url}}){:target="_blank"}で使った月別の二軸のグラフの縦軸、横軸、注釈部分を日本語で表記する例について、MacOSX Big Surでの例をご紹介します。
 
 ---
 
 
-### グラフにannotation追加のポイント
+### 日本語化のポイント
 >
 >基本的には、`japanize-matplotlib` のパッケージを追加導入します　
 >1. 日本語フォント`IPAGothic` をインストールします
@@ -31,6 +31,13 @@ PIPコマンドで`japanize-matplotlib`{:style="background: #ffebf6"} を追加�
 パッケージをインストールすればするほど、システム全体の依存関係が複雑になります。
 [仮想環境にPIPで定番パッケージを導入する]({{ "2021/01/15/Install_numpy_pandas_tensorflow_by_pip.html" | relative_url}}){:target="_blank"}でもご紹介しているとおり、システム全体にインストールする前に仮想環境でテストされることをお薦めします。
 実際の開発現場では少なからず行っていることです。
+
+
+>
+このインストールログでは、**仮想環境名 `(py37env)`** の中に入り、**ホームディレクトリ配下の`python`**というディレクトリの下でパッケージをインストールしています。仮想環境の作成については
+[Python3.7と3.8両方を使うための仮想環境を作成する_(Mac_Big_Sur)]({{ "2021/01/08/multi-python-env.html" | relative_url}}){:target="_blank"}の記事で仮想環境の作成方法を紹介しています。併せて参考にしてください。
+{:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 0.9em"}
+
 
 {% highlight python linenos %}
 (py37env) ~/python % pip install japanize-matplotlib
@@ -56,11 +63,13 @@ Successfully installed japanize-matplotlib-1.1.3
 
 ### IPAGothicフォントをインストールする
 
-[文字情報技術促進協議会のダウンロードページ](https://moji.or.jp/ipafont/ipafontdownload/)か ZIP形式をフォントをダウンロードして、ダブルクリックしてインストールします。利用規約には必ず目を通しましょう。
+[文字情報技術促進協議会のダウンロードページ](https://moji.or.jp/ipafont/ipafontdownload/)から ZIP形式をフォントをダウンロードして、ダブルクリックしてインストールします。利用規約には必ず目を通しましょう。
 
 ---
 
 ### サンプルコード
+
+ライン番号７から14が今回追加したところです。　それ以外は、タイトル、ラベルなどを日本語にしています。
 
 {% highlight python linenos %}
 import numpy as np
