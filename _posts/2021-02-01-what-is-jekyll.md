@@ -346,6 +346,53 @@ Server running... press ctrl-c to stop.
 404.html        Gemfile         Gemfile.lock    _config.yml     _posts          _site           about.markdown  index.markdown
 {% endhighlight %}
 
+### Jekyll Site 構造
+
+インストールされた`my_site`のディレクトリー構造を`tree`コマンドで図示します。
+
+{% highlight python linenos %}
+## homebrew からTreeコマンドをインストールします。
+~ % brew install tree 
+==> Downloading https://homebrew.bintray.com/bottles/tree-1.8.0.big_sur.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring tree-1.8.0.big_sur.bottle.tar.gz
+🍺  /usr/local/Cellar/tree/1.8.0: 8 files, 157.4KB
+{% endhighlight %}
+
+{% highlight python linenos %}
+~ % cd my_site
+~/my_site % tree     
+.
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── _config.yml
+├── _posts
+│   └── 2021-02-02-welcome-to-jekyll.markdown
+├── _site
+│   ├── 404.html
+│   ├── about
+│   │   └── index.html
+│   ├── assets
+│   │   ├── main.css
+│   │   ├── main.css.map
+│   │   └── minima-social-icons.svg
+│   ├── feed.xml
+│   ├── index.html
+│   └── jekyll
+│       └── update
+│           └── 2021
+│               └── 02
+│                   └── 02
+│                       └── welcome-to-jekyll.html
+├── about.markdown
+└── index.markdown
+
+9 directories, 15 files
+~/my_site % 
+{% endhighlight %}
+
+
 以上がjekyll のインストールと稼働確認になります。
 
 
