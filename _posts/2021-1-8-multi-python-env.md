@@ -235,12 +235,13 @@ py38env というPython3.8の仮想環境を作成します。
 $ cd project1
 ~/project1 $ python3.8 -m venv py38env
 ~/project1 $ . py38env/bin/activate
-(py38env) ~/project1  python3
+(py38env) ~/project1 $ python3
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
 [Clang 12.0.0 (clang-1200.0.32.28)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 \>>> exit()
-(py38env) ~/project1  deactivate
+
+(py38env) ~/project1 $ deactivate
 {% endhighlight %}
 
 3.7と3.8 で別々の仮想環境を作成できました。　py38env をアクティベイトしてそこにpip パッケージのの最新バージョンをインストールします。仮想環境へのインストールですから、システムとは分離されいろいろな開発環境を再現できるようになります。
@@ -257,7 +258,9 @@ Installing collected packages: pip
     Uninstalling pip-20.2.3:
       Successfully uninstalled pip-20.2.3
 Successfully installed pip-20.3.3
+
 (py38env) ~/project1 $ python3.8
+
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
 [Clang 12.0.0 (clang-1200.0.32.28)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
