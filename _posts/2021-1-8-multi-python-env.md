@@ -45,7 +45,7 @@ Python を使って開発では、目的や用途に応じて専用の実行環�
 ターミナルを起動して以下のようなコマンドを入力します
 
 {% highlight python linenos %}
-$ git --version
+~ $ git --version
 git version 2.13.6 (Apple Git-96)
 {% endhighlight %}
 
@@ -60,7 +60,7 @@ git version 2.13.6 (Apple Git-96)
 [Homebrew](https://brew.sh/index_ja){:target="_blank"}のホームページに行って、インストール用のコマンドがありますのでそれをホームディレクトリから入力します。ターミナルから`cd ~`{:style="background: #ffebf6"}を入力すると、 ホームディレクトリに戻ります。
 
 {% highlight python linenos %}
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
+~ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
 {% endhighlight %}
 
 
@@ -103,8 +103,9 @@ Python3.7 を導入しまが、まずPATHを通しておきます。　
 以下がコマンド投入ログです。
 
 {% highlight python linenos %}
-$ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-$ brew install python@3.7
+# locate home directory "cd ~"
+~ $ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+~ $ brew install python@3.7
 
 Updating Homebrew...
 ==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
@@ -142,14 +143,14 @@ Python has been installed as
 
 {% highlight python linenos %}
 
-$ ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7
+~ $ ln -s /usr/local/opt/python@3.7/bin/python3.7 /usr/local/bin/python3.7
 
 {% endhighlight %}
 
 **python3.7**と入力して3.7が起動されることを確認します。
 
 {% highlight python linenos %}
-$ python3.7
+~ $ python3.7
 Python 3.7.9 (default, Nov 20 2020, 23:58:42) 
 [Clang 12.0.0 (clang-1200.0.32.27)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -174,7 +175,9 @@ py37envという仮想環境名で仮想環境を作成し、パッケージは�
 仮想環境は、具体的には`py37env`{:style="background: #ffebf6"}というディレクトリ配下にパッケージを導入するということです。　`ls -a`{:style="background: #ffebf6"}で実際のファイル構成を確認してします。
 
 {% highlight python linenos %}
-$ . py37env/bin/activate
+# activate virtual env py37env
+~ $ . py37env/bin/activate
+# run python 3.7
 (py37env) ~/project1  python3.7
 Python 3.7.9 (default, Nov 20 2020, 23:58:42) 
 [Clang 12.0.0 (clang-1200.0.32.27)] on darwin
@@ -200,7 +203,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 3.7と同様の手順で、python3.8 を導入します。 `cd ~`{:style="background: #ffebf6"}でホームディレクトリ戻り、Homebrewコマンドで3.8をホームディレクトリに導入します
 
 {% highlight python linenos %}
-~ brew install python@3.8
+~ $ brew install python@3.8
 Updating Homebrew...
 ==> Auto-updated Homebrew!
 Updated 1 tap (homebrew/core).
@@ -220,8 +223,8 @@ because this is an alternate version of another formula.
 `python3.8`{:style="background: #ffebf6"}と入力すれば、python 3.8が起動できるようにします
 
 {% highlight python linenos %}
-$ ln -s /usr/local/opt/python@3.8/bin/python3.8 /usr/local/bin/python3.8
-$ python3.8
+~ $ ln -s /usr/local/opt/python@3.8/bin/python3.8 /usr/local/bin/python3.8
+~ $ python3.8
 
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
 [Clang 12.0.0 (clang-1200.0.32.28)] on darwin
@@ -232,22 +235,28 @@ Type "help", "copyright", "credits" or "license" for more information.
 py38env というPython3.8の仮想環境を作成します。
 
 {% highlight python linenos %}
-$ cd project1
+# change directory to /project1
+~ $ cd project1
+# create virtual envi py38env
 ~/project1 $ python3.8 -m venv py38env
+# acitvate py38env
 ~/project1 $ . py38env/bin/activate
+# run pytjon3 as 3.8.7
 (py38env) ~/project1 $ python3
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
 [Clang 12.0.0 (clang-1200.0.32.28)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 \>>> exit()
-
+# deactivate py38env
 (py38env) ~/project1 $ deactivate
 {% endhighlight %}
 
 3.7と3.8 で別々の仮想環境を作成できました。　py38env をアクティベイトしてそこにpip パッケージのの最新バージョンをインストールします。仮想環境へのインストールですから、システムとは分離されいろいろな開発環境を再現できるようになります。
 
 {% highlight python linenos %}
-~/project1 $ . py38env/bin/activate  
+# acitvate py38env
+~/project1 $ . py38env/bin/activate 
+# install latest pip 
 (py38env) ~/project1 $ pip install --upgrade pip
 
 Collecting pip
@@ -259,6 +268,7 @@ Installing collected packages: pip
       Successfully uninstalled pip-20.2.3
 Successfully installed pip-20.3.3
 
+# run python3.8
 (py38env) ~/project1 $ python3.8
 
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
