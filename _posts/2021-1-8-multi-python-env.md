@@ -175,7 +175,7 @@ py37envという仮想環境名で仮想環境を作成し、パッケージは�
 
 {% highlight python linenos %}
 . py37env/bin/activate
-(py37env) ~/project1 sowi python3.7
+(py37env) ~/project1  python3.7
 Python 3.7.9 (default, Nov 20 2020, 23:58:42) 
 [Clang 12.0.0 (clang-1200.0.32.27)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -189,7 +189,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 .               ..              bin             include         lib             pyvenv.cfg
 (py37env) ~/project1/py37env % 
 
-(py37env) ~/project1 sowi deactivate
+(py37env) ~/project1  deactivate
 {% endhighlight %}
 
 
@@ -233,21 +233,21 @@ py38env というPython3.8の仮想環境を作成します。
 
 {% highlight python linenos %}
 $ cd project1
-$ ~/project1 sowi python3.8 -m venv py38env
-$ ~/project1 sowi . py38env/bin/activate
-(py38env) ~/project1 sowi python3
+$ ~/project1  python3.8 -m venv py38env
+$ ~/project1  . py38env/bin/activate
+(py38env) ~/project1  python3
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
 [Clang 12.0.0 (clang-1200.0.32.28)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 \>>> exit()
-(py38env) ~/project1 sowi deactivate
+(py38env) ~/project1  deactivate
 {% endhighlight %}
 
 3.7と3.8 で別々の仮想環境を作成できました。　py38env をアクティベイトしてそこにpip パッケージのの最新バージョンをインストールします。仮想環境へのインストールですから、システムとは分離されいろいろな開発環境を再現できるようになります。
 
 {% highlight python linenos %}
-$ ~/project1 sowi . py38env/bin/activate  
-(py38env) ~/project1 sowi pip install --upgrade pip
+$ ~/project1  . py38env/bin/activate  
+(py38env) ~/project1  pip install --upgrade pip
 
 Collecting pip
   Using cached pip-20.3.3-py2.py3-none-any.whl (1.5 MB)
@@ -257,7 +257,7 @@ Installing collected packages: pip
     Uninstalling pip-20.2.3:
       Successfully uninstalled pip-20.2.3
 Successfully installed pip-20.3.3
-(py38env) ~/project1 sowi python3.8
+(py38env) ~/project1  python3.8
 Python 3.8.7 (default, Dec 30 2020, 10:14:55) 
 [Clang 12.0.0 (clang-1200.0.32.28)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
