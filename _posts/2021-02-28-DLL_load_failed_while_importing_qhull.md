@@ -34,10 +34,22 @@ ImportError: DLL load failed while importing qhull: 指定されたモジュー�
 
 [Winpython](https://winpython.github.io/)  3.8.3 に対して[日本地図にデータをマップする]({{ "2021/02/11/japan_map_data_apply.html" | relative_url}}){:target="_blank"}で紹介した環境を構築しようとした
 
-参考になった、[Webの記事](https://stackoverflow.com/questions/63613167/pycharm-error-dll-load-failed-while-importing-qhull-the-specified-module-could)では**仮想環境を再作成する**としています。<br>
-ヒントとなった部分の文章をそのまま転記します。
+参考になった、[Webの記事](https://stackoverflow.com/questions/63613167/pycharm-error-dll-load-failed-while-importing-qhull-the-specified-module-could)では
 
+**1) リプレースすべきモジュールが分かっているとして、正しいモジュールを再インストールする**<br>
+**2) .pyc のキャッシュファイルを削除する**<br>
+**3) 1), 2) でNGであれば、仮想環境を再作成し一からやり直す**<br>
+としています。ヒントとなった部分の文章をそのまま転記します。
 
+>Your question is too generic: there can be many reasons. My easiest and quick way to solve such class of problems (assuming you already checked the environment, and that you have relevant packages):<br><br>
+>  ・remove all python cache (.pyc files)
+> and if this doesn't solve the problem do:
+>
+>・copy the setting of your virtual environment (or conda environment)
+>
+>・delete the virtual environment (and then move or remove the remaining files)
+>
+>・create again the environment, with the packages you got from first point<br><br>
 >Very often, with such procedures, you get again a working environment. It seems that on some updates, some files remain in the wrong place, and so the wrong version of a DLL is used, and it confuse python and windows, about inconsistent status.
 >
 >Sometime you may have segmentation fault in Python program, alternate to failed to load DLL error.
@@ -46,11 +58,13 @@ ImportError: DLL load failed while importing qhull: 指定されたモジュー�
 
 
 
-確かに、このような状況に陥る前に、そのきっかけとなったパッケージの追加といった環境変更をしているはずですね。追加したモジュールの中に、間違った場所にDLLを置いてしまい、そのため違ったDLLが読み込まれる状況になり、ImportError: DLL load failed while importing qhullの例外を返してしまい、インポートができないということです。
+確かに、このような状況に陥る前に、そのきっかけとなったパッケージの追加といった環境変更をしているはずですね。従って、問題となったモジュールを適切なバージョンに入れ替えるのはその通りだと思います。<br>
+間違った場所をポイントするため、DLLが読み込まれない状況になり、ImportError: DLL load failed while importing qhullの例外を返してしまい、インポートができないということです。<br>
+正しいモジュールが分かれば、それに入れ替えて、キャッシュファイルをクリアすれば解決するだろうということです。
 
 #### 教訓１：仮想環境でパッケージの追加をテストし、安定してから本番(base)に導入
 
-パッケージの追加はモジュールの入れ替えが裏で行われて、このように突然、全然関係のない定番パッケージがインポートできなくなるというリスクがあります。これは、オープンソースの宿命です。このリスクから大切なpython環境を守るためにはやはり、仮想環境をいくつか作成して環境の変化が伴うパッケージの追加は、テスト環境で行うことが大切です。仮想化環境の作成については、以下のブログを参照してください。
+そもそも論として、パッケージの追加はモジュールの入れ替えが裏で行われて、このように突然、全然関係のない定番パッケージがインポートできなくなるというリスクがあります。これは、オープンソースの宿命です。このリスクから大切なpython環境を守るためにはやはり、仮想環境をいくつか作成して環境の変化が伴うパッケージの追加は、テスト環境で行うことが大切です。仮想化環境の作成については、以下のブログを参照してください。
 
 >
 >[Python3.7と3.8両方を使うための仮想環境を作成する_(Mac_Big_Sur)]({{ "2021/01/08/multi-python-env.html" | relative_url}})<br>
@@ -60,23 +74,23 @@ ImportError: DLL load failed while importing qhull: 指定されたモジュー�
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
 
-#### 疑問１：パッケージのアンインストールではだめなのか？
+#### 疑問１：パッケージのアンインストールで本当に解決するか？
 
-一から再作成するのではなく、きっかけとなったパッケージのアンインストールではだめなのでしょうか？ 答えは、NO：アンインストールしただけでは、問題は解決しないと思います。　
+一から再作成するのではなく、きっかけとなったパッケージのアンインストールではだめなのでしょうか？ <br>答えは、NO：アンインストールしただけでは、問題は解決しないと思います。　
 
 
 `キャッシュが残るなどしてトラブルが継続されることがあり、再作成した方が解決の近道`{:style="color: blue"} 
 
 >
->理由は、アンインストールしても、キャッシュが残るなどしてトラブルが継続されることがあり、キャッシュから何からクリアにするのであれば、結果的には再作成した方がいいというのが私の意見です。
+>理由は、アンインストールしてキャッシュファイルを全て削除したつもりでも、何かしら残骸が存在してトラブルが継続されることがあります。キャッシュを全てクリアにするのであれば、結果的には再作成した方がいいというのが私の意見です。
 >
 {:style="background-color: #faebd7; border-left: #faebd7; font-size: 1.0em"}
 
 
-`パッケージインストール自体が目的では無いため、トラブルに遭遇するまで、惰性でインストールしている場合あり`{:style="color: blue"} 
+`パッケージインストール自体が目的では無いため、トラブルに遭遇するまで、惰性でインストールし、原因となるモジュールの特定自体が難しい`{:style="color: blue"} 
 
 >
-パッケージのインストール自体も目的では無いため、パッケージの更新日、バージョンについて特に調べずに最新のパッケージを何も考えずに導入していたりしてそれからきっかけとなったパッケージを特定して、アンインストールしても中々、解決しないと思います。
+パッケージのインストール自体も目的では無いため、パッケージの更新日、バージョンについて特に調べずに最新のパッケージを何も考えずに導入していたりしてそれからきっかけとなったパッケージを特定すること自体が結構、難しいことだと思います。
 >
 {:style="background-color: #faebd7; border-left: #faebd7; font-size: 1.0em"}
 
@@ -96,8 +110,9 @@ ImportError: DLL load failed while importing qhull: 指定されたモジュー�
 #### 問題の解決
 
 > 私が遭遇したトラブルでは:<br>
->１）再インストールする<br>
->２）再インストールの際、pip list でモジュールのバージョンをチェックし、opencv-pythonのバージョンを4.5.1.48から 4.2.0.32に変更し解決。<br>
+>１）問題を再現する目的で一から環境を作成し、モジュールの依存関係を洗い出す<br>
+>２）再インストールの際、pip list でモジュールのバージョンをチェックし、原因となるモジュールを見つける。<br>
+>３）その結果、opencv-pythonのバージョンを4.5.1.48から 4.2.0.32に変更し解決。<br>
 >いい経験となりました。
 
 以下が`WinPython`{:style="color: blue"}で問題をクリアしたPIPリストになります(一部）。
