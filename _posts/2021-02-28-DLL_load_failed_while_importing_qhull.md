@@ -100,7 +100,7 @@ ImportError: DLL load failed while importing qhull: 指定されたモジュー�
 >２）再インストールの際、pip list でモジュールのバージョンをチェックし、opencv-pythonのバージョンを4.5.1.48から 4.2.0.32に変更し解決。<br>
 >いい経験となりました。
 
-以下がオWinPython で問題をクリアしたPIPリストになります(一部）。
+以下が`WinPython`{:style="color: blue"}で問題をクリアしたPIPリストになります(一部）。
 
 {% highlight python linenos %}
 gmpy2                         2.0.8
