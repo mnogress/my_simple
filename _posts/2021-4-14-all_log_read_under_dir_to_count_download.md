@@ -29,7 +29,8 @@ excerpt_separator: <!--more-->
 >２）アクセスログのフォーマットは上図のとおりですが、解析に不要な`referer` と `user agent` は含めません<br>
 >３）`renamed_dir` というディレクトリ配下に日次ファイルが溜め込まれています<br>
 >４）ファイル名`pdf.zip`へのGETアクションのログをカウントします。<br>
->５）[参考リンク](https://mmas.github.io/read-access-log-pandas)の内容を参考にコーディングします。
+>５）[Read Apache HTTP server access log with Pandas](https://mmas.github.io/read-apache-access-log-pandas){:target="_blank"}
+の内容を参考にコーディングします。<br>
 >
 >{:style="background-color: #faebd7; border-left: #faebd7; font-size: 1.0em"}
 
@@ -129,7 +130,7 @@ for gb in glob.glob(input_file_name, recursive=True):
 ### 参照ページ一覧
 必要に応じて以下のページを参考にしてください。
 >
-1) [Read Apache HTTP server access log with Pandas](https://mmas.github.io/read-access-log-pandas){:target="_blank"}<br>
+1) [Read Apache HTTP server access log with Pandas](https://mmas.github.io/read-apache-access-log-pandas){:target="_blank"}<br>
 2) [PythonでExcel自動化：複数のexcelファイルの同じ場所のセルの値を一つのシートにまとめる]({{ "2021/03/22/openpyxl_multi_excel_into_one_sheet.html" | relative_url}}){:target="_blank"}<br>
 3) [カラムデータの特定語句の有無を判定しカテゴリ化する]({{ "2020/04/02/who_to_call.html" | relative_url}}){:target="_blank"}<br>
 {:style="border-color: red; border-top-color: red; font-size: 1.0em; background-color: white;"}
