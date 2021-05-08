@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 列内のテキストで振り分ける
+title: カラムデータの特定語句の有無を判定しカテゴリ化する
 feature-img: "assets/img/2019_07_01/background-3045402_1920.png"   
 tags: [data handling, pandas]
 excerpt_separator: <!--more-->
