@@ -77,7 +77,7 @@ def parse_datetime(x):
 ### globでファイルを順次読み込む
 
 ディレクトリ配下のcsvファイルを順次読み込むには、`glob` を使います。
-csv形式としてハンドリングしますが、セパレータはカンマではありません。[参考リンク](https://mmas.github.io/read-access-log-pandas)に詳しい説明がありますが、以下の条件でのセパレータをアクセスログのフォーマットに合わせて定義します
+csv形式としてハンドリングしますが、セパレータはカンマではありません。[Read Apache HTTP server access log with Pandas](https://mmas.github.io/read-apache-access-log-pandas){:target="_blank"}に詳しい説明がありますが、以下の条件でのセパレータをアクセスログのフォーマットに合わせて定義します
 
 >１）スペースで区切る。ただし、以下の条件を満たす必要がある<br>
 >２）ダブルクォーテーション`""`で囲まれていないこと<br>
