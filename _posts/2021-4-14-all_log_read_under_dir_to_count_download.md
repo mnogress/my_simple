@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ディレクトリ配下の大量ファイルの順次読み込みと語句カウント
+title: globによる順次ファイル読み込み特定Stringのカウント
 feature-img: "assets/img/2019_07_01/easter-5061939_1280.jpg"   
 tags: [access_log, glob, Python]
 excerpt_separator: <!--more-->
