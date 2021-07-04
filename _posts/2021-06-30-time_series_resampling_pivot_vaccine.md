@@ -10,14 +10,14 @@ excerpt_separator: <!--more-->
 
 毎時や毎日のように一定間隔でデータを集計する時系列データを扱う際、datetimeオブジェクトとして日時データを取り込むと日次から週次などの間隔を変更、再集計（リサンプリングといいます）が簡単にできます。<!--more-->
 
-このブログでは政府が日々集計し公表している「新型コロナワクチンの接種状況」のデータを例にしてdatetimeオブジェクトの基本を解説しています。合わせてピボットテーブルでの集約方法も説明しています。双方を比較しながら、時系列データを使ったデータの分析、可視化の参考にしてください。
+このブログでは政府が日々集計し公表している[新型コロナワクチンの接種状況](https://cio.go.jp/c19vaccine_dashboard){:target="_blank"}のデータを例にしてdatetimeオブジェクトの基本を解説しています。合わせてピボットテーブルでの集約方法も説明しています。双方を比較しながら、時系列データを使ったデータの分析、可視化の参考にしてください。
 
 ### チートシート
 
 | やりたいこと                                                 | 方法                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 改行区切りJson形式の接種データ(`prefecture.ndjson`)をデータフレームとして読み込む | `import json`<br/>`import pandas as pd`<br/>`import numpy as np`<br>`records = map(json.loads, open('prefecture.ndjson'))`<br/>`df = pd.DataFrame.from_records(records)` |
-| データ型が文字列のカラム名"date"を`datetime object` にする   | `df['date'].dtypes`<br>=>`dtype('O')`<br><br>`df['date']=pd.to_datetime(df['date'])`<br><br>`dtype('<M8[ns]')`<br>=>`df['date'].dtypes`<br> |
+| データ型が文字列のカラム名"date"を`datetime object` にする   | `df['date'].dtypes`<br>=>`dtype('O')`<br><br>`df['date']=pd.to_datetime(df['date'])`<br><br>`df['date'].dtypes`<br>=>`dtype('<M8[ns]')`<br> |
 | `datetime object` にしたcolumn名` 'date'` をインデックスにする | `df = df.set_index('date')`                                  |
 | df1 を一回目接触(status =1)のデータフレーム<br>df2を二回目接種(status=2)と２つに分割する | `df1 = df[df['status'] == 1]`<br/>`df2 = df[df['status'] == 2]`<br/>`print(df1.shape)`<br/>`print(df2.shape)` |
 | カラム名'date'の時系列データ<br>(`summary_by_date`)を`dateオブジェクト`として読み込み<br> データフレーム名`df3`とする | `df3 = pd.read_csv("summary_by_date.csv", parse_dates=["date"])` |
