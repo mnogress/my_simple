@@ -1,6 +1,6 @@
 ---
 layout: post
-title: globによる順次ファイル読み込み特定Stringのカウント
+title: globによるファイルの順次読み込みと特定文字列のカウント
 feature-img: "assets/img/2019_07_01/easter-5061939_1280.jpg"   
 tags: [access_log, glob, Python]
 excerpt_separator: <!--more-->

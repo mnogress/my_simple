@@ -21,6 +21,8 @@ Pandas でデータ解析をしていて、結果を可視化するための作�
 
 [日本語対応した_matplotlib_2軸グラフ]({{ "2021/02/02/japanize_matplotlib_two_axis.html" | relative_url}}){:target="_blank"}で今回のグラフのラベルやタイトルの日本語化の方法を紹介しています。併せて参考にしてください。
 
+[EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する]({{ "_posts/2021-07-08-japan_population_by_prefecture.md" | relative_url}}){:target="_blank"}では、シンプルな日本語化した棒グラフのサンプルがあります。　合わせてご参照ください。
+
 
 ---
 
