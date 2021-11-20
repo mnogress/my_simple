@@ -1,13 +1,10 @@
 ---
-layout:post
-title:Docker for Windows でJupyter Notebook コンテナを起動させる
-feature-img: "assets/img/2019_07_01/road-4348087_1280.jpg"
-tags:[Docker, Jupyter Notebook, Windows]
+layout: post
+title: Docker for Windows でJupyter Notebook コンテナを起動させる
+feature-img: "assets/img/2020_08_15/ship-6271649_1280.jpg"
+tags: [Docker, Jupyter Notebook, Windows]
 excerpt_separator: <!--more-->
-
 ---
-
-
 
 Docker 環境があると、ちょっとPythDon の勉強用の試しコード作成等や本来ならば個人のPCでやるべきようなことを仕事用などのPCを使う場合等、PCを汚したくない時にDocker環境の中にJupyter Notebook稼働環境を作ってPC環境から独立して使うことができます。
 
@@ -25,7 +22,7 @@ Docker Dockerfile の中身は以下のとおりです。ファイルの設置�
 
 Dockerfile の中身は以下のとおりです。ファイルの設置先は、Jupyter Notebook のドキュメントルートとなるWORKDIR に設置します。
 
-![docker_1](C:\Users\tkjyoke\docker_jupyter\project_data\docker_1.png)
+![docker_1]({{ "assets/img/2020_08_15/docker_1.png" | relative_url}})<br>
 
 ### チートシート
 
@@ -44,8 +41,7 @@ Dockerfile で指定したWORKDIR と同じディレクトリを作成します�
 
 コマンドプロンプトより`docker build -t dev_jupyter . `{:style="background: #ffebf6"}と入力します。`dev_jupyter`{:style="background: #ffebf6"}という名前のDockerイメージが作られます。後述する`compose.yml`でもコンテナが無い場合は、Dockerイメージは作成されますが、Dockerfileで記述した内容どおりイメージファイルが作成されることを確認したいので、まずはDockerfille を起動します。
 
-```
-{% highlight python linenos %}
+{% highlight python %}
 PS C:\Users\xxxx\docker_jupyter> docker build -t dev_jupyter . 
 [+] Building 62.5s (10/10) FINISHED
  => [internal] load build definition from Dockerfile
@@ -63,47 +59,47 @@ PS C:\Users\xxxx\docker_jupyter> docker build -t dev_jupyter .
  => => exporting layers                                                                   
  => => writing image sha256:f88825ec2b01676addbdd482f8bb3b77bca6325d7efacf8f
  => => naming to docker.io/library/dev_jupyter 
- {% endhighlight %}
-```
+{% endhighlight %}
 
 入力した内容とその詳細は下図を参照してください。
 
-<img src="C:\Users\tkjyoke\docker_jupyter\project_data\docker_2.png" alt="docker_2" style="zoom: 50%;" />
+![docker_2]({{ "assets/img/2020_08_15/docker_2.png" | relative_url}})<br>
 
 `docker images`{:style="background: #ffebf6"}とコマンド入力し、作成されたDocker イメージを確認します。添付のスクリーンショットのとおり作成されました。赤枠が今回作成したDockerイメージに相当します。
 
-<img src="C:\Users\tkjyoke\docker_jupyter\project_data\docker_3.png" alt="docker_3" style="zoom:67%;" />
+![docker_3]({{ "assets/img/2020_08_15/docker_3.png" | relative_url}})<br>
+
 
 ### コンテナを作成する
 
 イメージを作成しただけではノートブックは使えません。ノートブックを使えるようにするため、コンテナを作成します。コマンドプロンプトから`RUN`コマンドで作成する方法とdocker-composeを使う方法を紹介します。
 
->```
->>[Point！]{:style="color: blue; font-size: 1.3em"} <br>`
 >
->`コンテナが消滅してもプログラムなどのユーザデータはWindows PC上に保存できるようでJupyter NotebookのファイルをコンテナとPC間で共有できるようにする。
+>`[Point！]`{:style="color: blue; font-size: 1.3em"} <br>
+>
+>コンテナが消滅してもプログラムなどのユーザデータはWindows PC上に保存できるようでJupyter NotebookのファイルをコンテナとPC間で共有できるようにする。
 >【方法1】Windows標準のコマンドプロンプト<br>
 >【方法2】GitBashとdocker-composeを使う方法を紹介します。
->```
-
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
 
 
-#### Windows標準のコマンドプロンプトの方法
+### Windows標準のコマンドプロンプトの方法
 
-コマンドプロンプトからRUNコマンドを入力して、コンテナをすぐ使える起動状態で作成します。Windows版のDocker を使っています。共有できるようにするため、volumeを定義します。
+コマンドプロンプトからRUNコマンドを入力して、コンテナをすぐ使える起動状態で作成します。Windows版のDocker を使っています。
+共有できるようにするため、volumeを定義します。
 
 `C:\Users\xxxx\docker_jupyter`{:style="background: #ffebf6"}をコンテナとPCの共有ディレクトリとし、Pythonコード等をPCからエキスプローラで直接共有できるようにします。コマンドの詳細は下図のとおりです。
 
-![docker_6](C:\Users\tkjyoke\docker_jupyter\project_data\docker_6.png)
+![docker_6]({{ "assets/img/2020_08_15/docker_6.png" | relative_url}})<br>
 
 Windows標準のコマンドプロンプトからコマンド投入することを前提にしたコマンドフォーマットを紹介します。　
 
-`docker container run -p 8888:8888  -v "%cd%":/docker_jupyter  dev_jupyter`{:style="background: #ffebf6"}以下が実際のコマンド投入後のログになります。
+`docker container run -p 8888:8888  -v "%cd%":/docker_jupyter  dev_jupyter`{:style="background: #ffebf6"}
+<br>
+以下が実際のコマンド投入後のログになります。
 
-```
-{% highlight python linenos %}
+{% highlight python %}
 C:\Users\xxxx\docker_jupyter>docker images
 REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
 dev_jupyter   latest    xxx93b79b3   20 hours ago   395MB
@@ -123,13 +119,12 @@ C:\Users\xxxx\docker_jupyter>docker container run -p 8888:8888  -v "%cd%":/docke
         http://547aa9fcc555:8888/?token=ba2fadfa74b2779e84e2f52cd07296c5aexxxxxxxbe05fd5
      or http://127.0.0.1:8888/?token=ba2fadfa74b2779e84e2f52cd07296c5aexxxxxxxbe05fd5
 {% endhighlight %}
-```
 
 起動オプションで指定したとおり、ノートブックはブラウザから自動的に起動しません。`copy and paste one of these URLs:`とあるURLをブラウザのURL指定部分にコピペすると、下図のとおりノートブックがコンテナを起動した際のカレントディレクトリを共有ディレクトリ（コンテナの外のDirectory）上に起動します。これらのファイルはDocker コンテナーからアクセスしJupyter Notebook が起動するだけでなく、PCからもエキスプローラでアクセスできるようになります。
 
 
+![docker_7]({{ "assets/img/2020_08_15/docker_7.png" | relative_url}})<br>
 
-![docker_7](C:\Users\tkjyoke\docker_jupyter\project_data\docker_7.png)
 
 
 
@@ -137,16 +132,17 @@ C:\Users\xxxx\docker_jupyter>docker container run -p 8888:8888  -v "%cd%":/docke
 
 `docker-compose.yml`というcompose ファイルをDockefile と同じディレクトリに配下に設置します。
 
-![docker_9](C:\Users\tkjyoke\docker_jupyter\project_data\docker_9.png)
+![docker_9]({{ "assets/img/2020_08_15/docker_9.png" | relative_url}})<br>
+
 
 docker-compose.ymlの中身は以下のとおりです。ここでは、volume の記述`${PWD}`が とlinux 用のbashで記述していますので、Windows コマンドプロンプトではなく、[Git Bash](https://gitforwindows.org/) から`docker-compose up`コマンドを打つ必要があります。
 
-![docker_8](C:\Users\tkjyoke\docker_jupyter\project_data\docker_8.png)
+![docker_8]({{ "assets/img/2020_08_15/docker_8.png" | relative_url}})<br>
+
 
 コンテナが無い場合は、Dockerfile を参照してキャッシュからイメージを再作成した上でコンテナを作成します。
 
-```
-
+{% highlight python %}
 $ docker-compose up
 [+] Building 7.4s (8/8) FINISHED
  => [internal] load build definition from Dockerfile                  
@@ -196,6 +192,6 @@ dev_jupyter-notebook  |         file:///root/.local/share/jupyter/runtime/nbserv
 dev_jupyter-notebook  |     Or copy and paste one of these URLs:
 dev_jupyter-notebook  |         http://251935dd8e24:8888/?token=34a5c0bfbbe7359004b4ac759a5749a90b3853e205f7ba34
 dev_jupyter-notebook  |      or http://127.0.0.1:8888/?token=34a5c0bfbbe7359004b4ac759a5749a90b3853e205f7ba34
+ {% endhighlight %}
 
-```
 
