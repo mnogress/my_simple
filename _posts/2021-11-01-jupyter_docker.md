@@ -20,8 +20,6 @@ Docker 環境があると、ちょっとPythDon の勉強用の試しコード�
 
 Docker Dockerfile の中身は以下のとおりです。ファイルの設置先は、Jupyter Notebook のドキュメントルートとなるWORKDIR に設置します。
 
-Dockerfile の中身は以下のとおりです。ファイルの設置先は、Jupyter Notebook のドキュメントルートとなるWORKDIR に設置します。
-
 ![docker_1]({{ "assets/img/2020_08_15/docker_1.png" | relative_url}})<br>
 
 ### チートシート
