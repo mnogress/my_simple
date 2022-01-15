@@ -55,7 +55,7 @@ PS C:\Users\xxxx\docker_jupyter> docker build -t dev_jupyter .
  => [3/3] RUN pip install numpy && pip install pandas && pip install jupyter
  => exporting to image                            
  => => exporting layers                                                                   
- => => writing image sha256:f88825ec2b01676addbdd482f8bb3b77bca6325d7efacf8f
+ => => writing image sha256:f88825ec2b01676addbvdddd482f8bb3b77bca6325efacf8f
  => => naming to docker.io/library/dev_jupyter 
 {% endhighlight %}
 
