@@ -9,14 +9,14 @@ excerpt_separator: <!--more-->
 特徴量選択（feature selection）＝どれを説明変数として使うかは、データ分析では重要です。実際のところドメイン知識が大きな力を発揮するため、データサイエンスに精通しないがドメイン知識をもつ専門家にもっと、モデルを作成してもらうためIBM のSPSS Modeler等の統計ソフトは大手企業、官公庁向の研究者やテータ分析担当者向けに導入が進んでいます。
 
 <!--more-->
-このBlogでは、特徴量選択についてXGBoostのアルゴリズムでSPSS Modeler の特徴量選択とPython Scikit-LearnのX結果を比較してみたいと思います。
+このBlogでは、特徴量選択についてXGBoostのアルゴリズムでSPSS Modeler の特徴量選択とPython Scikit-Learnの結果を比較してみたいと思います。
 
 この記事で扱うPC環境は以下のとおりです。
 
 | ソフトウエア     | バージョン                                                       |
 | -------- | ----------------------------------------------------------- |
 | SPSS Modeler | 18.3  on Windows 10                     |
-| Scikit-Learn   | 1.4.0 on Python 3.8 |
+| XGBoost on Scikit-learn   | 1.4.0 on Python 3.8 |
 
 使うデータはカリフォルニア住宅価格です。Scikit-Learnの標準データセットです。
 - F0: (MedInc)median income in block-`収入の中央値`{:style="color: blue"} 
@@ -58,7 +58,7 @@ xgb_model.fit(x,y)
 {% endhighlight %}{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 特徴量を可視化します。左の図のとおり、経度:F6、緯度:F7は計算上は、住宅価格の決定要因としては、収入に次ぐ要因となっています。
-外して再計算した結果を右側に並べて見るとその影響がよく分かりますね。
+それらを除外して再計算した結果を右側に並べて見るとその影響がよく分かりますね。
 
 ![feature_importance1]({{ "assets/img/2020_08_15/fig_3.png" | relative_url}})<br>
 
@@ -87,7 +87,7 @@ SPSS Modeler では：
 >
 `【考察】`{:style="color: blue; font-size: 1.3em"} <br>
 カルフォルニアの住宅価格の決定要因としては
-1. 収入(お金に余裕があるかどうか　＞　部屋数（家の広さ）＞　その地域に占める住宅地の大きさ（住宅街かそうで無いか）
+1. 収入(お金に余裕があるかどうか)　＞　部屋数（家の広さ）＞　その地域に占める住宅地の大きさ（周辺地域が住宅街かそうで無いか）
 2. 築年数はさほど影響しない
 3. 計算に使用したアルゴリズム XGBoost
 {:style="background-color: #e0dff0; border-left: #e0dff0; font-size: 1.0em"}
