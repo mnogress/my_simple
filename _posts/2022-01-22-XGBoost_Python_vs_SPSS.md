@@ -78,12 +78,11 @@ SPSS Modeler では：
 3. F5: (AveOccup)average house occupancy-平均住宅占有率
 とPython では3番目の`平均部屋数`{:style="color: blue"} が２番目という結果でしたが、それ以外は同じ順位でした。
 
-`＊SPSS Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。`{:style="background-color: #faf5d2; font-size: 0.82em"}
 
 ![feature_importance1]({{ "assets/img/2020_08_15/fig_5.png" | relative_url}})<br>
 
+`＊SPSS Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。`{:style="background-color: #faf5d2; font-size: 0.82em"}
 
-この事から
 >
 `【考察】`{:style="color: blue; font-size: 1.3em"} <br>
 カルフォルニアの住宅価格の決定要因としては
