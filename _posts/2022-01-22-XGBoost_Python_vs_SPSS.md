@@ -68,14 +68,14 @@ xgb_model.fit(x,y)
 次に同じデータセットでSPSS Modeler を使って計算します。　左がPythonで右がSPSS Modeler での計算結果です。 計算結果に少しだけ、差異があります。
 Python では：
 1. F0: (MedInc)median income in block-収入の中央値
-2. F5: (AveOccup)average house occupancy-平均住宅占有率
+2. F5: (AveOccup)average number of household members-平均世帯人数
 3. F2: (AveRooms)average number of rooms-平均部屋数
 と平均住宅占有率が２番目に大きな影響力があるとい結果でしたが
 
 SPSS Modeler では：
 1. F0: (MedInc)median income in block-収入の中央値
 2. F2: (AveRooms)average number of rooms-平均部屋数
-3. F5: (AveOccup)average house occupancy-平均住宅占有率
+3. F5: (AveOccup)average number of household members-平均世帯人数
 とPython では3番目の`平均部屋数`{:style="color: blue"} が２番目という結果でしたが、それ以外は同じ順位でした。
 
 
@@ -86,7 +86,7 @@ SPSS Modeler では：
 >
 `【考察】`{:style="color: blue; font-size: 1.3em"} <br>
 カルフォルニアの住宅価格の決定要因としては
-1. 収入(お金に余裕があるかどうか)　＞　部屋数（家の広さ）＞　その地域に占める住宅地の大きさ（周辺地域が住宅街かそうで無いか）
+1. 収入(お金に余裕があるかどうか)　＞　部屋数（家の広さ）＞　平均世帯人数（何人暮らしか）
 2. 築年数はさほど影響しない
 3. 計算に使用したアルゴリズム XGBoost
 {:style="background-color: #e0dff0; border-left: #e0dff0; font-size: 1.0em"}
