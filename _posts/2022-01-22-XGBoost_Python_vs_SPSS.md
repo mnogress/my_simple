@@ -88,7 +88,7 @@ SPSS Modeler では：
 カルフォルニアの住宅価格の決定要因としては
 1. 収入(お金に余裕があるかどうか)　＞　部屋数（家の広さ）＞　平均世帯人数（何人暮らしか）
 2. 築年数はさほど影響しない
-3. 計算に使用したアルゴリズム XGBoost
+3. 計算に使用したアルゴリズム XGBoostにおいてPython, SPSS ともほぼ同じ結論を導いている
 {:style="background-color: #e0dff0; border-left: #e0dff0; font-size: 1.0em"}
 
 
