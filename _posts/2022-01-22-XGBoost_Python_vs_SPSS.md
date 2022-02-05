@@ -18,7 +18,11 @@ excerpt_separator: <!--more-->
 | SPSS Modeler | 18.3  on Windows 10                     |
 | XGBoost on Scikit-learn   | 1.4.0 on Python 3.8 |
 
-使うデータはカリフォルニア住宅価格です。Scikit-Learnの標準データセットです。
+使うデータは[カリフォルニア住宅価格](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset
+){:target="_blank"}です。Scikit-Learnの標準データセットです。
+
+20640 rows × 9 columns　のサイズです。各々のカラムの意味は以下のとおりです。
+
 - F0: (MedInc)median income in block-`収入の中央値`{:style="color: blue"} 
 - F1: (HouseAge)median house age in block-`築年数の中央値`{:style="color: blue"} 
 - F2: (AveRooms)average number of rooms-`平均部屋数`{:style="color: blue"} 
@@ -28,12 +32,31 @@ excerpt_separator: <!--more-->
 - F6: (Latitude)house block latitude-`家屋の緯度`{:style="color: blue"} 
 - F7  (Longitude)house block longitude-`ハウスブロックの経度`{:style="color: blue"} 
 
+目的変数はカリフォルニア地区の住宅価格で単位は10万ドルです。データセット自体は1990年の米国国勢調査(U.S. census) のもので、一行に国勢調査で使われるブロックグループ単位で集計されています。ブロックグループは米国国勢調査において、最小の地理的な単位です。概ね、600～3,000人を一つのグループにしています。　
+
+世帯（household) は一つの住宅に居住する人数です。平均部屋数、ベッドルーム数はこの統計が世帯当たりで計算していますが、しばしばブロックグループ単位で計算すると「数世帯」と「多くの空き家」があるようなリゾート地では現実離れした大きな数字になる場合があります。それら大きな数字は外れ値としての処理が必要です。
+
+![outliner]({{ "assets/img/2020_08_15/fig_0.png" | relative_url}})<br>
+
+外れ値の求め方には色々な方法があります。代表的な方法は以下の二つです。　いずれも、SPSS Modeler でサポートされています。
+1. 平均から標準偏差のn倍(例：3倍）を範囲外とする
+2. 全体のnパーセンタイル（例：0.99)を超えるものを範囲外とする
+
+ここでは、方法2の 99パーセンタイルで平準化した場合の分布イメージを載せます。
+
+![99percentail]({{ "assets/img/2020_08_15/fig_99.png" | relative_url}})<br>
+
+### ドメイン知識による次元削減
+
+特徴量の抽出で重要なタスクはドメイン知識を持つ、データセット由来の業界知識・専門知識を持ついわゆる専門家からデータセットのカラムのうち、特徴量（説明変数）としては
+適切で無いものを除外する事です。今回の不動産価格においてはその地理的座標は不要とのことなので、ブロックの地理的座標軸（経度:F6、緯度:F7）は除きます。
+
 >
 `[ここがポイント！]`{:style="color: blue; font-size: 1.3em"} <br>
-上記が説明変数になりますが、このうちドメイン知識より家の座標軸（経度:F6、緯度:F7）は除きます。
+上記が説明変数になりますが、このうちドメイン知識よりブロックの地理的座標軸（経度:F6、緯度:F7）は除きます。
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
-### 経度:F6、緯度:F7のデータが与える影響を可視化する
+### ドメイン知識で除かれる経度:F6、緯度:F7のデータが与える影響を可視化する
 
 経度:F6、緯度:F7を除く前のXGBoostによるFeature Imporanceの計算をPythonで行ない、経度:F6、緯度:F7の影響を見ておく事とします。
 Code は以下の通りです。　とても簡単なコードですね。
