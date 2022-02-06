@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python と SPSS Modeler で XGBoost の特徴量選択を比較する
+title: Python と SPSS® Modeler で XGBoost の特徴量選択を比較する
 feature-img: "assets/img/2020_08_15/circuit-board-6522546_1280.png"
 tags: [Python, SPSS Modeler, XGBoost]
 excerpt_separator: <!--more-->
@@ -10,6 +10,7 @@ excerpt_separator: <!--more-->
 
 <!--more-->
 このBlogでは、特徴量選択についてXGBoostのアルゴリズムでSPSS® Modeler の特徴量選択とPython Scikit-Learnの結果を比較してみたいと思います。
+
 SPSS® Modeler には、Python 固有のアルゴリズムを使用するためのノードが用意されています。XGBoost Tree© は、
 ツリー モデルを基本モデルとして使用する勾配ブースティング・アルゴリズムを実装しており、Python で実装されています。
 
@@ -88,16 +89,16 @@ xgb_model.fit(x,y)
 ![feature_importance1]({{ "assets/img/2020_08_15/fig_3.png" | relative_url}})<br>
 
 
-### Python (Sciki-Learn) vs SPSS Modeler 特徴量計算を比較する
+### Python (Sciki-Learn) vs SPSS® Modeler 特徴量計算を比較する
 
-次に同じデータセットでSPSS Modeler を使って計算します。　左がPythonで右がSPSS Modeler での計算結果です。 計算結果に少しだけ、差異があります。
+次に同じデータセットでSPSS® Modeler を使って計算します。　左がPythonで右がSPSS® Modeler での計算結果です。 計算結果に少しだけ、差異があります。
 Python では：
 1. F0: (MedInc)median income in block-収入の中央値
 2. F5: (AveOccup)average number of household members-平均世帯人数
 3. F2: (AveRooms)average number of rooms-平均部屋数
 と平均住宅占有率が２番目に大きな影響力があるとい結果でしたが
 
-SPSS Modeler では：
+SPSS® Modeler では：
 1. F0: (MedInc)median income in block-収入の中央値
 2. F2: (AveRooms)average number of rooms-平均部屋数
 3. F5: (AveOccup)average number of household members-平均世帯人数
@@ -106,10 +107,10 @@ SPSS Modeler では：
 
 ![feature_importance1]({{ "assets/img/2020_08_15/fig_5.png" | relative_url}})<br>
 
-`＊SPSS Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。`{:style="background-color: #faf5d2; font-size: 0.82em"}
+`＊SPSS® Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。`{:style="background-color: #faf5d2; font-size: 0.82em"}
 
-### SPSS Modeler ストリームと設定
-SPSS Modeler 上でのストリームと設定の概要は以下のとおりです。
+### SPSS® Modeler ストリームと設定
+SPSS® Modeler 上でのストリームと設定の概要は以下のとおりです。
 
 #### ストリーム画面
 ![SPSS_Modeler1]({{ "assets/img/2020_08_15/fig_6.png" | relative_url}})<br>
@@ -126,7 +127,7 @@ SPSS Modeler 上でのストリームと設定の概要は以下のとおりで�
 カルフォルニアの住宅価格の決定要因としては
 1. 収入(お金に余裕があるかどうか)　＞　部屋数（家の広さ）＞　平均世帯人数（何人暮らしか）
 2. 築年数はさほど影響しない
-3. 計算に使用したアルゴリズム XGBoostにおいてPython, SPSS ともほぼ同じ結論を導いている
+3. 計算に使用したアルゴリズム XGBoostにおいてPython, SPSS® ともほぼ同じ結論を導いている
 {:style="background-color: #e0dff0; border-left: #e0dff0; font-size: 1.0em"}
 
 
