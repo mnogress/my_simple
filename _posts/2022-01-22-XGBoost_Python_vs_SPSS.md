@@ -6,10 +6,12 @@ tags: [Python, SPSS Modeler, XGBoost]
 excerpt_separator: <!--more-->
 ---
 
-特徴量選択（feature selection）＝どれを説明変数として使うかは、データ分析では重要です。実際のところドメイン知識が大きな力を発揮するため、データサイエンスに精通しないがドメイン知識をもつ専門家にもっと、モデルを作成してもらうためIBM のSPSS Modeler等の統計ソフトは大手企業、官公庁向の研究者やテータ分析担当者向けに導入が進んでいます。
+特徴量選択（feature selection）＝どれを説明変数として使うかは、データ分析では重要です。実際のところドメイン知識が大きな力を発揮するため、データサイエンスに精通しないがドメイン知識をもつ専門家にもっと、モデルを作成してもらうためIBM のSPSS® Modeler等の統計ソフトは大手企業、官公庁向の研究者やテータ分析担当者向けに導入が進んでいます。
 
 <!--more-->
-このBlogでは、特徴量選択についてXGBoostのアルゴリズムでSPSS Modeler の特徴量選択とPython Scikit-Learnの結果を比較してみたいと思います。
+このBlogでは、特徴量選択についてXGBoostのアルゴリズムでSPSS® Modeler の特徴量選択とPython Scikit-Learnの結果を比較してみたいと思います。
+SPSS® Modeler には、Python 固有のアルゴリズムを使用するためのノードが用意されています。XGBoost Tree© は、
+ツリー モデルを基本モデルとして使用する勾配ブースティング・アルゴリズムを実装しており、Python で実装されています。
 
 この記事で扱うPC環境は以下のとおりです。
 
@@ -106,6 +108,19 @@ SPSS Modeler では：
 
 `＊SPSS Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。`{:style="background-color: #faf5d2; font-size: 0.82em"}
 
+### SPSS Modeler ストリームと設定
+SPSS Modeler 上でのストリームと設定の概要は以下のとおりです。
+
+#### ストリーム画面
+![SPSS_Modeler1]({{ "assets/img/2020_08_15/fig_6.png" | relative_url}})<br>
+
+#### データ型ノードの設定
+![SPSS_Modeler2]({{ "assets/img/2020_08_15/fig_7.png" | relative_url}})<br>
+
+#### XGBoost Tree Pythonノードの作成オプション
+![SPSS_Modeler3]({{ "assets/img/2020_08_15/fig_8.png" | relative_url}})<br>
+
+
 >
 `【考察】`{:style="color: blue; font-size: 1.3em"} <br>
 カルフォルニアの住宅価格の決定要因としては
@@ -121,4 +136,5 @@ SPSS Modeler では：
 1) [Python API Reference](https://xgboost.readthedocs.io/en/stable/python/python_api.html){:target="_blank"}<br>
 2) [XGBoost ツリー・ノード](https://www.ibm.com/docs/ja/spss-modeler/SaaS?topic=nodes-xgboost-tree-node){:target="_blank"}<br>
 3) [特徴量選択（feature selection）方法３選〜Python](https://lunarwoffie.com/3feature-selection-algo-jp/){:target="_blank"}<br>
+4) [Python ノード](https://www.ibm.com/docs/ja/spss-modeler/18.2.0?topic=help-python-nodes){:target="_blank"}<br>
 {:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
