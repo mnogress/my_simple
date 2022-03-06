@@ -31,7 +31,7 @@ df1.merge(df2,how='left',on='key')
 
 ### インデックスJoin
 
-merge left では軸となるキー列を`on=キーとなるなる列名`{:style="background: #ffebf6"}で指定しましたが、インデックスJoin ではデータフレームのインデックスに沿ってデータフレーム同士を結合します。
+merge left では軸となるキー列を`on=キーとなる列名`{:style="background: #ffebf6"}で指定しましたが、インデックスJoin ではデータフレームのインデックスに沿ってデータフレーム同士を結合します。
 
 {% highlight python linenos %}
 df1 = pd.DataFrame({'col1': ['A', 'B', 'C', 'D'],
