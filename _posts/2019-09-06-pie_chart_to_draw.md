@@ -129,10 +129,16 @@ df_JobRole.plot.bar()
 
 ![df.shape]({{ "assets/img/2019_07_01/jobrole_bar.png" | relative_url}})
 
-参照ドキュメント(英語）のURLも追記します。
+### 参照ページ一覧
 
+以下のページ（本サイト内及び外部サイト）も参照してください。
 
-参照　[matplotlib_documentation](https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.pie){:target="_blank"}
+>
+1) [df.value_counts() の結果をパワポ用にビジュアル化する](https://www.so-wi.com/2022/03/11/df_value_counts_visualization.html){:target="_blank"}<br>
+2) [日本語対応した matplotlib 2軸グラフ](https://www.so-wi.com/2021/02/02/japanize_matplotlib_two_axis.html){:target="_blank"}<br>
+3) [クロス集計表とヒートマップでデータセットを理解する](https://www.so-wi.com/2020/12/22/cross_tab_heat_map.html){:target="_blank"}<br>
+4) [matplotlib_documentation](https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.pie){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
 
 ### ひとこと
 
