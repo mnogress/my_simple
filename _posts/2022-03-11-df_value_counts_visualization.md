@@ -26,7 +26,7 @@ excerpt_separator: <!--more-->
 
 
 
-### 要素数を調べる
+### 各々のラベルの要素数を調べる
 
 各々のラベルの要素の数を調べるには、以下のCodeで一発で分かります。
 
@@ -104,8 +104,29 @@ plt.show()
 ![index_join]({{ "assets/img/2020_08_15/df_pic422.png" | relative_url}})<br>
 
 
+### おまけ　構成比率を追加しました
+
+おまけとして、データフレームにも度数に加えて構成比を追加してみました。　
+`format_dict = { '構成比': '{:.1%}'}`{:style="background: #cbe8f5"} で％表示にしています。　これも報告用に整形する際のマストアイテムですね。
+
+{% highlight python linenos %}
+df[col_name].value_counts()
+tab = df[col_name].value_counts()
+tab = pd.DataFrame(tab)
+tab = tab.rename_axis(col_name)
+tab['構成比'] = (tab[col_name] / tab[col_name].sum() )
+tab.rename(columns={col_name: '度数'}, inplace = True)
+
+format_dict = { '構成比': '{:.1%}'}
+display(tab.style.format(format_dict))
+
+{% endhighlight %}
+
+![index_join]({{ "assets/img/2020_08_15/df_pic51.png" | relative_url}})<br>
+
+
 ### 参照ページ一覧
-このブログを作成するにあたり、このサイトの以下のページも併せてご覧ください。
+このブログと一緒にこのサイト内の以下のページも併せてご覧ください。
 >
 1) [value_counts()の結果を plt.subplots()で円グラフ化する](https://www.so-wi.com/2019/09/06/pie_chart_to_draw.html){:target="_blank"}<br>
 2) [日本語対応した matplotlib 2軸グラフ](https://www.so-wi.com/2021/02/02/japanize_matplotlib_two_axis.html){:target="_blank"}<br>
