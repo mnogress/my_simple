@@ -21,7 +21,7 @@ PythonおよびWindow 用のPython 処理系とNumpy, Pandas, Scikit-learn, Tens
 
 ### インストールはZIP解凍するだけ
 
-[WinPython](https://winpython.github.io/) の最大の特徴は、自己解凍形式exeで圧縮されており好きなフォルダ配下でダブルクリックして解凍するだけの非常に簡単なインストールできてしまうところです。
+[WinPython](https://winpython.github.io/){:target="_blank"} の最大の特徴は、自己解凍形式exeで圧縮されており好きなフォルダ配下でダブルクリックして解凍するだけの非常に簡単なインストールできてしまうところです。
 
 不要となりアンインストールしたい時にはそのフォルダを削除するだけです。しかも、主要なパッケージが組み込まれているので　[Python3.7と3.8両方を使うための仮想環境を作成する_(Windows10)]({{ "2021/02/25/win10_multi_python_venv.html" | relative_url}}){:target="_blank"}や、[仮想環境にPIPで定番パッケージを導入する]({{ "2021/01/15/Install_numpy_pandas_tensorflow_by_pip.html" | relative_url}}){:target="_blank"}で紹介した手順でインターネット経由で各モジュールをダウンロード、インストールすることなく、解凍すればすぐに使えます。オフライン条件下のPython開発環境には持って来いのソフトウェアと言えます。
 
