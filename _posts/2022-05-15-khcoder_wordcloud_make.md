@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Google フォームで収集した多重回答の結果をPandas で集計する
+title: KHCoder の頻出語集計機能を使ってWordCloudを作成する
 feature-img: "assets/img/2020_08_15/abstract-1867656_1280.jpg"
-tags: [Pandas, Google Forms, Python]
+tags: [Text mining, WordCloud, Python]
 excerpt_separator: <!--more-->
 ---
 
-フォーム入力の方法の一つである「チェックボックス入力形式」は、通常、ユーザが複数の回答を選択できるように用意されています。　その結果は多重回答といいます。多重回答の集計は、ラジオボタンで択一選択する場合と異なり、ちょっとしたコツが必要です。今回は、Google フォームに入力された多重回答をサンプルにしてその集計方法についてブログにまとめてみました。
+WordCloud は、どんな言葉が頻出しているか、キーワードを可視化し全体像を俯瞰するツールとしてよく使われています。その使い方は
+[[Python]WordCloudで岸田首相の所信表明演説のキーワードを可視化する](https://qiita.com/growsic/items/0663299ff8ed07ba9d30){:target="_blank"}で紹介されており、思いの外、手軽に作成できますが、問題は数多ある語句をどのように整理、コントロールしてWordCloud上に出現させるかです。
 
 <!--more-->
 
