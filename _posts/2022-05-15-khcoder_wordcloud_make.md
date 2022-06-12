@@ -1,7 +1,7 @@
 ---
 layout: post
 title: KH Coder で複合語をコントロールしてWordCloudを作成する
-feature-img: "assets/img/2020_08_15/word-cloud-gd51f18acc_1280.png"
+feature-img: "assets/img/2020_08_15/lemon-5703655_1280.jpg"
 tags: [KH Coder, WordCloud, Python]
 excerpt_separator: <!--more-->
 ---
