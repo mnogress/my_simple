@@ -33,6 +33,11 @@ Blog [Qiita: WordCloudで岸田首相の所信表明演説のキーワードを�
 
 ### KH Coderで作成した頻出語リストから分かち書きテキストを作成する
 
+KH Coder を使って頻出語リストを作成する際、以下のKH Coder の画面より抽出する頻出語の品詞によってコントロールできます。
+
+![KHCoder_frequent_df]({{ "assets/img/2020_08_15/khcoder_pic3.png" | relative_url}})<br>
+
+
 前半部分では列名‘col2’ に出現語句を出現回数分、半角スペースを空けて格納しています。
 
 {% highlight python linenos %}
