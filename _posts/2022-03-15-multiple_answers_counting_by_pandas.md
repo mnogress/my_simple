@@ -1,4 +1,4 @@
---
+---
 layout: post
 title: 多重回答の結果をPandas で集計する
 feature-img: "assets/img/2020_08_15/abstract-1867656_1280.jpg"
