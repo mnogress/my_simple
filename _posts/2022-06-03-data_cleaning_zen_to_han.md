@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 自由記述フィールドのデータクリーニング
-feature-img: "assets/img/2020_08_15/abstract-1867656_1280.jpg"
+feature-img: "assets/img/2020_08_15/eggs-6118730_1280.png"
 tags: [Data Cleaning, Python, Pandas]
 excerpt_separator: <!--more-->
 ---
@@ -46,9 +46,10 @@ df.head(10)
 
 
 ### 半角及び全角スペースを取り除く
-PandasとNumpyを使ってまず全角を取り除きます。　全角は`\u3000`{:style="background: #cbe8f5"}です。
 
 ![表記ゆれ_半角_全角詰め]({{ "assets/img/2020_08_15/hyouki_pic1.png" | relative_url}})<br>
+
+PandasとNumpyを使ってまず全角を取り除きます。　全角は`\u3000`{:style="background: #cbe8f5"}です。
 
 
 {% highlight python linenos %}
