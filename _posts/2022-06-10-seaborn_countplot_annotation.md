@@ -83,7 +83,7 @@ for rect in ax.patches:
 
 ### 度数分布図、大きい順
 
-`order = df[col_name].value_counts().index`{:style="background: #cbe8f5"}の指定があるため、度数の多い順に並べて棒グラフが完成します。　イメージは以下のとおりです。
+line 26　で　`order = df[col_name].value_counts().index`{:style="background: #cbe8f5"}の指定があるため、度数の多い順に並べて棒グラフが完成します。　イメージは以下のとおりです。
 
 ![度数分布図]({{ "assets/img/2020_08_15/seaborn_pic2.png" | relative_url}})<br>
 
