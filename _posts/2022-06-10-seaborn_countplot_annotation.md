@@ -94,6 +94,7 @@ line 26　で　`order = df[col_name].value_counts().index`{:style="background: 
 
 ![度数分布図]({{ "assets/img/2020_08_15/seaborn_pic3.png" | relative_url}})<br>
 
+line 10 に注目してください。
 
 {% highlight python linenos %}
 order = ['マーケティング', '理工学', '医薬、保健','人文科学','教育・人事','その他']
