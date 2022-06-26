@@ -127,8 +127,7 @@ for rect in ax.patches:
 1) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
 2) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
 3) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
-4) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
-5) [日本語対応した matplotlib 2軸グラフ](https://www.so-wi.com/2021/02/02/japanize_matplotlib_two_axis.html){:target="_blank"}<br>
+4) [日本語対応した matplotlib 2軸グラフ](https://www.so-wi.com/2021/02/02/japanize_matplotlib_two_axis.html){:target="_blank"}<br>
 {:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
 
 
