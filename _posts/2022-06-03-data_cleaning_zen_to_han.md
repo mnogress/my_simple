@@ -113,7 +113,7 @@ df['法人名'] = df['法人名'].apply(mojimoji.zen_to_han, kana=False)
 
 このブログと一緒にこのサイト内の以下のページも併せてご覧ください。
 >
-1) [データクリーニングの備忘録](https://www.so-wi.com/2022/04/22/data_cleaning_memo.html){:target="_blank"}<br>
+1) [データクリーニングの備忘録](https://www.so-wi.com/2020/04/22/data_cleaning_memo.html){:target="_blank"}<br>
 2) [カラムデータの特定語句の有無を判定しカテゴリ化する](https://www.so-wi.com/2020/04/02/who_to_call.html){:target="_blank"}<br>
 3) [DataFrame, ndarray, listの使い分けについて実用的に考える](https://www.so-wi.com/2021/07/11/python_ndarray_dataframe_conversion.html){:target="_blank"}<br>
 {:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
