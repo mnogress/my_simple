@@ -6,7 +6,7 @@ tags: [seaborn, visualization, Python]
 excerpt_separator: <!--more-->
 ---
 
-[seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。countplot はカテゴリカルデータを集計から度数分布図までを一気に行なってくれる大変便利なツールです。　　　
+[seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。countplot はカテゴリカルデータを集計から度数分布図までを一気に行なってくれる大変便利なツールです。
 
 今までも本サイトでも何度か、データビジュアライゼーションのサンプルとしてcode を紹介してきましたが、今回はannotation のつけ方について解説します。Excelの代わりにseanborn でサクサク、グラフ化の参考にしてください。
 
