@@ -1,6 +1,6 @@
 ---
 layout: post
-title: seaborn countplot の棒グラフに度数のAnnotationをつける
+title: seaborn countplot の棒グラフに度数のannotationをつける
 feature-img: "assets/img/2020_08_15/flowers-7217498_1280.jpg"
 tags: [seaborn, visualization, Python]
 excerpt_separator: <!--more-->
@@ -8,14 +8,14 @@ excerpt_separator: <!--more-->
 
 [seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。countplot はカテゴリカルデータを集計から度数分布図までを一気に行なってくれる大変便利なツールです。
 
-今までも本サイトでも何度か、データビジュアライゼーションのサンプルとしてcode を紹介してきましたが、今回はannotation のつけ方について解説します。Excelの代わりにseanborn でサクサク、グラフ化の参考にしてください。
+今までも本サイトでも何度か、データビジュアライゼーションのサンプルとしてcode を紹介してきましたが、今回は度数分布を作成する`countplt` での `annotation（度数）` のつけ方について解説します。Excelの代わりにseanborn でサクサク、グラフ化の参考にしてください。
 
 <!--more-->
 
 ### サンプルデータセット
 
 日本語化した度数分布表を作成するため、
-[サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介しているデータセット3 のHRデータを編集して使っています。HRデータのうち、`Age`,	`EducationField`,	`TotalWorkingYears`の列をそれぞれ、年齢、専攻、勤続年数と書き換えました。　さらに、`EducationField`で含まれるカテゴリカルデータを日本語にしています。
+[サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介しているデータセット3 のHRデータを編集して使っています。HRデータのうち、`Age`,	`EducationField`,	`TotalWorkingYears`　`MonthlyIncome` の列をそれぞれ、「年齢」、「専攻」、「勤続年数」、「月収」と書き換えました。　さらに、`EducationField`で含まれるカテゴリカルデータを日本語にしています。
 
 ![sample_dataframe]({{ "assets/img/2020_08_15/seaborn_pic1.png" | relative_url}})<br>
 
@@ -71,15 +71,26 @@ plt.xlabel(col_name, fontsize = 14, fontweight='bold')
 plt.ylabel(y_label, fontsize = 14, fontweight='bold')
 
 #Annotation を設定する
-for rect in ax.patches:
-    ax.text (rect.get_x() + rect.get_width() / 2,
-             rect.get_height() + 2,
-             rect.get_height(),horizontalalignment='center', 
-             fontsize = 14)
+for p in ax.patches:
+    ax.annotate(format(p.get_height(), '.0f'), 
+                   (p.get_x() + p.get_width() / 2., 
+                    p.get_height()), 
+                    ha = 'center', 
+                    va = 'center', 
+                    xytext = (0, 9), 
+                    textcoords = 'offset points',
+                    fontsize = 14,
+                    color = 'blue')
 
 {% endhighlight %}
 
+### 小数点何位までの表示とするかの指定
 
+数字表記の肝心な点として小数点何位まで表記するかだと思います。　度数ですので、この表では整数＝小数点は無いようにコントロールしています。　その指定は以下の`format( '0f')`{:style="background: #cbe8f5"}の部分がそれに相当します。 
+<dl>
+    <dt>format(p.get_height(), '.0f'</dt>
+    <dd>値pの小数点以下何位まで表記かを指定する　.0f = 小数点は無い</dd>
+</dl>
 
 ### 度数分布図、大きい順
 
@@ -94,7 +105,7 @@ line 26　で　`order = df[col_name].value_counts().index`{:style="background: 
 
 ![度数分布図]({{ "assets/img/2020_08_15/seaborn_pic3.png" | relative_url}})<br>
 
-line 10 に注目してください。
+<strong>line 10</strong>に注目してください。
 
 {% highlight python linenos %}
 order = ['マーケティング', '理工学', '医薬、保健','人文科学','教育・人事','その他']
@@ -113,11 +124,17 @@ plt.xticks(rotation=90)
 plt.xlabel(col_name, fontsize = 14, fontweight='bold')
 plt.ylabel(y_label, fontsize = 14, fontweight='bold')
 
-for rect in ax.patches:
-    ax.text (rect.get_x() + rect.get_width() / 2,
-             rect.get_height() + 2,
-             rect.get_height(),horizontalalignment='center', 
-             fontsize = 14)
+#Annotation を設定する
+for p in ax.patches:
+    ax.annotate(format(p.get_height(), '.0f'), 
+                   (p.get_x() + p.get_width() / 2., 
+                    p.get_height()), 
+                    ha = 'center', 
+                    va = 'center', 
+                    xytext = (0, 9), 
+                    textcoords = 'offset points',
+                    fontsize = 14,
+                    color = 'blue')
 {% endhighlight %}
 
 
