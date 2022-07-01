@@ -8,13 +8,13 @@ excerpt_separator: <!--more-->
 
 [seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。countplot はカテゴリカルデータを集計から度数分布図までを一気に行なってくれる大変便利なツールです。
 
-前回は[seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotaion.html){:target="_blank"}で`countplot`で度数を`annotation`する方法を紹介しました。　今回は、`barplot` で棒グラフを作成し、各々の`bar`の値を`annotation`したいと思います。Excelの代わりにseanborn でサクサク、グラフ化の参考の第二弾になります。
+前回は[seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}で`countplot`で度数を`annotation`する方法を紹介しました。　今回は、`barplot` で棒グラフを作成し、各々の`bar`の値を`annotation`したいと思います。Excelの代わりにseanborn でサクサク、グラフ化の参考の第二弾になります。
 
 <!--more-->
 
 ### サンプルデータセット
 
-日本語化した棒グラフを作成するためにデータセットを用意します。[seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotaion.html){:target="_blank"}と同様に
+日本語化した棒グラフを作成するためにデータセットを用意します。[seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}と同様に
 [サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介しているデータセット3 のHRデータを編集して使っています。HRデータのうち、`Age`,	`EducationField`,	`TotalWorkingYears`　`MonthlyIncome` の列をそれぞれ、「年齢」、「専攻」、「勤続年数」、「月収」と書き換えました。　さらに、`EducationField`で含まれるカテゴリカルデータを日本語するとろまでは同じです。
 
 今回は二次元データを作るために、「専攻」のカテゴリカルデータを軸に`groupby`メソッドでデータを集約します。`groupby`メソッドを使うと`mean()`平均値 や`sum()`トータルで各カテゴリー値を集約できます。今回は、平均値で各カテゴリの値を集約したいと思います。
@@ -112,7 +112,7 @@ for p in ax.patches:
 ### 参照ページ一覧
 本ブログは、以下のネットの記事等を参考に作成しました。　
 >
-1) [seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotaion.html){:target="_blank"}<br>
+1) [seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}<br>
 2) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
 3) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
 4) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
