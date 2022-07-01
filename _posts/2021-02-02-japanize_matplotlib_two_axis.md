@@ -160,3 +160,17 @@ fig.savefig('img_02_13.png')
 ### ひとこと
 
 >分析したデータを可視化するにあたり、グラフ自体の自己説明力は欠かせません。日本語化の利点は、オーディエンスが全て日本人であれば、できるだけ日本語にした方が、図への理解度の速さは英語とは格段によくなります。特に、説明するチャートが多ければ多いほど、直ぐに分かる（分からせる）ことが大切です。キーとなるチャートのタイトル、注釈、ラベルは日本語にするのも一手ですね。
+
+---
+
+### 参照ページ一覧
+本ブログは、以下のネットの記事等を参考に作成しました。　
+>
+1) [seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}<br>
+2) [seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/11/seaborn_brplot_annotation.html){:target="_blank"}<br>
+3) [seaborn barplot で棒グラフを隣接させＹ軸、annotationをパーセント表示する](https://www.so-wi.com/2022/06/13/seaborn_two_bars_back2back.html){:target="_blank"}<br>
+4) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
+5) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
+6) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
+

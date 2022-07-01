@@ -108,6 +108,7 @@ df['法人名'] = df['法人名'].apply(mojimoji.zen_to_han, kana=False)
 
 ![Before_After]({{ "assets/img/2020_08_15/hyouki_pic3.png" | relative_url}})<br>
 
+---
 
 ### 参照ページ一覧
 

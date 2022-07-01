@@ -44,6 +44,7 @@ df1.join(df2, rsuffix='_2')
 
 ![index_join]({{ "assets/img/2020_08_15/pic2.png" | relative_url}})<br>
 
+---
 
 ### チートシート
 

@@ -80,7 +80,7 @@ ans_list_q6.style.format(format_dict)
 
 ![google_form1]({{ "assets/img/2020_08_15/google_pic4.png" | relative_url}})<br>
 
-
+---
 
 ### 参照ページ一覧
 このブログと一緒にこのサイト内の以下のページも併せてご覧ください。

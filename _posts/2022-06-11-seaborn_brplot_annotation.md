@@ -93,7 +93,7 @@ for p in ax.patches:
 
 ### 小数点何位までの表示とするかの指定
 
-数字表記の肝心な点として小数点何位まで表記するかだと思います。　平均値のため、小数点第二位まで表記するようにしています。　以下の`format( '2f')`{:style="background: #cbe8f5"}の部分がそれに相当します。 
+数字表記の肝心な点として小数点何位まで表記するかだと思います。　平均値のため、小数点第二位まで表記するようにしています。　以下の`format( '.2f')`{:style="background: #cbe8f5"}の部分がそれに相当します。 
 <dl>
     <dt>format(p.get_height(), '.2f')</dt>
     <dd>値pの小数点以下何位まで表記かを指定する　.2f = 小数点第二位</dd>
@@ -107,16 +107,17 @@ for p in ax.patches:
 ![月収平均]({{ "assets/img/2020_08_15/seaborn_pic6.png" | relative_url}})<br>
 
 
-
+---
 
 ### 参照ページ一覧
 本ブログは、以下のネットの記事等を参考に作成しました。　
 >
 1) [seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}<br>
-2) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
-3) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
-4) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
-5) [日本語対応した matplotlib 2軸グラフ](https://www.so-wi.com/2021/02/02/japanize_matplotlib_two_axis.html){:target="_blank"}<br>
+2) [seaborn barplot で棒グラフを隣接させＹ軸、annotationをパーセント表示する](https://www.so-wi.com/2022/06/13/seaborn_two_bars_back2back.html){:target="_blank"}<br>
+3) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
+4) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
+5) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
+6) [日本語対応した matplotlib 2軸グラフ](https://www.so-wi.com/2021/02/02/japanize_matplotlib_two_axis.html){:target="_blank"}<br>
 {:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
 
 

@@ -110,7 +110,7 @@ wordc.generate(string).to_file('wordcloud_kishida.png')
 ![WordCloud＿KHCoder]({{ "assets/img/2020_08_15/wordcloud_kishida.png" | relative_url}})<br>
 
 
-
+---
 
 ### 参照ページ一覧
 本ブログは、以下のネットの記事等を参考に作成しました。　

@@ -83,7 +83,7 @@ for p in ax.patches:
 
 ### 小数点何位までの表示とするかの指定
 
-割合の表記で重要な点は`0.xxx` で操作はするけども、表記の際は`xx.x%` のようにパーセント表示にします。　以下の`format( '2%')`{:style="background: #cbe8f5"}の部分がそれに相当します。 
+割合の表記で重要な点は`0.xxx` で操作はするけども、表記の際は`xx.x%` のようにパーセント表示にします。　以下の`format( '.2%')`{:style="background: #cbe8f5"}の部分がそれに相当します。 
 <dl>
     <dt>format(p.get_height(), '.2%')</dt>
     <dd>値pをパーセント表示して小数点以下何位まで表記かを指定する　.2f = パーセント表示で小数点第二位</dd>
@@ -109,6 +109,7 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1, decimals=None, symbo
 ![隣接棒グラフ]({{ "assets/img/2020_08_15/seaborn_pic9.png" | relative_url}})<br>
 
 
+---
 
 
 ### 参照ページ一覧
