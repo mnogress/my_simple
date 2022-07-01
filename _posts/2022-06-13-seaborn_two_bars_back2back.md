@@ -115,7 +115,7 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1, decimals=None, symbo
 本ブログは、以下のネットの記事等を参考に作成しました。　
 >
 1) [seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}<br>
-2) [seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_brplot_annotaion.html){:target="_blank"}<br>
+2) [seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_brplot_annotation.html){:target="_blank"}<br>
 3) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
 4) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
 5) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
