@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 [seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。barplot は、データの大小が、棒の高低で表されるので、データの大小を比較するのに適しています。
 
-前回は基本[seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_brplot_annotation.html){:target="_blank"}で各々の`bar（棒）`の値を`annotation`の方法について解説しました。　今回は、比較対象の各々 `bar`を隣接させ、より大小比較を際立たせるグラフの作成を紹介します。また、Y軸をパーセント(%)表示にする方法もご紹介します。Excelの代わりにseanborn でサクサク、グラフ化の参考の第三弾になります。
+前回は基本[seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/11/seaborn_brplot_annotation.html){:target="_blank"}で各々の`bar（棒）`の値を`annotation`の方法について解説しました。　今回は、比較対象の各々 `bar`を隣接させ、より大小比較を際立たせるグラフの作成を紹介します。また、Y軸をパーセント(%)表示にする方法もご紹介します。Excelの代わりにseanborn でサクサク、グラフ化の参考の第三弾になります。
 
 <!--more-->
 
@@ -115,7 +115,7 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1, decimals=None, symbo
 本ブログは、以下のネットの記事等を参考に作成しました。　
 >
 1) [seaborn countplot の棒グラフに度数のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_countplot_annotation.html){:target="_blank"}<br>
-2) [seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/10/seaborn_brplot_annotation.html){:target="_blank"}<br>
+2) [seaborn barplot の棒グラフに平均値のannotationをつける](https://www.so-wi.com/2022/06/11/seaborn_brplot_annotation.html){:target="_blank"}<br>
 3) [seaborn](https://seaborn.pydata.org){:target="_blank"}<br>
 4) [matplotlib](https://matplotlib.org){:target="_blank"}<br>
 5) [EXCELの達人からPythonの達人へ：住民基本台帳年齢階級別人口から都道府県別人口を作成する](https://www.so-wi.com/2021/07/08/japan_population_by_prefecture.html){:target="_blank"}<br>
