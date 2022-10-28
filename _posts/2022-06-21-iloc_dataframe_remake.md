@@ -16,21 +16,6 @@ excerpt_separator: <!--more-->
 
 
 <!--more-->
-### Jupyter Notebook の表示を画面一杯にする
-
-データフレームの列をJupyter Notebook で再配置するにしても、まず最初にすることは画面一杯を使えるようにすることだと思います。 以下のコードでJupyter Notebook の作業域は最大化されます。
-
-{% highlight python linenos %}
-
-from IPython.display import display, HTML
-display(HTML("<style>.container { width:100% !important; }</style>"))
-
-{% endhighlight %}
-
-#### 拡大されたJupyter Notebook 画面イメージ
-
-![dataframe_enlargement]({{ "assets/img/2020_08_15/iloc_pic0.png" | relative_url}})<br>
-
 
 
 ### サンプルデータセット
