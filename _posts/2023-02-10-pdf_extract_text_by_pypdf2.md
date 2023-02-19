@@ -28,8 +28,6 @@ excerpt_separator: <!--more-->
 >
 
 
-
-
 サンプルコードでテキストデータを抽出するPDFは下図のとおりです。
 
 ![2page_pdf_sample]({{ "assets/img/2020_08_15/pdffig1.png" | relative_url}})<br>
