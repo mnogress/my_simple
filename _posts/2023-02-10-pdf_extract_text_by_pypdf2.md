@@ -41,9 +41,8 @@ excerpt_separator: <!--more-->
 
 #### Input 及び Output file
 
-サンプルコードでは、このPDF（サンプル文書.pdf ）をプログラムと同じ
-ディレクトリ配下に配置しています。
-PDFから抽出したtxt ファイル（サンプル文書.txt）も同じフォルダ配下に書き出します。
+サンプルコードでは、PDF（サンプル文書.pdf ）をプログラムと同じディレクトリ配下に配置しています。
+PDFから抽出したtxtファイル（サンプル文書.txt）も同じフォルダ配下に書き出すこととします。
 
 ---
 ### サンプルコード
@@ -74,19 +73,19 @@ with open("サンプル文書.txt", "w", encoding ="utf_8", errors="ignore") as 
 
 ### 各ステップの説明
 
-For ループで各ページ毎にテキストデータを抽出します。
-抽出した内容は、リスト形式で格納します。
+For ループで各ページ毎にテキストデータを抽出します。抽出した内容は、`[‘page1’, ‘page2’, ,,,,’pageEnd’]`という
+リスト形式で格納します。
 
-1. `PyPDF2` から`PdfReader` をインポートします
-2. `PdfReader` を使ってターゲットの"サンプル文書.pdf"を読み込み、`reader` というオブジェクトに格納します
-3. PDFの各ページのテキストデータをページ毎に`all_text` というリスト形式に格納するため、まず初期化します
-4. ページ数を `len(reader.page)`で求め、その値（今回は2）を変数 `number_of_pages`に格納します
-5. 変数 iでページ数までのFor ループを宣言し、各ページについて以下の事を行います
-    1. `reader.page[i]` ：最初のページから１ページずつ`page` というオブジェクトに格納します
-    2. `page` オブジェクトからテキストを抽出して、`output` という変数に格納します
-    3. `output` (pdf のテキスト）を `all_text` に`append` でリストの要素を追加します
-    4. `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  という感じで `all_text` 出来上がります。　ちなみに今回は２ページです。
-6. `s = ''.join(all_text)` でリスト形式で追加された `all_text` をひとつにまとめてその変数を`s`とします
+1. `PyPDF2` から`PdfReader` をインポートします。 `PyPDF2`を予め`PIPコマンド`でインストールしておく必要があります。
+2. `PdfReader` を使ってターゲットの"サンプル文書.pdf"を読み込み、`reader` というオブジェクトに格納します。
+3. PDFの各ページのテキストデータをページ毎に`all_text` というリスト形式に格納するため、初期化します。
+4. ページ数を `len(reader.page)`で求め、その値（今回は2）を変数 `number_of_pages`に格納します。
+5. 変数 iでページ数までのFor ループを宣言し、各ページについて以下の事を行います。
+    1. `reader.page[i]` ：最初のページから１ページずつ`page` というオブジェクトに格納します。
+    2. `page` オブジェクトからテキストを抽出して、`output` という変数に格納します。
+    3. `output` (pdf のテキスト）を `all_text` に`append` でリストの要素を追加します。
+    4. `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  という感じで `all_text` が出来上がります。今回は２ページです。
+6. `s = ''.join(all_text)` でリスト形式で追加された `all_text` をひとつにまとめてその変数を`s`とします。
 7. `with open` で"サンプル文書.txt"というテキストファイルを定義して、オプション`"w"` でファイルを上書き作成します。
 
 ### 抽出したテキストファイル
@@ -95,9 +94,8 @@ For ループで各ページ毎にテキストデータを抽出します。
 
 ![2page_pdf_sample]({{ "assets/img/2020_08_15/pdffig2.png" | relative_url}})<br>
 
-
 >
-`[ここがポイント！]`{:style="color: blue; font-size: 1.3em"} 
+`[ここがポイント！]`{:style="color: blue; font-size: 1.3em; background-color: #ffe3e2"} 
 1. ワードで作成された縦書きなどの文字には各文字に
 改行キーを入れて実現しているため、テキストのみを抽出した場合、文字ごとに改行がついた状態になります。
 2.  `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  というリスト形式でのテキスト化では、改行キー`\n`がテキストとして出現し、改行されません。
@@ -132,26 +130,25 @@ for file in files:
 
 {% endhighlight %}
 
-1. `PyPDF2` から`PdfReader` をインポートします
-2. `os`, `glob`, `sys` をインポートします。これらは、標準ライブラリです。   pip でインストール不要です
+1. `PyPDF2` から`PdfReader` をインポートします。
+2. `os`, `glob`, `sys` をインポートします。これらは、標準ライブラリですので、pip でインストール不要です。
 3. `file_path` という変数名でテキスト化したいPdfが設置されているディレクトリを指定します。
 4. `files` という変数に拡張子が pdf のファイルのみ順次読み込みます。
-5. `for file in files` で`files` で読み込まれたそれぞれの pdf file である`file`に対してfor ループ処理をします 
+5. `for file in files` で`files` で読み込まれたそれぞれの pdf file である`file`に対してfor ループ処理をします。 
 6. `PdfReader` を使ってターゲットの"サンプル文書.pdf"を読み込み、`reader` というオブジェクトに格納します（前半と同じですね）
 7. ページ数を `len(reader.page)`で求め、その値（今回は2）を変数 `count`に格納します (前半のコードと変数名変えています！)
-8. PDFの各ページのテキストデータをページ毎に`all_text` というリスト形式に格納するため、まず初期化します
-9. 変数 iでページ数までのFor ループを宣言し、各ページについて以下の事を行います
-    1. `reader.page[i]` ：最初のページから１ページずつ`page` というオブジェクトに格納します
-    2. `page` オブジェクトからテキストを抽出して、`output` という変数に格納します
-    3. `output` (pdf のテキスト）を `all_text` に`append` でリストの要素を追加します
-    4. `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  という感じで `all_text` 出来上がります。　ちなみに今回もいずれも２ページです。
-10. `newoutput = ''.join(all_text)` でリスト形式で追加された `all_text` をひとつにまとめてその変数を`newoutput`とします
+8. PDFの各ページのテキストデータをページ毎に`all_text` というリスト形式に格納するため、まず初期化します。
+9. 変数 iでページ数までのFor ループを宣言し、各ページについて以下の事を行います。
+    1. `reader.page[i]` ：最初のページから１ページずつ`page` というオブジェクトに格納します。
+    2. `page` オブジェクトからテキストを抽出して、`output` という変数に格納します。
+    3. `output` (pdf のテキスト）を `all_text` に`append` でリストの要素を追加します。
+    4. `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  という感じで `all_text` 出来上がります。今回はいずれも２ページです。
+10. `newoutput = ''.join(all_text)` でリスト形式で追加された `all_text` をひとつにまとめてその変数を`newoutput`とします。
 11. `with open` で"サンプル文書.txt"というテキストファイルを定義して、オプション`"a"` でファイルに追加し行きます。
-12. ファイルに書き込むにあたり、改行と******** を前後に付けてファイル名を代入しています。これでどのファイルをテキスト化したかが容易に判別できます・
-
+12. ファイルに書き込むにあたり、改行と******** を前後に付けてファイル名を代入しています。これでどのファイルをテキスト化したかが容易に判別できます。
 
 >
-`[ここがポイント！＜その２＞]`{:style="color: blue; font-size: 1.3em"} 
+`[ここがポイント！＜その２＞]`{:style="color: blue; font-size: 1.3em; background-color: #ffe3e2"} 
 1. For ループを二つ入れ子（いわゆる多重ループ）で回しています。Glob でファイルの順次読み込みをしたら、そのファイルに対して各ページも順に読み込みテキスト化します
 2. 多重ループなのか、単純にFor ループは二つそれぞれあるかを区別させるため、Python ではインデントで識別しています
 3. 今回は多重ループなので、インデントが二つ奥に入り込んでいます
@@ -166,4 +163,5 @@ for file in files:
 >
 1) [PyPDF2](https://pypi.org/project/PyPDF2/3.0.1/){:target="_blank"}<br>
 2) [KH Coder で複合語をコントロールしてWordCloudを作成する](https://www.so-wi.com/2022/05/15/khcoder_wordcloud_make.html){:target="_blank"}<br>
+3) [globによるファイルの順次読み込みと特定文字列のカウント](https://www.so-wi.com/2021/04/14/all_log_read_under_dir_to_count_download.html){:target="_blank"}<br>
 {:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
