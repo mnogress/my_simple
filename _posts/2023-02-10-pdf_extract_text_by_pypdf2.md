@@ -85,8 +85,8 @@ For ループで各ページ毎にテキストデータを抽出します。抽�
     2. `page` オブジェクトからテキストを抽出して、`output` という変数に格納します。
     3. `output` (pdf のテキスト）を `all_text` に`append` でリストの要素を追加します。
     4. `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  という感じで `all_text` が出来上がります。今回は２ページです。
-6. `s = ''.join(all_text)` でリスト形式で追加された `all_text` をひとつにまとめてその変数を`s`とします。
-7. `with open` で"サンプル文書.txt"というテキストファイルを定義して、オプション`"w"` でファイルを上書き作成します。
+6. `s = ''.join(all_text)`{:style="background: #1166AA; color: white"} でリスト形式で追加された `all_text` をひとつにまとめてその変数を`s`とします。
+7. `with open` で"サンプル文書.txt"というテキストファイルを定義して、オプション `'w'`{:style="background: #ff0044; color: white"}  ファイルを上書き作成します。
 
 ### 抽出したテキストファイル
 
@@ -95,7 +95,7 @@ For ループで各ページ毎にテキストデータを抽出します。抽�
 ![2page_pdf_sample]({{ "assets/img/2020_08_15/pdffig2.png" | relative_url}})<br>
 
 >
-`[ここがポイント！]`{:style="color: blue; font-size: 1.3em; background-color: #ffe3e2"} 
+`[ここがポイント！＜その１＞]`{:style="color: blue; font-size: 1.3em; background-color: #ffe3e2"} 
 1. ワードで作成された縦書きなどの文字には各文字に
 改行キーを入れて実現しているため、テキストのみを抽出した場合、文字ごとに改行がついた状態になります。
 2.  `[‘page1’, ‘page2’, ,,,,’pageEnd’]`  というリスト形式でのテキスト化では、改行キー`\n`がテキストとして出現し、改行されません。
@@ -153,7 +153,7 @@ for file in files:
 2. 多重ループなのか、単純にFor ループは二つそれぞれあるかを区別させるため、Python ではインデントで識別しています
 3. 今回は多重ループなので、インデントが二つ奥に入り込んでいます
 3. 一方、ファイルの書き込みはfor file in files 単位で行うので、最初のインデントで実行しています。 
-4. 書き込みオプション`'a'` で追記するようにして、ファイル書き込みで複数のファイルの書き込みを実現しています。
+4. 書き込みオプション `'a'`{:style="background: #ff0044; color: white"} で追記するようにして、ファイル書き込みで複数のファイルの書き込みを実現しています。
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
 
