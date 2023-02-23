@@ -45,27 +45,27 @@ def func_row_check(row):
 
 {% endhighlight %}
 
-コメント上図はコメントを入れた関数になっています。実際に必要なコードはLine #1,13,14,15,16 です。簡単ですね。 
+上図はコメントを入れた関数になっています。実際に必要なコードはLine #1,13,14,15,16 だけで十分です。簡単ですね。 
 
 ### 関数を適用する
 
 関数を適用した結果は、列名「結果」という新しい列に内容を追加します。
 
-{% highlight python linenos %}
+{% highlight python %}
 
-`df['結果'] = df.apply(func_row_check, axis=1)`
+df['結果'] = df.apply(func_row_check, axis=1)
 
 {% endhighlight %}
 
 
-### データフレームで内容を確認します。
+### データフレームで内容を確認
  
 ![fnction]({{ "assets/img/2020_08_15/fig6.png" | relative_url}})<br>
 
 
 ---
 
-### サンプルコード
+### サンプルコード（練習用データ付き）
 
 サンプルコードでは、データフレームの作成から、関数の定義と適用、結果の確認までを紹介していますので、お手元の
 Python 環境(Jupyrt Notebook 等)でお確かめくださいませ。
@@ -110,7 +110,7 @@ display(df)
 
 >
 `[ここがポイント！]`{:style="color: blue; font-size: 1.3em; background-color: #ffe3e2"} 
-`df['結果'] = df.apply(func_row_check, axis=1)` で`axis=1`{:style="background: #ffebf6"}の指定をしないと
+`df['結果'] = df.apply(func_row_check, axis=1)` で `axis=1`{:style="background: #ff0044; color: white"} の指定をしないと
 デフォルトでは、`axis=0`のため`KeyErro`で例外となってしまい関数が上手く働きません。
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
