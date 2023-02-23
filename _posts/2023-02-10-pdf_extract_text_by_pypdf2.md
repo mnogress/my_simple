@@ -125,7 +125,7 @@ for file in files:
         page = reader.pages[i]
         all_text.append(page.extract_text())
         newoutput = ''.join(all_text)
-    with open("output_example.txt", "a", encoding = "utf-8") as f:
+    with open("example0221.txt", "a", encoding = "utf-8") as f:
         f.write( "\n" + "\n" +"***********  " + file + "  *************" + "\n" + "\n" + newoutput)
 
 {% endhighlight %}
@@ -146,6 +146,12 @@ for file in files:
 10. `newoutput = ''.join(all_text)` でリスト形式で追加された `all_text` をひとつにまとめてその変数を`newoutput`とします。
 11. `with open` で"サンプル文書.txt"というテキストファイルを定義して、オプション`"a"` でファイルに追加し行きます。
 12. ファイルに書き込むにあたり、改行と******** を前後に付けてファイル名を代入しています。これでどのファイルをテキスト化したかが容易に判別できます。
+
+### テキスト抽出結果を確認する
+
+テキスト抽出結果は、`example0221.txt`{:style="background: #1166AA; color: white"}というファイル名で格納されますので、メモ帳で開きます。
+
+![2page_pdf_sample]({{ "assets/img/2020_08_15/pdffig3.png" | relative_url}})<br>
 
 >
 `[ここがポイント！＜その２＞]`{:style="color: blue; font-size: 1.3em; background-color: #ffe3e2"} 
