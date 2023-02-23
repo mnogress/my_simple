@@ -7,7 +7,7 @@ title: so-wi.com                                    # site's title
 description: "A website with blog posts and pages"      # used by search engines
 avatar: assets/img/avatars/authorimage12.jpg                         # Empty for no avatar in navbar
 favicon: assets/img/favicon.png                             # Icon displayed in the tab
-
+ 
 # Header and footer text
 header_text: データ分析の実際  # Change Blog header text
 header_feature_image: assets/img/pexels/dog-4372036_1920_2.jpg
