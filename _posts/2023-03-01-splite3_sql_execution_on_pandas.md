@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pandsデータフレームをsqlite3のSQL文で操作する
+title: Pandasデータフレームをsqlite3のSQL文で操作する
 feature-img: "assets/img/2020_08_15/cat-gf45769994_640.png"
 tags: [Python, sqlite3, SQL ]
 excerpt_separator: <!--more-->
