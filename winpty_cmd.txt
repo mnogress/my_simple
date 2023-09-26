@@ -1,0 +1,48 @@
+winpty docker run --rm -it --name docker_jekyll     
+-v /$PWD/_config.yml://work/_config.yml     
+-v /$PWD/index.html://work/index.html     
+-v /$PWD/_data/://work/_data/ 
+-v /$PWD/_includes/://work/_includes/   
+-v /$PWD/_layouts/://work/_layouts/   
+-v /$PWD/_portfolio/://work/_portfolio/   
+-v /$PWD/_posts/://work/_posts/ 
+-v /$PWD/_sass/://work/_sass/   
+-v /$PWD/assets/://work/assets/     
+-v /$PWD/pages/://work/pages/     
+-v /$PWD/_site/://work/_site/     
+-p 4000:4000     
+-w //work     
+docker_mysimple     
+bundle exec jekyll serve -H 0.0.0.0
+
+
+winpty docker run --rm -it --name docker_jekyll     -v /$PWD/_config.yml://work/_config.yml     -v /$PWD/index.html://work/index.html     -v /$PWD/_data/://work/_data/ -v /$PWD/_includes/://work/_includes/   -v /$PWD/_layouts/://work/_layouts/   -v /$PWD/_portfolio/://work/_portfolio/   -v /$PWD/_posts/://work/_posts/ -v /$PWD/_sass/://work/_sass/   -v /$PWD/assets/://work/assets/     -v /$PWD/pages/://work/pages/     -v /$PWD/_site/://work/_site/     -p 4000:4000     -w //work     docker_mysimple     bundle exec jekyll serve -H 0.0.0.0
+
+
+
+# FROM ruby:2.7.7-slim-bullseye
+
+FROM ruby:2.7.1-buster
+
+WORKDIR /work
+
+COPY Gemfile /work/Gemfile
+COPY type-on-strap.gemspec /work/type-on-strap.gemspec
+
+
+# Set locale
+RUN set -ex \
+  && apt-get update \
+  && apt-get install -y \
+    locales \
+    locales-all \
+  && locale-gen en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+RUN set -ex \
+  && cd /work \
+  && bundle install \
+  && rm -rf /root/.bundle/cache
