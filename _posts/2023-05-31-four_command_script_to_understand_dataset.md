@@ -133,8 +133,9 @@ display(tab.style.format(format_dict))
 {% endhighlight %}
 
 
-結果は以下のとおりです。パーセント表示は小数点1位までにしています。
-
+結果は以下のとおりです。
+度数のパーセント表示は`format_dict = {'構成比': '{:.1%}'}`{:style="background: #ff0044; color: white; font-size: 120%"}で
+小数点1位までにしています。
 
 ![data_frame]({{ "assets/img/2020_08_15/fig061204.png" | relative_url}})<br>
 
