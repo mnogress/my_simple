@@ -1,6 +1,6 @@
 ---
 layout: post
-title: str.contais 指定の値を含まない行の抽出
+title: str.contaisと~dfによる「指定の文字列を含まない行」を抽出する
 feature-img: "assets/img/2020_08_15/presents-1913987_1280.jpg"
 tags: [Python, pandas, dataframe ]
 excerpt_separator: <!--more-->
@@ -10,7 +10,7 @@ Pandas の`str.contais`を利用して指定の値を含まない行の抽出方
 データフレームの中身をクリーニング等で抽出作業は必須スキルです。
 今回は、
 `str.contains("除きたい文字列")`{:style="background: #64f5eb; font-size: 105%"} と
-not 演算子`~df`{:style="background: #f5e964; font-size: 105%"} を使って<strong>`指定の値を含まない行の抽出方法`</strong>をまとめました。
+not 演算子`~df`{:style="background: #f5e964; font-size: 105%"} を使って<strong>`指定の文字列を含まない行の抽出方法`</strong>をまとめました。
 
 <!--more-->
 
