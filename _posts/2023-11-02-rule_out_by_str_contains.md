@@ -75,3 +75,37 @@ display(df)
 {% endhighlight %}
 
 ![what_is_output]({{ "assets/img/2020_08_15/fig_1107_03.png" | relative_url}})<br>
+
+## まとめ
+
+<div class="box28">
+    <span class="box-title">Point</span>
+    <p style="font-size: 130%; color: blue;">df = df[df['メールアドレス'].str.contains('@example.org')]　<strong>含む</strong>で抽出<br>
+    df = df[~df['メールアドレス'].str.contains('@example.org')]　<strong>含まない</strong>で抽出</p>
+</div>
+
+<style>
+.box28 {
+    position: relative;
+    margin: 2em 0;
+    padding: 25px 10px 7px;
+    border: solid 5px #FFC107;
+}
+.box28 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -2px;
+    left: -2px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #FFC107;
+    color: #ffffff;
+    font-weight: bold;
+}
+.box28 p {
+    margin: 0; 
+    padding: 0;
+}
+</style>
