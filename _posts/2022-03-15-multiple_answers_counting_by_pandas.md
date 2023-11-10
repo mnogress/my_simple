@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 多重回答の結果をPandas で集計する
+title: 複数回答可のアンケート結果をPandasで集計する
 feature-img: "assets/img/2020_08_15/abstract-1867656_1280.jpg"
 tags: [Pandas, Google Forms, Python]
 excerpt_separator: <!--more-->
 ---
 
-フォーム入力の方法の一つである「チェックボックス入力形式」は、通常、ユーザが複数の回答を選択できるように用意されています。　その結果は多重回答といいます。多重回答の集計は、ラジオボタンで択一選択する場合と異なり、ちょっとしたコツが必要です。今回は、Google フォームに入力された多重回答をサンプルにしてその集計方法についてブログにまとめてみました。
+フォーム入力の方法の一つである「チェックボックス入力形式」は、通常、ユーザが複数の回答を選択できるように用意されています。　その結果は多重回答といいます。多重回答の集計は、ラジオボタンで択一選択する場合と異なり、ちょっとしたコツが必要です。今回は、Google フォームに入力された多重回答をサンプルにしてその集計方法についてブログにまとめました。
 
 <!--more-->
 
@@ -14,7 +14,7 @@ excerpt_separator: <!--more-->
 
 ユーザが複数回答を選択して回答できるアンケートフォームとは以下のようなフォームの事です。　今回は、Google フォームを例に取り説明します。
 
-![google_form1]({{ "assets/img/2020_08_15/google_pic1.png" | relative_url}})<br>
+![google_form1]({{ "assets/img/2020_08_15/google_pic1.png" | relative_url}}){:height="500px" width="630px"}<br>
 
 ### セミコロンで区切られた多重回答
 
@@ -23,12 +23,12 @@ Google フォームでは複数の回答は選択された各々の設問のま�
 サンプルとして問6でユーザの保有する資格について尋ねたアンケートで135人の回答について、csv 経由でPandas データフレームで取り込んだ結果を示します。
 ちなみに、[df.value_counts() の結果をパワポ用にビジュアル化する](https://www.so-wi.com/2022/03/11/df_value_counts_visualization.html){:target="_blank"}で紹介した方法でデータフレームの見栄えを良くしてます。
 
-![google_form2]({{ "assets/img/2020_08_15/google_pic2.png" | relative_url}})<br>
+![google_form2]({{ "assets/img/2020_08_15/google_pic2.png" | relative_url}}){:height="500px" width="630px"}<br>
 
 多重回答の組み合わせ毎に別々の回答してカウントするため、`value_counts()` では正しくカウントできません。　以下のようになってしまいます。この結果も
 [df.value_counts() の結果をパワポ用にビジュアル化する](https://www.so-wi.com/2022/03/11/df_value_counts_visualization.html){:target="_blank"}で紹介した方法でデータフレームの見栄えを良くしてます。
 
-![google_form2]({{ "assets/img/2020_08_15/google_pic3.png" | relative_url}})<br>
+![google_form2]({{ "assets/img/2020_08_15/google_pic3.png" | relative_url}}){:height="500px" width="630px"}<br>
 
 ### Pandas で集計する
 
@@ -55,7 +55,7 @@ ans_list = pd.DataFrame(ans_list, columns=['回答数'])
 ans_list = ans_list.rename_axis(q)
 ans_list = ans_list.reset_index()
 # 回答数が一種類のみ＝その他の自由記述回答したチェックリスト以外の回答とする　値としてNaNを入れる
-ans_list['col']= ans_list['回答数'].apply(lambda x: x if x != 1 else np.nan)
+ans_list['col']= ans_list['回答数'].apply(lambda x: x if x != 0 else np.nan)
 # 変数 sum_nan に回答数が一種類のみの総数を代入する
 sum_nan = ans_list['col'].isnull().sum()
 # その他の回答としてまとめる
@@ -78,7 +78,7 @@ ans_list_q6.style.format(format_dict)
 
 結果は以下のようになりました。　ここまで集約ができれば、あとは円グラフも簡単にできますね。
 
-![google_form1]({{ "assets/img/2020_08_15/google_pic4.png" | relative_url}})<br>
+![google_form1]({{ "assets/img/2020_08_15/google_pic4.png" | relative_url}}){:height="500px" width="630px"}<br>
 
 ---
 
