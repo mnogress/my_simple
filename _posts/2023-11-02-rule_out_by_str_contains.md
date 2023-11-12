@@ -39,12 +39,14 @@ print('after:', df.shape)
 
 前後に配置した<strong>`df.shape`</strong> でデータフレームのサイズのBefore/After を記録して抽出サイズ（削除された行数）を把握します。
 
-{% highlight python %}
+{% highlight linenos %}
+{% raw %}
 
 >> before: (8, 3)
 >> after: (6, 3)
 
-{% endhighlight %}
+{%  endraw %}
+{% endhighlight %} 
 
 抽出後のデータフレームは以下のとおりです。
 
