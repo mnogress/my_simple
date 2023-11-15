@@ -1,28 +1,27 @@
 ---
 layout: post
-title: ＃N/A を探す
+title: 混入した特定の文字を探す
 feature-img: "assets/img/portfolio/cake.png"
 img: "assets/img/portfolio/na_found.png"
-date: 27 September 2019
-tags: [pandas]
+date: 27 September 2023
+tags: [pandas, .isin, .at]
 ---
 
-仮定の話：解析用のデータを情シスからもらいましたが、特定の列のみ、本来は`int64` でないといけないのに、`dtpey('O')`でオブジェクトになっている。　
+仮定の状況ですが、解析用のデータを情報システムから提供されました。しかし、特定の列は本来`'int64'`{:style="background: #64f5eb; font-size: 105%"} であるべきなのに、`'dtype('O')'`{:style="background: #64f5eb; font-size: 105%"} でオブジェクト型になっていました。
 
-どうやら、EXCEL でVllokupをかけて内容を他のEXCELシートから突合したようで、見つからない＝#N/A が入っているようだったので、
-それを探すために以下のコマンドを打ち突き止めることができました。
+おそらく、ExcelでVLOOKUP関数を使用して他のExcelシートから情報を照合し、一致しない場合に`'#N/A'`{:style="background: #64f5eb; font-size: 105%"} が入力されているようです。そのため、問題を特定するために以下のコマンドを使用して問題を解決しました。
 
 {% highlight python linenos %}
 # 列PY_10に`#N/A` が混ざっていないかを確認する
 df[df['PY_10'].isin(['#N/A'])]
 {% endhighlight %}
 
-結果は、以下のとおり6303行目に発見！
+結果は、以下のとおり<strong>6203行目</strong>に発見！
 
 ![n/a_found]({{ "assets/img/portfolio/na_found_63003.png" | relative_url}})
 
 
-ピンポイントに変更は、以下のように打ちました。 今回はゼロを代入しています。
+具体的な変更点は、以下のように行いました。この場合、ゼロを代入しました。
 
 {% highlight python linenos %}
 # 特定の要素をピンポイントに変更する
