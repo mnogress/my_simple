@@ -26,16 +26,9 @@ Pandas の`str.contais`を利用して指定の値を含まない行の抽出方
 ### str.contains と 否定演算子を使う
 
 `str.contains("除きたい文字列")`{:style="background: #64f5eb; font-size: 105%"} と
-<<<<<<< HEAD
 否定演算子`~`{:style="background: #f5e964; font-size: 105%"} を使えば、簡単に抽出できます。
 また、<strong>print('before/after:', df.shape)</strong>を前後に挟むことで
 `データフレームの前後のサイズを把握します。`{:style="color: blue; font-size: 105%"}
-=======
-否定演算子`~`{:style="background: #f5e964; font-size: 105%"} を使えば、指定の文字列を含まない行を簡単に抽出できます。
-また、
-<strong>print('before/after:', df.shape)</strong>を前後に挟むことで
-`データフレームの前後のサイズの変化を把握します。`{:style="color: blue; font-size: 105%"}
->>>>>>> 17d4ef7c40a26b131f860c71300bf0bd31ee2592
 
 {% highlight python linenos %}
 
