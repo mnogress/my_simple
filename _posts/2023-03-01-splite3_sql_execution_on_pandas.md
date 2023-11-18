@@ -6,22 +6,37 @@ tags: [Python, sqlite3, SQL ]
 excerpt_separator: <!--more-->
 ---
 
-[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、軽量なディスク上のデータベースを提供する C ライブラリです。
-別のサーバプロセスを用意する必要なく、 SQLクエリー言語（SQL文）を使用してデータベースにアクセスできます。SQLiteを使ってアプリケーションのプロトタイプを作り、その後そのコードを PostgreSQLやOracle等の大規模データベースに移植することができるため、アプリ開発でのマストアイテム的なSQL DBツールです。
 
-今回は、Jupyter Notebook でデータ分析を前提に、データの読み込み、抽出の操作をsqlite3で提供されるSQL文を利用する方法にまとめました。
+この記事では、Jupyter Notebookを使用してデータ分析を行う際に、
+sqlite3で提供されるSQL文を使用してデータの読み込みと抽出操作をまとめました。
 
+[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、軽量なディスク上のデータベースを提供するCライブラリです。
+サーバプロセスを別途用意する必要がなく、SQLクエリー言語（SQL文）を使用してデータベースにアクセスできます。
+SQLiteを使用することで、アプリケーションのプロトタイプを作成し、
+そのコードを後でPostgreSQLやOracleなどの大規模データベースに移行できるため、
+アプリ開発においてSQLデータベースの必須ツールとなっています。
+
+今回は、Jupyter Notebookを使用したデータ分析を前提に、
+sqlite3で提供されるSQL文を使用してデータの読み込みおよび抽出の操作方法をまとめました。
 
 <!--more-->
 
+[DB Browser for SQLite](https://sqlitebrowser.org/){:target="_blank"}は、
+SQLiteデータベースを管理するためのソフトウェアです。
+SQLiteデータベースの作成、閲覧、編集が可能で、データベースの最適化によってファイルサイズを小さくすることもできます。
+また、USBドライブから起動できるポータブル版も提供されており、
+SQLiteをより身近に利用できるようになっています。
+多くの人がこのソフトウェアを利用した経験があるかもしれません。
 
-[DB Browser for SQLite](https://sqlitebrowser.org/){:target="_blank"}は、SQLiteのデータベースを管理できるソフトです。 上述のSQLiteのデータベースを作成・閲覧・編集できるほか、肥大化したデータベースを最適化してファイルサイズを小さくすることも可能で、USBドライブから起動するポータブル版もあったりして、SQLiteをより身近にさせるもので、こちらのソフトの方が使ったことがある方も少なくないと思います。
+[sqlite3](https://docs.python.org/ja/3.5/library/sqlite3.html){:target="_blank"}モジュールは、
+Python上でデータセットをSQLデータベースとして格納し、
+SQL文を使用してアクセスするためのインターフェイスを提供します。
+このモジュールを使用することで、PythonでSQLiteの操作を行うことができます。
+
+このブログがPythonプログラムでSQLの統合を行う際に役立つことを願っています。
 
 
-[sqlite3](https://docs.python.org/ja/3.5/library/sqlite3.html){:target="_blank"}モジュールは、Python 上でデータセットをSQL DBとして格納しSQL文でアクセスできるインターフェイスを提供します。このモジュールで、SQLite 上の操作をPython で行うことを可能にします。
 
-
-このブログがPythonプログラムでのSQLの取り込みに活用頂ければ幸いです。
 
 ---
 

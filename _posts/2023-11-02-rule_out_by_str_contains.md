@@ -6,11 +6,20 @@ tags: [Python, pandas, dataframe ]
 excerpt_separator: <!--more-->
 ---
 
+<<<<<<< HEAD
 Pandas の`str.contais`を利用して指定の値を含まない行の抽出方法をまとめました。
 データフレームの中身をクリーニング等で抽出作業は必須スキルです。
 今回は、
 `str.contains("除きたい文字列")`{:style="background: #64f5eb; font-size: 105%"} と
 否定演算子`~`{:style="background: #f5e964; font-size: 105%"} を使って`~df`{:style="background: #64f5eb; font-size: 105%"} として<strong>`指定の文字列を含まない行の抽出方法`</strong>をまとめました。
+=======
+Pandasの`str.contains`を活用して、指定の値を含まない行を抽出する方法についてまとめました。
+データフレームのクリーニングや抽出作業は必要不可欠なスキルです。
+今回は、`str.contains("除きたい文字列")`{:style="background: #64f5eb; font-size: 105%"}と
+否定演算子`~`{:style="background: #f5e964; font-size: 105%"}を使用して、
+<strong>指定の文字列を含まない行を抽出する方法</strong>を解説します。
+
+>>>>>>> 17d4ef7c40a26b131f860c71300bf0bd31ee2592
 
 <!--more-->
 
@@ -22,12 +31,19 @@ Pandas の`str.contais`を利用して指定の値を含まない行の抽出方
 
 ![what_is_problem]({{ "assets/img/2020_08_15/fig_1107_01.png" | relative_url}})<br>
 
-### str.contains　と　not 演算子を使う
+### str.contains と 否定演算子を使う
 
 `str.contains("除きたい文字列")`{:style="background: #64f5eb; font-size: 105%"} と
+<<<<<<< HEAD
 否定演算子`~`{:style="background: #f5e964; font-size: 105%"} を使えば、簡単に抽出できます。
 また、<strong>print('before/after:', df.shape)</strong>を前後に挟むことで
 `データフレームの前後のサイズを把握します。`{:style="color: blue; font-size: 105%"}
+=======
+否定演算子`~`{:style="background: #f5e964; font-size: 105%"} を使えば、指定の文字列を含まない行を簡単に抽出できます。
+また、
+<strong>print('before/after:', df.shape)</strong>を前後に挟むことで
+`データフレームの前後のサイズの変化を把握します。`{:style="color: blue; font-size: 105%"}
+>>>>>>> 17d4ef7c40a26b131f860c71300bf0bd31ee2592
 
 {% highlight python linenos %}
 
