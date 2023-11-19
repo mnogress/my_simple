@@ -96,7 +96,7 @@ df.to_sql('HR_Employee_Attrition_tab', conn, if_exists='replace', index=False)
 
 ls コマンドでファイルを確認すると、217,088 バイトの大きさで`HR_Employee_Attrition.db`{:style="background: #ffebf6"}というDBが作成されています。
 
-{% highlight python %}
+{% highlight python linenos %}
  ドライブ D のボリューム ラベルは ボリューム です
  ボリューム シリアル番号は C64A-8xx です
 
