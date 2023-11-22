@@ -56,20 +56,20 @@ df1 が左(left)、 df2 が右(right) です。
 
 ### 左結合
 
-左のDataFrame df1のインデックス[<strong>`a`, `b`, `c`, `d`</strong>]を軸にdf1のcol1にdf2のcol2が, col1,col2の順序で結合されます。インデックス値の順序は変わりません。　df2のインデックスには`c` がありませんので、col2 の値には<strong>`NaN `</strong> が代入されます。
+左のDataFrame df1のインデックス[`a`, `b`, `c`, `d`]を軸にdf1のcol1にdf2のcol2が, col1,col2の順序で結合されます。インデックス値の順序は変わりません。　df2のインデックスには`c` がありませんので、col2 の値には`NaN`が代入されます。
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_03.png" | relative_url}})
 
 ### 右結合
 
-右のDataFrame df2のインデックス[<strong>`a`, `b`, `d`, `e`</strong>]を軸にdf1のcol1にdf2のcol2がcol1,col2の順序で結合されます。インデックス値の順序は変わりません。　df1のインデックスには`e` がありませんので、col1の値には<strong>`NaN `</strong> が代入されます。 当たり前ですが、df1 のインデックス値<strong>`c`</strong>は対象となりません。
+右のDataFrame df2のインデックス[`a`, `b`, `d`, `e`]を軸にdf1のcol1にdf2のcol2がcol1,col2の順序で結合されます。インデックス値の順序は変わりません。　df1のインデックスには`e` がありませんので、col1の値には`NaN`が代入されます。 当たり前ですが、df1 のインデックス値`c`は対象となりません。
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_04.png" | relative_url}})
 
 ### 外部結合
 
-df1のインデックス[<strong>`a`, `b`, `c`, `d`</strong>]とdf2のインデックス[<strong>`a`, `b`, `d`, `e`</strong>]の和集合のインデックス値[<strong>`a`, `b`, `c`, `d`, `e`</strong>]を軸にdf1のcol1にdf2のcol2が結合されます。インデックスの順序はa,b,c順です。　
-df1のインデックスには`e` がdf2のインデックス値`c`がありませんので、それらはそれぞれ<strong>`NaN `</strong> が代入されます。 
+df1のインデックス[`a`, `b`, `c`, `d`]とdf2のインデックス[`a`, `b`, `d`, `e`]の和集合のインデックス値[`a`, `b`, `c`, `d`, `e`]を軸にdf1のcol1にdf2のcol2が結合されます。インデックスの順序はa,b,c順です。　
+df1のインデックスには`e` がdf2のインデックス値`c`がありませんので、それらはそれぞれ`NaN`が代入されます。 
 
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_05.png" | relative_url}})
