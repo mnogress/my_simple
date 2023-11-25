@@ -1,7 +1,7 @@
 ---
 layout: post
 title: データセットの結合 pd.merge 左、右、外部、内部、クロス結合
-feature-img: "assets/img/2019_06_30/website-1624028_1280.jpg"   
+feature-img: "assets/img/2020_08_15/grid-811032_1280.jpg"   
 tags: [pandas, data_handling]
 excerpt_separator: <!--more-->
 ---
