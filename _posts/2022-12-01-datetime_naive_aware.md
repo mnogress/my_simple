@@ -19,12 +19,16 @@ datetime モジュールは、日付や時刻を操作するためのクラス�
 time 型あるいは datetime 型のオブジェクトは aware か naive のどちらかです。
 一方、date 型のオブジェクトは常に naive です。
 
+---
+
 ### 通常 naive を使います
 
 naiveはタイムゾーン情報を持ちません。　通常、こちらで四則演算等の操作します。例えば
  `2021年8月22日の午前7時7分30秒は、2021-08-22 07:07:30`{:style="background-color: #faf5d2; font-size: 1.0em"}  となります。
 
 時刻表示は２４時間表示です。従って、午後4時33分17秒は 16:33:17 になります。
+
+---
 
 ### 時差の調整のために aware に変換します
 
@@ -41,6 +45,9 @@ aware はタイムゾーン情報を持っています。
 2. TypeError: DatetimeArray subtraction must have the same timezones or no timezones
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
+---
+
+
 ### UTC時刻でログされたCSVデータをJST時刻に変換する
 
 Teamsライブイベントの出席者エンゲージメントレポートを解析された方も少なくないかと思いますが
@@ -49,19 +56,27 @@ Teamsライブイベントの出席者エンゲージメントレポートを解
 
 日本時間(JST)に変換しないと、9時間遅れを理解して操作する必要がありますので、UTCからJSTに直すため、以下のようなタイムゾーンの操作が必須となります。
 
+---
+
+
 #### UTC to JST Datetime オブジェクトの操作
 
-1. teams のAttendance Reportを例にCSVデータをデータフレームに取り込みます
-2. Datetime オブジェクトに変換(この場合、naiveでUTC時刻でログされているとします）
-3. naive から aware への変換
-4. タイムゾーン（時差）の調整（UTC から JST等)
-5. Aware から Naive に戻す 　
+以下の操作をサンプルとして説明します。
 
----
+>
+1. Teams の「Attendance Report」を例にCSVデータをデータフレームに取り込みます
+2. Datetime オブジェクトに変換(この場合、naiveでUTC時刻でログされているとします）
+3. "naive" から "aware" への変換
+4. タイムゾーン（時差）の調整（UTC から JST等)
+5. "aware" から "naive" に戻す 
+>
+
+
 以下の図の通りになります。
 
 ![aware_naive]({{ "assets/img/2020_08_15/aware_naive.png" | relative_url}})<br>
 
+---
 
 ### 参照ページ一覧
 このブログを作成するにあたり、以下のページを参考にしています。
