@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 ### 変換イメージ
 データフレームの変換イメージを以下のとおり図示します。
 
-![countplot]({{ "assets/img/2020_08_15/fig_splited_01.png" | relative_url}}){:height="550px" width="9200px"}<br>
+![countplot]({{ "assets/img/2020_08_15/fig_splited_01.png" | relative_url}})<br>
 
 ### サンプルコード
 
@@ -72,4 +72,4 @@ display(df)
 
 ### 最終結果のデータフレーム
 
-![countplot]({{ "assets/img/2020_08_15/fig_splited_02.png" | relative_url}}){:height="250px" width="490px"}<br>
+![countplot]({{ "assets/img/2020_08_15/fig_splited_02.png" | relative_url}})<br>
