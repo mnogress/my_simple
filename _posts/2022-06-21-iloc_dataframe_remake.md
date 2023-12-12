@@ -75,7 +75,7 @@ columns.head(n)
 
 以下がイメージになります。　インデックス値がそのままオリジナルの列番号になります。
 
-![columns_to_dataframe]({{ "assets/img/2020_08_15/iloc_pic2.png" | relative_url}})<br>
+![columns_to_dataframe]({{ "assets/img/2020_08_15/iloc_pic2.png" | relative_url}}){:height="65%" width="65%"}<br>
 
 
 ### 参照ページ一覧
