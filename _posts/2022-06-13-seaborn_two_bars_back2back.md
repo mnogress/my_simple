@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 今回は、以下のようなマルチインデックスのデータセットを使ってグラフを作成したいと思います。4つの支部のそれぞれ令和3年度と4年度における達成率がデータとしてあります。支部名と年度名がラベルインデックスとして配置されて、各々の達成率がColumn で提供されています。
 
-![dataset_image]({{ "assets/img/2020_08_15/seaborn_pic7.png" | relative_url}})<br>
+![dataset_image]({{ "assets/img/2020_08_15/seaborn_pic7.png" | relative_url}}){:height="65%" width="65%"}<br>
 
 
 ### reset_index()でx軸、y軸をColumnに配置する
