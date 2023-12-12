@@ -174,7 +174,7 @@ df = pd.read_sql(query, conn)
 
 内容を確認します。
 
-![data_frame]({{ "assets/img/2020_08_15/fig31012.png" | relative_url}}){:height="85%" width="85%"}<br>
+![data_frame]({{ "assets/img/2020_08_15/fig31012.png" | relative_url}}){:height="65%" width="65%"}<br>
 
 
 
