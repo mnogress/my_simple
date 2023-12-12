@@ -29,7 +29,7 @@ excerpt_separator: <!--more-->
 
 表示結果`df.head()`は、以下のようになります。　
 
-![data_frame]({{ "assets/img/2020_08_15/fig1020001.png" | relative_url}}){:height="65%" width="65%"}<br>
+![data_frame]({{ "assets/img/2020_08_15/fig1020001.png" | relative_url}})<br>
 
 データセットの大きさは、1470 x 10　です。そのうち、
 
@@ -89,7 +89,7 @@ plt.show()
 
 結果は以下のとおりです。
 
-![data_frame]({{ "assets/img/2020_08_15/fig1020003.png" | relative_url}})<br>
+![data_frame]({{ "assets/img/2020_08_15/fig1020003.png" | relative_url}}){:height="65%" width="65%"}<br>
 
 ### seaborn.countplot の詳細
 
