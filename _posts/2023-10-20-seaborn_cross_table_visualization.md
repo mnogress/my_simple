@@ -29,7 +29,7 @@ excerpt_separator: <!--more-->
 
 表示結果`df.head()`は、以下のようになります。　
 
-![data_frame]({{ "assets/img/2020_08_15/fig1020001.png" | relative_url}})<br>
+![data_frame]({{ "assets/img/2020_08_15/fig1020001.png" | relative_url}}){:height="85%" width="85%"}<br>
 
 データセットの大きさは、1470 x 10　です。そのうち、
 
