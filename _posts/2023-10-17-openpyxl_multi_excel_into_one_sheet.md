@@ -36,7 +36,7 @@ Pythonを使って複数のexcelファイルの同じ場所のセルの値を一
 
 [Openpyxl](https://openpyxl.readthedocs.io/en/stable/tutorial.html){:target="_blank"} とはPythonでExcel ファイルを読み書き等の操作するためのモジュールです。一旦、EXCELファイルをPythonのプログラムで読み込んでしまえば、値の挿入から書式の変更までPythonプログラムやJupyter Notebook上でEXCEL操作が可能になります。
 
-### grob
+### glob
 
 複数のExcelファイルを読み込むために、[glob](https://docs.python.org/ja/3/library/glob.html){:target="_blank"} を利用します。　以下のサンプルでは、`D`ドライブの`jupyter`というフォルダ配下にある`xlsx`の拡張子がある`Excelファイル: workbook(gb)`を順次読み込ませ、読み込んだエクセルのbookの最初のシート`worksheets[0]`を `ws2`{:style="color: blue"}としています。
 
