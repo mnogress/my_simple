@@ -55,14 +55,14 @@ df.groupby(['Department','Attrition'])['Department'].count()
 
 ![cross_table1]({{ "assets/img/2020_08_15/fig1020002.png" | relative_url}})<br>
 
-結果を見てもお分かりのとおり、`Department` 単位の`Attrition`を`Deparment`をキー列に各々の数を集計します。
-このままでも、集計結果は理解できますが、これを棒グラフにして各々の`Department`毎の差異を数字ではなく、棒の大きさで視覚に訴えます。
+結果を見ていただければわかるとおり、`Department`ごとの`Attrition`を`Department`をキーにして各々の数を集計します。
+このままでも集計結果は理解できますが、それを棒グラフにして各`Department`ごとの差異を数字及び棒の大きさで視覚的に示します。
+
 
 ----
 ### Seaborn のcountplotを使って可視化する
 
-各カラム毎のユニークな値の総数が分かりましたので、その中身について全部または一部を一覧表示し、特性を理解するのに役に立つスクリプトが以下になります。
-
+ターゲット画像で示したとおり、各職種ごとにAttritionとNon-Attritionを対比した棒グラフを作成するためのスクリプトは以下のとおりです。
 
 {% highlight python linenos %}
 
