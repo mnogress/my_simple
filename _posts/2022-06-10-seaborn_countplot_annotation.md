@@ -1,14 +1,14 @@
 ---
 layout: post
-title: seaborn countplot の棒グラフに度数のannotationをつける
+title: seaborn countplot の棒グラフに度数のデータラベル(annotation)をつける
 feature-img: "assets/img/2020_08_15/flowers-7217498_1280.jpg"
-tags: [seaborn, visualization, Python]
+tags: [seaborn, visualization, Python, データラベル]
 excerpt_separator: <!--more-->
 ---
 
-[seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。countplot はカテゴリカルデータを集計から度数分布図までを一気に行なってくれる大変便利なツールです。
+[seaborn](https://seaborn.pydata.org){:target="_blank"}は[matplotlib](https://matplotlib.org){:target="_blank"}をベースにしたデータビジュアライゼーションライブラリです。countplot はカテゴリカルデータを集計から度数分布図までを一気に実行してくれる大変便利なツールです。
 
-今までも本サイトでも何度か、データビジュアライゼーションのサンプルとしてcode を紹介してきましたが、今回は度数分布を作成する`countplt` での `annotation（度数）` のつけ方について解説します。Excelの代わりにseanborn でサクサク、グラフ化の参考にしてください。
+本サイトでも何度か、データビジュアライゼーションのサンプルとしてseaborn をcode を紹介してきましたが、今回は度数分布を作成する`countplot` での `annotation（度数）` のつけ方について解説します。
 
 <!--more-->
 
@@ -17,7 +17,7 @@ excerpt_separator: <!--more-->
 日本語化した度数分布表を作成するため、
 [サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介しているデータセット3 のHRデータを編集して使っています。HRデータのうち、`Age`,	`EducationField`,	`TotalWorkingYears`　`MonthlyIncome` の列をそれぞれ、「年齢」、「専攻」、「勤続年数」、「月収」と書き換えました。　さらに、`EducationField`で含まれるカテゴリカルデータを日本語にしています。
 
-![sample_dataframe]({{ "assets/img/2020_08_15/seaborn_pic1.png" | relative_url}})<br>
+![sample_dataframe]({{ "assets/img/2020_08_15/seaborn_pic1.png" | relative_url}}){:height="50%" width="50%"}<br>
 
 {% highlight python linenos %}
 df['専攻'].value_counts()
