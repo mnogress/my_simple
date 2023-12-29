@@ -124,25 +124,27 @@ for gb in glob.glob(input_file_name, recursive=True):
 
 {% endhighlight %}
 
+### サンプルコードのLine by Line の説明
+
 <div style="padding: 20px; margin-bottom: 10px; border: 3px solid #DF1452; border-radius: 8px;">
 
 1. 必要なモジュールをロードする<br>
 2. 同上<br>
-3. 取りまとめるフォルダと配下のExcelファイルを指定 D:\\jupyter\<br>
-4. 書き込みファイル名を指定 `wb.xlsx`  ファイルをロードし結果を書き込む<br>
-5. `saved.xlsx`という別名で保存<br>
-6. 書き込み用'wb.xlsx'(output_file_name) を読み込み、`book`というオブジェクトに格納<br>
-7. アクティブシートを `ws` という名前で定義し、このシートに値を代入する<br>
-8. 最初の書き込み位置を2行目`line_num = 2`にセットする<br>
+3. 取りまとめるフォルダと配下のExcelファイル<strong>*.xls</strong>を指定する。コードでは以降、D:\\jupyter\とする。<br>
+4. 書き込みファイル名を <strong>wb.xlsx</strong> と定義し、結果を書き込む<br>
+5. <strong>saved.xlsx</strong>という別名で保存する。<br>
+6. 書き込み用<strong>wb.xlsx</strong>(output_file_name) を読み込み、<strong>book</strong>というオブジェクトに格納<br>
+7. アクティブシートを <strong>ws</strong> という名前で定義し、このシートに値を代入する<br>
+8. 最初の書き込み位置を2行目<strong>line_num = 2</strong>にセットする<br>
 9. 定数 'input_file_name'で指定したフォルダ配下の excelファイルがひとつづつ読み込まれる<br>
-10. 読み込まれるExcel bookの最初シート`worksheets[0]`をws2と定義する<br>
+10. 読み込まれるExcel bookの最初シート<strong>worksheets[0]</strong>をws2と定義する<br>
 11. ws2にある値を各行ごとのリスト形式です読み込む<br>
-12. wsの line_num行1列目`column=1`にsh_valuesの(0,0)=>1行目の1列目の値（都道府県名）を代入する<br>
-13. wsの line_num行2列目`column=2`にsh_valuesの(3,3)=>4行目の4列目の値（代表者名）を代入する<br>
-14. wsの line_num行3列目`column=3`にsh_valuesの(2,1)=>3行目の2列目の値（Web参加人数）を代入する<br>
-15. wsの line_num行4列目`column=3`にsh_valuesの(3,2)=>4行目の3列目の値（都道府県番号）を代入する<br>
+12. wsの line_num行1列目<strong>column=1</strong>にsh_valuesの(0,0)=>1行目の1列目の値（都道府県名）を代入する<br>
+13. wsの line_num行2列目<strong>column=2</strong>にsh_valuesの(3,3)=>4行目の4列目の値（代表者名）を代入する<br>
+14. wsの line_num行3列目<strong>column=3</strong>にsh_valuesの(2,1)=>3行目の2列目の値（Web参加人数）を代入する<br>
+15. wsの line_num行4列目<strong>column=3</strong>にsh_valuesの(3,2)=>4行目の3列目の値（都道府県番号）を代入する<br>
 16. line_numを +1 する<br>
-17. bookをセーブするファイル名はsaved_file_nameで定義している<br>
+17. bookをセーブする。ファイル名はsaved_file_nameで定義している<br>
 
 </div>
 
@@ -151,4 +153,4 @@ for gb in glob.glob(input_file_name, recursive=True):
 
 ### ひとこと
 
-><p>メールでEXCELファイルを送信し、決められたフォームに必要事項を入力してもらって記入済のEXCELファイルを取りまとめるという作業はメールとEXCELがオフィスツールとして定着した30数年前から今日まで根強く蔓延ったルーチン作業の一つだと思います。<br>課内等の１０数件であれば、一時間もあれば手作業でも完了しますが、全国47都道府県分であるとか、全国営業店、支店から等で100件以上の三桁のオーダーとなると手作業では半日以上かかることも少なくありません。Pythonを駆使して時短に挑戦する価値があるルーチン作業だと思います。
+><p>メールでEXCELファイルを送信し、決められたフォームに必要事項を入力してもらって記入済のEXCELファイルを取りまとめるという作業はメールとEXCELがオフィスツールとして定着した30数年前から今日まで根強く蔓延ったルーチン作業の一つだと思います。<br>課内等の10数件であれば、一時間もあれば手作業でも完了しますが、全国47都道府県分であるとか、全国営業店、支店から等で100件以上の三桁のオーダーとなると手作業では半日以上かかることも少なくありません。<br>Pythonを駆使して時短に挑戦する価値があるルーチン作業だと思います。
