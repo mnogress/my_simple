@@ -38,7 +38,7 @@ SQLiteをより身近に利用できるようになっています。
 
 ---
 
-###  sqlit　モジュールとは
+###  sqlite3　モジュールとは
 
 [sqlite3](https://docs.python.org/ja/3.5/library/sqlite3.html){:target="_blank"}モジュールは、
 Python上でデータセットをSQLデータベースとして格納し、
