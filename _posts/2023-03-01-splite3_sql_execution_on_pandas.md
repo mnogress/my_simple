@@ -7,19 +7,27 @@ excerpt_separator: <!--more-->
 ---
 
 
-この記事では、Jupyter Notebookを使用してデータ分析を行う際に、
-sqlite3で提供されるSQL文を使用してデータの読み込みと抽出操作をまとめました。
+この記事では、Jupyter NotebookのPandasを使用してデータ分析を行う際に、
+sqlite3で提供されるSQL文を使用してデータの読み込みと抽出操作をまとめました。<br>
 
-[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、軽量なディスク上のデータベースを提供するCライブラリです。
-サーバプロセスを別途用意する必要がなく、SQLクエリー言語（SQL文）を使用してデータベースにアクセスできます。
-SQLiteを使用することで、アプリケーションのプロトタイプを作成し、
-そのコードを後でPostgreSQLやOracleなどの大規模データベースに移行できるため、
-アプリ開発においてSQLデータベースの必須ツールとなっています。
+このブログがPythonプログラムでSQL操作を行う際に役立つことを願っています。
 
-今回は、Jupyter Notebookを使用したデータ分析を前提に、
-sqlite3で提供されるSQL文を使用してデータの読み込みおよび抽出の操作方法をまとめました。
 
 <!--more-->
+
+---
+
+
+### SQlite とは
+
+[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、Cライブラリで、軽量なディスク上のデータベースを提供します。
+サーバプロセスを別途用意する必要がなく、SQLクエリー言語（SQL文）を使用してデータベースにアクセスできます。
+SQLiteを使用することで、アプリケーションのプロトタイプを迅速に作成し、そのコードを後でPostgreSQLやOracleなどの大規模データベースに移行できます。
+そのため、[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、SQLデータベースを使うアプリ開発においては必須のツールとなっています。
+
+---
+
+### DB Browser for SQLite とは
 
 [DB Browser for SQLite](https://sqlitebrowser.org/){:target="_blank"}は、
 SQLiteデータベースを管理するためのソフトウェアです。
@@ -28,19 +36,19 @@ SQLiteデータベースの作成、閲覧、編集が可能で、データベ�
 SQLiteをより身近に利用できるようになっています。
 多くの人がこのソフトウェアを利用した経験があるかもしれません。
 
+---
+
+###  sqlit　モジュールとは
+
 [sqlite3](https://docs.python.org/ja/3.5/library/sqlite3.html){:target="_blank"}モジュールは、
 Python上でデータセットをSQLデータベースとして格納し、
 SQL文を使用してアクセスするためのインターフェイスを提供します。
 このモジュールを使用することで、PythonでSQLiteの操作を行うことができます。
 
-このブログがPythonプログラムでSQLの統合を行う際に役立つことを願っています。
-
-
-
 
 ---
 
-### サンプルデータセット
+### サンプルデータセットとその読み込み方法について
 
 [サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介した「データセット3: HR データ」を使います。他のデータセットでももちろん可能ですが、このデータセットに興味のある方は、[Kaggle_HR_attrition](https://www.kaggle.com/search?q=hr+attrition){:target="_blank"}で検索してデータセットをダウンロードしてください。
 
@@ -48,17 +56,22 @@ SQL文を使用してアクセスするためのインターフェイスを提�
 
 {% highlight python linenos %}
 import codecs
-with codecs.open("WA_Fn-UseC_-HR-Employee-Attrition.csv", mode ="r", encoding ="utf-8", errors="ignore") as file:
+with codecs.open("WA_Fn-UseC_-HR-Employee-Attrition.csv", 
+    mode ="r", encoding ="utf-8", errors="ignore") as file:
     df = pd.read_csv(file, delimiter =",", header=0)
 {% endhighlight %}
 
 今回は、データクリーニング前のRaw Data の読み込みを前提としているため、
-[UnicodeDecodeErrorで csv ファイルが読み込みエラーになる](https://www.so-wi.com/portfolio/csv-read-error){:target="_blank"}でもご紹介している方法でCSV形式のファイルを読み込みます。
+[UnicodeDecodeErrorで csv ファイルが読み込みエラーになる](https://www.so-wi.com/portfolio/csv-read-error){:target="_blank"}でもご紹介している方法でCSV形式のファイルを読み込みます。ポイントは以下のとおりです。
+
+>
 1. `mode ="r"`{:style="background: #ffebf6"} 読み込みモードを指定します。
 2. `encoding ="utf-8"`{:style="background: #ffebf6"} インターネットからダウンロードした場合は、`utf-8`{:style="background: #ffebf6"} を指定します。Windows PC（Excel）で操作したデータを使う場合は、`shift-jis`{:style="background: #ffebf6"}を指定します。
 3. `errors="ignore"`{:style="background: #ffebf6"}を指定してデコードできない文字が含まれていた場合に無視(ignore)するを指定します。
 4. CSVファイルをデータフレームとして読み込むにあたり`delimiter =","`{:style="background: #ffebf6"} CSVファイルなのでカンマを区切り文字にします。　
 5. `header=0`{:style="background: #ffebf6"}最初の行をヘッダーとして扱います。
+{:style="border-color: #C3E6F0; border-top-color: #C3E6F0; font-size: 1.0em; background-color: #DBEEF3;"}
+---
 
 ### sqlite DB を定義する
 
@@ -79,6 +92,7 @@ cur = conn.cursor()
 
 {% endhighlight %}
 
+---
 
 ### SQlite DBにテーブルを定義し、データフレームの中身をテーブルに流し込む 
 
@@ -108,6 +122,8 @@ ls コマンドでファイルを確認すると、217,088 バイトの大きさ
                1 個のファイル             217,088 バイト
                2 個のディレクトリ  212,100,857,856 バイトの空き領域
 {% endhighlight %}
+
+---
 
 ### SQLite DB にアクセスしてSQL文を実行する
 
