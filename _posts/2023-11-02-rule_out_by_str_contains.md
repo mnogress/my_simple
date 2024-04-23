@@ -1,6 +1,6 @@
 ---
 layout: post
-title: str.containsと否定演算子"~"による「指定の文字列を含まない行」を抽出する
+title: str.contain否定演算子"~"による「指定の文字列を含まない行」を抽出する
 feature-img: "assets/img/2020_08_15/presents-1913987_1280.jpg"
 tags: [Python, pandas, dataframe ]
 excerpt_separator: <!--more-->

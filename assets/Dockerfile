@@ -1,15 +1,27 @@
-FROM sylhare/jekyll:latest
-LABEL maintainer="sylhare"
-LABEL image="sylhare/type-on-strap"
+# FROM ruby:2.7.7-slim-bullseye
 
-# Create Type-on-strap Gemfile
-RUN echo "source \"https://rubygems.org\"" >> Gemfile
-RUN echo "gem 'type-on-strap', '>= 2.0.2', '< 3.0'" >> Gemfile
-RUN echo "Adding the Gemfile" >> cat Gemfile
+FROM ruby:2.7.1-buster
 
-# Install the theme
-RUN bundle install
+WORKDIR /work
 
-# Make it accessible from outside
-EXPOSE 4000
+COPY Gemfile /work/Gemfile
+COPY type-on-strap.gemspec /work/type-on-strap.gemspec
+
+
+# Set locale
+RUN set -ex \
+  && apt-get update \
+  && apt-get install -y \
+    locales \
+    locales-all \
+  && locale-gen en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+RUN set -ex \
+  && cd /work \
+  && bundle install \
+  && rm -rf /root/.bundle/cache
 
