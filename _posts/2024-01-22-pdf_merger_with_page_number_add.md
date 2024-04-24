@@ -178,6 +178,8 @@ canvas.save()
 {:style="background-color: #ffe3e2; border-left: #ffe3e2; font-size: 1.0em"}
 
 
+---
+
 
 ### 参照ページ一覧
 このブログを作成するにあたり、以下のページを参考にさせていただきました。併せてご覧ください。
