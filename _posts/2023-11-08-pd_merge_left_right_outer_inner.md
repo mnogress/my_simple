@@ -107,4 +107,10 @@ df1のインデックス[<strong>`a`, `b`, `c`, `d`</strong>]とf2のインデ�
 
 > 両方のキーカラムにキーが`null`である行が含まれている場合、これらの行は互いに一致します。これは通常のSQLの結合動作とは違う挙動になります。
 
-
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [データセットの結合 pd.concat 縦向き、横向き結合](https://www.so-wi.com/2023/11/09/pd_concat_axis_tate_yoko_df){:target="_blank"}<br>
+2) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes){:target="_blank"}<br>
+3) [Merge Join Concat Dataframes](https://www.so-wi.com/2022/03/01/dataframe_merge_concat_join){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
