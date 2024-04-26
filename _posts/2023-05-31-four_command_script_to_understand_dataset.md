@@ -2,6 +2,7 @@
 layout: post
 title: データセットを理解するためのスクリプト4選
 feature-img: "assets/img/2020_08_15/flowers-g500bc7407_640.jpg"
+color: rgb(80,140,22)
 tags: [Python, sqlite3, SQL ]
 excerpt_separator: <!--more-->
 ---
@@ -150,4 +151,5 @@ display(tab.style.format(format_dict))
 1) [サンプルデータセットの説明](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}<br>
 2) [df.value_counts() の結果をパワポ用にビジュアル化する](https://www.so-wi.com/2022/03/11/df_value_counts_visualization.html){:target="_blank"}<br>
 3) [クロス集計表とヒートマップでデータセットを理解する](https://www.so-wi.com/2020/12/22/cross_tab_heat_map.html){:target="_blank"}<br>
-{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
+4) [データフレーム内の列間の値を比較する](https://www.so-wi.com/2023/02/17/function_to_compare_between_rows){:target="_blank"}<br>
+{:style="border-color: #ff0044; border-top-color: #ff0044; font-size: 1.0em; background-color: #e0ffff;"}
