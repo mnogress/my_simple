@@ -2,6 +2,7 @@
 layout: post
 title: PyPDF2とpdfrwを利用して複数PDFファイルを連結してページ番号を付与する
 feature-img: "assets/img/2020_08_15/blue-2721464_1280.jpg"
+color: rgb(80,140,22)
 tags: [Python, PyPDF2, pdfrw, ページ番号, PDF連結 ]
 excerpt_separator: <!--more-->
 ---
@@ -187,4 +188,4 @@ canvas.save()
 1) [Python, pypdfでPDFを結合・分割（ファイル全体・個別ページ)](https://note.nkmk.me/python-pypdf2-pdf-merge-insert-split/){:target="_blank"}<br>
 2) [reportlab-how-to-add-a-footer-to-a-pdf-file](https://stackoverflow.com/questions/28281108/reportlab-how-to-add-a-footer-to-a-pdf-file){:target="_blank"}<br>
 3) [PyPDF2を使ったPDFからのテキストファイルの抽出](https://www.so-wi.com/2023/02/10/pdf_extract_text_by_pypdf2.html){:target="_blank"}<br>
-{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
+{:style="border-color: #ff0044; border-top-color: #ff0044; font-size: 1.0em; background-color: #e0ffff;"}
