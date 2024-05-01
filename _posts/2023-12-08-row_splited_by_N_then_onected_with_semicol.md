@@ -83,5 +83,4 @@ display(df)
 2) [カテゴリカル変数の要約](https://www.so-wi.com/2019/07/01/categorical_data_lookup.html){:target="_blank"}<br>
 3) [カラムデータの特定語句の有無を判定しカテゴリ化する](https://www.so-wi.com/2020/04/02/who_to_call.html){:target="_blank"}<br>
 4) [データクリーニングの備忘録(Updated)](https://www.so-wi.com/2023/10/15/data_cleaning_memo.html){:target="_blank"}<br>
-5) [カラムデータの特定語句の有無を判定しカテゴリ化する](https://www.so-wi.com/2020/04/02/who_to_call.html){:target="_blank"}<br>
 {:style="border-color: #ff0044; border-top-color: #ff0044; font-size: 1.0em; background-color: #e0ffff;"}

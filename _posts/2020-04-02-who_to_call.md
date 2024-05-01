@@ -193,6 +193,6 @@ Name: other, dtype: int64
 >
 1) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes.html){:target="_blank"}<br>
 2) [カテゴリカル変数の要約](https://www.so-wi.com/2019/07/01/categorical_data_lookup.html){:target="_blank"}<br>
-3) [カラムデータの特定語句の有無を判定しカテゴリ化する](https://www.so-wi.com/2020/04/02/who_to_call.html){:target="_blank"}<br>
+3) [Pandas 列内のデータをN分割して、それぞれをセミコロンで連結した新しい列を作成する](https://www.so-wi.com/2023/12/08/row_splited_by_N_then_onected_with_semicol.html){:target="_blank"}<br>
 4) [データクリーニングの備忘録(Updated)](https://www.so-wi.com/2023/10/15/data_cleaning_memo.html){:target="_blank"}<br>
 {:style="border-color: #ff0044; border-top-color: #ff0044; font-size: 1.0em; background-color: #e0ffff;"}
