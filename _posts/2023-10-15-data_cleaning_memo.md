@@ -2,7 +2,7 @@
 layout: post
 title: データクリーニングの備忘録(Updated)
 feature-img: "assets/img/2019_07_01/background-3046435_1920.jpg"   
-tags: [data handling, pandas]
+tags: [data_handling, pandas]
 excerpt_separator: <!--more-->
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: データセットを理解するためのスクリプト4選
 feature-img: "assets/img/2020_08_15/flowers-g500bc7407_640.jpg"
-color: rgb(80,140,22)
+color: rgb(33,90,2)
 tags: [Python, sqlite3, SQL ]
 excerpt_separator: <!--more-->
 ---

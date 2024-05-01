@@ -2,7 +2,7 @@
 layout: post
 title: PyPDF2とpdfrwを利用して複数PDFファイルを連結してページ番号を付与する
 feature-img: "assets/img/2020_08_15/blue-2721464_1280.jpg"
-color: rgb(80,140,22)
+color: rgb(33,90,2)
 tags: [Python, PyPDF2, pdfrw, ページ番号, PDF連結 ]
 excerpt_separator: <!--more-->
 ---
