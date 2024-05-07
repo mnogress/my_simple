@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 生年月日から年齢を計算する
+title: 生年月日(MM/DD/YY)から年齢を計算する
 feature-img: "assets/img/2019_07_01/alice_pattern.png"   
 tags: [pandas, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-生年月日から年齢を計算をします。文字列`MM/DD/YY`で年が二桁しかありません。
+生年月日(MM/DD/YY)から年齢を計算をします。文字列`MM/DD/YY`で年が二桁しかありません。
 <!--more-->
 [Kaggle]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"}でみつけた2016年リオデジャネイロオリンピックの選手リストを使って、Pandas で計算します。
 
@@ -16,10 +16,9 @@ excerpt_separator: <!--more-->
 
 ### チートシート
 
-やりたいこと | 注意点
+やりたいこと | Coding
 ---------- | -------------
-生年月日を計算下準備 | df[&#39;dob&#39;] = pd.to_datetime(df[&#39;dob&#39;])でオブジェクトにすること
-MM/DD/YYの対応 | 1/1/68 が2068-01-01になってしまうので、計算を分けること
+文字列の生年月日をDatetimeオブジェクトにする | df[&#39;dob&#39;] = pd.to_datetime(df[&#39;dob&#39;])
 
 
 ---
@@ -27,7 +26,7 @@ MM/DD/YYの対応 | 1/1/68 が2068-01-01になってしまうので、計算を�
 
 ### Kaggle データで作成する
 
-[リオデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} を使って、生年月日を計算しました。　生年月日がMM/DD/YYと年が二桁であること。　データに欠損値があるので、必ず、その行を落とすなどして下準備をする必要があります。
+[リオデータ]({{ "https://www.kaggle.com" | relative_url}}){:target="_blank"} を使って、生年月日を計算しました。　生年月日がMM/DD/YYと年が二桁であること。　データに欠損値があるので、必ず、その行を落とすなどして下準備が必要です。
 Kaggle で RIO, Olympic と検索すると出てくると思います・
 
 
@@ -84,4 +83,5 @@ df['age']=(now.year - df['DoB'].dt.year) - ((now.month - df['DoB'].dt.month) < 0
 
 ### ひとこと
 
-> データ解析に日付データは欠かせません。変化のスピードが早い中データ解析に求められるのも、新鮮なデータでの解析です。したがって、「いつのデータを元にしたか」で信頼性が大きく変わってきます。そのベースがdatetime handling です。
+> データ解析に日付データは欠かせません。`MM/DD/YY` 年数部分は二桁が依然主流です。<br>
+>`df["DoB"] = pd.to_datetime(df["dob"], format="%m/%d/%y")`はよく使うコードです。
