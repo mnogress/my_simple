@@ -18,7 +18,7 @@ excerpt_separator: <!--more-->
 
 やりたいこと | Coding
 ---------- | -------------
-文字列の生年月日をDatetimeオブジェクトにする | df[&#39;dob&#39;] = pd.to_datetime(df[&#39;dob&#39;])
+文字列の生年月日が格納されている列名"dob"をDatetimeオブジェクトにして、列名"DoB"として格納する | df["DoB"] = pd.to_datetime(df["dob"], format="%m/%d/%y")
 
 
 <div class="box28">
