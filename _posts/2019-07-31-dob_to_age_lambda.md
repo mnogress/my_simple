@@ -2,7 +2,7 @@
 layout: post
 title: 生年月日(MM/DD/YY)から年齢を計算する
 feature-img: "assets/img/2019_07_01/alice_pattern.png"   
-tags: [pandas, data_handling]
+tags: [pandas, data_handling, Datetime]
 excerpt_separator: <!--more-->
 ---
 
