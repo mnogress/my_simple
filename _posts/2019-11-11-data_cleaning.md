@@ -100,7 +100,7 @@ after (17570, 96)
 
 ### 文字列などEXCEL シリアル値でないデータをNaNにします
 
-日付データには、HやRで始まるもの、「令和」と漢字入力されているもの、'YYYY/MM/DD予定'となっているものが多くあります。それらを一括してNaNにするため、`pd.to_numeric`{:style="background-color: #ffe3e2; font-size: 0.9em"}の`errors = 'coerce'`{:style="background-color: #ffe3e2; font-size: 0.9em"}を指定することで、うまく変換できない場合はNaNを戻り値にします。　
+日付データには、HやRで始まるもの、「令和」と漢字入力されているもの、'YYYY/MM/DD予定'となっているものが多くあります。それらを一括してNaNにするため、`pd.to_numeric`{:style="background-color: #ffe3e2; font-size: 0.9em"}の`errors = 'coerce'`{:style="background-color: #ffe3e2; font-size: 0.9em"}を指定することで、うまく変換できない場合はNaNを戻り値にします。　
 参照：[pandas.to_numeric](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas-to-numeric){:target="_blank"}
 
 {% highlight python linenos %}
@@ -148,7 +148,7 @@ after (16044, 96)
 
 ### 企業IDが重複しているデータを最新のデータを残して削除します
 
-CRMと同様、企業ID一つに対してその状況アップデートしていますので、同じ企業IDを持つ行の重複は無いはずですが、実際には重複があります。最新のデータを残して、重複処理をします。そのためには：<br>
+CRMと同様、企業ID一つに対してその状況アップデートしていますので、同じ企業IDを持つ行の重複は無いはずですが、実際には重複があります。最新のデータを残して、重複処理をします。そのためには：<br>
 １） 日付で若い順にデータセットをソートします<br>
 ２） `df.drop_duplicates([ keep='first' )`{:style="background-color: #ffe3e2; font-size: 0.9em"}で最初のデータを残すとします。
 
