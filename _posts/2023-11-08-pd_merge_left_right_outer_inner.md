@@ -42,7 +42,7 @@ DataFrameまたは名前付きSeriesオブジェクトをデータベースス�
 
 ### pd.merge のコーディングルール
 
-コーディングルールは以下のとおりです。[pd.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html#pandas-merge){:target="_blank"}のとおり、引数は他にもありますので、興味がある場合参照してください。
+コーディングルールは以下のとおりです。[pd.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html#pandas-merge){:target="_blank"}のとおり、引数は他にもありますので、興味がある方は、参照すると良いでしょう。
 df1 が左(left)、 df2 が右(right) です。
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_01.png" | relative_url}})
@@ -85,7 +85,7 @@ df1のインデックス[<strong>`a`, `b`, `c`, `d`</strong>]とf2のインデ�
 
 クロス結合（cross join）は、2つのDataFrameの全ての行同士の組み合わせを生成する操作です。クロス結合は、結合する列（キー）を指定せずに、単に2つのDataFrameを結合し、結果として全ての行の組み合わせを生成します。
 
-クロス結合は通常、大きなデータセットの場合や特定の条件を満たす全ての組み合わせを見つける必要がある場合に使用されます。ただし、注意が必要で、DataFrameが大きい場合は生成される組み合わせが爆発的に増加し、メモリ使用量が増加する可能性があるため、注意が必要です。
+クロス結合は通常、大きなデータセットの場合や特定の条件を満たす全ての組み合わせを見つける必要がある場合に使用されます。ただし、DataFrameが大きい場合は生成される組み合わせが爆発的に増加し、メモリ使用量が増加する可能性があるため、注意が必要です。
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_07.png" | relative_url}})
 
