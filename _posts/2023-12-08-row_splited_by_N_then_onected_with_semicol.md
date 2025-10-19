@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Pandas 列内のデータをN分割して、それぞれをセミコロンで連結した新しい列を作成する
-feature-img: "assets/img/2020_08_15/background-6360864_640.png"   
-tags: [pandas, concat]
+feature-img: "assets/img/2020_08_15/background-6360864_640.png" 
+color: rgb(33,90,2)
+tags: [pandas, concat, data_handling]
 excerpt_separator: <!--more-->
 ---
 
@@ -72,4 +73,14 @@ display(df)
 
 ### 最終結果のデータフレーム
 
-![countplot]({{ "assets/img/2020_08_15/fig_splited_02.png" | relative_url}}){:height="60%" width="60%"}<br>
+![countplot]({{ "assets/img/2020_08_15/fig_splited_02.png" | relative_url}}){:height="50%" width="50%"}<br>
+
+---
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes.html){:target="_blank"}<br>
+2) [カテゴリカル変数の要約](https://www.so-wi.com/2019/07/01/categorical_data_lookup.html){:target="_blank"}<br>
+3) [カラムデータの特定語句の有無を判定しカテゴリ化する](https://www.so-wi.com/2020/04/02/who_to_call.html){:target="_blank"}<br>
+4) [データクリーニングの備忘録(Updated)](https://www.so-wi.com/2023/10/15/data_cleaning_memo.html){:target="_blank"}<br>
+{:style="border-color: #ff0044; border-top-color: #ff0044; font-size: 1.0em; background-color: #e0ffff;"}

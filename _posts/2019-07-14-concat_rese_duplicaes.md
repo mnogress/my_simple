@@ -101,3 +101,13 @@ Kaggle より[HRデータ]({{ "https://www.kaggle.com" | relative_url}}){:target
 ### ひとこと
 
 > マシンラーニング等で解析する場合は、一つの大きなデータセットをトレーニングとテストに分けていきます。　人が解析や管理するには、データセットを細分化した方が都合がいいかもしれません。　そのため、解析にあたりこのような単純ではあるが、気の抜けない「結合作業」は必ず存在します。
+
+---
+
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [データセットの結合 pd.concat 縦向き、横向き結合](https://www.so-wi.com/2023/11/09/pd_concat_axis_tate_yoko_df){:target="_blank"}<br>
+2) [Merge Join Concat Dataframes](https://www.so-wi.com/2022/03/01/dataframe_merge_concat_join){:target="_blank"}<br>
+3) [データセットの結合 pd.merge 左、右、外部、内部、クロス結合](https://www.so-wi.com/2023/11/08/pd_merge_left_right_outer_inner){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}

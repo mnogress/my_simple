@@ -2,16 +2,47 @@
 layout: post
 title: カラムデータの特定語句の有無を判定しカテゴリ化する
 feature-img: "assets/img/2019_07_01/background-3045402_1920.png"   
-tags: [data handling, pandas]
+color : rgb(33,90,2)
+tags: [data_handling, pandas]
 excerpt_separator: <!--more-->
 ---
 
 EXCELに溜め込まれた訪問先の最初の担当者の様々な役職データを「経営層」、「管理職層」、「一般職（その他）」に
 分類して、どの層にアポを取れてアプローチすれば、次のセルステージにつなげる確率が高いかを分析しました。
 
-仮説「経営層から最初に攻めるトップダウンアプローチが有効である」とし、
-立証「各層のセルステージ成功率に有意な差がある」
+<div class="box28">
+    <span class="box-title">仮説&立証</span>
+    <p style="font-size: 110%; color: blue;"><strong>仮説</strong>「経営層から最初に攻めるトップダウンアプローチが有効である」<br>
+    <strong>立証</strong>「各層のセルステージ成功率に有意な差がある」</p>
+</div>
 
+<style>
+.box28 {
+    position: relative;
+    margin: 2em 0;
+    padding: 25px 10px 7px;
+    border: solid 5px #dc143c;
+}
+.box28 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -2px;
+    left: -2px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #dc143c;
+    color: #ffffff;
+    font-weight: bold;
+}
+.box28 p {
+    margin: 0; 
+    padding: 0;
+}
+</style>
+
+<br>
 分析そのものは簡単でしたが、手間取ったのは、担当者の様々な役職データの分類作業です。
 
 <!--more-->
@@ -34,7 +65,7 @@ EXCELに溜め込まれた訪問先の最初の担当者の様々な役職デー
 
 やりたいこと | 方法
 ---------- | -------------
-代表取締役,理事長,社長,取締役,理事,執行役員<br>のいずれかの文字列があれば Trueを返す。| 1. executive  = 代表取締役,理事長,社長,取締役,理事,執行役員<br>2. df[&#39;executive&#39;] =s.str.contains(executive, na=False)
+代表取締役,理事長,社長,取締役,理事,執行役員<br>のいずれかの文字列があれば Trueを返し、経営層としてカテゴリ化する。| 1. executive  = &#39;代表取締役`|`理事長`|`社長`|`取締役`|`理事`|`執行役員&#39;<br>2. df[&#39;executive&#39;] =s.str.contains(executive, na=False)
 Trueを1に変換する<br>Falseを0に変換する | 1. df[&#39;executive&#39;] = df[&#39;executive&#39;] * 1
 
 ---
@@ -156,3 +187,12 @@ Name: other, dtype: int64
 
 > 今回は、「経営層」、「管理職層」、「一般職層」の3つのカテゴリーに分類しましたが、大企業ではあれば、管理職にもいわゆる「課長」、「支店長」といった中間管理職、「執行役員」とか「本部長」といった事業責任者を分けて分析したいというニーズも当然でてきます。その場合は、従業員数が1000人を超える大企業に対して分類を細かく分けるというようなデータスライスと一緒に行うのが効果的です。しかし、社員数が1000人以上では、セールストップの訪問でも社長といった役員との訪問はほとんどなく、事業責任者が実質、経営層とするのが妥当である場合も少なく無いと思います。
 
+---
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes.html){:target="_blank"}<br>
+2) [カテゴリカル変数の要約](https://www.so-wi.com/2019/07/01/categorical_data_lookup.html){:target="_blank"}<br>
+3) [Pandas 列内のデータをN分割して、それぞれをセミコロンで連結した新しい列を作成する](https://www.so-wi.com/2023/12/08/row_splited_by_N_then_onected_with_semicol.html){:target="_blank"}<br>
+4) [データクリーニングの備忘録(Updated)](https://www.so-wi.com/2023/10/15/data_cleaning_memo.html){:target="_blank"}<br>
+{:style="border-color: #ff0044; border-top-color: #ff0044; font-size: 1.0em; background-color: #e0ffff;"}

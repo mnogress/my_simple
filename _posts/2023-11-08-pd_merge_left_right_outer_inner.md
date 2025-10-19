@@ -42,7 +42,7 @@ DataFrameまたは名前付きSeriesオブジェクトをデータベースス�
 
 ### pd.merge のコーディングルール
 
-コーディングルールは以下のとおりです。[pd.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html#pandas-merge){:target="_blank"}のとおり、引数は他にもありますので、興味がある場合参照してください。
+コーディングルールは以下のとおりです。[pd.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html#pandas-merge){:target="_blank"}のとおり、引数は他にもありますので、興味がある方は、参照すると良いでしょう。
 df1 が左(left)、 df2 が右(right) です。
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_01.png" | relative_url}})
@@ -85,7 +85,7 @@ df1のインデックス[<strong>`a`, `b`, `c`, `d`</strong>]とf2のインデ�
 
 クロス結合（cross join）は、2つのDataFrameの全ての行同士の組み合わせを生成する操作です。クロス結合は、結合する列（キー）を指定せずに、単に2つのDataFrameを結合し、結果として全ての行の組み合わせを生成します。
 
-クロス結合は通常、大きなデータセットの場合や特定の条件を満たす全ての組み合わせを見つける必要がある場合に使用されます。ただし、注意が必要で、DataFrameが大きい場合は生成される組み合わせが爆発的に増加し、メモリ使用量が増加する可能性があるため、注意が必要です。
+クロス結合は通常、大きなデータセットの場合や特定の条件を満たす全ての組み合わせを見つける必要がある場合に使用されます。ただし、DataFrameが大きい場合は生成される組み合わせが爆発的に増加し、メモリ使用量が増加する可能性があるため、注意が必要です。
 
 ![merge_format]({{ "/assets/img/2020_08_15/fig_1113_07.png" | relative_url}})
 
@@ -108,3 +108,13 @@ df1のインデックス[<strong>`a`, `b`, `c`, `d`</strong>]とf2のインデ�
 > 両方のキーカラムにキーが`null`である行が含まれている場合、これらの行は互いに一致します。これは通常のSQLの結合動作とは違う挙動になります。
 
 
+---
+
+
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [データセットの結合 pd.concat 縦向き、横向き結合](https://www.so-wi.com/2023/11/09/pd_concat_axis_tate_yoko_df){:target="_blank"}<br>
+2) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes){:target="_blank"}<br>
+3) [Merge Join Concat Dataframes](https://www.so-wi.com/2022/03/01/dataframe_merge_concat_join){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}

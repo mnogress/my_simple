@@ -6,7 +6,8 @@ tags: [Python, data_handling]
 excerpt_separator: <!--more-->
 ---
 
-カテゴリカル変数をデータ解析の説明変数とするためダミー変数にします。Pandas では一発でダミー変数にできます。
+カテゴリカル変数を回帰分析等の説明変数として利用するためには、ダミー変数にする必要があります。
+Pandas では`dummy = pd.get_dummies(dummy, prefix='td')`{:style="background: #64f5eb; font-size: 100%"}でダミー変数化されたデータフレーム(`dummy`{:style="background: #64f5eb; font-size: 100%"})を生成きます。
 <!--more-->
 
 
@@ -17,7 +18,7 @@ excerpt_separator: <!--more-->
 やりたいこと | コーディング
 ---------- | -------------
 ダミー変数化したい列をシリーズデータ(dummy)として取り出す | dummy = df[&#39;ダミー変数したい列&#39;] 
-シリーズデータ(dummy)をダミー変数のデータフレームにする | dymmy = pd.get_dummies(dummy, prefix=&#39;td&#39;)
+シリーズデータ(dummy)をダミー変数のデータフレームにする | dummy = pd.get_dummies(dummy, prefix=&#39;td&#39;)
 
 参照　[pd.get_dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html#pandas-get-dummies
 ){:target="_blank"}

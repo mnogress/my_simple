@@ -1,6 +1,6 @@
 ---
 layout: post
-title: str.containsと否定演算子"~"による「指定の文字列を含まない行」を抽出する
+title: str.contain否定演算子"~"による「指定の文字列を含まない行」を抽出する
 feature-img: "assets/img/2020_08_15/presents-1913987_1280.jpg"
 tags: [Python, pandas, dataframe ]
 excerpt_separator: <!--more-->
@@ -112,3 +112,13 @@ display(df)
     padding: 0;
 }
 </style>
+
+---
+
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [カラムデータの特定語句の有無を判定しカテゴリ化する](https://www.so-wi.com/2020/04/02/who_to_call){:target="_blank"}<br>
+2) [データフレーム内の列間の値を比較する](https://www.so-wi.com/2023/02/17/function_to_compare_between_rows){:target="_blank"}<br>
+3) [データセットを理解するためのスクリプト4選](https://www.so-wi.com/2023/05/31/four_command_script_to_understand_dataset){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}

@@ -73,3 +73,14 @@ outerjoinとinnerjoinの違いは覚えておきたいところです。縦方�
 
 `参照：`{:style="color: blue; font-size: 120"}[pd.concat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html){:target="_blank"}
 
+
+---
+
+
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [データセットの結合 pd.merge 左、右、外部、内部、クロス結合](https://www.so-wi.com/2023/11/08/pd_merge_left_right_outer_inner){:target="_blank"}<br>
+2) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes){:target="_blank"}<br>
+3) [Merge Join Concat Dataframes](https://www.so-wi.com/2022/03/01/dataframe_merge_concat_join){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}

@@ -124,7 +124,7 @@ plt.show()
 
 
 ### データラベルを付ける
-データラベルは、以下のCoding で実現しています。`bar_labe;()`{:style="background: #64f5eb; font-size: 105%"}を利用すると簡単に実現できます。
+データラベルは、以下のCoding で実現しています。`bar_label()`{:style="background: #7fffd4; font-size: 105%"}を利用すると簡単に実現できます。
 ちなみに、`range(2)`{:style="background: #64f5eb; font-size: 105%"}の2 は
 比較対象で `hue`{:style="background: #64f5eb; font-size: 105%"}で
 凡例としている `Attrition/Non Attrition`{:style="background: #64f5eb; font-size: 105%"} の

@@ -54,5 +54,12 @@ df1.join(df2, rsuffix='_2')
 | インデックス Join            | `df1.join(df2, rsuffix='_2')`{:style="background: #ffebf6"} |
 
 
+### 参照ページ一覧
+このブログを作成するにあたり、以下のページを参考にしています。併せてご覧ください。
+>
+1) [データセットの結合 pd.concat 縦向き、横向き結合](https://www.so-wi.com/2023/11/09/pd_concat_axis_tate_yoko_df){:target="_blank"}<br>
+2) [複数の行を連結して重複行を削除する](https://www.so-wi.com/2019/07/14/concat_rese_duplicaes){:target="_blank"}<br>
+3) [データセットの結合 pd.merge 左、右、外部、内部、クロス結合](https://www.so-wi.com/2023/11/08/pd_merge_left_right_outer_inner){:target="_blank"}<br>
+{:style="border-color: #5f564d; border-top-color: #5f564d; font-size: 1.0em; background-color: #f5f5dc;"}
 
 
