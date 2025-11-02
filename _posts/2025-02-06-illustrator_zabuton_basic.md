@@ -17,7 +17,7 @@ sidebar:
   nav: "docs"
 tag: [illustrator, appearance_pannel, design]
 category: illustrator
-date: 2021-02-04
+date: 2025-02-04
 last_modified_at : 2025-10-22 09:00:00
 ---
 <style type="text/css">
