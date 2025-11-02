@@ -1,6 +1,0 @@
-
-
-winpty docker run --rm -it --name mysimple_bak     -v /$PWD/_config.yml://work/_config.yml     -v /$PWD/index.html://work/index.html     -v /$PWD/_data/://work/_data/ -v /$PWD/_includes/://work/_includes/   -v /$PWD/_layouts/://work/_layouts/   -v /$PWD/_portfolio/://work/_portfolio/   -v /$PWD/_posts/://work/_posts/ -v /$PWD/_sass/://work/_sass/   -v /$PWD/assets/://work/assets/     -v /$PWD/pages/://work/pages/     -v /$PWD/_site/://work/_site/     -p 4000:4000     -w //work     mysimple_bak     bundle exec jekyll serve -H 0.0.0.0
-
-
-winpty docker run --rm -it --name my_simple     -v /$PWD/_config.yml://work/_config.yml     -v /$PWD/index.html://work/index.html     -v /$PWD/_data/://work/_data/ -v /$PWD/_includes/://work/_includes/   -v /$PWD/_layouts/://work/_layouts/   -v /$PWD/_portfolio/://work/_portfolio/   -v /$PWD/_posts/://work/_posts/ -v /$PWD/_sass/://work/_sass/   -v /$PWD/assets/://work/assets/     -v /$PWD/pages/://work/pages/     -v /$PWD/_site/://work/_site/     -p 4000:4000     -w //work     my_simple     bundle exec jekyll serve -H 0.0.0.0
