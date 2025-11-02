@@ -1,0 +1,47 @@
+main:
+  - title: "Top"
+    url: /
+  - title: "カテゴリ"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+
+
+docs:
+  - title: よく読まれている記事
+    children: 
+      - title: "そのまま覚えるフランス語の文例 ～ faire ～"
+        url: /français/faire_ca_memo/
+      - title: "そのまま覚えるフランス語の文例 ～ aller ～"
+        url: /français/comm_ca_memo/
+      - title: "カテゴリカルデータの個数、構成比率、トータル行を集計、整形する"
+        url: /reference/df_velue_counts_formatting/
+      - title: "日付の新しいものを残す重複排除"
+        url: /reference/sort_drop_duplicate/
+      - title: "Markdown Cheat Sheet"
+        url: /reference/Markdown_Cheat_Sheet/
+      - title: "Minimal mistakes の文字の大きさ変更のための SCSS"
+        url: /reference/minimal_mistakes_scss/
+      - title: "Jupyter NotebookでPandas 使う際の必須Coding集"
+        url: /reference/Jupyter_Notebook_Essensial_Notebook_Essensial/
+      - title: "HTML/Markdown style sheet reference"
+        url: /reference/html_style_sheet_reference/
+      - title: "Excelファイルの読み書き"
+        url: /reference/Read_Write_Excel/
+        
+  - title: 関連記事
+    children:
+      - title: "Top"
+        url: /  
+      - title: "カテゴリ"
+        url: /categories/
+      - title: "TAGs"
+        url: /tags/
+      - title: "About"
+        url: /about/
+      - title: "Conditions"
+        url: /terms_and_conditions/
+      - title: "External Link"
+        url: https://google.com 
+        target: _blank
+

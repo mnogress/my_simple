@@ -1,0 +1,19 @@
+# /_data/authors.yml
+
+Author:
+  name        : "サイト作成者"
+  bio         : "Je suis très travailleur."
+  url         : "https://southwiseman.blog"
+  avatar      : "images/200by200_dog.png"
+  location    : "Chiba, Japan"
+  links:
+    - label: "About Me"
+      icon: "fa fa-user"
+      url: "https://southwiseman.blog/about/"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://southwiseman.blog"
+  #  - label: "Twitter"
+  #    icon: "fab fa-fw fa-twitter-square"
+  #    url: "https://twitter.com/extravagantman"
+
