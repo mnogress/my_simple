@@ -10,10 +10,6 @@ main:
 docs:
   - title: よく読まれている記事
     children: 
-      - title: "そのまま覚えるフランス語の文例 ～ faire ～"
-        url: /français/faire_ca_memo/
-      - title: "そのまま覚えるフランス語の文例 ～ aller ～"
-        url: /français/comm_ca_memo/
       - title: "カテゴリカルデータの個数、構成比率、トータル行を集計、整形する"
         url: /reference/df_velue_counts_formatting/
       - title: "日付の新しいものを残す重複排除"

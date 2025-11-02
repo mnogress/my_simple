@@ -15,13 +15,13 @@ remote_theme             : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    :  "air" #"air" #"air" #"default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # Site Settings
 locale                   : "en-US"
-title                    : "SouthWiseMan's Blog"
+title                    : "so-wi.com_blog"
 title_separator          : "-"
-name                     : "southwiseman.blog"
+name                     : "so-wi.com_blog"
 description              : "Blog for Data Analysis and more.."
-url                      : "https://docker_safe.github.io"
+url                      : "https://mnogress.github.io"
 baseurl                  : ""
-repository               : "mnogress/docker_safe"
+repository               : "mnogress/my_simple"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -99,7 +99,7 @@ social:
 analytics:
   provider               : "google-gtag"
   google:
-    tracking_id          : "G-TN6XXL3XL8"
+    tracking_id          : "UA-164667445-1"
     anonymize_ip         : False # default
 
 
