@@ -17,7 +17,7 @@ sidebar:
   nav: "docs"
 tag: [WinPython, openpyxl, offline]
 category: Python
-date: 2021-04-08
+date: 2025-04-08
 last_modified_at : 2025-10-30 09:00:00
 ---
 

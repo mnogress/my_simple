@@ -17,7 +17,7 @@ sidebar:
   nav: "docs"
 tag: [seaborn, visualization, Python]
 category: Python
-date: 2022-06-11
+date: 2025-06-11
 last_modified_at : 2025-10-30 09:00:00
 ---
 

@@ -17,7 +17,7 @@ sidebar:
   nav: "docs"
 tag: [DataFrame, ndarray, list]
 category: Python
-date: 2021-07-11
+date: 2025-07-11
 last_modified_at : 2025-10-29 09:00:00
 ---
 

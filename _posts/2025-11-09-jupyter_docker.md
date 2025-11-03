@@ -17,7 +17,7 @@ sidebar:
   nav: "docs"
 tag: [Docker, Jupyter Notebook, Windows]
 category: Python
-date: 2021-11-09
+date: 2025-11-09
 last_modified_at : 2025-10-29 09:00:00
 ---
 
