@@ -37,7 +37,7 @@ docs:
         url: /about/
       - title: "Conditions"
         url: /terms_and_conditions/
-      - title: "External Link"
-        url: https://google.com 
+      - title: "Apprendre le français"
+        url: https://southwiseman.blog/ 
         target: _blank
 
