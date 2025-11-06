@@ -158,7 +158,8 @@ Numpyには、ndarrayと呼ばれるデータ型が⽤意されています。 n
 
 
 
-<strong>Pandas, Numpyとも「統計量」を算出するメソッドは多数提供されています。Pandas の方が使いやすく、見やすいという意見も多いです。</strong>
+**Pandas, Numpyとも「統計量」を算出するメソッドは多数提供されています。Pandas の方が使いやすく、見やすいという意見も多いです。**
+{: .notice--danger}
 
 
 ### Python標準の配列データの形式がlist

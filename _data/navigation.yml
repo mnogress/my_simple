@@ -10,6 +10,14 @@ main:
 docs:
   - title: よく読まれている記事
     children: 
+      - title: "DataFrame, ndarray, list の使い分けについて実用的に考える"
+        url: /Python/python_ndarray_dataframe_conversion/
+      - title: "WinPython でオフライン環境でPythonを使う"
+        url: /Python/winpython_install/
+      - title: "イラレのアピアランスパネルを理解する"
+        url: /illustrator/illustrator_pannel_1/
+      - title: "アピアランスパネルで座布団を作成する"
+        url: /illustrator/illustrator_zabuton_basic/
       - title: "カテゴリカルデータの個数、構成比率、トータル行を集計、整形する"
         url: /reference/df_velue_counts_formatting/
       - title: "日付の新しいものを残す重複排除"
