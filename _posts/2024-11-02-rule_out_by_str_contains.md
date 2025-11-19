@@ -100,10 +100,10 @@ letter-spacing: inherit;
 }
 </style>
 
-Pandas の**str.contais**を利用して指定の値を含まない行の抽出方法をまとめました。
+Pandas の<strong>str.contais</strong>を利用して指定の値を含まない行の抽出方法をまとめました。
 データフレームの中身をクリーニング等で抽出作業は必須スキルです。
 今回は、
-**str.contains("除きたい文字列")**と否定演算子 ** ~ ** を使って** ~df **
+<strong>str.contains("除きたい文字列")</strong>と否定演算子 <strong> ~ </strong> を使って<strong> ~df </strong>
 として<strong>指定の文字列を含まない行の抽出方法</strong>をまとめました。
 
 <!--more-->
