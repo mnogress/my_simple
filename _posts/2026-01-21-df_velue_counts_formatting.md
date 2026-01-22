@@ -35,10 +35,6 @@ last_modified_at : 2026-01-21 11:00:00
 
 {% highlight python linenos  %}
 
-import pandas as pd
-
-col_name = '部門'  # 集計したい列名
-
 # 件数（count）と構成比（normalize=Trueで比率が出せる）
 vc = df[col_name].value_counts(dropna=False)         # 件数
 ratio = df[col_name].value_counts(dropna=False, normalize=True)  # 構成比
@@ -51,7 +47,7 @@ tab = pd.DataFrame({
 
 # 合計行（Total）を追加
 tab.loc['Total', '件数'] = tab['件数'].sum()
-tab.loc['Total', '構成比'] = tab['件数'] / tab.loc['Total', '件数']  # =1.0 になる
+tab.loc['Total', '構成比'] = tab['構成比'].sum()
 
 # 表示用フォーマット
 format_dict = {'構成比': '{:.1%}', '件数': '{:n}'}
