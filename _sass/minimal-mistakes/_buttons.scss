@@ -1,0 +1,223 @@
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+/*
+   Default button
+   ========================================================================== */
+
+.btn {
+  /* default */
+  display: inline-block;
+  margin-bottom: 0.25em;
+  padding: 0.5em 1em;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-width: 0;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+
+
+
+
+  .icon {
+    margin-inline-end: 0.5em;
+  }
+
+  .icon + .hidden {
+    margin-inline-start: -0.5em; /* override for hidden text*/
+  }
+
+  /* button colors */
+  $buttoncolors:
+  (primary, $primary-color),
+  (inverse, #fff),
+  (light-outline, transparent),
+  (success, $success-color),
+  (warning, $warning-color),
+  (danger, $danger-color),
+  (info, $info-color),
+  (facebook, $facebook-color),
+  (twitter, $twitter-color),
+  (linkedin, $linkedin-color);
+
+  @each $buttoncolor, $color in $buttoncolors {
+    &--#{$buttoncolor} {
+      @include yiq-contrasted($color);
+      @if ($buttoncolor == inverse) {
+        border: 1px solid $border-color;
+      }
+      @if ($buttoncolor == light-outline) {
+        border: 1px solid #fff;
+      }
+
+      &:visited {
+        @include yiq-contrasted($color);
+      }
+
+      &:hover {
+        @include yiq-contrasted(mix(#000, $color, 20%));
+      }
+    }
+  }
+
+  /* fills width of parent container */
+  &--block {
+    display: block;
+    width: 100%;
+
+    + .btn--block {
+      margin-top: 0.25em;
+    }
+  }
+
+  /* disabled */
+  &--disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+    opacity: 0.65;
+  }
+
+  /* extra large button */
+  &--x-large {
+    font-size: $type-size-4;
+  }
+
+  /* large button */
+  &--large {
+    font-size: $type-size-5;
+  }
+
+  /* small button */
+  &--small {
+    font-size: $type-size-7;
+  }
+}
+
+/* ボタン全体 CSS コントロール */
+.page_top_btn {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: rgb(0, 146, 202);
+  opacity: 0.55;
+  border-radius: 50%;
+  }
+/*-- ①　ウィンドウ幅が広い時（60em以上） --*/
+@media screen and (min-width:60empx){
+.page_top_btn{
+    left: 5%;
+    margin-left:1em; /*コンテンツの中心からボタンまでの距離*/
+  }
+} 
+/*-- ②　ウィンドウ幅が狭い時（59.9em以下） 消える--*/
+@media screen and (max-width:59.9em){
+.page_top_btn{
+    display: none;
+    right:0;
+    margin-left:0;
+  }
+}
+  
+  /* Font Awesome */
+  .page_top_btn::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102'; /*＾が二つ*/
+  font-size: 50px;
+  color: #ffffff;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  translate: -50% -50%;
+  }
+
+  .page_top_btn::after {
+    content: '先頭';
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    top: 5%;
+    left: 50%;
+    translate: -50%;
+  }
+
+/*-- ①　ウィンドウ幅が広い時（60em以上） --*/
+@media screen and (min-width:60empx){
+  .pagetop{
+      left: 5%;
+      margin-left:1em; /*コンテンツの中心からボタンまでの距離*/
+    }
+  } 
+  /*-- ②　ウィンドウ幅が狭い時（59.9em以下） 消える--*/
+@media screen and (max-width:59.9em){
+  .pagetop{
+      display: none;
+      right:0;
+      margin-left:0;
+    }
+  }
+
+
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+}
+.pagetop a {
+    display: block;
+    background-color: #faf8f8;
+    text-align: center;
+    color: #07022a;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 5px 10px;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+.pagetop a:hover {
+    display: block;
+    background-color: #021126;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    padding:5px 10px;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: rgba(199, 103, 13, 0.44);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 32px;
+}
+
+#myBtn:hover {
+  background-color: rgba(9, 26, 80, 0.44);
+}
