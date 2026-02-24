@@ -2,7 +2,7 @@
 layout: single
 title: カテゴリカルデータの個数、構成比率、トータル行を集計、整形する
 header:
-  overlay_image: images/header_F.png
+  overlay_image: images/header_A3.png
   overlay_filter: rgba(44, 82, 207, 0.35)
 toc: True
 toc_label: "目次"
