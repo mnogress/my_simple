@@ -110,11 +110,53 @@ display: inline-block;
 letter-spacing: inherit;
 }
 
-.custom-list-violet {
+.bleu {
 color: rgb(67, 31, 158);
 font-size: 24px;
 }
 
+.noir {
+color: #090c0cff;
+font-size: 0.850em;
+font-weight: normal;
+font-family: inherit;
+letter-spacing: inherit;
+}
+.bleu {
+color: #0053a6;
+font-size: 1.20em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.gris_p {
+color: rgb(45, 43, 42);
+font-size: 0.7em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.petit {
+font-size: 0.80em;
+color: black;
+font-family: inherit;
+line-height: 1.1;
+display: inline-block;
+letter-spacing: inherit;
+}
+  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ul {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.3;      /* 読みやすさ調整（任意） */
+  }
+
+  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ol {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.6;      /* 読みやすさ調整（任意） */
+  }
 </style>
 
 ### 前提PC環境
@@ -132,16 +174,16 @@ font-size: 24px;
 
 20640 rows × 9 columns　のサイズです。各々のカラムの意味は以下のとおりです。
 
-<nl>
-  <li class="custom-list-violet">F0: (MedInc)median income in block- 収入の中央値</li> 
-  <li class="custom-list-violet">F1: (HouseAge)median house age in block- 築年数の中央値</li> 
-  <li class="custom-list-violet">F2: (AveRooms)average number of rooms- 平均部屋数</li>
-  <li class="custom-list-violet">F3: (AveBedrms)average number of bedrooms-平均ベッドルーム数</li>
-  <li class="custom-list-violet">F4: (Population)block population- 人口</li> 
-  <li class="custom-list-violet">F5: (AveOccup)average house occupancy- 平均住宅占有率</li>
-  <li class="custom-list-violet">F6: (Latitude)house block latitude- 家屋の緯度</li>
-  <li class="custom-list-violet">F7:  (Longitude)house block longitude- ハウスブロックの経度</li>
-</nl>
+<ul>
+  <li> <span class="bleu">F0: (MedInc)median income in block- 収入の中央値</span></li> 
+  <li> <span class="bleu">F1: (HouseAge)median house age in block- 築年数の中央値</span></li> 
+  <li> <span class="bleu">F2: (AveRooms)average number of rooms- 平均部屋数</span></li>
+  <li> <span class="bleu">F3: (AveBedrms)average number of bedrooms-平均ベッドルーム数</span></li>
+  <li> <span class="bleu">F4: (Population)block population- 人口</span></li> 
+  <li> <span class="bleu">F5: (AveOccup)average house occupancy- 平均住宅占有率</span></li>
+  <li> <span class="bleu">F6: (Latitude)house block latitude- 家屋の緯度</span></li>
+  <li> <span class="bleu">F7:  (Longitude)house block longitude- ハウスブロックの経度</span></li>
+</ul>
 <br>
 目的変数はカリフォルニア地区の住宅価格で単位は10万ドルです。データセット自体は1990年の米国国勢調査(U.S. census) のもので、一行に国勢調査で使われるブロックグループ単位で集計されています。ブロックグループは米国国勢調査において、最小の地理的な単位です。概ね、600～3,000人を一つのグループにしています。　<br>
 
@@ -207,26 +249,26 @@ xgb_model.fit(x,y)
 
 次に同じデータセットでSPSS® Modeler を使って計算します。　左がPythonで右がSPSS® Modeler での計算結果です。 計算結果に少しだけ、差異があります。
 Python では：
-<nl>
-<li class="custom-list-violet">F0: (MedInc)median income in block-収入の中央値</li>
-<li class="custom-list-violet">F5: (AveOccup)average number of household members-平均世帯人数</li>
-<li class="custom-list-violet">F2: (AveRooms)average number of rooms-平均部屋数</li>
-</nl>
+<ul>
+<li> <span class="bleu">F0: (MedInc)median income in block-収入の中央値</span></li>
+<li> <span class="bleu">F5: (AveOccup)average number of household members-平均世帯人数</span></li>
+<li> <span class="bleu">F2: (AveRooms)average number of rooms-平均部屋数</span></li>
+</ul>
 と平均住宅占有率が２番目に大きな影響力があるとい結果でしたが
 
 SPSS® Modeler では：
-<nl>
-<li class="custom-list-violet">F0: (MedInc)median income in block-収入の中央値</li>
-<li class="custom-list-violet">F2: (AveRooms)average number of rooms-平均部屋数</li>
-<li class="custom-list-violet">F5: (AveOccup)average number of household members-平均世帯人数</li>
-</nl>
+<ul>
+<li> <span class="bleu">F0: (MedInc)median income in block-収入の中央値</span></li>
+<li> <span class="bleu">F2: (AveRooms)average number of rooms-平均部屋数</span></li>
+<li> <span class="bleu">F5: (AveOccup)average number of household members-平均世帯人数</span></li>
+</ul>
 とPython では3番目の<strong>平均部屋数</strong>が２番目という結果でしたが、それ以外は同じ順位でした。
 
 
 ![feature_importance1]({{ "/images/img/fig_5.png" | relative_url}}){:height="900px" width="900px"}<br>
 
 
-`＊SPSS® Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。`{:style="background-color: #faf5d2; font-size: 0.95em"}
+<span class="rouge">＊SPSS® Modelerでは、Feature をF1から始めて作図されます。本ブログではPythonとの比較のため、Python と同じようにF0からに変更しています。</span>
 
 ### SPSS® Modeler ストリームと設定
 SPSS® Modeler 上でのストリームと設定の概要は以下のとおりです。
