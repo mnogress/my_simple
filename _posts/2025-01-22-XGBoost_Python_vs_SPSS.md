@@ -26,10 +26,14 @@ last_modified_at : 2025-10-22 09:00:00
 
 <!--more-->
 
-特徴量選択は、実際のところドメイン知識が大きな力を発揮するため、データサイエンスに精通しないがドメイン知識をもつ専門家にもっと、モデルを作成してもらうためIBM のSPSS® Modeler等の統計ソフトを大手企業、官公庁向の研究者やテータ分析担当者向けに導入が進んでいます。
+### 🧩 この記事の結論 🧩
 
-SPSS® Modeler には、Python 固有のアルゴリズムを使用するためのノードが用意されています。XGBoost Tree© は、
-ツリー モデルを基本モデルとして使用する勾配ブースティング・アルゴリズムを実装しており、Python で実装されています。
+データ分析では、どのアルゴリズムを使うかよりも、  **「どの特徴量を使うか」** を決める前段階の判断が結果を大きく左右します。
+
+今回、Python（Scikit-Learn）と SPSS Modeler の XGBoost を比較したところ、  両者はほぼ同じ特徴量重要度を返しました。 つまり、ツールの違いによる差は小さく、本当に重要なのは **ドメイン知識による次元削減** です。特に今回の住宅価格データでは、  地理的座標（緯度・経度）はドメイン知識により除外されるべき特徴量であり、 これを含めるかどうかでモデルの解釈が大きく変わります。
+<span class="bleu4">この記事では、「ツールの違いよりも、前段階の判断が本質である」 という点を実例を通して示します。</span>
+
+
 
 <style type="text/css">
 
@@ -95,12 +99,6 @@ font-weight: normal;
 font-family: inherit;
 letter-spacing: inherit;
 }
-.bleu {
-color: blue;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
 .petit {
 font-size: 0.80em;
 color: black;
@@ -109,12 +107,6 @@ line-height: 1.1;
 display: inline-block;
 letter-spacing: inherit;
 }
-
-.bleu {
-color: rgb(67, 31, 158);
-font-size: 24px;
-}
-
 .noir {
 color: #090c0cff;
 font-size: 0.850em;
@@ -125,6 +117,14 @@ letter-spacing: inherit;
 .bleu {
 color: #0053a6;
 font-size: 1.20em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.bleu4 {
+color: #0053a6;
+font-size: 1.0em;
 font-weight: 500;
 font-style: italic;
 font-family: inherit;
