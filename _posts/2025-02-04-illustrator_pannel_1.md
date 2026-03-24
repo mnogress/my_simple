@@ -17,12 +17,20 @@ sidebar:
   nav: "docs"
 tag: [illustrator, appearance_pannel, design]
 category: illustrator
-date: 2025-02-04
-last_modified_at : 2025-10-22 09:00:00
+date: 2026-03-01
+last_modified_at : 2026-03-18 09:00:00
 ---
 
-アピアランスパネルは、オブジェクトの実体は同じままで、見た目を変えるものです。修正に強く流用しやすいパーツを作るのに欠かせない機能を提供します。
-同じ見た目を他のオブジェクトに展開して効率的にデザインの統一感を出すことができます。イラストレーターの数ある機能の中で押さえておくべアピアランス機能について深堀りします。<!--more-->
+アピアランスパネルは、オブジェクトの実体は同じままで、見た目を変えるものです。イラストレーターの数ある機能の中で押さえておくべアピアランス機能にいて説明します。<!--more-->
+
+### このページの目的
+
+アピアランスパネルは、Illustrator の中でも特に「デザインの自由度」と「修正のしやすさ」を両立させるための重要な機能です。
+
+「塗り」・「線」・「効果」を重ねて見た目だけを変えられるため、同じオブジェクトから複数のバリエーションを作ったり、後から簡単に調整したりできます。
+
+この記事では、アピアランスの仕組みと活用方法を整理し、**文字装飾や図形デザインを効率的に行うための基本をまとめます。**
+
 
 ---
 <style type="text/css">
@@ -77,23 +85,44 @@ _media screen and (max-width:750px){
 .resp_table {width:100% !important;}
 .resp_table th ,.resp_table td{padding:10px !important;}
 }
-.rouge {
-color: red;
-font-weight: normal;
+.violet {
+color: #cb23d1;
+font-size: 1.0em;
+font-weight: 500;
+font-style: italic;
 font-family: inherit;
-letter-spacing: inherit;
+letter-spacing: 0.02em;
+}
+.rouge {
+color: #d9180eff;
+font-size: 1.14em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
 }
 .noir {
-color: 1A818;
+color: #090c0cff;
+font-size: 0.850em;
 font-weight: normal;
 font-family: inherit;
 letter-spacing: inherit;
 }
 .bleu {
-color: blue;
-font-weight: normal;
+color: #0053a6;
+font-size: 1.10em;
+font-weight: 500;
+font-style: italic;
 font-family: inherit;
-letter-spacing: inherit;
+letter-spacing: 0.02em;
+}
+.gris_p {
+color: rgb(45, 43, 42);
+font-size: 0.7em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
 }
 .petit {
 font-size: 0.80em;
@@ -103,7 +132,19 @@ line-height: 1.1;
 display: inline-block;
 letter-spacing: inherit;
 }
+  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ul {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.3;      /* 読みやすさ調整（任意） */
+  }
+
+  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ol {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.6;      /* 読みやすさ調整（任意） */
+  }
 </style>
+
 ### アピアランスパネルとは見た目を変えるためのパネル
 
 アピアランスパネルは、**ウインドウ→アピアランス**で出現します。
