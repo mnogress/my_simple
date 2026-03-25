@@ -17,8 +17,8 @@ sidebar:
   nav: "docs"
 tag: [DataFrame, ndarray, list]
 category: Python
-date: 2025-07-11
-last_modified_at : 2025-10-29 09:00:00
+date: 2026-03-22
+last_modified_at : 2026-03-24 09:00:00
 ---
 
 このブログではデータハンドリングの基本である、DataFrame, ndarray, list の形式変換について「DataFrame,  ndarray,  list の使い分けについて実用的に考える」という問いに対してブログにしました。
@@ -107,6 +107,14 @@ font-weight: normal;
 font-family: inherit;
 letter-spacing: inherit;
 }
+.bleu2 {
+color: #0053a6;
+font-size: 1.20em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
 .bleu {
 color: #0053a6;
 font-size: 1.20em;
@@ -142,7 +150,6 @@ letter-spacing: inherit;
     font-size: 1rem;       /* 任意のサイズに */
     line-height: 1.6;      /* 読みやすさ調整（任意） */
   }
-
 .custom-list-violet {
 color: rgb(67, 31, 158);
 font-size: 24px;
@@ -153,6 +160,16 @@ font-size: 24px;
 ### DataFrame <-> ndarray <-> list 間のコンバージョンイメージ
 
 ![df_ndarray_list_conversion]({{ "/images/img/df_ndarray_list_conversion.png" | relative_url}}){:height="600px" width="600px"}<br>
+
+
+### 変換一覧　
+
+| 変換                  | コード                           |
+| :----- |:-----  |
+| **list → ndarray**      | <span class ="bleu2"> np.array(my_list)</span>                   |
+| **ndarray → list**      | <span class ="bleu2">my_array.tolist()</span>                  |
+| **ndarray → DataFrame** | <span class ="bleu2">pd.DataFrame(my_array)</span>              |
+| **DataFrame → ndarray** | <span class ="bleu2">my_df.values</span> または <span class ="bleu2">my_df.to_numpy()</span> |
 
 
 ### Pandas が用意する二次元データセット｜DataFrame：データフレーム
