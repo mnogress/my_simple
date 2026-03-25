@@ -2,7 +2,7 @@
 layout: single
 title: df_overview スクリプト
 header:
-  overlay_image: images/header_H.png
+  overlay_image: images/header_X1_1280by336.png
   overlay_filter: rgba(107, 74, 43, 0.40)
 toc: True
 toc_label: "目次"
@@ -17,7 +17,7 @@ sidebar:
   nav: "docs"
 category: Reference
 tag: ["Pandas", "Function"]
-date: 2024-07-04
+date: 2026-01-31
 last_modified_at : 2026-03-22 15:23:00
 ---
 
