@@ -2,7 +2,7 @@
 layout: single
 title: df_overview スクリプト
 header:
-  overlay_image: images/header_H.png
+  overlay_image: images/header_X1_1280by336.png
   overlay_filter: rgba(107, 74, 43, 0.40)
 toc: True
 toc_label: "目次"
@@ -12,12 +12,12 @@ excerpt_separator: <!--more-->
 classes:
   - landing
   - dark-theme
-  #- wide
+  - wide
 sidebar:
   nav: "docs"
 category: Reference
 tag: ["Pandas", "Function"]
-date: 2024-07-04
+date: 2026-01-31
 last_modified_at : 2026-03-22 15:23:00
 ---
 
@@ -59,7 +59,7 @@ df_overview
 #### 🧩「ユニーク数を見ると何がわかるのか」
 
 ユニーク数（その列に含まれる異なる値の数）を見ることで、**列の性質**がつかめます。
-例えば、ユニーク数が少なければカテゴリ変数の可能性が高く、逆に非常に多ければIDのような識別子かもしれません。
+例えば、ユニーク数が少なければカテゴリ変数の可能性が高く、逆に非常に多ければIDのような識別子かもしれません。<br>
 <span class="bleu">この情報は、どの列を分析に使えるか、どの列を前処理すべきかを判断する助けになります。</span>
 
 
