@@ -2,8 +2,8 @@
 layout: single
 title:  DataFrame, ndarray, list の使い分けについて実用的に考える
 header:
-  overlay_image: images/header_K.png
-  overlay_filter: rgba(107, 74, 43, 0.20)
+  overlay_image: images/header_A2.png
+  overlay_filter: rgba(107, 74, 43, 0.35)
 toc: true
 toc_label: "目次"
 toc_icon: "heart"
@@ -12,24 +12,24 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-#- wide
+- wide
 sidebar:
   nav: "docs"
 tag: [DataFrame, ndarray, list]
 category: Python
-date: 2025-07-11
-last_modified_at : 2025-10-29 09:00:00
+date: 2026-03-22
+last_modified_at : 2026-03-24 09:00:00
 ---
 
 このブログではデータハンドリングの基本である、DataFrame, ndarray, list の形式変換について「DataFrame,  ndarray,  list の使い分けについて実用的に考える」という問いに対してブログにしました。
 
 <!--more-->
 
+### この記事の目的
 
-データ分析をするデータセットはそのほとんどは、n行 ｘ ｍ列の２次元のデータです。２次元のデータを扱うためのデータ形式には、Pandas のデータフレーム、Numpyのndarray、Python標準の list が一般的です。それぞれの形式をその用途に合わせて変換します。 
+データ分析をするデータセットはそのほとんどは、n行 ｘ ｍ列の２次元のデータです。２次元のデータを扱うためのデータ形式には、Pandas のデータフレーム、Numpyのndarray、Python標準の list が一般的です。それぞれの形式をその用途に合わせて相互変換します。 
 
-
-このブログでは、２次元のデータに絞って、以下の図をデータ分析の観点から使い方に合わせて変換できることを目標にしています。
+このブログでは、２次元のデータに絞って、データ分析の観点から使い方に合わせて変換できることを目標にしています。
 
 <style type="text/css">
 
@@ -83,23 +83,52 @@ _media screen and (max-width:750px){
 .resp_table {width:100% !important;}
 .resp_table th ,.resp_table td{padding:10px !important;}
 }
-.rouge {
-color: red;
-font-weight: normal;
+.violet {
+color: #cb23d1;
+font-size: 1.0em;
+font-weight: 500;
+font-style: italic;
 font-family: inherit;
-letter-spacing: inherit;
+letter-spacing: 0.02em;
+}
+.rouge {
+color: #d9180eff;
+font-size: 1.14em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
 }
 .noir {
-color: 1A818;
+color: #090c0cff;
+font-size: 0.850em;
 font-weight: normal;
 font-family: inherit;
 letter-spacing: inherit;
 }
-.bleu {
-color: blue;
-font-weight: normal;
+.bleu2 {
+color: #0053a6;
+font-size: 1.20em;
+font-weight: 500;
+font-style: normal;
 font-family: inherit;
-letter-spacing: inherit;
+letter-spacing: 0.02em;
+}
+.bleu {
+color: #0053a6;
+font-size: 1.20em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.gris_p {
+color: rgb(45, 43, 42);
+font-size: 0.7em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
 }
 .petit {
 font-size: 0.80em;
@@ -109,7 +138,17 @@ line-height: 1.1;
 display: inline-block;
 letter-spacing: inherit;
 }
+  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ul {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.3;      /* 読みやすさ調整（任意） */
+  }
 
+  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ol {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.6;      /* 読みやすさ調整（任意） */
+  }
 .custom-list-violet {
 color: rgb(67, 31, 158);
 font-size: 24px;
@@ -117,16 +156,91 @@ font-size: 24px;
 
 </style>
 
-### DataFrame <-> ndarray <-> list 間のコンバージョン
+### DataFrame <-> ndarray <-> list 間の相互変換
+
+Python では次の3つの形式をよく使います：
+
+*   **list（リスト）**
+*   **ndarray（NumPy 配列）**
+*   **DataFrame（Pandas の表形式データ）**
+
+これらは用途が違うため、必要に応じて相互に変換して使います。
+
+
+
+### 1. list → ndarray（NumPy 配列）
+
+Python の list を NumPy の ndarray に変換します。
+
+{% highlight python linenos %}
+import numpy as np
+
+my_list = [1, 2, 3]
+my_array = np.array(my_list)
+{% endhighlight %}
+
+
+
+### 2. ndarray → list
+
+NumPy 配列を Python の list に戻します。
+
+{% highlight python linenos %}
+my_list = my_array.tolist()
+{% endhighlight %}
+
+***
+
+### 3. ndarray → DataFrame（Pandas）
+
+NumPy 配列を Pandas の DataFrame に変換します。
+
+{% highlight python linenos %}
+import pandas as pd
+
+my_df = pd.DataFrame(my_array)
+{% endhighlight %}
+
+***
+
+### 4. DataFrame → ndarray
+
+DataFrame から ndarray に変換します。
+
+{% highlight python linenos %}
+my_array = my_df.values
+{% endhighlight %}
+
+※ `.values` は ndarray を返します  
+（Pandas 1.0以降は `.to_numpy()` を使うことも推奨されています）
+
+{% highlight python linenos %}
+my_array = my_df.to_numpy()
+{% endhighlight %}
+
+
+### DataFrame <-> ndarray <-> list 相互変換イメージ
 
 ![df_ndarray_list_conversion]({{ "/images/img/df_ndarray_list_conversion.png" | relative_url}}){:height="600px" width="600px"}<br>
 
 
-### Pandas DataFrame がデータセットを用意するツール
+### 変換一覧　
 
-Pandasは、Pythonでのデータ分析ライブラリとして最も活⽤されているライブラリです。Pandas
-はNumpyを基盤に、シリーズ（Series、１次元データ）とデータフレーム（DataFrame、二次元データ）という二つのデータ型を提供します。
-データフレームは使いやすく、豊富な機能(メソッド）でデータ分析のための無くてはならないライブラリです。
+| 変換                  | コード                           |
+| :----- |:-----  |
+| **list → ndarray**      | <span class ="bleu2"> np.array(my_list)</span>                   |
+| **ndarray → list**      | <span class ="bleu2">my_array.tolist()</span>                  |
+| **ndarray → DataFrame** | <span class ="bleu2">pd.DataFrame(my_array)</span>              |
+| **DataFrame → ndarray** | <span class ="bleu2">my_df.values</span> または <span class ="bleu2">my_df.to_numpy()</span> |
+
+
+### Pandas が用意する二次元データセット｜DataFrame：データフレーム
+
+Pandasは、Pythonでのデータ分析ライブラリとして最も活⽤されているライブラリです。
+
+PandasはNumpyを、Numpyを基盤に、シリーズ（Series、１次元データ）とデータフレーム（DataFrame、二次元データ）という二つのデータ型を提供します。
+
+特に、データフレームは使いやすく、豊富な機能(メソッド)が用意され、データ分析のための必須のデータセットを扱う二次元データです。
 
 
 
@@ -139,11 +253,25 @@ Pandasは、Pythonでのデータ分析ライブラリとして最も活⽤さ�
 
 
 
-### 数値計算に特化したNumpy ndarray
+### 数値計算に特化したNumPy ndarray
 
-Numpyを利⽤すると、Python標準のリスト型に⽐べて、多次元配列のデータを効率よく扱うことができます。また、Numpyは標準偏差や分散といった統計量を出⼒してくれる関数が⽤意されており、科学技術計算の基盤となっており、その延長線上で機械学習、ディープラーニングでも使われています。
+NumPy（ナンパイ）は、**数値計算を効率よく行うためのPythonのライブラリ**です。
+Pythonには標準で「リスト型」がありますが(後述します)、大量の数値データを扱うときは処理が遅くなったり、複雑になったりします。そこで役に立つのが **NumPy** です。
 
-Numpyには、ndarrayと呼ばれるデータ型が⽤意されています。 ndarrayは⼀⾒すると、Python標準のリスト型（list）と似ていますが、ベクトル計算のように、内部の要素それぞれを⼀括して計算します。
+### **NumPy を使うとできること**
+
+(1)  **多次元配列（行列など）を高速に扱える**<br> 
+(2)  **標準偏差・分散などの統計量を簡単に計算できる**<br> 
+(3)  科学技術計算や、機械学習・ディープラーニングでもよく使われる 
+
+### **NumPy の ndarray（エヌディーアレイ）とは？**
+
+NumPyには **ndarray（エヌディーアレイ）** という、数値データのための特別な配列型があります。
+
+(1) 見た目はPythonのリストに似ている<br>
+(2) しかし、**ベクトル計算のように、要素をまとめて高速に計算できる**<br>  
+    （例：配列に <span class="rouge">+1</span> すると、全ての要素に一気に1が足される）
+
 
 ### ndarray と list の計算の違い
 
@@ -162,9 +290,15 @@ Numpyには、ndarrayと呼ばれるデータ型が⽤意されています。 n
 {: .notice--danger}
 
 
-### Python標準の配列データの形式がlist
+### **Python にもともと用意されている配列：list（リスト）**
 
-⼀つの変数に複数のデータを⼊れて扱う、配列データとして使うのが リスト型（list)です。したがって、Pythonプログラムの入出力の標準データ形式がlist ということになります。
+Python には **list（リスト）** という、複数の値をひとまとめにして扱える便利なデータ形式があります。
+
+(1) 1つの変数の中に、いくつものデータを入れられる  
+         例：<span class="rouge">[1, 2, 3]</span> や <span class="rouge">["apple", "banana"]</span><br>
+(2) Python では、**入力や出力でよく使われる基本的なデータ形式**
+
+そのため「とりあえず配列を使いたい」というときは、まず list を使うことが多いです。
 
 
 <div class="box33">
