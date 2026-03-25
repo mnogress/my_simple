@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-#- wide
+- wide
 sidebar:
   nav: "docs"
 tag: [DataFrame, ndarray, list]
@@ -25,6 +25,7 @@ last_modified_at : 2025-10-29 09:00:00
 
 <!--more-->
 
+### この記事の目的
 
 データ分析をするデータセットはそのほとんどは、n行 ｘ ｍ列の２次元のデータです。２次元のデータを扱うためのデータ形式には、Pandas のデータフレーム、Numpyのndarray、Python標準の list が一般的です。それぞれの形式をその用途に合わせて変換します。 
 
@@ -83,23 +84,44 @@ _media screen and (max-width:750px){
 .resp_table {width:100% !important;}
 .resp_table th ,.resp_table td{padding:10px !important;}
 }
-.rouge {
-color: red;
-font-weight: normal;
+.violet {
+color: #cb23d1;
+font-size: 1.0em;
+font-weight: 500;
+font-style: italic;
 font-family: inherit;
-letter-spacing: inherit;
+letter-spacing: 0.02em;
+}
+.rouge {
+color: #d9180eff;
+font-size: 1.14em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
 }
 .noir {
-color: 1A818;
+color: #090c0cff;
+font-size: 0.850em;
 font-weight: normal;
 font-family: inherit;
 letter-spacing: inherit;
 }
 .bleu {
-color: blue;
-font-weight: normal;
+color: #0053a6;
+font-size: 1.20em;
+font-weight: 500;
+font-style: italic;
 font-family: inherit;
-letter-spacing: inherit;
+letter-spacing: 0.02em;
+}
+.gris_p {
+color: rgb(45, 43, 42);
+font-size: 0.7em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
 }
 .petit {
 font-size: 0.80em;
@@ -109,6 +131,17 @@ line-height: 1.1;
 display: inline-block;
 letter-spacing: inherit;
 }
+  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ul {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.3;      /* 読みやすさ調整（任意） */
+  }
+
+  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ol {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.6;      /* 読みやすさ調整（任意） */
+  }
 
 .custom-list-violet {
 color: rgb(67, 31, 158);
@@ -117,16 +150,18 @@ font-size: 24px;
 
 </style>
 
-### DataFrame <-> ndarray <-> list 間のコンバージョン
+### DataFrame <-> ndarray <-> list 間のコンバージョンイメージ
 
 ![df_ndarray_list_conversion]({{ "/images/img/df_ndarray_list_conversion.png" | relative_url}}){:height="600px" width="600px"}<br>
 
 
-### Pandas DataFrame がデータセットを用意するツール
+### Pandas が用意する二次元データセット｜DataFrame：データフレーム
 
-Pandasは、Pythonでのデータ分析ライブラリとして最も活⽤されているライブラリです。Pandas
-はNumpyを基盤に、シリーズ（Series、１次元データ）とデータフレーム（DataFrame、二次元データ）という二つのデータ型を提供します。
-データフレームは使いやすく、豊富な機能(メソッド）でデータ分析のための無くてはならないライブラリです。
+Pandasは、Pythonでのデータ分析ライブラリとして最も活⽤されているライブラリです。
+
+PandasはNumpyを、Numpyを基盤に、シリーズ（Series、１次元データ）とデータフレーム（DataFrame、二次元データ）という二つのデータ型を提供します。
+
+特に、データフレームは使いやすく、豊富な機能(メソッド)が用意され、データ分析のための必須のデータセットを扱う二次元データです。
 
 
 
@@ -139,11 +174,25 @@ Pandasは、Pythonでのデータ分析ライブラリとして最も活⽤さ�
 
 
 
-### 数値計算に特化したNumpy ndarray
+### 数値計算に特化したNumPy ndarray
 
-Numpyを利⽤すると、Python標準のリスト型に⽐べて、多次元配列のデータを効率よく扱うことができます。また、Numpyは標準偏差や分散といった統計量を出⼒してくれる関数が⽤意されており、科学技術計算の基盤となっており、その延長線上で機械学習、ディープラーニングでも使われています。
+NumPy（ナンパイ）は、**数値計算を効率よく行うためのPythonのライブラリ**です。
+Pythonには標準で「リスト型」がありますが(後述します)、大量の数値データを扱うときは処理が遅くなったり、複雑になったりします。そこで役に立つのが **NumPy** です。
 
-Numpyには、ndarrayと呼ばれるデータ型が⽤意されています。 ndarrayは⼀⾒すると、Python標準のリスト型（list）と似ていますが、ベクトル計算のように、内部の要素それぞれを⼀括して計算します。
+### **NumPy を使うとできること**
+
+(1)  **多次元配列（行列など）を高速に扱える**<br> 
+(2)  **標準偏差・分散などの統計量を簡単に計算できる**<br> 
+(3)  科学技術計算や、機械学習・ディープラーニングでもよく使われる 
+
+### **NumPy の ndarray（エヌディーアレイ）とは？**
+
+NumPyには **ndarray（エヌディーアレイ）** という、数値データのための特別な配列型があります。
+
+(1) 見た目はPythonのリストに似ている<br>
+(2) しかし、**ベクトル計算のように、要素をまとめて高速に計算できる**<br>  
+    （例：配列に <span class="rouge">+1</span> すると、全ての要素に一気に1が足される）
+
 
 ### ndarray と list の計算の違い
 
@@ -162,9 +211,15 @@ Numpyには、ndarrayと呼ばれるデータ型が⽤意されています。 n
 {: .notice--danger}
 
 
-### Python標準の配列データの形式がlist
+### **Python にもともと用意されている配列：list（リスト）**
 
-⼀つの変数に複数のデータを⼊れて扱う、配列データとして使うのが リスト型（list)です。したがって、Pythonプログラムの入出力の標準データ形式がlist ということになります。
+Python には **list（リスト）** という、複数の値をひとまとめにして扱える便利なデータ形式があります。
+
+(1) 1つの変数の中に、いくつものデータを入れられる  
+         例：<span class="rouge">[1, 2, 3]</span> や <span class="rouge">["apple", "banana"]</span><br>
+(2) Python では、**入力や出力でよく使われる基本的なデータ形式**
+
+そのため「とりあえず配列を使いたい」というときは、まず list を使うことが多いです。
 
 
 <div class="box33">
