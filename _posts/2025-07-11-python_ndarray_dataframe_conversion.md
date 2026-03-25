@@ -2,8 +2,8 @@
 layout: single
 title:  DataFrame, ndarray, list の使い分けについて実用的に考える
 header:
-  overlay_image: images/header_K.png
-  overlay_filter: rgba(107, 74, 43, 0.20)
+  overlay_image: images/header_A2.png
+  overlay_filter: rgba(107, 74, 43, 0.35)
 toc: true
 toc_label: "目次"
 toc_icon: "heart"
@@ -27,10 +27,9 @@ last_modified_at : 2026-03-24 09:00:00
 
 ### この記事の目的
 
-データ分析をするデータセットはそのほとんどは、n行 ｘ ｍ列の２次元のデータです。２次元のデータを扱うためのデータ形式には、Pandas のデータフレーム、Numpyのndarray、Python標準の list が一般的です。それぞれの形式をその用途に合わせて変換します。 
+データ分析をするデータセットはそのほとんどは、n行 ｘ ｍ列の２次元のデータです。２次元のデータを扱うためのデータ形式には、Pandas のデータフレーム、Numpyのndarray、Python標準の list が一般的です。それぞれの形式をその用途に合わせて相互変換します。 
 
-
-このブログでは、２次元のデータに絞って、以下の図をデータ分析の観点から使い方に合わせて変換できることを目標にしています。
+このブログでは、２次元のデータに絞って、データ分析の観点から使い方に合わせて変換できることを目標にしています。
 
 <style type="text/css">
 
@@ -96,7 +95,7 @@ letter-spacing: 0.02em;
 color: #d9180eff;
 font-size: 1.14em;
 font-weight: 500;
-font-style: italic;
+font-style: normal;
 font-family: inherit;
 letter-spacing: 0.02em;
 }
@@ -157,7 +156,70 @@ font-size: 24px;
 
 </style>
 
-### DataFrame <-> ndarray <-> list 間のコンバージョンイメージ
+### DataFrame <-> ndarray <-> list 間の相互変換
+
+Python では次の3つの形式をよく使います：
+
+*   **list（リスト）**
+*   **ndarray（NumPy 配列）**
+*   **DataFrame（Pandas の表形式データ）**
+
+これらは用途が違うため、必要に応じて相互に変換して使います。
+
+
+
+### 1. list → ndarray（NumPy 配列）
+
+Python の list を NumPy の ndarray に変換します。
+
+{% highlight python linenos %}
+import numpy as np
+
+my_list = [1, 2, 3]
+my_array = np.array(my_list)
+{% endhighlight %}
+
+
+
+### 2. ndarray → list
+
+NumPy 配列を Python の list に戻します。
+
+{% highlight python linenos %}
+my_list = my_array.tolist()
+{% endhighlight %}
+
+***
+
+### 3. ndarray → DataFrame（Pandas）
+
+NumPy 配列を Pandas の DataFrame に変換します。
+
+{% highlight python linenos %}
+import pandas as pd
+
+my_df = pd.DataFrame(my_array)
+{% endhighlight %}
+
+***
+
+### 4. DataFrame → ndarray
+
+DataFrame から ndarray に変換します。
+
+{% highlight python linenos %}
+my_array = my_df.values
+{% endhighlight %}
+
+※ `.values` は ndarray を返します  
+（Pandas 1.0以降は `.to_numpy()` を使うことも推奨されています）
+
+{% highlight python linenos %}
+my_array = my_df.to_numpy()
+{% endhighlight %}
+
+
+### DataFrame <-> ndarray <-> list 相互変換イメージ
 
 ![df_ndarray_list_conversion]({{ "/images/img/df_ndarray_list_conversion.png" | relative_url}}){:height="600px" width="600px"}<br>
 
