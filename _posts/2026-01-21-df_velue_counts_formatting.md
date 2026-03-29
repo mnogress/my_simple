@@ -2,7 +2,7 @@
 layout: single
 title: カテゴリカルデータの個数、構成比率、トータル行を集計、整形する
 header:
-  overlay_image: images/header_A5.png
+  overlay_image: images/header_A3.png
   overlay_filter: rgba(44, 82, 207, 0.35)
 toc: True
 toc_label: "目次"
@@ -17,11 +17,15 @@ sidebar:
   nav: "docs"
 category: Reference
 tag: ["Pandas", "Function"]
-date: 2024-09-01
-last_modified_at : 2024-09-01 11:00:00
+date: 2026-01-21
+last_modified_at : 2026-01-21 11:00:00
 ---
 
-カテゴリカルデータの個数、構成比率、トータル行を集計、整形する<!--more-->方法をまとめました。
+カテゴリカルデータの個数、構成比率、トータル行を集計、整形する方法をまとめました。
+
+データフレームの特定の列（例：部門）ごとに、❶件数（何件あるか）、❷構成比（全体のうち何%か）を出して、
+後で加工しやすい「表（データフレーム）」の形にまと、ついでに合計（Total）行も付けるためのスクリプトをまとめました。
+<!--more-->
 
 
 #### サンプルコードの紹介
@@ -31,20 +35,22 @@ last_modified_at : 2024-09-01 11:00:00
 
 {% highlight python linenos  %}
 
-col_name = '部門' # 集計したい列名
-tab = df[col_name].value_counts()
-tab = pd.DataFrame(tab)
-tab = tab.rename_axis(col_name)
-tab['構成比']=(tab['count'] / tab['count'].sum())
-tab.rename(columns={col_name: '会社数', 'count': '件数'}, inplace = True)
+# 件数（count）と構成比（normalize=Trueで比率が出せる）
+vc = df[col_name].value_counts(dropna=False)         # 件数
+ratio = df[col_name].value_counts(dropna=False, normalize=True)  # 構成比
 
-# Total 行を追加する関数
-def append_sum_row_label(df):
-    df.loc['Total'] = df.sum(numeric_only=True)
-    return df
+# データフレーム化して結合
+tab = pd.DataFrame({
+    '件数': vc,
+    '構成比': ratio
+})
 
-tab = append_sum_row_label(tab)
-format_dict = {'構成比': '{:.1%}', '件数' : '{:n}'}
+# 合計行（Total）を追加
+tab.loc['Total', '件数'] = tab['件数'].sum()
+tab.loc['Total', '構成比'] = tab['構成比'].sum()
+
+# 表示用フォーマット
+format_dict = {'構成比': '{:.1%}', '件数': '{:n}'}
 display(tab.style.format(format_dict))
 
 {% endhighlight %}

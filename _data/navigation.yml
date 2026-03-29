@@ -1,51 +1,43 @@
 main:
-  - title: "Top"
+  - title: "🍎 Top"
     url: /
-  - title: "カテゴリ"
+  - title: "🔍 Search"
+    url: /search/
+  - title: "🗂️ カテゴリ"
     url: /categories/
-  - title: "Tags"
-    url: /tags/
+  - title: "👤 About"
+    url: /about/
 
 
 docs:
-  - title: よく読まれている記事
+  - title: 🔥 よく読まれている記事
     children: 
-      - title: "DataFrame, ndarray, list の使い分けについて実用的に考える"
+      - title: "🧩 DataFrame, ndarray, list の使い分けについて実用的に考える"
         url: /Python/python_ndarray_dataframe_conversion/
-      - title: "WinPython でオフライン環境でPythonを使う"
+      - title: "🧩 WinPython でオフライン環境でPythonを使う"
         url: /Python/winpython_install/
-      - title: "イラレのアピアランスパネルを理解する"
+      - title: "🧩 イラレのアピアランスパネルを理解する"
         url: /illustrator/illustrator_pannel_1/
-      - title: "アピアランスパネルで座布団を作成する"
+      - title: "🧩 アピアランスパネルで座布団を作成する"
         url: /illustrator/illustrator_zabuton_basic/
-      - title: "カテゴリカルデータの個数、構成比率、トータル行を集計、整形する"
+      - title: "🧩 カテゴリカルデータの個数、構成比率、トータル行を集計、整形する"
         url: /reference/df_velue_counts_formatting/
-      - title: "日付の新しいものを残す重複排除"
+      - title: "🧩 日付の新しいものを残す重複排除"
         url: /reference/sort_drop_duplicate/
-      - title: "Markdown Cheat Sheet"
-        url: /reference/Markdown_Cheat_Sheet/
-      - title: "Minimal mistakes の文字の大きさ変更のための SCSS"
-        url: /reference/minimal_mistakes_scss/
-      - title: "Jupyter NotebookでPandas 使う際の必須Coding集"
+      - title: "🧩 Jupyter NotebookでPandas 使う際の必須Coding集"
         url: /reference/Jupyter_Notebook_Essensial_Notebook_Essensial/
-      - title: "HTML/Markdown style sheet reference"
-        url: /reference/html_style_sheet_reference/
-      - title: "Excelファイルの読み書き"
-        url: /reference/Read_Write_Excel/
+
         
-  - title: 関連記事
+  - title: 📚 関連記事
     children:
-      - title: "Top"
-        url: /  
-      - title: "カテゴリ"
+      - title: "🍎Top"
+        url: / 
+      - title: "🔍 Search"
+        url: /search/ 
+      - title: "🗂️ カテゴリ"
         url: /categories/
-      - title: "TAGs"
-        url: /tags/
-      - title: "About"
+      - title: "👤 About"
         url: /about/
-      - title: "Conditions"
+      - title: "📖 Conditions"
         url: /terms_and_conditions/
-      - title: "Apprendre le français"
-        url: https://southwiseman.blog/ 
-        target: _blank
 
