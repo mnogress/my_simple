@@ -19,6 +19,9 @@ tag: [seaborn, visualization, Python]
 category: Python
 date: 2025-06-11
 last_modified_at : 2025-10-30 09:00:00
+excerpt: >
+  seaborn の barplot に平均値のラベル（annotation）を追加する方法を、groupby から reset_index、描画、桁数指定まで実務的な手順でまとめた How To 記事です。Excel で行っていた棒グラフ作成を Python だけで完結させたい人向けに、コード例とポイントをわかりやすく解説しています。
+
 ---
 
 
