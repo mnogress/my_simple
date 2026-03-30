@@ -1,8 +1,11 @@
 ---
+title: "Search by Word"
+header:
+  overlay_image: "/images/header_V.png"
+  overlay_filter: rgba(12, 99, 100, 0.15)  
 layout: search
-title: Search
 permalink: /search/
-subtitle: "What are you looking for?"
-feature-img: "assets/img/pexels/search-map.jpeg"
-icon: "fa-search"
+author_profile: true
+sidebar:
+  nav: "docs"
 ---

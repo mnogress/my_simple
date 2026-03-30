@@ -1,8 +1,19 @@
-so-wi: # author-id
-  name: "so-wi space"
-  avatar: 
-  url: "https://github.com/mnogress"
-unknown:
-  name: Unknown
-  avatar:
-  url:
+# /_data/authors.yml
+
+Author:
+  name        : "サイト作成者"
+  bio         : "Je suis très travailleur."
+  url         : "https://www.so-wi.com/"
+  avatar      : "images/200by200_dog.png"
+  location    : "Chiba, Japan"
+  links:
+    - label: "About Me"
+      icon: "fa fa-user"
+      url: "https://www.so-wi.com//about/"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.so-wi.com/"
+  #  - label: "Twitter"
+  #    icon: "fab fa-fw fa-twitter-square"
+  #    url: "https://twitter.com/extravagantman"
+
