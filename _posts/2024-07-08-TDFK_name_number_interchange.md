@@ -12,16 +12,19 @@ excerpt_separator: <!--more-->
 classes:
   - landing
   - dark-theme
-  #- wide
+  - wide
 sidebar:
   nav: "docs"
 category: Reference
 tag: ["Pandas", "Function"]
 date: 2024-07-25
 last_modified_at : 2024-07-25 15:00:00
----
+excerpt: >
+  都道府県番号と都道府県名を相互に変換するための実用的なリファレンスです。jp_pref.prefecture モジュールを使うことで、自分で変換表を用意する手間なく、番号⇄名称の変換を簡潔に扱えます。データ処理や前処理で頻出する作業を効率化できます。
 
-都道府県名から都道府県番号に変換及びその反対変換<!--more-->を[**jp_pref.prefectureモジュール**](https://pypi.org/project/jp-pref/){:target="_blank"}の
+---
+<!--more-->
+都道府県名から都道府県番号に変換及びその反対変換>を[**jp_pref.prefectureモジュール**](https://pypi.org/project/jp-pref/){:target="_blank"}の
 *name2code, code2name*をPandas データフレームに対して利用する関数とその適用方法を紹介します。
 
 #### モジュールをインポートと関数定義
