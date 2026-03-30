@@ -16,7 +16,7 @@ classes:
 sidebar:
   nav: "docs"
 tag: [DataFrame, ndarray, list]
-category: Python
+category: [Python]
 date: 2026-03-22
 last_modified_at : 2026-03-24 09:00:00
 excerpt: >

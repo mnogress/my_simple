@@ -16,7 +16,7 @@ classes:
 sidebar:
   nav: "docs"
 tag: ["KHCoder", "wordcloud"]
-category: python
+category: Python
 date: 2024-05-15
 last_modified_at : 2025-10-20 09:00:00
 excerpt: >

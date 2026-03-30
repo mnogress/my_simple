@@ -15,10 +15,13 @@ classes:
 # wide
 sidebar:
   nav: "docs"
-tag: [Python, sqlite3, SQL ]
-category: python
+tag: [Python]
+category: [Python]
 date: 2023-03-01
 last_modified_at : 2025-10-22 09:00:00
+excerpt: >
+  SQLite の SQL を Pandas 上で実行する方法をまとめた実務向けの解説です。誕生から半世紀近く経つ SQL は、今もデータ分析に欠かせない言語です。Pandas と組み合わせることで、従来の SQL 的な思考と Python ベースの分析を自然につなぐ“架け橋”として活用できます。
+
 ---
 
 この記事では、Jupyter NotebookのPandasを使用してデータ分析を行う際に、

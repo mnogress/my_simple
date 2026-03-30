@@ -16,7 +16,7 @@ classes:
 sidebar:
   nav: "docs"
 tag: [Python, SPSS Modeler, XGBoost]
-category: Python
+category: [Python]
 date: 2026-03-11
 last_modified_at : 2026-03-23 09:00:00
 excerpt: >

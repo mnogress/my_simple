@@ -15,13 +15,16 @@ classes:
   #- wide
 sidebar:
   nav: "docs"
-category: Reference
+category: Python
 tag: ["Pandas", "Function"]
 date: 2024-08-14
 last_modified_at : 2024-08-14 15:00:00
----
+excerpt: >
+  Pandas を使った Excel ファイルの読み書き方法をまとめた実務向けの解説です。データ分析では CSV が軽量で高速ですが、実務では Excel でデータを受け取り、Excel で結果を返すケースが依然として多くあります。Pandas を使って Excel と柔軟にやり取りするための基本と実用的な書き方を整理しています。
 
-Excelファイルの読み書きをPandas データフレーム上で行なう<!--more-->基本事項をまとめました。
+---
+<!--more-->
+Excelファイルの読み書きをPandas データフレーム上で行なう基本事項をまとめました。
 
 
 #### シート名の確認

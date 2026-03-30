@@ -16,7 +16,7 @@ classes:
 sidebar:
   nav: "docs"
 tag: [Python, pandas, dataframe]
-category: python
+category: [Python]
 date: 2024-11-02
 last_modified_at : 2025-10-28 09:00:00
 excerpt: >
