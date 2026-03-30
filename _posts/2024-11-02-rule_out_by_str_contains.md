@@ -19,6 +19,9 @@ tag: [Python, pandas, dataframe]
 category: python
 date: 2024-11-02
 last_modified_at : 2025-10-28 09:00:00
+excerpt: >
+  Pandas の str.contains と否定演算子 ~ を使って、「指定の文字列を含まない行」を抽出する方法をまとめた実務向けの How To です。データクレンジングで頻出する処理を、最小コードで確実に行うためのポイントと具体例を紹介しています。
+
 ---
 <style type="text/css">
 

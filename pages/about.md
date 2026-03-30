@@ -2,7 +2,7 @@
 permalink: /about/
 title: "About me"
 layout: single
-author_profile: false
+author_profile: true
 ---
 <div style="background-color:black;color:white;padding:1.3em;opacity: 0.88;">管理人の SouthWiseMan です。</div>
 <div style="background-color:#0092ca;color:white;padding:1.3em 1.3em 9em;opacity: 1.0;">
