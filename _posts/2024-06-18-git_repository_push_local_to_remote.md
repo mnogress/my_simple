@@ -19,10 +19,25 @@ category: Reference
 tag: ["Github"]
 date: 2024-06-11
 last_modified_at : 2024-08-21 15:00:00
----
+excerpt: >
+  ローカルで作成した Git リポジトリをリモートへ push するまでの最小手順をまとめたメモです。ネット上にも多くの解説がありますが、実務で素早く作業したいときに、自分の環境に合わせた手順を確認できるよう整理しています。Git の基本操作を確実に行うための簡潔なリファレンスです。
 
-新しくリモートリポジトリを追加するために投入したgit remote add でerror: remote origin already exists. の解決方法<!--more-->
+---
+<!--more-->
+新しくリモートリポジトリを追加するために投入したgit remote add でerror: remote origin already exists. の解決方法
 についてまとめました。 
+
+### このページの目的
+<p>
+このページでは、ローカルで作成した Git リポジトリをリモートリポジトリへ push するまでの最小手順をまとめています。
+Git の初期設定や push の流れはネット上にも多くの情報がありますが、実務では「必要な手順だけを素早く確認したい」場面が多いため、メモとして整理しています。
+</p>
+
+<p>
+特に、GitHub や GitLab に新しいリポジトリを作成した直後に行う初回 push は、毎回少しずつ忘れやすい部分でもあります。
+このページでは、余計な説明を省き、確実に push まで進めるための最短ルートを紹介しています。
+</p>
+
 
 [**Adding a remote repository**](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories){:target="_blank"}
 で紹介されているページの解説になります。
