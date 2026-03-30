@@ -19,6 +19,9 @@ tag: ["KHCoder", "wordcloud"]
 category: python
 date: 2024-05-15
 last_modified_at : 2025-10-20 09:00:00
+excerpt: >
+  日本語テキストを WordCloud で正しく可視化するために、MeCab が分割してしまう複合語を KH Coder で抽出し、Python で扱いやすく整える手順をまとめたページです。「資本主義」のように文脈で一語として扱いたい語を適切にカウントするためのヒント＆チップスを紹介し、より意味のある可視化につなげる実務的な方法を解説しています。
+
 ---
 
 テキストマイニングの定番である[KH Coder](https://khcoder.net){:target="_blank"} に頻出語及び複合語の抽出、排除等のコントロールをさせて。そのリストから分かち書きのテキストを再作成してWordCloudを作成するまでの手順をBlogにまとめました。　　

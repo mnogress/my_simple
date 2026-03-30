@@ -19,6 +19,9 @@ tag: [Python, SPSS Modeler, XGBoost]
 category: Python
 date: 2026-03-11
 last_modified_at : 2026-03-23 09:00:00
+excerpt: >
+  Python（Scikit-Learn）と SPSS Modeler の XGBoost を比較し、特徴量重要度がほぼ同じ結果になることを示しながら、実務で本当に重要なのはツールの違いではなく「どの特徴量を使うか」を決める前段階の判断であることを解説した記事です。地理的座標のようにドメイン知識で除外すべき特徴量を含めるかどうかでモデル解釈が大きく変わる点を、実例と可視化を通して示しています。
+
 ---
 
 

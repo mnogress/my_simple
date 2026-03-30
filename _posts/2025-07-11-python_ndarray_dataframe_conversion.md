@@ -19,6 +19,9 @@ tag: [DataFrame, ndarray, list]
 category: Python
 date: 2026-03-22
 last_modified_at : 2026-03-24 09:00:00
+excerpt: >
+  データ分析でよく使う DataFrame・ndarray・list の違いと使い分けを、実務目線でわかりやすく整理した How To 記事です。2次元データを扱う際に、それぞれの形式がどんな場面で適しているのかを比較し、用途に応じて変換できるようになることを目的に解説しています。
+
 ---
 
 このブログではデータハンドリングの基本である、DataFrame, ndarray, list の形式変換について「DataFrame,  ndarray,  list の使い分けについて実用的に考える」という問いに対してブログにしました。
