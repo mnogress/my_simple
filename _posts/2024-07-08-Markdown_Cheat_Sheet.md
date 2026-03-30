@@ -12,17 +12,32 @@ excerpt_separator: <!--more-->
 classes:
   - landing
   - dark-theme
-  #- wide
+  - wide
 sidebar:
   nav: "docs"
 category: Reference
 tag: ["HTML", "Markdown", "css"]
 date: 2024-07-27
-last_modified_at : 2024-07-27 15:23:00
+last_modified_at : 2026-03-29 15:23:00
+excerpt: >
+  Minimal Mistakes が採用する kramdown を前提に、Markdown と HTML を組み合わせて使うためのチートシートです。Markdown の手軽さを保ちながら、HTML を完全に習得しなくても表現力豊かな記事を作れる実用的な記法をまとめています。
+
 ---
 
 HTML/Markdown のStyle sheet reference になります。 <!--more--> 前提は[*Karmdown*](https://kramdown.gettalong.org/){:target="_blank"}で、
 [*Jekyll Minimal Mistakes*](https://github.com/mmistakes/minimal-mistakes){:target="_blank"} がテーマです。
+
+### はじめに
+<p>
+このページでは、Minimal Mistakes テーマで採用されている <strong>kramdown</strong> を前提に、Markdown と HTML を組み合わせて使うためのチートシートをまとめています。
+kramdown は、通常の Markdown よりも柔軟で、必要に応じて HTML を併用できるため、文法をすべて覚えなくても表現力豊かな記事を作成できます。
+</p>
+
+<p>
+見出し、表、リスト、強調、ボックス、レイアウト調整など、当サイトで頻繁に使う記法を中心に整理しています。
+「Markdown の手軽さ」と「HTML の自由度」を両立させながら、読みやすく統一感のある記事を書くための実用的なリファレンスとして活用してください。
+</p>
+
 
 ### 文字に色をつける
 
