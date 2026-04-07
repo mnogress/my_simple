@@ -18,7 +18,7 @@ sidebar:
 tag: [Python]
 category: [Python]
 date: 2023-03-01
-last_modified_at : 2025-10-22 09:00:00
+last_modified_at : 2026-04-02 09:00:00
 excerpt: >
   SQLite の SQL を Pandas 上で実行する方法をまとめた実務向けの解説です。誕生から半世紀近く経つ SQL は、今もデータ分析に欠かせない言語です。Pandas と組み合わせることで、従来の SQL 的な思考と Python ベースの分析を自然につなぐ“架け橋”として活用できます。
 
@@ -64,9 +64,8 @@ sqlite3で提供されるSQL文を使用してデータの読み込みと抽出�
 
 ### サンプルデータセットとその読み込み方法について
 
-[サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介した「データセット3: HR データ」を使います。他のデータセットでももちろん可能ですが、このデータセットに興味のある方は、[Kaggle_HR_attrition](https://www.kaggle.com/search?q=hr+attrition){:target="_blank"}で検索してデータセットをダウンロードしてください。
-
-カレントディレクトリにダウンロードしたデータセットを配置して、Dataframeとして読み込みます。読み込むコードは以下のとおりです。
+1. [Kaggle_HR_attrition](https://www.kaggle.com/search?q=hr+attrition){:target="_blank"}で検索してデータセットをダウンロードしてください。
+2. カレントディレクトリにダウンロードしたデータセットを配置して、Dataframeとして読み込みます。読み込むコードは以下のとおりです。
 
 {% highlight python linenos %}
 import codecs
@@ -76,7 +75,6 @@ with codecs.open("WA_Fn-UseC_-HR-Employee-Attrition.csv",
 {% endhighlight %}
 
 今回は、データクリーニング前のRaw Data の読み込みを前提としているため、上記の方法でCSV形式のファイルを読み込みます。<br>
-ポイントは以下のとおりです。
 
 <div class="box33">
     <span class="box-title">ポイント</span>
