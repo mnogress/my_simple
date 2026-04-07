@@ -103,7 +103,7 @@ excerpt: >
 経度:F6、緯度:F7を除く前のXGBoostによるFeature Imporanceの計算をPythonで行ない、経度:F6、緯度:F7の影響を見ておく事とします。
 Code は以下の通りです。　とても簡単なコードですね。
 
-{% highlight python %}
+{% highlight python linenos %}
 from sklearn.datasets import fetch_california_housing
 import pandas as pd
 import seaborn as sns
