@@ -36,127 +36,6 @@ excerpt: >
 
 <style type="text/css">
 
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.violet {
-color: #cb23d1;
-font-size: 1.0em;
-font-weight: 500;
-font-style: italic;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.rouge {
-color: #d9180eff;
-font-size: 1.14em;
-font-weight: 500;
-font-style: normal;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.noir {
-color: #090c0cff;
-font-size: 0.850em;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu2 {
-color: #0053a6;
-font-size: 1.20em;
-font-weight: 500;
-font-style: normal;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.bleu {
-color: #0053a6;
-font-size: 1.20em;
-font-weight: 500;
-font-style: italic;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.gris_p {
-color: rgb(45, 43, 42);
-font-size: 0.7em;
-font-weight: 500;
-font-style: normal;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
-  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
-  .page-ul-fix ul {
-    font-size: 1rem;       /* 任意のサイズに */
-    line-height: 1.3;      /* 読みやすさ調整（任意） */
-  }
-
-  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
-  .page-ul-fix ol {
-    font-size: 1rem;       /* 任意のサイズに */
-    line-height: 1.6;      /* 読みやすさ調整（任意） */
-  }
-.custom-list-violet {
-color: rgb(67, 31, 158);
-font-size: 24px;
-}
-
 </style>
 
 ### DataFrame <-> ndarray <-> list 間の相互変換
@@ -171,7 +50,7 @@ Python では次の3つの形式をよく使います：
 
 
 
-### 1. list → ndarray（NumPy 配列）
+#### 1. list → ndarray（NumPy 配列）
 
 Python の list を NumPy の ndarray に変換します。
 
@@ -184,7 +63,7 @@ my_array = np.array(my_list)
 
 
 
-### 2. ndarray → list
+#### 2. ndarray → list
 
 NumPy 配列を Python の list に戻します。
 
@@ -194,7 +73,7 @@ my_list = my_array.tolist()
 
 ***
 
-### 3. ndarray → DataFrame（Pandas）
+#### 3. ndarray → DataFrame（Pandas）
 
 NumPy 配列を Pandas の DataFrame に変換します。
 
@@ -206,7 +85,7 @@ my_df = pd.DataFrame(my_array)
 
 ***
 
-### 4. DataFrame → ndarray
+#### 4. DataFrame → ndarray
 
 DataFrame から ndarray に変換します。
 
