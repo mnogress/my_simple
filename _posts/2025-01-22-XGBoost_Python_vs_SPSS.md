@@ -34,132 +34,12 @@ excerpt: >
 データ分析では、どのアルゴリズムを使うかよりも、  **「どの特徴量を使うか」** を決める前段階の判断が結果を大きく左右します。
 
 今回、Python（Scikit-Learn）と SPSS Modeler の XGBoost を比較したところ、  両者はほぼ同じ特徴量重要度を返しました。 つまり、ツールの違いによる差は小さく、本当に重要なのは **ドメイン知識による次元削減** です。特に今回の住宅価格データでは、  地理的座標（緯度・経度）はドメイン知識により除外されるべき特徴量であり、 これを含めるかどうかでモデルの解釈が大きく変わります。
-<span class="bleu4">この記事では、「ツールの違いよりも、前段階の判断が本質である」 という点を実例を通して示します。</span>
+<span class="bleu24">この記事では、「ツールの違いよりも、前段階の判断が本質である」 という点を実例を通して示します。</span>
 
 
 
 <style type="text/css">
 
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.rouge {
-color: red;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.noir {
-color: 1A818;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
-.noir {
-color: #090c0cff;
-font-size: 0.850em;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu {
-color: #0053a6;
-font-size: 1.20em;
-font-weight: 500;
-font-style: italic;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.bleu4 {
-color: #0053a6;
-font-size: 1.0em;
-font-weight: 500;
-font-style: italic;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.gris_p {
-color: rgb(45, 43, 42);
-font-size: 0.7em;
-font-weight: 500;
-font-style: normal;
-font-family: inherit;
-letter-spacing: 0.02em;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
-  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
-  .page-ul-fix ul {
-    font-size: 1rem;       /* 任意のサイズに */
-    line-height: 1.3;      /* 読みやすさ調整（任意） */
-  }
-
-  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
-  .page-ul-fix ol {
-    font-size: 1rem;       /* 任意のサイズに */
-    line-height: 1.6;      /* 読みやすさ調整（任意） */
-  }
 </style>
 
 ### 前提PC環境
@@ -178,14 +58,14 @@ letter-spacing: inherit;
 20640 rows × 9 columns　のサイズです。各々のカラムの意味は以下のとおりです。
 
 <ul>
-  <li> <span class="bleu">F0: (MedInc)median income in block- 収入の中央値</span></li> 
-  <li> <span class="bleu">F1: (HouseAge)median house age in block- 築年数の中央値</span></li> 
-  <li> <span class="bleu">F2: (AveRooms)average number of rooms- 平均部屋数</span></li>
-  <li> <span class="bleu">F3: (AveBedrms)average number of bedrooms-平均ベッドルーム数</span></li>
-  <li> <span class="bleu">F4: (Population)block population- 人口</span></li> 
-  <li> <span class="bleu">F5: (AveOccup)average house occupancy- 平均住宅占有率</span></li>
-  <li> <span class="bleu">F6: (Latitude)house block latitude- 家屋の緯度</span></li>
-  <li> <span class="bleu">F7:  (Longitude)house block longitude- ハウスブロックの経度</span></li>
+  <li> <span class="bleu2">F0: (MedInc)median income in block- 収入の中央値</span></li> 
+  <li> <span class="bleu2">F1: (HouseAge)median house age in block- 築年数の中央値</span></li> 
+  <li> <span class="bleu2">F2: (AveRooms)average number of rooms- 平均部屋数</span></li>
+  <li> <span class="bleu2">F3: (AveBedrms)average number of bedrooms-平均ベッドルーム数</span></li>
+  <li> <span class="bleu2">F4: (Population)block population- 人口</span></li> 
+  <li> <span class="bleu2">F5: (AveOccup)average house occupancy- 平均住宅占有率</span></li>
+  <li> <span class="bleu2">F6: (Latitude)house block latitude- 家屋の緯度</span></li>
+  <li> <span class="bleu2">F7:  (Longitude)house block longitude- ハウスブロックの経度</span></li>
 </ul>
 <br>
 目的変数はカリフォルニア地区の住宅価格で単位は10万ドルです。データセット自体は1990年の米国国勢調査(U.S. census) のもので、一行に国勢調査で使われるブロックグループ単位で集計されています。ブロックグループは米国国勢調査において、最小の地理的な単位です。概ね、600～3,000人を一つのグループにしています。　<br>
@@ -253,17 +133,17 @@ xgb_model.fit(x,y)
 次に同じデータセットでSPSS® Modeler を使って計算します。　左がPythonで右がSPSS® Modeler での計算結果です。 計算結果に少しだけ、差異があります。
 Python では：
 <ul>
-<li> <span class="bleu">F0: (MedInc)median income in block-収入の中央値</span></li>
-<li> <span class="bleu">F5: (AveOccup)average number of household members-平均世帯人数</span></li>
-<li> <span class="bleu">F2: (AveRooms)average number of rooms-平均部屋数</span></li>
+<li> <span class="bleu2">F0: (MedInc)median income in block-収入の中央値</span></li>
+<li> <span class="bleu2">F5: (AveOccup)average number of household members-平均世帯人数</span></li>
+<li> <span class="bleu2">F2: (AveRooms)average number of rooms-平均部屋数</span></li>
 </ul>
 と平均住宅占有率が２番目に大きな影響力があるとい結果でしたが
 
 SPSS® Modeler では：
 <ul>
-<li> <span class="bleu">F0: (MedInc)median income in block-収入の中央値</span></li>
-<li> <span class="bleu">F2: (AveRooms)average number of rooms-平均部屋数</span></li>
-<li> <span class="bleu">F5: (AveOccup)average number of household members-平均世帯人数</span></li>
+<li> <span class="bleu2">F0: (MedInc)median income in block-収入の中央値</span></li>
+<li> <span class="bleu2">F2: (AveRooms)average number of rooms-平均部屋数</span></li>
+<li> <span class="bleu2">F5: (AveOccup)average number of household members-平均世帯人数</span></li>
 </ul>
 とPython では3番目の<strong>平均部屋数</strong>が２番目という結果でしたが、それ以外は同じ順位でした。
 
