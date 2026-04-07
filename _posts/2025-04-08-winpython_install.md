@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-#- wide
+- wide
 sidebar:
   nav: "docs"
 tag: [WinPython, openpyxl, offline]
 category: Python
 date: 2025-04-08
-last_modified_at : 2025-10-30 09:00:00
+last_modified_at : 2026-04-02 09:00:00
 excerpt: >
   機密性の高いデータ分析で求められるオフライン環境に最適な WinPython の導入方法をまとめたページです。ネット接続なしでは追加が難しいモジュールを、Control Panel を使ってインストールする手順を GIF つきでわかりやすく解説し、実務で安心して Python を使える環境づくりをサポートします。
 
@@ -30,89 +30,6 @@ excerpt: >
 このBlogではWinPythonでの定番モジュールの追加のTips をまとめました。
 
 <style type="text/css">
-
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.rouge {
-color: red;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.noir {
-color: 1A818;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu {
-color: blue;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
-
-.custom-list-violet {
-color: rgb(67, 31, 158);
-font-size: 24px;
-}
-
 </style>
 
 
@@ -171,8 +88,8 @@ PythonおよびWindow 用のPython 処理系とNumpy, Pandas, Scikit-learn, Tens
 </div>
 
 
-サンプルとしてopenpyxlを使えるようにした際の動画を載せています。参考にしてください。
-動画を見てお気づきのとおり、openpyxl以外にjdcal とet_xml を一緒にインストールしないとインストールができません。注意してください。
+・サンプルとしてopenpyxlを使えるようにした際の動画を載せています。参考にしてください。<br>
+・動画を見てお気づきのとおり、openpyxl以外にjdcal とet_xml を一緒にインストールしないとインストールができません。注意してください。
 {: .notice--danger}
 
 
@@ -182,6 +99,5 @@ PythonおよびWindow 用のPython 処理系とNumpy, Pandas, Scikit-learn, Tens
 ---
 
 ### ひとこと
-
-WinPython は解凍するだけですぐに使えるターンキーソリューションです。オフライン環境での構築には威力を発揮します。しかし、オンライン環境では気にしなかったモジュールの依存関係、目的のモジュールとバンドルしてインストールされるモジュール等の管理のためには、オフライン環境とは別に、オンラインテスト環境での事前準備が必須になるかと思います。
+WinPython は解凍するだけですぐに使えるターンキーソリューションです。オフライン環境での構築には威力を発揮します。<br>しかし、実有無的には、オンライン環境では気にしなかったモジュールの依存関係、目的のモジュールとバンドルしてインストールされるモジュール等の管理のためには、オフライン環境とは別に、オンラインテスト環境での事前準備が必須になります。
 {: .notice--warning}
