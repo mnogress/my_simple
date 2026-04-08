@@ -113,6 +113,42 @@ th {
 ### Base Result
 
 <style type="text/css">
+  table {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-size: 0.65em;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+table + table {
+  margin-top: 1em;
+}
+thead {
+  background-color: #e6e6fa;
+  border-bottom: 2px solid #9b9b9d;
+}
+th {
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: start;
+}
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #9b9b9d;
+}
+tfoot {
+  background-color: #afeeee;
+  padding: 0.5em;
+  border-bottom: 1px solid #9b9b9d;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
 </style>
 
 
