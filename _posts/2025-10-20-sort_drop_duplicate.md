@@ -34,36 +34,6 @@ excerpt: >
 </div>
 
 <style>
-.box33 {
-    position: relative;
-    margin: 2em 0;
-    padding: 15px 10px 7px;
-    border: solid 2px #0092ca;
-    border-radius: 6px;
-}
-.box33 .box-title {
-    position: absolute;
-    display: inline-block;
-    top:  -15px;
-    left:  15px;
-    padding: 0 9px;
-    height: 35px;
-    line-height: 35px;
-    font-size: 20px;
-    background: #0092ca;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 6px;
-}
-.box33 p {
-    margin: 0; 
-    padding: 1em;
-    font-size: 1.2em;
-}
-.box33 li {
-    margin: 0; 
-    font-size: 1.05em;
-}
 </style>
 
 
