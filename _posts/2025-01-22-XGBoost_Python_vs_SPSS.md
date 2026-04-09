@@ -128,7 +128,7 @@ xgb_model.fit(x,y)
 ![feature_importance1]({{ "/images/img/fig_3.png" | relative_url}}){:height="900px" width="900px"}<br>
 
 
-### 🚀 Python (Sciki-Learn) vs SPSS® Modeler 特徴量計算を比較する
+### 🚀 Python (Scikit-Learn) vs SPSS® Modeler 特徴量計算を比較する
 
 次に同じデータセットでSPSS® Modeler を使って計算します。　左がPythonで右がSPSS® Modeler での計算結果です。 計算結果に少しだけ、差異があります。
 Python では：
