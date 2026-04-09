@@ -73,7 +73,7 @@ df = df.sort_values(["date"], ascending = False)
 
 列名**date**で新しい順に並び替えておく。
 
-#### *ascending = False* >> 降順 >> 新しいものから古いもの
+##### *ascending = False* >> 降順 >> 新しいものから古いもの
 
 <div class="box33">
 <span class="box-title">Point!</span>
