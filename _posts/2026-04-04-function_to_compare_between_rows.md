@@ -2,7 +2,7 @@
 layout: single
 title: 異なる列間で値の一致、不一致を調べる
 header:
-  overlay_image: images/header_041_1280by336.png
+  overlay_image: images/header_04_1280by336.png
   overlay_filter: rgba(44, 82, 207, 0.35)
 toc: True
 toc_label: "目次"
