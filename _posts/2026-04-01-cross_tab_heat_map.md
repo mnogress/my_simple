@@ -2,7 +2,7 @@
 layout: single
 title: クロス集計表とヒートマップでデータセットを理解する
 header:
-  overlay_image: images/header_5.png
+  overlay_image: images/header_042_1280by336.png
   overlay_filter: rgba(44, 82, 207, 0.35)
 toc: True
 toc_label: "目次"
