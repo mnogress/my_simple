@@ -9,4 +9,347 @@ search: false
 @import "minimal-mistakes"; // main partials
 @import "minimal-mistakes/variables"; $doc-font-size: 10 !default;
 
+.violet {
+color: #cb23d1;
+font-size: 1.0em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.violet07 {
+color: #cb23d1;
+font-size: 0.7em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.verde {
+color: rgb(3, 53, 21);
+font-weight: 500;
+font-weight: normal;
+font-family: italic;
+letter-spacing: inherit;
+}
+.green {
+color: #055c12ff;
+font-weight: normal;
+font-family: inherit;
+letter-spacing: inherit;
+}
+.rouge {
+color: #d9180eff;
+font-size: 1.14em;
+font-weight: 500;
+font-style: italic;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.rouge2 {
+color: #d9180eff;
+font-size: 1.00em;
+font-weight: normal;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.noir {
+color: #090c0cff;
+font-size: 0.850em;
+font-weight: normal;
+font-family: inherit;
+letter-spacing: inherit;
+}
+.noir07 {
+color: #090c0cff;
+font-size: 0.70em;
+font-weight: normal;
+font-family: inherit;
+letter-spacing: inherit;
+}
+.noir4 {
+color: #090c0cff;
+font-size: 1.3em;
+font-weight: 500;
+font-family: inherit;
+letter-spacing: inherit;
+}
+.bleu {
+color: #0053a6;
+font-size: 1.10em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.bleu2 {
+color: #0053a6;
+font-size: 1.00em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.gris_p {
+color: rgb(45, 43, 42);
+font-size: 0.7em;
+font-weight: 500;
+font-style: normal;
+font-family: inherit;
+letter-spacing: 0.02em;
+}
+.petit {
+font-size: 0.80em;
+color: black;
+font-family: inherit;
+line-height: 1.1;
+display: inline-block;
+letter-spacing: inherit;
+}
+    .player {
+      margin: 1rem 0;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    button {
+      padding: 0.4rem 0.8rem;
+    }
+    audio {
+      /* 画面に出したくない場合は隠してもOK */
+      display: none;
+    }
 
+table {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-size: 0.8em;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+table + table {
+  margin-top: 1em;
+}
+
+thead {
+  background-color: #e6e6fa;
+  border-bottom: 2px solid #9b9b9d;
+}
+
+th {
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: start;
+  text-align: center;
+}
+
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #9b9b9d;
+}
+
+tfoot {
+  background-color: #afeeee;
+  padding: 0.5em;
+  border-top: 2px solid #9b9b9d;
+  border-bottom: 2px solid #9b9b9d;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 吹き出し間の余白 */
+  max-width: 900px;
+}
+.speech-bubble {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 13px;
+  padding: 10px 15px;
+  width: fit-content;
+  max-width: 900px;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  margin-bottom: 12px
+}
+.speech-bubble.bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #f8efefff;
+  filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.2));
+}
+
+.speech-bubble.left::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: #f8efefff;
+  filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.2));
+}
+
+.speech-bubble.right::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: #f8efefff;
+  filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.2));
+}
+
+  #rate-control { display:flex; align-items:center; gap:1rem; margin:1rem 0; }
+  #status { margin-top: .5rem; color: #333; }
+
+/* details をカード風にして2列に並べる */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* details の見た目を整える（任意） */
+.details-grid details {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #fafafa;
+}
+.box33 {
+    position: relative;
+    margin: 2em 0;
+    padding: 15px 10px 7px;
+    border: solid 2px #0092ca;
+    border-radius: 6px;
+}
+.box33 .box-title {
+    position: absolute;
+    display: inline-block;
+    top:  -15px;
+    left:  15px;
+    padding: 0 9px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    background: #0092ca;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 6px;
+}
+.box33 p {
+    margin: 0; 
+    padding: 1em;
+}
+  .definitions dl {
+    margin: 0;
+  }
+  .definitions dt {
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .definitions dd {
+    margin: .25rem 0 0 0;
+  }
+  .definitions ol {
+    margin: .25rem 0 0 1.5rem; /* 番号のインデント */
+  }
+
+  /* 色定義（テーマ変更しやすいようにCSS変数も併用可） */
+  .is-blue { color: #1565c0; }
+  .is-red  { color: #c62828; }
+.mytable tbody.rowgroup { background: #78aae3; }        /* デフォルト色 */
+.mytable tbody.rowgroup.group-a { background: #17bb25; } /* Aは淡いグリーン */
+.mytable tbody.rowgroup.group-b { background: #4c3d0a; } /* Bは淡いイエロー */
+/* --- Base font reset for Minimal Mistakes --- */
+
+/* 段落とリストを通常サイズに戻す */
+.page__content p,
+.page__content li,
+.page__content dl {
+  font-size: 0.9rem !important;
+  line-height: 1.55;
+}
+
+/* 入れ子リストも同じサイズに統一 */
+.page__content ul ul,
+.page__content ol ol {
+  font-size: 0.9rem !important;
+}
+
+table {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-size: 0.85em;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+table + table {
+  margin-top: 1em;
+}
+
+thead {
+  background-color: #e6e6fa;
+  border-bottom: 2px solid #9b9b9d;
+}
+
+th {
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: start;
+}
+
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #9b9b9d;
+}
+
+tfoot {
+  background-color: #afeeee;
+  padding: 0.5em;
+  border-top: 2px solid #9b9b9d;
+  border-bottom: 2px solid #9b9b9d;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+
+  /* このページだけのULを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ul {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.3;      /* 読みやすさ調整（任意） */
+  }
+
+  /* このページだけのOLを調整（スコープ＝.page-ul-fix） */
+  .page-ul-fix ol {
+    font-size: 1rem;       /* 任意のサイズに */
+    line-height: 1.6;      /* 読みやすさ調整（任意） */
+  }

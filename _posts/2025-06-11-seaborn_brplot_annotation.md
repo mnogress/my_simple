@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-#- wide
+- wide
 sidebar:
   nav: "docs"
 tag: [seaborn, visualization, Python]
@@ -31,98 +31,14 @@ excerpt: >
 
 <!--more-->
 <style type="text/css">
-
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.rouge {
-color: red;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.noir {
-color: 1A818;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu {
-color: blue;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
-
-.custom-list-violet {
-color: rgb(67, 31, 158);
-font-size: 24px;
-}
-
 </style>
 ### サンプルデータセット
 
-１．日本語化した棒グラフを作成するためにデータセットを用意します。<br>
-２．Kagle のHRデータを編集して使っています。HRデータのうち、**Age**,	**EducationField**,	**TotalWorkingYears**　**MonthlyIncome** の列をそれぞれ、「年齢」、「専攻」、「勤続年数」、「月収」と書き換えました。<br>
-３．**EducationField**で含まれるカテゴリカルデータを日本語するとろまでは同じです。<br>
-４．二次元データを作るために、「専攻」のカテゴリカルデータを軸に**groupby**メソッドでデータを集約します。<br>
-５．**groupby**メソッドを使うと**mean()**平均値 や**sum()**トータルで各カテゴリー値を集約できますが、平均値で各カテゴリの値を集約したいと思います。
-{: .notice--warning}
+  1. 日本語化した棒グラフを作成するためにデータセットを用意します。<br>
+  2. Kagle のHRデータを編集して使っています。HRデータのうち、**Age**,	**EducationField**,	**TotalWorkingYears**　**MonthlyIncome** の列をそれぞれ、「年齢」、「専攻」、「勤続年数」、「月収」と書き換えました。<br>
+  3. **EducationField**で含まれるカテゴリカルデータを日本語するとろまでは同じです。<br>
+  4. 二次元データを作るために、「専攻」のカテゴリカルデータを軸に**groupby**メソッドでデータを集約します。<br>
+  5. **groupby**メソッドを使うと**mean()**平均値 や**sum()**トータルで各カテゴリー値を集約できますが、平均値で各カテゴリの値を集約したいと思います。
 
 
 ### groupby での集約のイメージ
@@ -213,8 +129,10 @@ for p in ax.patches:
 
 ### 度数分布図、任意のカテゴリー順
 
-<span class="bleu">order = ['マーケティング', '理工学', '医薬、保健','人文科学','教育・人事','その他']</span>として
-<span class="bleu">order = order</span>とすると、<span class="bleu">order</span>で指定した順に棒グラフが並びます。イメージは以下のとおりです。
+<span class="bleu">order = ['マーケティング', '理工学', '医薬、保健','人文科学','教育・人事','その他']</span>として<br>
+<span class="bleu">order = order</span>とすると、<span class="bleu">order</span>で指定した順に棒グラフが並びます。
+
+イメージは以下のとおりです。
 
 ![月収平均]({{ "/images/img/seaborn_pic6.png" | relative_url}}){:height="600px" width="600px"}
 

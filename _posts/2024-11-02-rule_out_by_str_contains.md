@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-# wide
+- wide
 sidebar:
   nav: "docs"
 tag: [Python, pandas, dataframe]
@@ -24,83 +24,6 @@ excerpt: >
 
 ---
 <style type="text/css">
-
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.rouge {
-color: red;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.noir {
-color: 1A818;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu {
-color: blue;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
 </style>
 
 Pandas の<strong>str.contais</strong>を利用して指定の値を含まない行の抽出方法をまとめました。
@@ -146,7 +69,7 @@ print('after:', df.shape)
 
 抽出後のデータフレームは以下のとおりです。
 
-![what_is_output]({{ "/images/img/fig_1107_02.png" | relative_url}}){:height="300px" width="300px"}<br>
+![what_is_output]({{ "/images/img/fig_1107_02.png" | relative_url}}){:height="500px" width="500px"}<br>
 
 
 ### 練習データで指定する「値を含む」場合を示します
@@ -172,7 +95,7 @@ display(df)
 
 {% endhighlight %}
 
-![what_is_output]({{ "/images/img/fig_1107_03.png" | relative_url}}){:height="300px" width="300px"}<br>
+![what_is_output]({{ "/images/img/fig_1107_03.png" | relative_url}}){:height="500px" width="500px"}<br>
 
 
 ### まとめ

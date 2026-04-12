@@ -24,91 +24,6 @@ excerpt: >
 
 ---
 <style type="text/css">
-
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.rouge {
-color: red;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.noir {
-color: 1A818;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu {
-color: blue;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
-.grand {
-font-size: 1.20em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
 </style>
 
 <!--more-->
@@ -116,24 +31,21 @@ letter-spacing: inherit;
 アピアランスパネルだけで作成する座布団の基本的な手順を覚え、それを応用すれば、文字に視覚的な効果のバリエーションが一気に広がります。
 
 ### はじめに
-<p>
+
 このページでは、Illustrator でよく使われる「座布団（背景パネル）」をアピアランスで作成し、グラフィックスタイルとして登録する方法を紹介しています。
 座布団は見出しやアイコンの背景として頻繁に使われますが、毎回アピアランスパネルで設定すると手間がかかり、作業が煩雑になりがちです。
-</p>
 
-<p>
 グラフィックスタイルに登録しておけば、別のオブジェクトにもワンクリックで適用でき、デザインの統一性を保ちながら作業効率を大幅に向上できます。
 Illustrator を日常的に使う人にとって、知っておくと手放せなくなる実用的なテクニックです。
-</p>
 
-<p>
 このページでは、座布団の基本的な作り方から、スタイル登録、再利用の流れまでをわかりやすくまとめています。
-</p>
 
 
 ### アピアランスで作成、グラフィックスタイルで複製
 
-アピアランスパネルだけで座布団を作成し、アピアランスパネルの内容をグラフィックスタイルに登録すれば、簡単に他のオブジェクトにアピアランス反映することができます。以下の動画のように、文字を装飾するアピアランスをグラフィックスタイルに登録すれば、後は文字を入力し、グラフィックスタイルを適用するだけで、簡単に対象の文字に対して座布団を敷いてみたり、囲みをいれたり、反射文字に変更することができます。　
+アピアランスパネルだけで座布団を作成し、アピアランスパネルの内容をグラフィックスタイルに登録すれば、簡単に他のオブジェクトにアピアランス反映することができます。
+
+以下の動画のように、文字を装飾するアピアランスをグラフィックスタイルに登録すれば、後は文字を入力し、グラフィックスタイルを適用するだけで、簡単に対象の文字に対して座布団を敷いてみたり、囲みをいれたり、反射文字に変更することができます。　
 
 動画では、イラストレーターがデフォルトで提供している、グラデーションやお化けの装飾に変えるグラフィックスタイルの適用例も入れています。
 

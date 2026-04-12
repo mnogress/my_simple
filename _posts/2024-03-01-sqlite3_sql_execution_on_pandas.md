@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-# wide
+- wide
 sidebar:
   nav: "docs"
 tag: [Python]
 category: [Python]
 date: 2023-03-01
-last_modified_at : 2025-10-22 09:00:00
+last_modified_at : 2026-04-02 09:00:00
 excerpt: >
   SQLite の SQL を Pandas 上で実行する方法をまとめた実務向けの解説です。誕生から半世紀近く経つ SQL は、今もデータ分析に欠かせない言語です。Pandas と組み合わせることで、従来の SQL 的な思考と Python ベースの分析を自然につなぐ“架け橋”として活用できます。
 
@@ -31,110 +31,32 @@ sqlite3で提供されるSQL文を使用してデータの読み込みと抽出�
 
 ---
 <style type="text/css">
-
-table {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.75em;
-  border-collapse: collapse;
-  overflow-x: auto;
-}
-
-table + table {
-  margin-top: 1em;
-}
-
-thead {
-  background-color: #e6e6fa;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: start;
-}
-
-td {
-  padding: 0.5em;
-  border-bottom: 1px solid #9b9b9d;
-}
-
-tfoot {
-  background-color: #afeeee;
-  padding: 0.5em;
-  border-top: 2px solid #9b9b9d;
-  border-bottom: 2px solid #9b9b9d;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
-}
-_media screen and (max-width:1280px){
-.p_table {width:100%;overflow:scroll;}
-.p_table table {width:1153px;}
-}
-_media screen and (max-width:750px){
-.resp_table {width:100% !important;}
-.resp_table th ,.resp_table td{padding:10px !important;}
-}
-.rouge {
-color: red;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.noir {
-color: 1A818;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.bleu {
-color: blue;
-font-weight: normal;
-font-family: inherit;
-letter-spacing: inherit;
-}
-.petit {
-font-size: 0.80em;
-color: black;
-font-family: inherit;
-line-height: 1.1;
-display: inline-block;
-letter-spacing: inherit;
-}
 </style>
 
 ### SQlite とは
 
-[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、Cライブラリで、軽量なディスク上のデータベースを提供します。
-サーバプロセスを別途用意する必要がなく、SQLクエリー言語（SQL文）を使用してデータベースにアクセスできます。
-SQLiteを使用することで、アプリケーションのプロトタイプを迅速に作成し、そのコードを後でPostgreSQLやOracleなどの大規模データベースに移行できます。
-そのため、[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、SQLデータベースを使うアプリ開発においては必須のツールとなっています。
+1. [SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、Cライブラリで、軽量なディスク上のデータベースを提供します。
+2. サーバプロセスを別途用意する必要がなく、SQLクエリー言語（SQL文）を使用してデータベースにアクセスできます。
+3. SQLiteを使用することで、アプリケーションのプロトタイプを迅速に作成し、そのコードを後でPostgreSQLやOracleなどの大規模データベースに移行できます。
+4. そのため、[SQLite](https://www.sqlite.org/index.html){:target="_blank"}は、SQLデータベースを使うアプリ開発においては必須のツールとなっています。
 
 ---
 
 ### DB Browser for SQLite とは
 
-[DB Browser for SQLite](https://sqlitebrowser.org/){:target="_blank"}は、
-SQLiteデータベースを管理するためのソフトウェアです。
-SQLiteデータベースの作成、閲覧、編集が可能で、データベースの最適化によってファイルサイズを小さくすることもできます。
-また、USBドライブから起動できるポータブル版も提供されており、
-SQLiteをより身近に利用できるようになっています。
+1. [DB Browser for SQLite](https://sqlitebrowser.org/){:target="_blank"}は、SQLiteデータベースを管理するためのソフトウェアです。
+2. SQLiteデータベースの作成、閲覧、編集が可能で、データベースの最適化によってファイルサイズを小さくすることもできます。
+3. また、USBドライブから起動できるポータブル版も提供されており、SQLiteをより身近に利用できるようになっています。
+
 多くの人がこのソフトウェアを利用した経験があるかもしれません。
 
 ---
 
 ###  sqlite3　モジュールとは
 
-[sqlite3](https://docs.python.org/ja/3.5/library/sqlite3.html){:target="_blank"}モジュールは、
-Python上でデータセットをSQLデータベースとして格納し、
-SQL文を使用してアクセスするためのインターフェイスを提供します。
+1. [sqlite3](https://docs.python.org/ja/3.5/library/sqlite3.html){:target="_blank"}モジュールは、Python上でデータセットをSQLデータベースとして格納し、
+2. SQL文を使用してアクセスするためのインターフェイスを提供します。
+
 このモジュールを使用することで、PythonでSQLiteの操作を行うことができます。
 
 
@@ -142,9 +64,8 @@ SQL文を使用してアクセスするためのインターフェイスを提�
 
 ### サンプルデータセットとその読み込み方法について
 
-[サンプルデータセット](https://www.so-wi.com/2019/06/01/reference_data.html){:target="_blank"}で紹介した「データセット3: HR データ」を使います。他のデータセットでももちろん可能ですが、このデータセットに興味のある方は、[Kaggle_HR_attrition](https://www.kaggle.com/search?q=hr+attrition){:target="_blank"}で検索してデータセットをダウンロードしてください。
-
-カレントディレクトリにダウンロードしたデータセットを配置して、Dataframeとして読み込みます。読み込むコードは以下のとおりです。
+1. [Kaggle_HR_attrition](https://www.kaggle.com/search?q=hr+attrition){:target="_blank"}で検索してデータセットをダウンロードしてください。
+2. カレントディレクトリにダウンロードしたデータセットを配置して、Dataframeとして読み込みます。読み込むコードは以下のとおりです。
 
 {% highlight python linenos %}
 import codecs
@@ -154,7 +75,6 @@ with codecs.open("WA_Fn-UseC_-HR-Employee-Attrition.csv",
 {% endhighlight %}
 
 今回は、データクリーニング前のRaw Data の読み込みを前提としているため、上記の方法でCSV形式のファイルを読み込みます。<br>
-ポイントは以下のとおりです。
 
 <div class="box33">
     <span class="box-title">ポイント</span>
@@ -170,7 +90,9 @@ with codecs.open("WA_Fn-UseC_-HR-Employee-Attrition.csv",
 
 ### sqlite DB を定義する
 
-SQliteDBを作成します。DB名は<span class="bleu">HR_Employee_Attrition.db</span>としています。以下のCode でDBを作成します。
+SQliteDBを作成します。DB名は<span class="bleu">HR_Employee_Attrition.db</span>としています。
+
+以下のCode でDBを作成します。
 ここでは、コメントにもあるとおり<span class="bleu">HR_Employee_Attrition.db</span>という名前のDBがなければ作成し、接続して使えるようにします。
 すでに存在する場合は接続して使えるようにします。
 
@@ -189,7 +111,7 @@ cur = conn.cursor()
 
 ---
 
-### SQlite DBにテーブルを定義し、データフレームの中身をテーブルに流し込む 
+#### SQlite DBにテーブルを定義し、データフレームの中身をテーブルに流し込む 
 
 DB名は<span class="bleu">HR_Employee_Attrition.db</span>でその情報はconnectionオブジェクト <span class="bleu">conn</span> で引き継がれます。
 DB内のテーブル名は<span class="rouge">HR_Employee_Attrition_tab</span>と定義します。
@@ -227,11 +149,11 @@ df.to_sql('HR_Employee_Attrition_tab', conn, if_exists='replace', index=False)
 
 ---
 
-### SQLite DB にアクセスしてSQL文を実行する
+#### SQLite DB にアクセスしてSQL文を実行する
 
-作成したSQlite DBにJupyter Notebook からアクセス（接続）し、SELECT文を使ってテーブルの中身を抽出します。
-抽出したデータは、Pandas データフレームとして取り込みます。
-以下のSELECT文では、テーブル全体すなわち、DBのデータ全部をデータフレームとして読み込むこととなります。
+- 作成したSQlite DBにJupyter Notebook からアクセス（接続）し、SELECT文を使ってテーブルの中身を抽出します。
+- 抽出したデータは、Pandas データフレームとして取り込みます。
+- 以下のSELECT文では、テーブル全体すなわち、DBのデータ全部をデータフレームとして読み込むこととなります。
 
 {% highlight python linenos %}
 
@@ -256,9 +178,12 @@ Jupyter Notebook から内容を確認します。
 
 ### Here Document でSELECT文の見通しの良さをアップする
 
-SELECT文等でクエリを組み込みますが、Pythonでは、区切り文字として引用符を3つ続ける<strong>「"""」文字列リテラル</strong>（いわゆる、ベタ打ち文字列）を持つことができます。　改行できるため、抜き出すカラム名で改行させかつ、Query として独立させ、全体を見通しを良くさせます。 
+SELECT文等でクエリを組み込みますが、Pythonでは、区切り文字として引用符を3つ続ける<strong>「"""」文字列リテラル</strong>（いわゆる、ベタ打ち文字列）を持つことができます。　
+
+改行できるため、抜き出すカラム名で改行させかつ、Query として独立させ、全体を見通しを良くさせます。 
 
 このQueryでは、特定のカラムのみを抽出しますが、それ毎に改行しています。
+
 また、条件として、<strong>"BusinessTravel"="Travel_Frequently"</strong>　かつ、<strong>"DailyRate" < 1350</strong>　かつ <strong>"Age" > 36</strong>に絞りますが、これも見やすくするため改行しています。
 
 {% highlight python linenos %}

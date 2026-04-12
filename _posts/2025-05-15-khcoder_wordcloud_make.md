@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 classes:
 - landing
 - dark-theme
-# wide
+- wide
 sidebar:
   nav: "docs"
 tag: ["KHCoder", "wordcloud"]
 category: Python
 date: 2024-05-15
-last_modified_at : 2025-10-20 09:00:00
+last_modified_at : 2026-3-20 09:00:00
 excerpt: >
   日本語テキストを WordCloud で正しく可視化するために、MeCab が分割してしまう複合語を KH Coder で抽出し、Python で扱いやすく整える手順をまとめたページです。「資本主義」のように文脈で一語として扱いたい語を適切にカウントするためのヒント＆チップスを紹介し、より意味のある可視化につなげる実務的な方法を解説しています。
 
@@ -32,6 +32,7 @@ excerpt: >
 
 日本語のWordCloud作成方法を丁寧に説明した
 Blog [Qiita: WordCloudで岸田首相の所信表明演説のキーワードを可視化する](https://qiita.com/growsic/items/0663299ff8ed07ba9d30){:target="_blank"}がネットにあり、簡単にWordCloud が作成できます。
+
 私も、Qiita記事を参考にほとんどそのままのコードでWordCloudが作成できました。このような懇切丁寧なBlogのおかげもあり、
 作成自体は簡単ですが、WordCloudで可視化された大きな文字で印象に残るキーワードから何かしらのまとめメッセージや、
 文書全体の示唆を導こうとすると、複合語の抽出と排除の問題にぶつかりました。
@@ -47,31 +48,6 @@ Blog [Qiita: WordCloudで岸田首相の所信表明演説のキーワードを�
 </div>
 
 <style>
-.box33 {
-    position: relative;
-    margin: 2em 0;
-    padding: 15px 10px 7px;
-    border: solid 2px #0366fc;
-    border-radius: 6px;
-}
-.box33 .box-title {
-    position: absolute;
-    display: inline-block;
-    top:  -15px;
-    left:  15px;
-    padding: 0 9px;
-    height: 35px;
-    line-height: 35px;
-    font-size: 20px;
-    background: #0366fc;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 6px;
-}
-.box33 p {
-    margin: 0; 
-    padding: 1em;
-}
 </style>
 
 
@@ -80,11 +56,11 @@ Blog [Qiita: WordCloudで岸田首相の所信表明演説のキーワードを�
 MeCab単体と文字操作だけでは複合語の抽出、取捨選択が難しく、テキストマイニングのソフトウエアを利用して複合語を管理するのが現実的という結論に至りました。
 
 
-
-
 ### KH Coderで作成した頻出語リストから分かち書きテキストを作成する
 
-KH Coder を使って頻出語リストを作成すれば、以下のKH Coder の画面より抽出する頻出語の品詞によって取捨選択が容易にできます。この例では、「動詞」を排除しています。品詞名にBがつくのは，平仮名のみからなる語を集めた品詞のことです。今回、これらの語句もWordCloudに含めないため、チェックを外しています。
+KH Coder を使って頻出語リストを作成すれば、以下のKH Coder の画面より抽出する頻出語の品詞によって取捨選択が容易にできます。
+
+この例では、「動詞」を排除しています。品詞名にBがつくのは，平仮名のみからなる語を集めた品詞のことです。今回、これらの語句もWordCloudに含めないため、チェックを外しています。
 
 ![KHCoder_frequent_df]({{ "/images/img/khcoder_pic3.png" | relative_url}}){:height="600px" width="600px"}<br>
 
@@ -92,8 +68,10 @@ KH Coder を使って頻出語リストを作成すれば、以下のKH Coder �
 ### Python 前半部分
 
 前半部分では列名‘col2’ に出現語句を出現回数分、半角スペースを空けて格納しています。
-`khc6_kishida_frequent.xlsx`{:style="background: #cbe8f5"}というExcelファイルにKH Coderから作成した頻出単語リストが
-Excel形式で格納されています。　また、入力テキストは[第二百七回国会における岸田内閣総理大臣所信表明演説](https://www.kantei.go.jp/jp/101_kishida/statement/2021/1206shoshinhyomei.html){:target="_blank"}としています。
+<span class="rouge2">khc6_kishida_frequent.xlsx</span>というExcelファイルにKH Coderから作成した頻出単語リストが
+Excel形式で格納されています。　
+
+また、入力テキストは[第二百七回国会における岸田内閣総理大臣所信表明演説](https://www.kantei.go.jp/jp/101_kishida/statement/2021/1206shoshinhyomei.html){:target="_blank"}としています。
 
 {% highlight python linenos %}
 #使用するモジュールをimport
@@ -157,10 +135,9 @@ wordc = wordcloud.WordCloud(
 wordc.generate(string).to_file('wordcloud_kishida.png')
 {% endhighlight %}
 
-結果は以下のようになりました。　品詞として`タグ`{:style="background: #cbe8f5"}となっているのが、複合語になります。
+結果は以下のようになりました。　品詞として<span class="bleu">タグ</span>となっているのが、複合語になります。
 
 ![WordCloud＿KHCoder]({{ "/images/img/wordcloud_kishida.png" | relative_url}}){:height="600px" width="600px"}<br>
-
 
 ---
 
