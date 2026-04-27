@@ -26,9 +26,6 @@ excerpt:
 
 ---
 <!--more-->
-Pandas の pd.concat を使った縦結合・横結合を、図解中心で直観的に理解できるように解説。
-外部結合・内部結合の違いも視覚的に整理し、複数データの統合や行追加・列追加がすぐに使える形で身につきます。
-データ分析で必須の concat を、図で見てそのままコマンドに落とし込める構成でまとめました。
 
 ---
 
@@ -40,10 +37,10 @@ Pandas の pd.concat を使った縦結合・横結合を、図解中心で直�
 
 #### リスト形式で連結対象データフレームを指定する
 concat 関数には連結したいデータフレームをリスト形式で渡します。　図のように、df1, df2, df3 の3つのデータフレームを一つに連結したいのであれば
-`[df1, df2, df3]` とします。　pd.concat では一度に複数のデータフレームの結合が可能です。
+`[df1, df2, df3]`{:style="background: #eda0c4; font-size: 1.00em;"} とします。　pd.concat では一度に複数のデータフレームの結合が可能です。
 
 #### axis で連結方向：縦横が指定可能
-axisは連結方向を示します。デフォルトの`axis=0`は縦方向、`axis=1`は横方向の連結です。
+axisは連結方向を示します。デフォルトの`axis=0`{:style="background: #eda0c4; font-size: 1.00em;"}は縦方向、`axis=1`{:style="background: #eda0c4; font-size: 1.00em;"}は横方向の連結です。
 
 縦方向の連結では、列の内容が同じで行（データを追加したい等）のケースでとても便利です。いわゆる行を増やす縦持ちデータ追加です。　
 
@@ -61,15 +58,15 @@ ignoreindexにはインデックスを振り直すか、そのまま他を指定
 
 ![concat_axis_0]({{ "/images/img/fig_1117_02.png" | relative_url}})
 
-連結結果です。`ignore_index`の設定でインデックス番号がそのままだったり、振り直されたりしています。
+連結結果です。`ignore_index`{:style="background: #eda0c4; font-size: 1.00em;"}の設定でインデックス番号がそのままだったり、振り直されたりしています。
 
 ![concat_axis_0]({{ "/images/img/fig_1117_03.png" | relative_url}})
 
-このように、pd.concat のaxis=0 縦向き連結はデータの追加に適しています。
+このように、pd.concat の`axis=0`{:style="background: #eda0c4; font-size: 1.00em;"} 縦向き連結はデータの追加に適しています。
 
 #### axis=1 横向き連結
 
-df4を作りたいと思います。df3.set_index(「名前」)で名前列をインデックスにします。
+df4を作りたいと思います。`df3.set_index(「名前」)`{:style="background: #eda0c4; font-size: 1.00em;"}で名前列をインデックスにします。
 df4です。「名前」がインデックスになっていることがわかります。
 
 新しいデータフレームを作成します。df5とします。
@@ -81,19 +78,15 @@ df5は名前と役職を持つデータフレームとします。そしてこ�
 #### join="outer"は外部結合 、join="inner"は内部結合
 
 この名前の列を軸（キー）に
-df4とdf5の２つのデータフレームを横方向に結合してみます。axis=1を指定します。
-今度は引数joinを指定してすることで連結のスタイルを指定します。join="outer"は外部結合です。
+df4とdf5の２つのデータフレームを横方向に結合してみます。`axis=1`{:style="background: #eda0c4; font-size: 1.00em;"} を指定します。
+今度は引数joinを指定してすることで連結のスタイルを指定します。`join="outer"`{:style="background: #eda0c4; font-size: 1.00em;"} は外部結合です。
 joinを指定しなかった時と同じ結果になります。
 
-join="inner"は内部結合です。お互いに存在するデータのみが結合されます。
+`join="inner"`{:style="background: #eda0c4; font-size: 1.00em;"}は内部結合です。お互いに存在するデータのみが結合されます。
 outerjoinとinnerjoinの違いは覚えておきたいところです。縦方向でも横方向でも結合できるのがconcat関数の特徴です。
 
 ![concat_axis_1]({{ "/images/img/fig_1117_06.png" | relative_url}})
 
-
-ページ内容（pd.concat の解説）を踏まえて、  
-**記事の最後に置く「まとめ（箇条書き）」** を、読みやすさと SEO を意識して作成しました。  
-内容はあなたのページの実データに基づいています。   [localhost](http://localhost/reference/pd_concat_axis_tate_yoko_df)
 
 ---
 

@@ -45,7 +45,7 @@ excerpt:
 
 ### 関数を定義する
 
-`if row['記録 列A'] == row['報告 列B']:` の等式`==`　で一致であれば、1を返し、不一致の場合は9を返すようにしています。
+`if row['記録 列A'] == row['報告 列B']:`{:style="background: #eda0c4; font-size: 1.00em;"} の等式`==`{:style="background: #eda0c4; font-size: 1.00em;"}　で一致であれば、1を返し、不一致の場合は9を返すようにしています。
 
 {% highlight python linenos %}
 
