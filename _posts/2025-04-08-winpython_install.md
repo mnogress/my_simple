@@ -17,8 +17,8 @@ sidebar:
   nav: "docs"
 tag: [WinPython, openpyxl, offline]
 category: Python
-date: 2025-04-08
-last_modified_at : 2026-04-02 09:00:00
+date: 2025-04-22
+last_modified_at : 2026-05-11 09:00:00
 excerpt: >
   機密性の高いデータ分析で求められるオフライン環境に最適な WinPython の導入方法をまとめたページです。ネット接続なしでは追加が難しいモジュールを、Control Panel を使ってインストールする手順を GIF つきでわかりやすく解説し、実務で安心して Python を使える環境づくりをサポートします。
 

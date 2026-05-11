@@ -16,6 +16,8 @@ classes:
 sidebar:
   nav: "docs"
 category: Reference
+date: 2025-04-08
+last_modified_at : 2026-05-11 09:00:00
 tag: ["Pandas", "Function"]
 excerpt: >
   Jupyter Notebook を新規作成するときに毎回読み込んでいる、定番の初期設定コードをまとめたリファレンスです。NumPy・Pandas・Matplotlib など、分析作業で必ず使うモジュールを一度に準備できるよう整理しています。
