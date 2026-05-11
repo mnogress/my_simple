@@ -12,14 +12,29 @@ excerpt_separator: <!--more-->
 classes:
   - landing
   - dark-theme
-  #- wide
+  - wide
 sidebar:
   nav: "docs"
 category: Reference
 tag: ["Pandas", "Function"]
+excerpt: >
+  Jupyter Notebook を新規作成するときに毎回読み込んでいる、定番の初期設定コードをまとめたリファレンスです。NumPy・Pandas・Matplotlib など、分析作業で必ず使うモジュールを一度に準備できるよう整理しています。
+
 ---
 
-Jupyter NotebookでPandas 使う際の必須Coding集<!--more-->
+<!--more-->
+#### はじめに
+Jupyter Notebook で新しいノートを作成するとき、毎回同じモジュールをインポートしたり、
+表示設定を整えたりすることが多いと思います。特にデータ分析では、NumPy・Pandas・Matplotlib
+などの基本的なライブラリを最初に読み込んでおくことで、作業をスムーズに始められます。
+
+このページでは、Notebook を開いた直後に必ず実行している「定番の初期設定コード」をまとめています。
+分析環境をすぐに整えられるよう、よく使うモジュールのロード、表示オプション、グラフ設定などを
+ひとつのセルに集約しています。
+
+日々の作業を効率化したい方や、Notebook のテンプレートを作りたい方にとって、
+そのままコピーして使える実用的なリファレンスです。
+
 
 
 #### 新規Notebook 作成際の必須Coding
