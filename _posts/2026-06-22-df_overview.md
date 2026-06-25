@@ -132,6 +132,33 @@ pd.reset_option('display.max_columns')
 
 {% endhighlight %}
 
+#### 🧩 特定の列に欠損値（NaN）が含まれる行を削除（除外）
+
+データフレームの理解を進めて、データをクレンジングする最初のステップとして
+pandasのデータフレームから「特定の列に欠損値（NaN）が含まれる行」を削除（除外）する処理を行うには以下のコードになります。
+
+{% highlight python linenos  %}
+
+col_name = 'target_col_name'
+
+df = df[df[col_name].isnull() == False]
+
+# 「isnull（欠損値である）」の「~（逆＝欠損値ではない）」行を抽出
+df = df[~df[col_name].isnull()]
+
+# 欠損値ではない（値がある）行を抽出
+df = df[df[col_name].notnull()]
+
+# subsetで指定した列に NaN がある行を削除する
+df = df.dropna(subset=[col_name])
+
+{% endhighlight %}
+
+実務では、3つ目の dropna(subset=[...]) を使うケースが一番多いので、ぜひこちらも合わせて覚えてみてください！
+
+
+
+
 #### データフレームのインデックス番号、インデックス名を指定してその行を削除する
 
 おまけとして、インデックス名を指定してその行を削除するとてもよく使うコマンドを併記します。
