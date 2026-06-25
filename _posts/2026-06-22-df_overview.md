@@ -17,8 +17,8 @@ sidebar:
   nav: "docs"
 category: Reference
 tag: ["Pandas", "Function"]
-date: 2026-01-31
-last_modified_at : 2026-03-22 15:23:00
+date: 2026-06-22
+last_modified_at : 2026-06-22 14:23:00
 excerpt: >
   データ分析の最初のステップとして、データセットの全体像を短時間で把握するための必須スクリプト df_overview を紹介します。列名・ユニーク数・データ型・欠損数を一覧で確認でき、次に行うべき前処理や分析方針を判断しやすくなるように、初心者がつまずきやすいポイントも丁寧に解説しています。
 
@@ -97,6 +97,40 @@ df_overview を使うと、列名・ユニーク数・データ型・欠損数�
 
 つまり、データセットの全体像を短時間でつかみ、分析の準備を効率化できるのが最大のメリットです。
 
+#### 🧩 pandasの表示行数を変更する
+
+データフレームを表示したときに、途中が ... で省略されずに指定した行数まで表示できるようにします。
+
+{% highlight python linenos  %}
+
+# 必要なモジュールをインポート
+import numpy as np
+
+# 表示行数を600行に設定
+pd.set_option('display.max_rows', 600)
+
+# (参考) 列数も同様に変更したい場合
+pd.set_option('display.max_columns', 100)
+
+{% endhighlight %}
+
+ {: .notice--danger}
+データフレームの行数を超えて設定する必要があります。　データフレームのサイズが、`(520, 80)` では、すべて表示されます。しかし、`(610, 101)` だと、依然として途中が ... で省略されしまいます。
+
+
+元の設定値に戻したい場合は、以下のコードで戻ります。
+
+
+{% highlight python linenos  %}
+
+# 必要なモジュールをインポート
+import pandas as pd
+
+# 元の設定（デフォルト）にリセット
+pd.reset_option('display.max_rows')
+pd.reset_option('display.max_columns')
+
+{% endhighlight %}
 
 #### データフレームのインデックス番号、インデックス名を指定してその行を削除する
 
