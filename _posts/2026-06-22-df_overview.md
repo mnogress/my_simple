@@ -156,8 +156,84 @@ df = df.dropna(subset=[col_name])
 
 実務では、3つ目の dropna(subset=[...]) を使うケースが一番多いので、ぜひこちらも合わせて覚えてみてください！
 
+#### ⚠️ ビッグデータ csv ファイルのデータフレームへの読込み
+
+以前は
+{% highlight python linenos  %}
+
+import codecs
+
+with codecs.open(
+    "big_data.csv",
+    mode="r",
+    encoding="sjis",
+    errors="replace"
+) as file:
+    df = pd.read_csv(file)
+
+{% endhighlight %}
+
+でデータを読んでいました。　しかし、
+上記では、SJISとして解釈できないバイト列は
+
+� （Unicodeの置換文字：U+FFFD）
+
+になります。
+
+#### ⚠️ errors=“ignore” vs errors=“replace”
+
+元データ（不正な文字を含む）：東京都□港区
+
+| **errors=“ignore”** | **errors=“replace”** |
+| :-----:       | :-----:       |
+| 東京都港区    | 東京都�港区 |
+| **不正文字が消える** | **不正文字があった場所が分かる** |
 
 
+#### ⚠️ pandasで直接書く方法
+最近のpandasなら、
+
+{% highlight python linenos  %}
+
+filename = "big_data.csv"
+
+df = pd.read_csv(
+    filename,
+    encoding="cp932",
+    encoding_errors="replace",
+    low_memory=False
+)
+
+{% endhighlight %}
+
+がお勧めです。
+
+#### ⚠️ 置換された行を探す
+
+{% highlight python linenos  %}
+
+mask = df.astype(str).apply(
+    lambda col: col.str.contains("�", na=False)
+).any(axis=1)
+
+df_error = df[mask]
+
+{% endhighlight %}
+
+で置換文字を含む行だけ抽出できます。
+
+件数だけなら
+
+{% highlight python linenos  %}
+
+df.astype(str).apply(
+    lambda col: col.str.count("�")
+).sum().sum()
+
+{% endhighlight %}
+
+で置換文字の総数を確認します。`0件`なら安心して処理を続け、`1件以上`なら元CSVのどこに不正文字があるか調査します。<br>
+**ignore**はエラー箇所が分からなくなるため、データ品質チェックの観点では**replace**の方がおすすめです。
 
 #### データフレームのインデックス番号、インデックス名を指定してその行を削除する
 
