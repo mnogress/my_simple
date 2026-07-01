@@ -353,3 +353,17 @@ th {
     font-size: 1rem;       /* 任意のサイズに */
     line-height: 1.6;      /* 読みやすさ調整（任意） */
   }
+
+  /* 引用 */
+blockquote {
+  background-color: #e6e5f5;
+  border-left: 5px solid #88b9f2;
+  padding: 0.8em 1em;
+  margin: 1.2em 0;
+  color: #292a2c;
+  font-size: 1.10em;
+  font-weight: normal;
+  font-style: normal;
+  font-family: inherit;
+  letter-spacing: inherit;
+}
