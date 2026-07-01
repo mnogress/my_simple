@@ -156,42 +156,14 @@ df = df.dropna(subset=[col_name])
 
 実務では、3つ目の dropna(subset=[...]) を使うケースが一番多いので、ぜひこちらも合わせて覚えてみてください！
 
-#### ⚠️ ビッグデータ csv ファイルのデータフレームへの読込み
 
-以前は
-{% highlight python linenos  %}
-
-import codecs
-
-with codecs.open(
-    "big_data.csv",
-    mode="r",
-    encoding="sjis",
-    errors="replace"
-) as file:
-    df = pd.read_csv(file)
-
-{% endhighlight %}
-
-でデータを読んでいました。　しかし、
-上記では、SJISとして解釈できないバイト列は
-
-� （Unicodeの置換文字：U+FFFD）
-
-になります。
-
-#### ⚠️ errors=“ignore” vs errors=“replace”
-
-元データ（不正な文字を含む）：東京都□港区
-
-| **errors=“ignore”** | **errors=“replace”** |
-| :-----:       | :-----:       |
-| 東京都港区    | 東京都�港区 |
-| **不正文字が消える** | **不正文字があった場所が分かる** |
 
 
 #### ⚠️ pandasで直接書く方法
-最近のpandasなら、
+
+最近のpandasなら、ビッグデータを CSV から読み込む際は、まず⽂字コードエラーの扱いを慎重に選ぶ必要があります。
+特に `errors="ignore"` を使うと、不正な⽂字が「消えてしまう」ため、元データのどこに問題があったのか後から確認できなくなります。<br>
+以下がお勧めのコードです。
 
 {% highlight python linenos  %}
 
@@ -206,7 +178,20 @@ df = pd.read_csv(
 
 {% endhighlight %}
 
-がお勧めです。
+replace を使えば、不正⽂字は「�」として残るため、後述の「置換された行を探す」で問題⾏を抽出できます。
+このステップを挟むことで、df_overview の結果がより信頼できるものになり、後続の前処理や分析を安全に進められます。
+
+#### ⚠️ errors=“ignore” vs errors=“replace”
+
+元データ（不正な文字を含む）：
+
+**東京都□港区**
+
+| **errors=“ignore”** | **errors=“replace”** |
+| :-----:       | :-----:       |
+| 東京都港区    | 東京都�港区 |
+| **不正文字が消える** | **不正文字があった場所が分かる** |
+
 
 #### ⚠️ 置換された行を探す
 
