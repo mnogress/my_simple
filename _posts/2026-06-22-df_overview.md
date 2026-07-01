@@ -181,13 +181,13 @@ df = pd.read_csv(
 replace を使えば、不正⽂字は「�」として残るため、後述の「置換された行を探す」で問題⾏を抽出できます。
 このステップを挟むことで、df_overview の結果がより信頼できるものになり、後続の前処理や分析を安全に進められます。
 
-#### ⚠️ errors=“ignore” vs errors=“replace”
+#### ⚠️ encoding_errors=“ignore” vs encoding_errors=“replace”
 
 > << 例 >><br>
 > 元データ（不正な文字を含む）：<br>
 >  **東京都□港区**
 
-| **errors=“ignore”** | **errors=“replace”** |
+| **encoding_errors=“ignore”** | **encoding_errors=“replace”** |
 | :-----:       | :-----:       |
 | 東京都港区    | 東京都�港区 |
 | **不正文字が消える** | **不正文字があった場所が分かる** |
