@@ -163,6 +163,26 @@ df_a_filtered = df_a[~df_a['name'].isin(df_b['name'])]
 WHERE name NOT IN (...)
 {% endhighlight %}
 
+### 🧠 フィルタされた数だけを知りたい
+
+- len() を使う（シンプル）ですが、shape を使うのが、おすすめです。<br>
+- df.shape は (行数, 列数) のタプルを返します。例えば `df.shape`が (100, 5) なら、100行5列です。<br>
+- 実務では `df.shape[0]` を使うことが多いです。列数も同時に確認したい場合は、以下のとおりです。<br>
+
+{% highlight python linenos  %}
+print(f"行数: {df.shape[0]}")
+print(f"列数: {df.shape[1]}")
+{% endhighlight %}
+
+`len()` を使いたいのであれば
+
+{% highlight python linenos  %}
+print(len(df))       
+print(len(df.index)) 
+{% endhighlight %}
+
+※このブログの流れであれば、`df`は、`df_a_filtered_isn`もしくは、`df_a_filtered_notin`で読み返してください。
+{: .notice--danger}
 
 <style>
 </style>
