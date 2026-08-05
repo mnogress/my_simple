@@ -1,6 +1,6 @@
 ---
 layout: single
-title: isin() メソッドでビッグデータを操作する
+title: isin() メソッドでビッグデータをフィルタリングする
 header:
   overlay_image: images/header_X12_1280by336.png
   overlay_filter: rgba(107, 74, 43, 0.40)
@@ -21,7 +21,7 @@ date: 2026-08-04
 last_modified_at : 2026-08-05 10:21:00
 excerpt: >
 
- このセクションでは、大量のデータ（ビッグデータ）を効率的にフィルタリングする手法やベストプラクティスについて解説しています。
+ 「大量データを高速・簡潔にフィルタリングするための実務的な isin() の使い方」を、IN と NOT IN の両方向でわかりやすく説明しています。
 
 ---
 <!--more-->
@@ -183,6 +183,50 @@ print(len(df.index))
 
 ※このブログの流れであれば、`df`は、`df_a_filtered_isn`もしくは、`df_a_filtered_notin`で読み返してください。
 {: .notice--danger}
+
+
+### 🚀 複合キーでフィルタリングする（複数列で一致判定したい場合）
+
+実務では、1列だけで一致判定するケースは少なく、  **複数列の組み合わせ（複合キー）で一致を判定したい**場面が多くあります。
+
+例えば、以下のようなケースです：
+
+    - 顧客ID + 日付  
+    - 商品コード + サイズ  
+    - 銘柄コード + 市場区分  
+    - 氏名 + 生年月日  
+
+こうした場合、`isin()` は **1列に対してしか使えない**ため、 複数列をまとめて「キー列」を作る必要があります。
+
+### 🔁 方法：複数列を結合してキーを作る
+
+{% highlight python linenos  %}
+# df_a と df_b の複合キーを作成
+df_a['key'] = df_a['col1'].astype(str) + '_' + df_a['col2'].astype(str)
+df_b['key'] = df_b['col1'].astype(str) + '_' + df_b['col2'].astype(str)
+
+# 複合キーで一致する行だけを抽出（IN）
+df_filtered = df_a[df_a['key'].isin(df_b['key'])]
+{% endhighlight %}
+
+
+### NOT IN（複合キーで一致しない行を抽出）
+
+{% highlight python linenos  %}
+df_filtered_notin = df_a[~df_a['key'].isin(df_b['key'])]
+{% endhighlight %}
+
+### 🎯 注意点
+
+### 1. データ型を揃える  
+- `astype(str)` を使って文字列化しておくと安全です。
+
+### 2. 区切り文字を入れる  
+- `col1 + col2` だと区別できないケースがある。  
+- `col1 + '_' + col2` のように区切り文字を入れるのがポイントです。
+
+### 3. merge のほうが適切な場合もある  
+複合キーが増えるほど `merge` のほうが安全で高速になるケースもあります。
 
 <style>
 </style>
