@@ -17,8 +17,8 @@ sidebar:
   nav: "docs"
 tag: [WinPython, openpyxl, offline]
 category: Python
-date: 2025-04-22
-last_modified_at : 2026-07-01 09:00:00
+date: 2026-08-18
+last_modified_at : 2026-08-18 09:00:00
 excerpt: >
   機密性の高いデータ分析で求められるオフライン環境に最適な WinPython の導入方法をまとめたページです。ネット接続なしでは追加が難しいモジュールを、Control Panel を使ってインストールする手順を GIF つきでわかりやすく解説し、実務で安心して Python を使える環境づくりをサポートします。
 
@@ -97,6 +97,56 @@ PythonおよびWindow 用のPython 処理系とNumpy, Pandas, Scikit-learn, Tens
 ![winpython_openpyxl]({{ "/images/img/04_19_winpython_openpyxl_install3ea464f4.autosave4.gif" | relative_url}}){:height="600px" width="600px"}
 
 ---
+
+### openpyxl をオフラインPCへインストールする方法
+
+オフラインPCへ `openpyxl` をインストールする場合は、オンラインPCで必要なパッケージを事前にダウンロードし、
+USBメモリなどでコピーしてインストールします。
+
+`openpyxl 3.1.5` の必須依存パッケージでは `et-xmlfile` になります(as of 2026-08-18)。
+
+```text
+mkdir C:\usr\temp\openpyxl_pkg
+
+(venv) PS C:\usr\project> pip download openpyxl -d c:\usr\temp\openpyxl_pkg
+
+Collecting openpyxl
+  Using cached openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting et-xmlfile (from openpyxl)
+  Using cached et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+Using cached openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+Using cached et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+Saved c:\usr\temp\openpyxl_pkg\openpyxl-3.1.5-py2.py3-none-any.whl
+Saved c:\usr\temp\openpyxl_pkg\et_xmlfile-2.0.0-py3-none-any.whl
+Successfully downloaded openpyxl et-xmlfile
+
+pip download openpyxl -d C:\temp\openpyxl_pkg
+```
+
+ダウンロードされるファイル例(as of 2026-08-18):
+
+```text
+openpyxl-3.1.5-py2.py3-none-any.whl
+et_xmlfile-2.0.0-py3-none-any.whl
+```
+
+### Pythonバージョンを指定してダウンロードする場合
+
+オフラインPCと同じPythonバージョン向けのパッケージを取得する場合は、以下のように指定します。
+
+```text
+ pip download openpyxl --python-version 310 --only-binary=:all: -d c:\usr\temp\openpyxl_pkg
+```
+
+### Pythonバージョン指定例
+
+| Pythonバージョン | 指定値 |
+|-----------------|---------|
+| Python 3.8 | 38 |
+| Python 3.9 | 39 |
+| Python 3.10 | 310 |
+| Python 3.11 | 311 |
+| Python 3.12 | 312 |
 
 ### 🚀 ワンポイントアドバイス
 
