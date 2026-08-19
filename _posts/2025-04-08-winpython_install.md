@@ -105,7 +105,7 @@ USBメモリなどでコピーしてインストールします。
 
 `openpyxl 3.1.5` の必須依存パッケージでは `et-xmlfile` になります(as of 2026-08-18)。
 
-```text
+{% highlight cmd linenos  %}
 mkdir C:\usr\temp\openpyxl_pkg
 
 (venv) PS C:\usr\project> pip download openpyxl -d c:\usr\temp\openpyxl_pkg
@@ -121,7 +121,7 @@ Saved c:\usr\temp\openpyxl_pkg\et_xmlfile-2.0.0-py3-none-any.whl
 Successfully downloaded openpyxl et-xmlfile
 
 pip download openpyxl -d C:\temp\openpyxl_pkg
-```
+{% endhighlight %}
 
 ダウンロードされるファイル例(as of 2026-08-18):
 
@@ -134,9 +134,9 @@ et_xmlfile-2.0.0-py3-none-any.whl
 
 オフラインPCと同じPythonバージョン向けのパッケージを取得する場合は、以下のように指定します。
 
-```text
+{% highlight cmd linenos  %}
  pip download openpyxl --python-version 310 --only-binary=:all: -d c:\usr\temp\openpyxl_pkg
-```
+{% endhighlight %}
 
 ### Pythonバージョン指定例
 
