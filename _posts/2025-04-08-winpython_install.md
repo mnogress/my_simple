@@ -82,14 +82,16 @@ PythonおよびWindow 用のPython 処理系とNumpy, Pandas, Scikit-learn, Tens
     <span class="box-title">おすすめ手順</span>
   <ol>  
 <li>インターネット接続した別のPC(オンラインPC)を用意する</li>
-<li>オンラインPCから追加で必要はライブラリをダウンロードして、オフラインPCにUSB等で移動させておく</li>
-<li>WinPython Control Panel から以下の動画のようにインストール</li>
+<li>オンラインPCから追加で必要なライブラリをダウンロードして、オフラインPCからUSB等で移動させておく</li>
+<li>WinPython Control Panel から以下の動画のようにインストールできます</li>
  </ol>
 </div>
 
 
-・サンプルとしてopenpyxlを使えるようにした際の動画を載せています。参考にしてください。<br>
-・動画を見てお気づきのとおり、openpyxl以外にjdcal とet_xml を一緒にインストールしないとインストールができません。注意してください。
+・サンプルとして`openpyxl`をWinpython オフラインPCで使えるようにした際の動画です。<br>
+・動画のとおり、`openpyxl`以外に`jdcal`と`et_xml` を一緒に必須モジュールをインストールが必要です<br>
+・また、必須依存パッケージでは `et-xmlfile` になります **(as of 2026-08-18)**<br>
+・後述する`pip download openpyxl -d` で必須パッケージをまとめてダウンロードします。
 {: .notice--danger}
 
 
@@ -103,7 +105,11 @@ PythonおよびWindow 用のPython 処理系とNumpy, Pandas, Scikit-learn, Tens
 オフラインPCへ `openpyxl` をインストールする場合は、オンラインPCで必要なパッケージを事前にダウンロードし、
 USBメモリなどでコピーしてインストールします。
 
-`openpyxl 3.1.5` の必須依存パッケージでは `et-xmlfile` になります(as of 2026-08-18)。
+
+> pip download openpyxl -d c:\usr\... <- 保存場所を指定<br>
+> - `openpyxl 3.1.5` の必須依存パッケージでは `et-xmlfile` になります **(as of 2026-08-18)**
+
+コマンドのログは以下のとおりです。
 
 {% highlight cmd linenos  %}
 mkdir C:\usr\temp\openpyxl_pkg
